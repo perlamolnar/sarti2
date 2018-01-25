@@ -1,28 +1,35 @@
-
-
+ ul{list-style-type: none;}
+ 
  a{
     color: red;
     direction: none;
+    background-image: url("ladybird.png");
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position-y: 15px;
+    background-position-x: 10px;
 }
+
 a:hover{
-    background-color: red;
-    color:white;
+    /* background-color: red; */
+    background-image: url("bugUp.png");
+    color:rgb(20, 20, 20);
 }
+
 a:visited{color: #ccc;}
 
+li a{padding-left: 35px;}
+
 .button {
-    background-color: rgb(29, 14, 250); /* Green */
+    background-color: rgb(236, 235, 135); /* Green */
     border: 1px solid rgb(250, 195, 16);
-    color: white;
+    color: rgb(240, 14, 14);
     padding: 15px 32px;
+    padding-left: 60px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
-    /*float: left;*/
+    /*float: left;*/    
 }
-
-/* ul{list-style-type: none;} */
-ul{list-style-position: inside;}
-li {list-style-image: url("../flecha.png")}
