@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Rellena tu CV</h1>
+    <form method="POST" action="http://daw.iesjoaquimmir.cat/sarti.php" enctype="mulipart/form-data">
+        <label for="idNombre">Nombre</label><br>
+        <input type="text" id="idNombre" name="nombre" size="30"><br><br>
+
+        <label for="idApellidos">Apellidos</label><br>
+        <input type="text" id="idApellidos" name="apellidos" size="80"><br><br>
+
+        <label for="idContraseña">Contrseña</label><br>
+        <input type="password" name="contrasenya" size="10"><br><br>
+
+        <label for="idDNI">DNI</label><br>
+        <input type="text" name="dni" pattern="[A-Za-z]{1}[0-9]{8}"  maxlength="9"><br><br>
+
+        <label for="idSexo">Sexo</label><br>
+        <input type="radio" id="idSexo" name="gender" value="male"checked>Hombre<br>
+        <input type="radio" id="idSexo" name="gender" value="female">Mujer<br><br>
+
+        <label for="idFoto">Incluir mi foto</label>
+        <input type="file" name="foto" id="idFoto"><br><br>
+
+        <input type="checkbox" name="suscribir" checked="checked">Suscribirme al boletin de novedades<br><br>
+
+        <input type="submit" value="Guardar cambios" /> 
+        <input type="reset" value="Borrar datos introducidos" />   
+    
+    
+    
+    </form>
+    
+</body>
+</html>

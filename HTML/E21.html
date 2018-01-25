@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <style>
+    .scroll {   
+        overflow-y: scroll;
+        }
+    </style>
+   
+</head>
+<body>
+    <h1>Información sobre el producto</h1>
+    <form method="POST" action="http://daw.iesjoaquimmir.cat/sarti.php" >
+    
+        <fieldset>
+            <legend>Datos básicos</legend>
+
+            <label for="producto">Nombre del producto</label><br>
+            <input type="text" name="producto" id="producto">
+            <br><br>
+
+            <label for="descripcion">Descripciópn del producto</label><br>
+            <textarea class="scroll" name="descripcion" id="descripcion" cols="60" rows="5"></textarea>
+            <br><br>
+
+            <label for="idFoto">Foto</label>
+            <input type="file" name="foto" id="idFoto"><br><br>
+
+            <input type="checkbox" name="suscribir">Añadir contador de visitas<br>
+    
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Datos económicos</legend>
+
+            <label for="precio">Precio</label>
+            <input type="text"><span>€</span>
+            &nbsp &nbsp &nbsp &nbsp &nbsp
+
+            <label for="impuestos">Impuestos</label>
+            
+            <select>
+                    <option value="4">4%</option>
+                    <option value="7">7%</option>
+                    <option value="16">16%</option>
+                    <option value="25">25%</option> 
+            </select>
+            <br><br>
+
+            <label for="promocion">Promoción</label><br>
+            <input type="radio" name="promocion" value="ninguno" checked>Ninguno<br>
+            <input type="radio" name="promocion" value="transporte">Transporte gratuito<br>
+            <input type="radio" name="promocion" value="descuento">Descuento 5%  
+
+        </fieldset>
+        <br>
+
+        <input type="submit" value="Guardar cambios" /> 
+        <input type="reset" value="Borrar datos introducidos" />   
+    
+    </form>
+</body>
+</html>

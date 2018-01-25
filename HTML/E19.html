@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    .scroll {   
+        overflow-y: scroll;
+        }
+    
+    </style>
+</head>
+<body>
+    <h1>Datos del producto</h1>
+
+    <form method="POST" action="http://daw.iesjoaquimmir.cat/sarti.php" >
+        
+        <label for="producto">Nombre del producto</label><br>
+        <input type="text" name="producto" id="producto">
+        <br><br>
+
+        <label for="descripcion">Descripciópn del producto</label><br>
+        <textarea class="scroll" name="descripcion" id="descripcion" cols="60" rows="5"></textarea>
+        <br><br>
+
+        <input type="submit" value="Guardar cambios" /> 
+        <input type="reset" value="Borrar datos introducidos" />   
+    
+    </form>
+    
+</body>
+</html>

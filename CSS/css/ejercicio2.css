@@ -1,0 +1,30 @@
+h1 #titulo {color: cadetblue;}
+p strong {color: red;}
+.destacado {color: orange;}
+#subtitulo{color: blue;}
+p a {color: red;}
+p a em {color: cornflowerblue;}
+span.especial{color: blueviolet;}
+caption{color: cornflowerblue;}
+
+table, th, tr, td {
+    border: solid 1px black;
+    border-collapse:collapse;
+    padding: 5px;
+}
+th.especial{color:orange;}
+th {color: red;}
+td {color: green;}
+td strong{color: orange;}
+
+#adicional{color: darkkhaki;}
+#adicional a{color: forestgreen;}
+#adicional #especial{color: fuchsia;}
+
+
+
+
+
+
+
+

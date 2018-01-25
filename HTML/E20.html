@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .scroll {   
+                overflow-y: scroll;
+                }
+            
+            </style>
+</head>
+<body>
+    <h1>Rellena tu CV</h1>
+    <form method="POST" action="http://daw.iesjoaquimmir.cat/sarti.php" >
+        <fieldset>           
+            <legend>Datos personales</legend>
+
+            <label for="Provencia">Provencia</label><br>
+            <select id="Provencia">
+                <option value="-1" selected>-Selecciona-</option>
+                <option value="Barcelona">Barcelona</option>
+                <option value="Tarragona">Tarragona</option>
+                <option value="Lleida">Lleida</option>                
+            </select>
+            <br><br>
+
+            <label for="diaNacimiento"></label>
+            <input type="text" name="diaNacimiento" id="diaNacimiento" size="2"><span> de</span>
+            <select class="scroll">
+                    <option value="Enero">Enero</option>
+                    <option value="Febrero">Febrero</option>
+                    <option value="Marzo">Marzo</option>
+                    <option value="Abril">Abril</option>
+                    <option value="Mayo">Mayo</option>
+                    <option value="Junio">Junio</option>
+                    <option value="Julio">Julio</option>
+                    <option value="Agosto">Agosto</option>
+                    <option value="Septiembre">Septiembre</option>
+                    <option value="Octubre">Octubre</option>
+                    <option value="Noviembre">Noviembre</option>
+                    <option value="Diciembre">Diciembre</option>
+            </select>
+            <span> de</span>
+            <input type="text" name="anyoNacimiento" id="anyoNacimiento" size="4">
+            <br><br>
+
+            <label for="interes">Temas de interés</label><br>
+            <select name="interes" id="interes" size="4" multiple>
+                    <option value="1">Adiminstración de bases de datos</option>
+                    <option value="2">Análisis y programación</option>
+                    <option value="3">Arquitectrua</option>
+                    <option value="4">Calidad</option>
+                    <option value="5">ERP</option>
+                    <option value="6">CRM</option>
+                    <option value="7">Business Intelligent</option>
+                   
+            </select>       
+            <br>
+
+        </fieldset>
+        <br>
+        
+        <input type="submit" value="Guardar cambios" /> 
+        <input type="reset" value="Borrar datos introducidos" />   
+    </form>
+</body>
+</html>

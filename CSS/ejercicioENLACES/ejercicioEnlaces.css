@@ -1,0 +1,24 @@
+ul{list-style-type: none;}
+
+a{
+    color: red;
+    direction: none;
+}
+a:hover{
+    background-color: red;
+    color:white;
+}
+a:visited{color: #ccc;}
+
+.button {
+    background-color: rgb(29, 14, 250); /* Green */
+    border: 1px solid rgb(250, 195, 16);
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    /*float: left;*/
+}
