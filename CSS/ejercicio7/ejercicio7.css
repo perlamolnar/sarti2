@@ -11,7 +11,7 @@
 }
 
 a:hover{
-    /* background-color: red; */
+    background-color: rgb(245, 241, 8);
     background-image: url("bugUp.png");
     color:rgb(20, 20, 20);
 }
@@ -21,7 +21,7 @@ a:visited{color: #ccc;}
 li a{padding-left: 35px;}
 
 .button {
-    background-color: rgb(236, 235, 135); /* Green */
+    background-color: rgb(236, 235, 135);
     border: 1px solid rgb(250, 195, 16);
     color: rgb(240, 14, 14);
     padding: 15px 32px;
@@ -33,3 +33,7 @@ li a{padding-left: 35px;}
     cursor: pointer;
     /*float: left;*/    
 }
+
+.horizontal li{float: left}
+.vertical{clear: both;
+padding-top: 20px}

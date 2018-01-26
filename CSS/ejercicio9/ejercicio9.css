@@ -1,0 +1,21 @@
+body{
+    background-color: gold; 
+    margin: auto;    
+}
+.container{
+    background-color: rgb(21, 139, 139);
+    padding: 10%;
+    margin: 10%;
+    height: 100%}
+
+.left{width: 50%;float: left;}
+.right{width: 50%; float: left;}
+label{width: 25%}
+input{width: 80%;}
+input:focus {border: 2px solid #000;background: #f3f3f3}
+.direccion1{width: 35%;float: left;}
+.direccion2{width: 55%;float: left;}
+.fijo{width: 45%;float: left;}
+.movil{width: 45%; float: left;}
+.telefono{width: 100%; clear: both; }
+span{color: red;}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="ejercicio9.css" title="style">
+</head>
+<body>
+<div class="container">
+
+
+  <h1>Formulario de alta</h1>
+  <form action="POST">
+      <div class="left">
+        <h4>Nombre y apellidos <span>*</span></h4>  
+        
+        <input type="text" name="Nombre" id="Nombre" size="15" required><br>
+        <label for="Nombre">Nombre</label><br>
+
+        <input type="text" name="PrimerApellido" id="PrimerApellido" size="30" required>
+        <br>
+        <label for="Primer Apellido">Primer Apellido</label><br>
+
+        <input type="text" name="SegundoApellido" id="SegundoApellido" size="30" required>
+        <br>
+        <label for="SegundoApellido">Segundo Apellido</label><br>
+
+
+        <h4>Email</h4>
+        <input type="email" name="Email" id="Email">
+        <label for="Email"></label>
+
+      </div>
+
+      <div class="right">
+        <h4>Dirección <span>*</span></h4>
+        <input type="text" name="Direccion" id="Direccion"  required>
+        <br>
+        <label for="Direccion">Calle, número, piso, puerta</label>
+        <br>
+
+        <div class="direccion1">
+            <input type="text" name="CP" id="CP" required>
+            <br>
+            <label for="CP">Código Postal</label>
+            <br>
+
+            
+            <select id="Provincia" required>
+                <option value="Barcelona">Barcelona</option>
+                <option value="Tarragona">Tarragona</option>
+                <option value="Lleida">Lleida</option>
+                <option value="Girona">Girona</option>
+                <option value="Otro">Otro</option>     
+            </select>
+            <br>
+            <label for="Provincia">Provincia</label>
+            <br>
+        </div>
+
+        <div class="direccion2">
+            <input type="text" name="Municipio" id="Municipio" required>
+            <br>
+            <label for="Municipio">Municipio</label>
+            <br>
+            
+            <select id="País" required>
+                <option value="Espana">España</option>
+                <option value="Francia">Francia</option>
+                <option value="Ingleterra">Inglaterra</option>
+                <option value="Hungria">Hungría</option>
+                <option value="Otro">Otro</option>
+            </select>
+            <br>
+            <label for="País">País</label>
+            <br>            
+        </div>
+        <div class="telefono">
+            <h4>Teléfono <span>*</span></h4>
+            
+            <div class="fijo"><input type="text" name="Fijo" id="Fijo" required>
+            <br>
+            <label for="Fijo">Fijo</label>
+            </div>
+
+            <div class="movil">
+            <input type="text" name="Móvil" id="Móvil" required>
+            <br>
+            <label for="Móvil">Provincia</label>                
+            </div> 
+        </div>
+
+
+
+
+
+        </div>
+        <hr>
+
+
+
+
+
+
+  </form>
+</div>
+</body>
+</html>

@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
-    <style>
-    
+     
     body, html{
         margin: auto;
         width: 100%;
@@ -53,37 +44,43 @@
         padding: 20px;
         text-align: center;
         }
+        
+    ul{list-style-type: none;}
+ 
+ a{
+    color: red;
+    direction: none;
+    background-image: url("ladybird.png");
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position-y: 15px;
+    background-position-x: 10px;
+}
 
-    </style>
+a:hover{
+    background-color: rgb(245, 241, 8);
+    background-image: url("bugUp.png");
+    color:rgb(20, 20, 20);
+}
 
+a:visited{color: #ccc;}
 
-</head>
-<body>
-    <div id="head">
-        <div class="box"><h1>Cabecera</h1></div>        
-    </div>
+li a{padding-left: 35px;}
 
-    <div id="side">
-        <div class="box">
-        <p>Sidemenu</p>
-        </div>
-    </div>
+.button {
+    background-color: rgb(236, 235, 135);
+    border: 1px solid rgb(250, 195, 16);
+    color: rgb(240, 14, 14);
+    padding: 15px 32px;
+    padding-left: 60px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    /*float: left;*/    
+}
 
-    <div id="containts">
-        <div class="box">
-        <h2>Contenidos</h2>
-        </div>  
-    </div>  
-    
-    <div id="lateral">
-        <div class="box">
-        <p>Lateral</p> 
-        </div> 
-    </div> 
-
-    <div id="footer">
-        <p>Pie de pagina</p>
-    </div>
-
-</body>
-</html>
+.horizontal li{float: left}
+.vertical{clear: both;
+padding-top: 20px}
