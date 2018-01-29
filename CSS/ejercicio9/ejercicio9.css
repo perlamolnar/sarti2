@@ -1,6 +1,8 @@
 body{
-    background-color: gold; 
-    margin: auto;    
+    background-color: #ede797b0; 
+    margin: auto;
+    font-size: 15px;
+    font-family: Ariel;
 }
 .container{
     background-color: rgb(21, 139, 139);
@@ -10,12 +12,40 @@ body{
 
 .left{width: 50%;float: left;}
 .right{width: 50%; float: left;}
-label{width: 25%}
-input{width: 80%;}
-input:focus {border: 2px solid #000;background: #f3f3f3}
-.direccion1{width: 35%;float: left;}
-.direccion2{width: 55%;float: left;}
-.fijo{width: 45%;float: left;}
-.movil{width: 45%; float: left;}
-.telefono{width: 100%; clear: both; }
+
+input{width: 100%; }    
+input:focus {border: 2px solid #E6B700;background: #f3f3f3}
+
+.direccion1{width: 45%;float: left;}
+.direccion2{width: 50%;float: right;}
+
+select{width: 100%;}
+
+
+.fijo{width: 48%;float: left;}
+.movil{width: 48%; float: right;}
+
 span{color: red;}
+#boton{
+	float:right; 
+	width: auto; 
+	background-color: #b3aeae; 
+	padding: 5px; 
+	font-size: 16px;
+	background-image: url(img/flecha.png);
+	background-repeat: no-repeat;
+	background-size: 15px;
+	background-position: right;
+	padding-right: 30px;
+
+	}
+hr{width: 100%}
+fieldset{padding: 25px; border: none;}
+fieldset:hover{background-color: #ede797;}
+
+.vacio{height: 20px; width: 100%; background-color: #efbc60; padding-top: 50px;}
+
+.grupo{width: 30%; height: 100%; float: left; }
+.preguntas{width: 65%; float: left; padding-top: 20px;}
+.preguntas2 {width: 40%; float: left; padding-top: 20px;}
+.comentario {width: 20%; float: left; padding-top: 20px;}
