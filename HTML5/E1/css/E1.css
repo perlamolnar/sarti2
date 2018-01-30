@@ -1,0 +1,99 @@
+body{
+    margin: auto; 
+    background-color: lightskyblue; 
+}
+#container{
+    margin: auto;   
+    
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    margin: 0px;  
+}
+
+a{
+    color: red;
+    direction: none;
+}
+a:hover{
+    background-color: rgb(250, 185, 89);
+    color:white;
+}
+a:visited{color: #ccc;}
+
+.button {
+    background-color: rgb(189, 231, 241); /* Green */
+    /*border: 1px solid rgb(250, 195, 16);*/
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+}
+
+header{
+    background-color: rgb(204, 240, 240);
+    margin: 0;
+    float: left;
+    width: 100%;
+    height: 25%;
+    text-align: center;
+}
+
+nav{
+    background-color: rgb(204, 240, 240);
+    width: 100%;
+    float: left;
+    padding: 0 50px;
+    display: inline-block;
+}
+
+.mainBox{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+article{
+    width: 70%;
+    float: left;
+    background-color: darkkhaki;
+    padding: 50px 100px;
+    box-sizing: border-box;    
+}
+
+aside{
+    width: 30%;
+    background-color: lightskyblue;     
+    float: right;
+    padding: 50px;   
+    box-sizing: border-box;  
+}
+
+footer{
+    width: 100%;
+    height: 30%;
+    background-color: #ccc;
+    clear: both;
+    padding: 50px 0px;
+    text-align: center;
+    bottom: 0px;
+}
+section {
+    float: left;
+    width: 40%; 
+}
+
+.video{
+    width: 50%;
+    float: right;
+    padding-top: 20px;
+}
+
+.sound{width: 100%;
+float: left;}
+
