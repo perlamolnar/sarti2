@@ -1,0 +1,26 @@
+body{
+    background-color: darkkhaki;
+    margin: auto;
+    padding: 40px;
+}
+#container{
+    background-color: rgb(241, 237, 172);
+}
+ul{list-style-type: none;}
+
+ul li::first-line{color: cadetblue; font-size: 2em;}
+
+li:nth-last-child(2){color: brown}
+
+a[href$=".es"]:hover {color: aqua; font-size: 1.6em}
+p{padding: 30px;}
+
+p::first-line{background-color: rgb(238, 238, 88);}
+p:hover::first-letter{font-size: 5em; color: red;}
+
+p:nth-child(even){background-color: rgb(236, 204, 122);}
+
+.hola{}
+.hello{}
+.bonjour{}
+
