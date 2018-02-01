@@ -1,22 +1,39 @@
-body,html{background-color: mistyrose;
-height: 98%}
+body,html{
+    background-color:  rgb(188, 239, 240);
+    margin: 0;
+}
 
+h1, h2, h3, h4{
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(255, 0, 242, 0.733);
+}
 .container{
     display: flex;
     flex-direction: column; 
-    border: 1px solid black; 
-    height: 100%;    
+    /* border: 1px solid black;  */
+    height: 100%;
+    width: 100%;    
     }
 header{
     border: 1px solid black;
-    flex-grow: 2;
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/mk.png), url(../img/DM.png) ;
+    background-repeat: no-repeat, repeat;
+    background-position: left top, right bottom;    
+    color: rgb(250, 249, 252);
+    font-size: 3em;
+}
+header h1{
+    background-color: rgba(74, 107, 107, 0.61);
 }
 
 nav{
     display: flex;
     flex-grow: 1;
     border: 1px solid black;
-    align-items: center;   
+    align-items: center;  
+    background-color:  rgb(188, 239, 240);
  }
 
 nav a{
@@ -24,7 +41,7 @@ nav a{
     text-align: center;
     }
 a{
-    background-color: darkturquoise;
+    background-color:transparent;
     padding: 10px;
 }
 .mainBox{
@@ -32,21 +49,74 @@ a{
     flex-grow:7;   
     display: flex;
     flex-direction: row;
+    background-color: mistyrose;
 }
 
 aside{
-    border: 1px solid black;
+    background-color: darkkhaki;
+    /* border: 1px solid black; */
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    padding: 10px;
    }
 
 section{
-    border: 1px solid black;
-    flex-grow: 7;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 7;  
+    
 }
-footer{border: 1px solid black;
-flex-grow: 1}
+.noticias{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 3;
+    
+}
+p{padding: 15px;}
+
+.galeria img{
+    width: 200px;
+    height: 150px;
+    margin: 20px;
+    box-shadow: 10px 10px 29px 9px rgba(0,0,0,0.44);
+    border-radius: 25px;    
+}
+.galeria{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 3;
+    justify-content: space-around;
+    flex-wrap: wrap;   
+}
+
+footer{
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;   
+    background-color:  rgb(188, 239, 240);
+    /* background-image: url(../img/playa.png); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.footerlinks{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 100px;
+}
+.footerlinks a img{
+    width: 30px;
+}
+
+.contacto{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 100px;
+}
+
 
 
 
