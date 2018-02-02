@@ -24,9 +24,9 @@ header{
     flex-direction: row;
     border-radius: 25px 25px 0 0 ;
     background-color: blue;
-    background-image: url(../img/mk.png), url(../img/DM.png);
-    background-repeat: no-repeat, repeat;
-    background-position: left top, right bottom;   
+    background-image: url(../imatges/gat.png), url(../imatges/dau.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: left center, right center;   
 }
 
 nav{
