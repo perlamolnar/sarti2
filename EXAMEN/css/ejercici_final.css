@@ -1,39 +1,38 @@
 body{
-    background-color:  rgb(188, 239, 240);
-    margin: 0;    
-    
-
+    background: linear-gradient(to bottom, rgb(165, 172, 243) , rgb(250, 250, 252));    
+    margin: auto;
+    padding:40px;
+    display: flex;
 }
 
-h1, h2, h3, h4{
+h1{
     text-align: center;
-    text-shadow: 2px 2px 8px rgb(249, 252, 255);
+    color: white;
+
 }
 .container{
+    border-radius: 25px;
     display: flex;
-    flex-direction: column;
-    /* border: 1px solid black; */
+    flex-direction: column;    
     height: 100%;
     width: 100%;
-    }
+    margin: 50px;   
+}
+
 header{
-    border: 1px solid #b73030;
-    height: 100%;
-    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 25px 25px 0 0 ;
+    background-color: blue;
     background-image: url(../img/mk.png), url(../img/DM.png);
     background-repeat: no-repeat, repeat;
-    background-position: left top, right bottom;
-    color: rgb(144, 15, 15);
-    font-size: 3em;
-}
-header h1{
-    background-color: rgba(74, 107, 107, 0.61);
+    background-position: left top, right bottom;   
 }
 
 nav{
     display: flex;
     flex-grow: 1;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     align-items: center;  
     background-color:  rgb(188, 239, 240);
  }
@@ -41,42 +40,70 @@ nav{
 nav a{
     flex-grow: 1;
     text-align: center;
-    }
+}
+
 a{
     background-color:transparent;
     padding: 10px;
 }
-.mainBox{
-    border: 1px solid black;
-    flex-grow:7;   
-    display: flex;
-    flex-direction: row;
-    background-color: mistyrose;
+
+/* unvisited link */
+a:link {
+    color: green;
 }
 
-aside{
-    background-color: darkkhaki;
-    /* border: 1px solid black; */
-    flex-grow: 1;
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: red;
+}
+
+/* selected link */
+a:active {
+    color: yellow;
+}
+
+
+
+.mainBox{
+    /*border: 1px solid black;*/     
     display: flex;
     flex-direction: column;
-    padding: 10px;
-   }
-
+    background-color: mistyrose;
+}
+article{
+    display: flex;
+    flex-direction: row;
+    background-color: pink;
+}
 section{
     /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
-    flex-grow: 7;  
-    
+    flex-grow: 5; 
+    padding: 50px;    
 }
+
 .noticias{
     display: flex;
     flex-direction: row;
-    flex-grow: 3;
-    
+    flex-grow: 3;    
 }
+
 p{padding: 15px;}
+
+aside{
+    background-color: #bac76d;
+    /* border: 1px solid black; */
+    flex-grow: 3;
+    display: flex;
+    flex-direction: column;
+    padding:30px;
+}
 
 .galeria img{
     width: 200px;
@@ -118,9 +145,6 @@ footer{
     flex-direction: column;
     margin: 20px 100px;
 }
-
-
-
 
 
 
