@@ -1,0 +1,54 @@
+body{
+    background-color: darkkhaki;
+    margin: auto;
+    padding: 200px;
+}
+#container{
+	background-color: rgb(241, 237, 172);
+}
+
+
+ul{list-style-type: none;}
+
+/* unvisited link */
+a:link {color: red;}
+
+/* visited link 
+a:visited {color: purple;}*/
+
+/* mouse over link */
+a:hover {color: blue; background-color: yellow;}
+
+/* selected link */
+a:active {color: yellow;}
+
+a href$:hover {font-size:5em;}
+
+
+li:nth-child(2){font-size: 1.8em; background-color: aqua; }
+li:nth-child(3){background-color: green;}
+
+li:last-child a{color: rgb(83, 72, 51);}
+
+li:nth-child(odd){font-size: 3em;}
+li:nth-child(even){padding-left: 40px;}
+
+p{padding: 30px;}
+p::first-line{background-color: rgb(238, 238, 88);}
+p:hover::first-letter{font-size: 5em; color: red;}
+p:nth-child(even){background-color: rgb(236, 204, 122);}
+p::before{
+	content: url(../img/cara.png);
+}
+p::before img{
+	width: 50%;
+	
+}
+
+
+h2{padding-left: 30px}
+h2:hover{font-variant: small-caps; font-size: 2em; background-color: orange;}
+
+
+
+li:first-type-of{color: cadetblue; font-size: 3em;}
