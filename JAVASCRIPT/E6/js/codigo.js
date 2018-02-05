@@ -1,18 +1,23 @@
-var valores = [true, 5, false, "hola", "adios", 2];
+var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S','Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
 
-var resultado = valores[3] > valores[4];
-alert("El texto " + valores[3]+" es  mayor que el texto " + valores [4] + "? " + resultado);
+var DNI = prompt("Introduce los numeros de tu DNI sin la letra al final");
 
-//Combinar vlores booleanos
-var valor1 = valores[0];
-var valor2 = valores[2];
+if (DNI<99999999 && DNI > 0) {
+    var LETRA = prompt("Introduce la letra de su DNI");
+    LETRA = LETRA.toUpperCase();
+    
+    var restoDNI23 = DNI % 23;
+    var letraCalculada = letras[restoDNI23];
+    
+    if (letraCalculada==LETRA) {
+        alert("Tu numero de DNI es correcta.");
 
-//Obtener un resultado TRUE
-var resultado = valor1 || valor2;
+    }
+    else{
+        alert("Error, la letra no coincide con el numero que has dado.");
+    }    
+}
 
-//Opreaciones matematicas
-var num1 =valores[1];
-var num1 = valores[1];
 
 
 
