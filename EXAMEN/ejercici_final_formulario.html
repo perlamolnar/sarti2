@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/ejercici_final_formulario.css">
+</head>
+
+<body>
+	<div class="container">
+
+		<header>			
+			<h1>MI SITIO WEB</h1>	
+		</header>
+
+		<nav>
+			<a href="ejercici_final.html">HOME</a>
+			<a href="ejercici_final">ABOUT</a>
+			<a href="ejercici_final">BLOG</a>
+			<a href="ejercici_final">GALERIA</a>
+			<a href="ejercici_final">PORTFOLIO</a>
+			<a target="_blank" href="ejercici_final_formulario.html">CONTACT</a>
+			<a href="ejercici_final">LINKS</a>
+
+		</nav>
+
+		<div class="mainBox">
+			<article>
+				<form method="POST" action="http://daw.iesjoaquimmir.cat/sarti.php">
+				
+					<fieldset>
+						<div class="grupo">
+							<h3>Datos personales
+								<span>*</span>
+							</h3>
+						</div>
+				
+						<div class="preguntas2">
+				
+							<input type="text" name="Nombre" id="Nombre" required autocomplete="on" autofocus>
+							<br>
+							<label for="Nombre">Nombre</label><br>
+				
+							<input type="text" name="Apellidos" id="Apellidos" required>
+							<br>
+							<label for="Primer Apellido">Apellidos</label>
+				
+							<input type="text" name="DNI" id="DNI" pattern="[A-Z]{1}[-]{1}[0-9]{8}" maxlength="10" placeholder="A-12345678">
+							<label for="DNI">DNI</label>
+				
+				
+				
+							<input type="date" name="fechaNacimiento" id="fechaNacimiento">
+							<label for="fechaNacimiento">Fecha de nacimiento</label>
+				
+							<input type="number" name="Hijos" id="Hijos" min="0" max="10">
+							<label for="Hijos">Número de hijos</label>
+				
+							<input type="file" name="Foto" id="Foto">
+							<label for="Foto">Subir una foto</label>
+				
+						</div>
+						<div class="comentario">
+							<p>Los datos del cliente es imprescindible para proceder su caso.</p>
+						</div>
+					</fieldset>
+				
+					<fieldset>
+						<div class="grupo">
+							<h3>Contacto
+								<span>*</span>
+							</h3>
+						</div>
+						<div class="preguntas2">
+							<div class="fijo">
+								<input type="tel" name="Fijo" id="Fijo" required>
+								<br>
+								<label for="Fijo">Fijo</label>
+							</div>
+				
+							<div class="movil">
+								<input type="tel" name="Movil" id="Movil" required>
+								<br>
+								<label for="Movil">Móvil</label>
+							</div>
+				
+							<input type="email" name="Email" id="Email">
+							<label for="Email">Dirección correo electronico</label>
+				
+							<input type="url" name="web" id="web" placeholder="www.tuweb.es">
+							<label for="web">URL de tu web si existe</label>
+						</div>				
+				
+						<div class="comentario">
+							<p>Datos de contacto es imprescindible para quedar en contacto con usted.</p>
+						</div>
+					</fieldset>
+				
+					<fieldset>
+						<div class="grupo">
+							<h3>Dirección
+								<span>*</span>
+							</h3>
+						</div>
+				
+						<div class="preguntas2">
+							<input type="text" name="Direccion" id="Direccion" required>
+							<br>
+							<label for="Direccion">Calle, número, piso, puerta</label>
+							<br>
+							<br>
+				
+							<div class="direccion1">
+								<input type="text" name="CP" id="CP" required>
+								<br>
+								<label for="CP">Código Postal</label>
+								<br>
+								<br>
+								<select id="Provincia" required>
+									<option value="Barcelona">Barcelona</option>
+									<option value="Tarragona">Tarragona</option>
+									<option value="Lleida">Lleida</option>
+									<option value="Girona">Girona</option>
+									<option value="Otro">Otro</option>
+								</select>
+								<br>
+								<label for="Provincia">Provincia</label>
+								<br>
+							</div>
+				
+							<div class="direccion2">
+								<input type="text" name="Municipio" id="Municipio" required>
+								<br>
+								<label for="Municipio">Municipio</label>
+								<br>
+								<br>
+								<select id="País" required>
+									<option value="Espana">España</option>
+									<option value="Francia">Francia</option>
+									<option value="Ingleterra">Inglaterra</option>
+									<option value="Hungria">Hungría</option>
+									<option value="Otro">Otro</option>
+								</select>
+								<br>
+								<label for="País">País</label>
+								<br>
+								<br>
+							</div>
+						</div>
+				
+						<div class="comentario">
+							<p>La dirección es imprescindible para poder confirmar los pedidos.</p>
+						</div>
+					</fieldset>
+				
+					<fieldset>
+						<div class="grupo">
+							<h3>Usuario y contraseña
+								<span>*</span>
+							</h3>
+						</div>
+				
+						<div class="preguntas2">
+							<input type="text" name="Usuario" id="Usuario" maxlength="100">
+							<label for="Usuario">Usuario</label>
+				
+							<input type="password" name="Password" id="Password" minlength="8" pattern="[0-9]{1}[a-zA-Z0-9]{6,}[A-Z]{1}">
+							<label for="Password">Password</label>
+						</div>
+				
+						<div class="comentario">
+							<p>La contraseña debe tener una longitud mínima de 8 caracteres, comenzar por un número y terminar en una letra mayúscula.</p>
+						</div>
+					</fieldset>
+				
+					<fieldset>
+						<div class="grupo">
+							<h3>Otros</h3>
+						</div>
+				
+						<div class="preguntas2">
+							<input type="color" name="Color" id="Color" value="#ff5500">
+							<label for="Color">Tu color prefereido</label>
+				
+						</div>
+				
+						<div class="comentario">
+							<p>Nos interesa tus gustos.</p>
+						</div>
+					</fieldset>
+				
+					<progress value="20" max="100"></progress>
+					<label for="progress">El % de relleno del formulario.</label>				
+					<hr>
+					<input id="boton" type="submit" value="ENVIAR" />
+				</form>			
+
+			</article>
+		</div>
+
+		<footer>
+			<p>Copyright 2017 Nombre de empresa</p>	
+		</footer>
+
+	</div>
+</body>
+</html>

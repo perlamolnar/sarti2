@@ -120,7 +120,7 @@ aside{
     border-radius: 25px;
     float: left;
 }
-h3{background-color: #A0B9F3; padding: 15px;}
+h3{ padding: 15px;}
 .sobremi{width: 100%; font-size: 10px;}
 .sobremi img{width: 50px; float:left;padding-right: 10px}
 .sobremi p {float:left; padding-left: 10px;}
@@ -151,6 +151,7 @@ footer {
     color: #233C9B;
 }
 
+
 .left{width: 50%;float: left;}
 .right{width: 50%; float: left;}
 
@@ -179,7 +180,7 @@ span{color: red;}
 }
 hr{width: 100%}
 fieldset{padding: 25px; border: none;}
-fieldset:hover{background-color: #ede797;}
+fieldset:hover{background-color: #e0eff3;}
 fieldset .comentario{display: none;}
 fieldset:hover .comentario{display: block;} 
 .vacio{height: 20px; width: 100%; background-color: #efbc60; padding-top: 50px;}
@@ -190,11 +191,3 @@ fieldset:hover .comentario{display: block;}
 .comentario p{padding-right: 0px;margin-right: -60px;}
 
 progress{width: 100%; height: 30px;}
-
-
-
-
-
-
-
-
