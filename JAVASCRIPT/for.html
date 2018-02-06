@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+        var mensaje = "Hola Mundo, soy una cadena de texto!";
+        var palabras = mensaje.split(" "); // palabras = ["Hola", "Mundo,", "soy", "una", "cadena", "de", "texto!"];
+        var palabra = "Hola";
+        var letras = palabra.split(""); // letras = ["H", "o", "l", "a"]
+
+
+        var mensaje = "Hola que tal";
+            var resultado = mensaje.lastIndexOf("a"); //calcula la última posición en la que se encuentra el carácter indicado dentro de la cadena de texto.
+            alert(resultado); 
+
+
+        var mensaje ="Hola que tal";
+        var resultado= mensaje.indexOf("a", 5); //busca "a" apartir de posicion 5
+        alert(resultado); //devuelve 10 
+
+        var mensaje = "Hola que tal";
+        var resultado = mensaje.indexOf("a");
+        alert(resultado); //devuelve la posicion donde esta "a" en el mensaje
+
+
+         for (i = 0; i < 5; i++) {
+                if (i == 3) continue; //hace todo menos el 3. Salta el 3.
+                alert(i);
+            }
+
+
+        for (i = 0; i < 5; i++) {
+            if(i==2) break; //salimos del bucle cuando i =2 despues no se ejecuta el resto
+                alert(i);
+            }
+
+        var resultado = 1;
+            var numero = 5;
+            do {
+                resultado *= numero; // resultado = resultado * numero
+                numero--;
+            } while (numero > 0);
+
+
+        var resultado = 0;
+            var numero = 100;
+            var i = 0;
+            while (i <= numero) {
+                resultado += i; //resultado=resultado+i
+                i++;
+            }
+            alert(resultado); //si ponemos dentro el alert, sale alert 100 vezes.
+            //si el alart esta fuera, sale una vez al final
+
+
+
+        //elemento in vector
+        var vector = ["uno", "dos", "tres"];
+            for (elemento in vector) {
+                alert(vector[elemento]);
+            }
+
+
+        //length of the array. en este caso hay 3 elementos en el array.
+        var vector=["1", "2", "3"];
+        for (i = 0; i < vector.length; i++) {
+            alert(vector[i]);            
+        }
+
+
+        var i;
+        //en principio el i es zero, el proceso va hasta 5, va añadiendo uno al valor del i.
+        for(i=0; i<5; i++){ 
+            alert(i);
+        }
+
+
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

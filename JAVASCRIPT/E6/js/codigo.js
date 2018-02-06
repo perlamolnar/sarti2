@@ -18,7 +18,27 @@ if (DNI<99999999 && DNI > 0) {
     }    
 }
 
+//Javi version -incompleto
+/* var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
 
+var numero = prompt("Introduce los numeros de tu DNI sin la letra al final");
+var letra = prompt("Introduce la letra de su DNI");
+letra = letra.toUpperCase();
+
+if (numero > 99999999 && numero < 0) {
+    alert("El numero proporcionado no es valido.");
+    else{
+        var restoDNI23 = DNI % 23;
+        var letraCalculada = letras[restoDNI23];
+    
+        (letraCalculada == LETRA) {
+        alert("Tu numero de DNI es correcta.");
+    }
+
+
+    }
+    
+} */
 
 
 
