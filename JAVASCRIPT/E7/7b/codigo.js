@@ -1,10 +1,5 @@
 var meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
 
-//mostrando los meses uno por uno con el "for":
-/* for (i = 0; i < 12; i++) {
-    alert (meses[i]);    
-}  */
-
 var final = false;
 while (!final) {  //!final es como final=ture. negamos que final sea false
     var tuMes = prompt("Introduce tu mes favorito.");
@@ -13,7 +8,7 @@ while (!final) {  //!final es como final=ture. negamos que final sea false
 
     if (posicion >-1) {
         
-        alert("Tu mes favorito esta en la posición " + ++posicion);
+        alert("Tu mes favorito esta en la posición " + ++posicion); //vamos a añadir 1 al valor de la posicon para que coincide con el numero de mes en calendario.
         final=true;        
     }
     else{
