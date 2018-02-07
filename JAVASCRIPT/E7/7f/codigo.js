@@ -14,9 +14,11 @@ var meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "ag
 var i = 11;
 
 for (i = 11; i >= 0; i--) {    
-    alert(meses [i]);    
+    alert(meses[i].toUpperCase());    
 }
 
+
+//toUpperCase funciona con strings pero NO CON ARRAYS
 
 
 

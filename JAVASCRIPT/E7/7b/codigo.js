@@ -4,6 +4,7 @@ var final = false;
 while (!final) {  //!final es como final=ture. negamos que final sea false
     var tuMes = prompt("Introduce tu mes favorito.");
     var posicion = meses.indexOf(tuMes);
+    //.indexOf busca la posicion de un elemento concreto
     //si no encontra me dara -1
 
     if (posicion >-1) {
@@ -12,7 +13,7 @@ while (!final) {  //!final es como final=ture. negamos que final sea false
         final=true;        
     }
     else{
-        alert("No encontro tu mes favorito.");
+        alert("No encontro tu mes favorito. Vuelva a probar.");
     }
     
 }

@@ -12,3 +12,12 @@ for ( numero; numero > 0; numero--) {
 }
 
 
+//otra forma:
+for (var i = 10; i >=0; i--) {
+    var respuesta = confirm(i);
+    if(!respuesta){ //respuesta ==false, pero con! es mas como los programos
+        alert("la cuenta atras se interrumpe");
+        break;
+    }
+    
+}

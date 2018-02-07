@@ -9,14 +9,14 @@ var arrayLetras = text.split("");
 var i = 0;
 
 for (i = 0; i < arrayLetras.length; i++) {
-    alert(arrayLetras[i]); 
+    //alert(arrayLetras[i]); 
 
-    // if (arrayLetras[i]!=$) {
-    //     alert(arrayLetras[i]);         
-    // }    
-    // else{
-    //     break;
-    // }
+    if (arrayLetras[i]!="$") {
+        alert(arrayLetras[i]);         
+    }    
+    else{
+        break;
+    }
 } 
 
 

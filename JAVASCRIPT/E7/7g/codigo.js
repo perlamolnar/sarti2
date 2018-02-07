@@ -1,4 +1,4 @@
-texto = prompt("Introduce un texto de  más de 5 caracteres, por favor.");
+texto = " ";
 numeroLetras = texto.length;
 
 do {
