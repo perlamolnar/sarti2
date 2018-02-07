@@ -17,7 +17,7 @@ alert(resultado);
 
 
 
-//otro forma:
+//otra forma:
 while (numeroInicial <= 100) {
     numeroInicial *= numeroInicial;    
 }
