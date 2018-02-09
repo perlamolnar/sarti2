@@ -1,12 +1,14 @@
-var micadena = prompt("Escribe algun texto.");
-var miresultado = palindromo(micadena);
+inicio();
 
-if (miresultado) {                  //if resultado es TRUE
-      alert("Este texto es palindromo.");
-}else {                             //if resultado es FALSE
-      alert("Este texto NO es palindromo.");
+function inicio() {
+      var micadena = prompt("Escribe algun texto.");
+      var miresultado = palindromo(micadena);
+      if (miresultado) {                  //if resultado es TRUE
+            alert("Este texto " + micadena+" es palindromo.");
+      }else {                             //if resultado es FALSE
+            alert("Este texto " + micadena +"  NO es palindromo.");
+      }
 }
-
 
 function palindromo(cadena) {
       var resultado = true;
@@ -20,7 +22,10 @@ function palindromo(cadena) {
       var arraySinEspacio = cadenaSinEspacio.split("");
       //alert(arraySinEspacio);
       
-      var arrayAlreves = arraySinEspacio.slice(0);//copiar el array y guardar en otro array. Si no, no hara el inverse!!!!
+      var arrayAlreves = arraySinEspacio.slice(0);
+      //copiar el array y guardar en otro array. Si no, no hara el inverse!!!!
+      //.slice(0)->zero, porque queremos que no quite ningun elemento del array. Pero es = .slice(); 
+      
       arrayAlreves.reverse();
       //alert(arrayAlreves);
 
@@ -30,10 +35,11 @@ function palindromo(cadena) {
             //alert(arraySinEspacio[i]);
             //alert(arrayAlreves[i]);
             if (arraySinEspacio[i] != arrayAlreves[i]) {
-            //si cumple este "if" guarda un valor "false" en el variable "resultado"            
-            resultado=false; 
-            break;                 
-           }            
+                  //si cumple este "if" guarda un valor "false" en el variable "resultado"            
+                  resultado=false; 
+                  break;                 
+           }    
+           console.log("paso por bucle "+i);
       }
 
 return resultado;      

@@ -11,19 +11,59 @@
 
 
 //con una función:
+// var minumero = prompt("Dame un numero!");
+// var miresultado = parImpar(minumero);
+// alert("Resultado: El número " + minumero + " es " + miresultado);
+
+// function parImpar(numero) { 
+
+//       if (numero % 2 ==0) {
+//             return "par"; 
+//       } else {
+//             return "impar"  ;
+//       }
+
+// }
+
+//con SOLO UN RETURN!!!! MEJOR
 var minumero = prompt("Dame un numero!");
 var miresultado = parImpar(minumero);
 alert("Resultado: El número " + minumero + " es " + miresultado);
 
-function parImpar(numero) { 
-
-      if (numero % 2 ==0) {
-            return "par"; 
+function parImpar(numero) {
+      //var texto ="";
+      if (numero % 2 == 0) {
+            texto = "par";
       } else {
-            return "impar"  ;
+            texto = "impar";
       }
+      return texto;
 
 }
+
+//con SOLO UN RETURN!!!! MEJOR
+var minumero = prompt("Dame un numero!");
+var miresultado = parImpar(minumero);
+alert("Resultado: El número " + minumero + " es " + miresultado);
+
+function parImpar(numero) {
+      var texto ="";
+      if (numero % 2 == 0) {
+            texto += "par";
+      } else {
+            texto += "impar";
+      }
+      return texto;
+
+}
+
+
+
+
+
+
+
+
 
 
 
