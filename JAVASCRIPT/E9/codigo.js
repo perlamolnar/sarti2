@@ -17,7 +17,7 @@ function recibeCadena(cadena) {
 
       }else {
             //alert("Tu texto está formado sólo con mayusculas y con minusculas.");
-            resultado = "Tu texto está formado sólo con mayusculas y con minusculas.";
+            resultado = "Tu texto está formado con mayusculas y con minusculas.";
       }
       return resultado;
 }

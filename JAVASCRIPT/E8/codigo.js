@@ -11,8 +11,9 @@
 
 
 //con una función:
-var numero = prompt("Dame un numero!");
-var resultado = parImpar(numero);
+var minumero = prompt("Dame un numero!");
+var miresultado = parImpar(minumero);
+alert("Resultado: El número " + minumero + " es " + miresultado);
 
 function parImpar(numero) { 
 
@@ -23,22 +24,22 @@ function parImpar(numero) {
       }
 
 }
-alert("Resultado: El número " + numero + " es " + resultado);
+
 
 
 //EN OTRA MANERA:
-var number = prompt("Give me a number!");
+var minumber = prompt("Give me a number!");
+miresultado = PARimPAR(minumber); //llamamos la función, gardamos lo que devuelve en "resultado"
+alert("The number " +minumber+ " is " +miresultado);
+
+
 function PARimPAR(n) {
       return(n%2 ? "impar":"par");
-      //variablename o return = (condition) ? true :false; 
-      //variablename o return = (condition) ? 1 : 0; 
+      //variablename o return = (condition ? true : false); 
+      //variablename o return = (condition ? 1 : 0); 
 
 }
 
-resultado = PARimPAR(number);    
-//llamamos la función, gardamos lo que devuelve en "y"
-
-alert("The number " +number+ " is " +resultado);
 
 
 

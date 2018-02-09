@@ -1,13 +1,12 @@
-var micadena =prompt("Escribe algun texto.");
+var micadena = prompt("Escribe algun texto.");
 var miresultado = palindromo(micadena);
 
 if (miresultado) {                  //if resultado es TRUE
-      alert("es palindromo");
+      alert("Este texto es palindromo.");
 }else {                             //if resultado es FALSE
-      alert("es NO palindromo");
+      alert("Este texto NO es palindromo.");
 }
 
-alert(miresultado);
 
 function palindromo(cadena) {
       var resultado = true;
@@ -25,12 +24,15 @@ function palindromo(cadena) {
       arrayAlreves.reverse();
       //alert(arrayAlreves);
 
+      //en un bucle "for" comparamos los dos arrays para ver si son identicos :
+
       for (i = 0; i < arraySinEspacio.length; i++) {
             //alert(arraySinEspacio[i]);
             //alert(arrayAlreves[i]);
             if (arraySinEspacio[i] != arrayAlreves[i]) {
-                  resultado=false;
-                  break;                 
+            //si cumple este "if" guarda un valor "false" en el variable "resultado"            
+            resultado=false; 
+            break;                 
            }            
       }
 
@@ -40,11 +42,11 @@ return resultado;
 
 
 
-var micadena = prompt("Escribe algun texto.");
-var miresultado = palindromo(micadena);
-alert(miresultado);
+var micadena1 = prompt("Write some text.");
+var miresultado1 = palindromo1(micadena1);
+alert(miresultado1);
 
-function palindromo(cadena) {      
+function palindromo1(cadena) {      
       var cadena = cadena.toLowerCase();
       var cadenaArray = cadena.split(" "); //creamos un array del texto dado.
       //alert(cadenaArray);
@@ -63,10 +65,10 @@ function palindromo(cadena) {
             //alert(arraySinEspacio[i]);
             //alert(arrayAlreves[i]);
             if (arraySinEspacio[i] == arrayAlreves[i]) {
-                  resultado = "es palindromo";
+                  resultado = "This text is palindromo";
                   
             }else{
-                  resultado = "es NO palindromo";
+                  resultado = "This text is not palindromo";
             }
       }
 
