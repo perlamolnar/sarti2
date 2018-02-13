@@ -20,7 +20,12 @@ window.onload = function () {
                 numEnlacePrueba++;            
         } 
     }
-    mensajeTot += "El número de enlaces que apuntan a ´http://prueba´ es: " +numEnlacePrueba+ "<br>";
+    mensajeTot += "El número de enlaces que apuntan a ´http://prueba´ es: " + numEnlacePrueba + "<br>";
+
+    //otro modo de hacer:
+    var enlacesPrueba = document.querySelectorAll("a[href=\"http://prueba\"]");
+    var numeroEnlacesPrueba = enlacesPrueba.length;
+    mensajeTot += "El número de enlaces que apuntan a ´http://prueba´ es: " + numeroEnlacesPrueba+ "<br>";
 
 
 
