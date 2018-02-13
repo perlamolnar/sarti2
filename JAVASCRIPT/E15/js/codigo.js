@@ -4,7 +4,7 @@ window.onload = function () {
     // Numero de enlaces de la pagina
 
     var enlaces = document.getElementsByTagName("a"); 
-    var numeroEnlaces = enlaces.length;
+    //var numeroEnlaces = enlaces.length;
     //mensajeTot +="El número de las enlaces de la página es "+numeroEnlaces + "<br>";
     mensajeTot += "El número de las enlaces de la página es " + enlaces.length + "<br>";
 
@@ -24,8 +24,8 @@ window.onload = function () {
     }
     mensajeTot += "El número de enlaces que apuntan a ´http://prueba´ es: " + numEnlacePrueba + "<br>";
 
-    //otro modo de hacer SIN BUCLE que es mas eficiente!!!:
-    var enlacesPrueba = document.querySelectorAll("a[href=\"http://prueba\"]");
+    //otro modo de hacer:
+    var enlacesPrueba = document.querySelectorAll("[href=\"http://prueba\"]");
     var numeroEnlacesPrueba = enlacesPrueba.length;
     mensajeTot += "El número de enlaces que apuntan a ´http://prueba´ es: " + numeroEnlacesPrueba+ "<br>";
 
