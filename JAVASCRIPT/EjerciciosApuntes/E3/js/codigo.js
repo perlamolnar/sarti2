@@ -96,7 +96,29 @@ function perderFocus() {
 
 
 
+// function cargaEventos() {
+//       document.getElementById("Nombre").addEventListener("change", newValue);
+//       document.getElementById("Apellidos").addEventListener("change", newValue);
+//       var listaInputs = document.getElementsByTagName("input");
+//       // for ( i = 0; i < listaInputs.length; i++) {
+//       //      listaInputs[i].addEventListener("blur", perderFocus);     
+//       // }
 
+//       document.getElementById("DNI").addEventListener("blur", newValue);
+
+
+// }
+
+// function newValue() {
+//       var newInput = document.getElementById(this.id).value;
+//       alert("El texto del formulario ha sido cambiado. El nuevo texto es: " + newInput);
+// }
+
+// function perderFocus() {
+//       alert("Has salido del campo.");
+
+
+// }
 
 
 
