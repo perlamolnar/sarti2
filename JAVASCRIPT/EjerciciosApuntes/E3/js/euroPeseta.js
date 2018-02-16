@@ -20,10 +20,12 @@ function calcularEuros() {
 }
 
 function calcularPesetas() {
-    var euros = document.getElementById("euros").value;
+    var euros = document.getElementById("euros").value; 
+    //var euros es un string, aunque el input es tipo numero
+
     euros = parseFloat(euros).toFixed(2);
-    console.log(euros);
-    console.log(parseFloat(euros).toFixed(2));    
+    //el parseFloat convierte un string (euros) a un número     
+
     if (euros > 0 ) {
         Pesetas = euros * 166.386;
         Pesetas = Pesetas.toFixed();
