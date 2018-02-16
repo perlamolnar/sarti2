@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/codigo5.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/E2.css" title="style">
+<style>
+input{color:blue;}
+textarea{width: 100%;}
+
+</style>
+
+</head>
+
+<body onbeforeunload="return adios();">
+    <div class="container">
+        <h1>Formulario con las nuevas etiquetas de HTML5</h1>
+
+        <form id"formulario" name="formulario" method="POST" action="http://daw.iesjoaquimmir.cat/sarti.php">
+
+            <hr>
+            <h5>Deja tu mensaje. (Numero de maximo caracter es 10.)</h5>
+            <textarea name="Mensaje" id="Mensaje" onkeydown="return limita()" onkeyup="return limita()"></textarea>
+            
+            <p id="caracterEscrito"></p>
+            <p id="caracterQueda"></p>
+
+            <hr>
+            <input id="boton" type="button" value="SUBMIT">
+            <hr>
+            <input type="reset" id="reset" value="RESET" />
+            <hr>
+            <button type="button" id="redBtn">Cambia el color de los texto a ROJO</button>
+
+           
+        </form>
+    </div>
+</body>
+
+</html>
