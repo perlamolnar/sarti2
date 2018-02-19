@@ -18,7 +18,7 @@ function getReady(){
     var colores = document.getElementById("colores").children;
     //console.log(colores);
     for (i = 0; i < colores.length; i++) {
-        colores[i].addEventListener("click", cambiarColor);
+        colores[i].addEventListener("mouseover", cambiarColor);
     }
    
 }
@@ -29,64 +29,63 @@ function cambiarTitulo() {
     document.getElementById("miTitulo").innerHTML = nuevoTitulo; 
     
     //otra manera:
-    //var encabezado =document.getElementsByTagName("h1")[0];
-    //document.title=this.innerHTML;
-    //encabezado.innerHTML=this.innerHTML;
+    //var encabezado =document.getElementsByTagName("h1")[0];    
+    //encabezado.innerHTML=this.innerHTML; //cambia el h1
+    //document.title=this.innerHTML;   //esto cambia el titulo en el buscador
 
     //otra manera:
-    //var titulo =document.getElementsByTagName("h1");
-    //document.title=this.innerHTML;
+    //var titulo =document.getElementsByTagName("h1");    
     //titulo[0].innerHTML=this.innerHTML;
-    
-
-
+    //document.title=this.innerHTML;
 }
 
 function cambiarColor() {
-    switch (this.id) {
-        case "rojo":
-            document.body.style.backgroundColor = this.getAttribute('class');        
-            break;
-        case "negro":
-            document.body.style.backgroundColor = this.getAttribute('class');
-            break;
-        case "amarillo":
-            document.body.style.backgroundColor = this.getAttribute('class');
-            break;
-        case "verde":
-            document.body.style.backgroundColor = this.getAttribute('class');
-            break;
-        case "negro":
-            document.body.style.backgroundColor = this.getAttribute('class');
-            break;
-        case "rosa":
-            document.body.style.backgroundColor = this.getAttribute('class');
-            break;
-        case "gris":
-            document.body.style.backgroundColor = this.getAttribute('class');
-            break;
-        case "turquesa":
-            document.body.style.backgroundColor = this.getAttribute('class');
-            break;
-        case "lima":
-            document.body.style.backgroundColor = this.getAttribute('class');
-            break;
-    
-        default:
-            break;
-    }
-
-    var nuevoColor = document.getElementById(this.id);
-    console.log(nuevoColor);
-
-
-
-    var nuevoColor = nuevoColor.style.getPropertyValue.backgroundColor;
-    console.log(nuevoColor);
-    //document.body.style.backgroundColor = 
+    if (window.getComputedStyle) {
+        var computedStyle = getComputedStyle(this, null);
+                
+    } else { //si es IExplorer -> comuptedStyle
+        computedStyle = this.currentStyle;
         
-    
+    }
+    document.body.style.backgroundColor = computedStyle.backgroundColor;
 }
 
 
+// function cambiarColor() {
+//     switch (this.id) {
+//         case "rojo":
+//             document.body.style.backgroundColor = this.getAttribute('class');        
+//             break;
+//         case "negro":
+//             document.body.style.backgroundColor = this.getAttribute('class');
+//             break;
+//         case "amarillo":
+//             document.body.style.backgroundColor = this.getAttribute('class');
+//             break;
+//         case "verde":
+//             document.body.style.backgroundColor = this.getAttribute('class');
+//             break;
+//         case "negro":
+//             document.body.style.backgroundColor = this.getAttribute('class');
+//             break;
+//         case "rosa":
+//             document.body.style.backgroundColor = this.getAttribute('class');
+//             break;
+//         case "gris":
+//             document.body.style.backgroundColor = this.getAttribute('class');
+//             break;
+//         case "turquesa":
+//             document.body.style.backgroundColor = this.getAttribute('class');
+//             break;
+//         case "lima":
+//             document.body.style.backgroundColor = this.getAttribute('class');
+//             break;
+//         case "azul":
+//             document.body.style.backgroundColor = this.getAttribute('class');
+//             break;    
+//         default:
+//             break;
+//     }
 
+
+// }
