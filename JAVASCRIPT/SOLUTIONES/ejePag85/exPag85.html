@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/eje09b.css">
+		<title>Formulario de alta</title>
+		<script src="js/formulari.js">
+		</script>
+	</head>
+
+	<body>
+		<div id="contenedor">
+			<h2>Formulario de alta</h2>
+			<form name="myForm" id="myForm" action="exemplePrintaFormulari.php" enctype="multipart/form-data" method="post">
+
+				<fieldset class="izquierda">
+					<legend> Nombre y apellidos </legend>
+
+					<input type="text" id="nombre" name="nombre" autofocus value="" /><br>
+			  		<label for="nombre">Nombre</label><br>
+			  		<input type="text" id="apellido1" name="apellido1" value="" /><br>
+			  		<label for="apellido1">Primer apellido</label><br>
+			  		<input type="text" id="apellido2" name="apellido2" value=""/><br>
+			  		<label for="apellido2">Segundo apellido</label><br>
+					<input type="text" id="edad" name="edad" value="" /><br>
+			  		<label for="edad">Edad</label><br>
+				</fieldset>
+
+				<fieldset class="derecha">
+					<legend>Dirección</legend><br>
+					<input type="text" id="direccion" name="direccion" value="" /><br>
+					<label for="direccion">Calle, número, piso, puerta</label><br>
+					<input type="number" id="codigopostal" name="codigopostal" value="" /><br>
+					<label for="codigopostal">Código postal</label><br>
+					<input type="text" id="municipio" name="municipio" value=""/><br>
+					<label for="municipio">Municipio</label><br>
+					<select id="provincia" name="provincia"><br>
+						<option value=""></option>
+						<option value="provincia1">Provincia 1</option>
+						<option value="provincia2">Provincia 2</option>
+						<option value="provincia3">Provincia 3</option>
+					</select><br>
+					<label for="provincia">Provincia</label><br>
+					<select id="pais" name="pais"><br>
+						<option value=""></option>
+						<option value="pais1">País 1</option>
+						<option value="pais2">País 2</option>
+						<option value="pais3">País 3</option>
+					</select><br>
+					<label for="pais">País</label>
+				</fieldset>
+
+				<img id="imatge" src="imatge/gat.png" alt="gat" height="142" width="142" >
+
+				<div id="inferior">
+				    <div class="izquierda">
+					    <label class="titulo" for="email">Email</label><br>
+			  		    <input type="email" id="email" name="email" value="" />
+				  	    <!-- <p class="ayuda">Asegúrate de que sea válido</p> -->
+				    </div>
+
+				    <div class="derecha">
+					    <label class="titulo" for="telefonofijo">Teléfono</label><br>
+					    <input type="tel" id="telefonofijo" name="telefonofijo" value="" />
+					    <label for="telefonofijo">Fijo</label>
+				  	    <input type="tel" id="telefonomovil" name="telefonomovil" value="" />
+				  	    <label for="telefonomovil">Móvil</label>
+				    </div>
+				</div>
+				<hr>
+				<div class="botones">
+					<input id="alta" type="button" value="Darme de alta &rarr;" />
+					<input id="rojo" type="button" value="ROJO"/>
+				</div>
+			</form>
+			<p id="demo"></p>
+		</div>
+	</body>
+</html>

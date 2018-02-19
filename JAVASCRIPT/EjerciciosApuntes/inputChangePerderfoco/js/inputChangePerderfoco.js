@@ -1,34 +1,33 @@
 window.addEventListener("load", cargaEventos);
 
+
+window.addEventListener("beforeunload", adios);
+//window.beforeunload = adios();
+
+window.beforeonload = function () {
+      event.preventDefault();
+      return "Gracias por visitar la pagina." 
+ }
+//adios();
+//  window.beforeunload = function (event) {
+//       event.returnValue = "Gracias por visitar la pagina.";
+//   };
+
+// window.addEventListener("beforeunload", function () {
+//     returnValue = "Gracias por visitar la pagina.";
+// });
+
 var semaforo=true;
 
 function cargaEventos() {
     var listaInputs = document.getElementsByTagName("input");
     for (i = 0; i < listaInputs.length; i++) {
         listaInputs[i].addEventListener("change", newValue); 
-        listaInputs[i].addEventListener("blur", perderFocus);        
+        listaInputs[i].addEventListener("blur", perderFocus);
+        //listaInputs[i].addEventListener("click", redText);
        }
-    document.getElementById("redBtn").addEventListener("click", redText);
 }
-
-function redText() {           
-    //alert("cambiamos color");
-    //document.getElementById("Nombre").style.color = "magenta"; 
-
-        var listaInputs = document.getElementsByTagName("input");
-        //console.log(listaInputs);
-
-        for (i = 0; i < listaInputs.length; i++) { 
-            //var idImputs = document.getElementById(listaInputs);
-            console.log(listaInputs[i]);
-            //listaInputs[i].style.color = "red";
-            document.getElementById(listaInputs[i].id).style.color = "magenta"; 
-            //listaInputs[i].id!!!!!!!!! . id!!!!! recogo por id!!!!
-
-        }
-        
-    } 
-
+ 
 function newValue() {
       if (semaforo){
             semaforo = false;
@@ -49,22 +48,15 @@ function perderFocus() {
       }
 }
 
+function redText() {           
+      alert("cambiamos color");
+      document.getElementById("Nombre").style.color = "magenta"; 
+      //document.getElementsByName("input").textObject.style.color="red";
+      //document.getElementById(listaInputs).style.color = "magenta";       
+      document.formulario.className="";
+      document.getElementsByName("input").className="redText";
 
-window.addEventListener("beforeunload", adios);
-//window.beforeunload = adios();
-
-window.beforeonload = function () {
-    event.preventDefault();
-    return "Gracias por visitar la pagina."
 }
-//adios();
-//  window.beforeunload = function (event) {
-//       event.returnValue = "Gracias por visitar la pagina.";
-//   };
-
-// window.addEventListener("beforeunload", function () {
-//     returnValue = "Gracias por visitar la pagina.";
-// });
 
 
 

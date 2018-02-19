@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/redButtonForm.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/E2.css" title="style">
+<style>
+input{color:blue;}
+.redText{color:red}
+
+</style>
+
+</head>
+
+<body onbeforeunload="return adios();">
+    <div class="container">
+        <h1>Formulario con Red Button</h1>
+
+        <form id"formulario" name="formulario" method="POST" action="http://daw.iesjoaquimmir.cat/sarti.php">
+
+            <fieldset>
+                <div class="grupo">
+                    <h3>Datos personales
+                        <span>*</span>
+                    </h3>
+                </div>
+
+                <div class="preguntas2">
+
+                    <input type="text" name="Nombre" id="Nombre" value="Gyöngyi" required autocomplete="on" autofocus>
+                    <br>
+                    <label for="Nombre">Nombre</label>
+
+                    <input type="text" name="Apellidos" id="Apellidos" value="Molnar" required>
+                    <br>
+                    <label for="Primer Apellido">Apellidos</label>
+
+                    <input type="text" name="DNI" id="DNI" pattern="[A-Z]{1}[-]{1}[0-9]{8}" maxlength="10" placeholder="A-12345678">
+                    <label for="DNI">DNI</label>
+
+
+
+                    <input type="date" name="fechaNacimiento" id="fechaNacimiento">
+                    <label for="fechaNacimiento">Fecha de nacimiento</label>
+
+                    <input type="number" name="Hijos" id="Hijos" min="0" max="10">
+                    <label for="Hijos">Número de hijos</label>
+
+                    <input type="file" name="Foto" id="Foto">
+                    <label for="Foto">Subir una foto</label>
+
+                </div>
+                <div class="comentario">
+                    <p>Los datos del cliente es imprescindible para proceder su caso.</p>
+                </div>
+            </fieldset>          
+            
+            <hr>
+            <input id="boton" type="button" value="SUBMIT" onClick="return submitFormulario();">
+            <hr>
+            <input type="reset" id="reset" value="RESET" />
+            <hr>
+            <button type="button" id="redBtn">Cambia el color de los texto a ROJO</button>
+
+           
+        </form>
+    </div>
+</body>
+
+</html>
