@@ -16,7 +16,6 @@ function visor() {
     bigImg.src = this.src; 
     imgText.innerHTML = this.alt;
 
-    document.getElementById("bigImg").innerHTML=bigImg;   
-    //bigImg.parentElement.style.display = "block";  
+     
 }
 
