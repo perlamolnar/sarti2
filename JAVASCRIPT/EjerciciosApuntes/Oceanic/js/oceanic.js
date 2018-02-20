@@ -9,7 +9,7 @@ function getReady(){
     }
 
     //otra manera:
-    //for (elements in boton) {
+    //for (elements of boton) {
     //    element[i].addEventListener("click", cambiarTitulo);
     //    }
 
@@ -24,30 +24,34 @@ function getReady(){
 }
 
 function cambiarTitulo() {
-    var nuevoTitulo = this.innerHTML;
-    console.log(nuevoTitulo);
-    document.getElementById("miTitulo").innerHTML = nuevoTitulo; 
+    //var nuevoTitulo = this.innerHTML;
+    //console.log(nuevoTitulo);
+    //document.getElementById("miTitulo").innerHTML = nuevoTitulo; 
+
+    //o en una sola linea directamente:
+    document.getElementById("miTitulo").innerHTML = this.innerHTML; 
     
     //otra manera:
-    //var encabezado =document.getElementsByTagName("h1")[0];    
-    //encabezado.innerHTML=this.innerHTML; //cambia el h1
-    //document.title=this.innerHTML;   //esto cambia el titulo en el buscador
+    //var encabezado = document.getElementsByTagName("h1")[0];    
+    //encabezado.innerHTML=this.innerHTML; //cambia el h1  
 
     //otra manera:
-    //var titulo =document.getElementsByTagName("h1");    
-    //titulo[0].innerHTML=this.innerHTML;
-    //document.title=this.innerHTML;
+    //var encabezado =document.getElementsByTagName("h1");    
+    //encabezado[0].innerHTML=this.innerHTML;
+
+    //document.title=this.innerHTML;   //esto cambia el titulo en el buscador
 }
 
 function cambiarColor() {
     if (window.getComputedStyle) {
-        var computedStyle = getComputedStyle(this, null);
+        var elementStyle = getComputedStyle(this, null);
+        //console.log(elementStyle.backgroundColor);
                 
     } else { //si es IExplorer -> comuptedStyle
-        computedStyle = this.currentStyle;
+        elementStyle = this.currentStyle;
         
     }
-    document.body.style.backgroundColor = computedStyle.backgroundColor;
+    document.body.style.backgroundColor = elementStyle.backgroundColor;
 }
 
 
