@@ -1,76 +1,46 @@
-window.addEventListener("load", cargaEventos);
-
-function cargaEventos() {
-    document.getElementById("enlace_1").addEventListener("click", muestraOculta);
-    document.getElementById("enlace_2").addEventListener("click", muestraOculta);
-    document.getElementById("enlace_3").addEventListener("click", muestraOculta);
-}
+$(document).ready(function () {    
+    $("a").on("click", muestraOculta);
+});
 
 function muestraOculta() {
-    //document.getElementById("contenidos_1").className = "oculto";
-    //document.getElementById("contenidos_2").className = "oculto";
-    //document.getElementById("contenidos_3").className = "oculto";
+    $(this).prev().toggle("slow");
 
-    //console.log(this.id);  
-    //this.id devuelve el ID de enlace en que hacemos un click. 
-
-    //Guardamos en un variable su ultimo caracter:
-    var NumIdEnlace = this.id.substr(-1);
-    //console.log(NumIdEnlace);
-
-    //Creamos variables dinamicas segun en qual enlace hacemos click:
-    var enlace = "enlace_"+NumIdEnlace;
-    var contenido= "contenidos_"+NumIdEnlace;
-
-    //Verificamos que es el contenido texto del enlace y damos instrucciones que hacer
-    if (document.getElementById(enlace).innerHTML=="Ocultar contenidos") {
-        document.getElementById(contenido).style.visibility="hidden";
-        document.getElementById(enlace).innerHTML="Mostrar contenidos";      
-    }
-    else{
-        document.getElementById(contenido).style.visibility = "visible";
-        document.getElementById(enlace).innerHTML = "Ocultar contenidos"; 
-    }        
+        if ($(this).text() == "Ocultar contenidos") {        
+            $(this).text("Mostrar contenidos");
+        } else {        
+            $(this).text("Ocultar contenidos");
+        }
 }
 
 
+//PIRMERA VERSION:
+// $(document).ready(function () {
+//     //$("#enlace_1").on("click", muestraOculta);
+//     //$("#enlace_2").on("click", muestraOculta);
+//     //$("#enlace_3").on("click", muestraOculta);
+// });
+// function muestraOculta() {
+//     //Guardamos en un variable su ultimo caracter:
+//     var idEnlace = $(this).attr("id");
+//     console.log(idEnlace);
+//     var numEnlace = idEnlace.substr(-1);
+//     console.log(numEnlace);
+//     //mas simplemente:
+//     //var NumIdEnlace = this.id.substr(-1);
+
+//     //Creamos variables dinamicas segun en qual enlace hacemos click:
+//     var enlace = "#enlace_" + numEnlace; //#############indicar que es un ID!!!!!! si no, no lo sabe!
+//     var contenido= "#contenidos_"+numEnlace;
+
+//     //Verificamos que es el contenido texto del enlace y damos instrucciones que hacer:
+//     if ($(this).text() == "Ocultar contenidos") {
+//         $(enlace).text("Mostrar contenidos");
+//         $(contenido).css("display", "none");
+        
+//     } else {
+//         $(enlace).text("Ocultar contenidos");
+//         $(contenido).css("display", "block");        
+//     }    
+// }
 
 
-
-//otra version:
-function muestraOculta(id) {
-    var elemento = document.getElementById('contenidos_' + id);
-    var enlace = document.getElementById('enlace_' + id);
-
-    if (elemento.style.display == "" || elemento.style.display == "block") {
-        elemento.style.display = "none";
-        enlace.innerHTML = 'Mostrar contenidos';
-    }
-    else {
-        elemento.style.display = "block";
-        enlace.innerHTML = 'Ocultar contenidos';
-    }
-}
-
-
-
-//otra version:
-
-function muestraOculta() {
-    var idEnlace = this.id;
-    var trozos = idEnlace.split('_');
-    var numero = trozos[1];
-    var parrafo = document.getElementById('contenidos_' + numero);
-
-    switch (parrafo.style.display) {
-        case 'none':
-            parrafo.style.display = 'block';
-            this.innerHTML = 'Ocultar contenidos';
-            break;
-        case 'block':
-        case '':
-            parrafo.style.display = 'none';
-            this.innerHTML = 'Mostrar contenidos';
-            break;
-    }
-}
