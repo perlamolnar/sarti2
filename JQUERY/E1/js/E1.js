@@ -23,7 +23,7 @@ function mifunction() {
 //         var link = $(this).attr("href");
 //         console.log(link);
 
-//         $("#contenido").load(link + function (response, status, xhr) {
+//         $("#contenido").load(link, function (response, status, xhr) {
 //             if (status == "error") {
 //                 var msg = "Sorry but there was an error: ";
 //                 $("#contenido").html(msg + xhr.status + " " + xhr.statusText);

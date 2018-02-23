@@ -1,0 +1,21 @@
+#container{
+    background-image: url("../img/black.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5%;
+    color: white ;  
+
+}
+#formulario{
+    background-color: rgba(155, 179, 99, 0.795);
+    padding: 5%;
+    color: black;
+}
+
+h1{
+    
+}
+
+fieldset img {
+    width: 10%;
+}

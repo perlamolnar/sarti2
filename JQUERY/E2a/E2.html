@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/E2.js"></script>
+    <link rel="stylesheet" href="css/E2.css">
+</head>
+<body>
+    <div id="container">
+    <h1>FORMULARIO</h1>
+
+        <form id="formulario" action="" method="POST">
+            <fieldset>
+                <legend>Información personal</legend>
+                <input type="text" name="Nombre" id="Nombre" required autocomplete="on" autofocus>
+                <br>
+                <label for="Nombre">Nombre</label>
+                
+                <input type="text" name="Apellidos" id="Apellidos" required>
+                <br>
+                <label for="Primer Apellido">Apellidos</label>
+                
+                <input type="text" name="DNI" id="DNI" pattern="[A-Z]{1}[-]{1}[0-9]{8}" maxlength="10" placeholder="A-12345678">
+                <label for="DNI">DNI</label>
+                <br><br>
+                
+                <label for="opcion">Que actividades te interesan?</label>
+            
+                <div id="opciones">
+                    <input type="radio" name="opcion" id="option1">Musica
+                    <input type="radio" name="opcion" id="option2">Pintura
+                </div>
+            </fieldset>
+            <br>
+
+            <div id="subForm">
+
+
+            </div>
+            <br>
+        
+            <button type="submit">ENVIAR</button>
+        
+        </form>
+
+    
+
+
+
+
+
+
+    </div>
+    
+
+
+</body>
+</html>

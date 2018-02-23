@@ -1,0 +1,15 @@
+#container{
+    background-image: url("../img/nieve.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5%;
+
+}
+#formulario{
+    background-color: rgba(179, 230, 245, 0.644);
+    padding: 5%;
+
+}
+#container h1{
+    background-color: rgb(173, 204, 230);
+}
