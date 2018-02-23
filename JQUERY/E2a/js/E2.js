@@ -4,9 +4,10 @@ $(document).ready(function(){
 
 function mifuncion() {
     var opcion = $(this).attr("id");
+    opcion = "html/" + opcion + ".html";
     console.log(opcion);
 
-    $("#subForm").load(opcion+".html"); 
+    $("#subForm").load(opcion); 
    
 }
 
