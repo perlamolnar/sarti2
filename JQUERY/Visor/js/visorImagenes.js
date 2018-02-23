@@ -15,3 +15,4 @@ function visor() {
 
   
 
+//http://sachinchoolur.github.io/lightslider/
