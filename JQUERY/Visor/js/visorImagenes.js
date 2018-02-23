@@ -1,20 +1,16 @@
-$(document).ready(function () {     
-    $("#smallImg img").on("click", visor);
-        
+$(document).ready(function () {    
+    $("#smallImg img").on("click", visor);         
 });
 
 function visor() {
-    var imagenes = $("#smallImg img");
-    for (foto of imagenes) {
-        console.log(foto);
-        foto.addEventListener("click", visor);        
-    }
 
-    var bigImg = $("#bigImg");
-    var imgText = $("#imgText");
+    var imagen = this.src;
+    console.log(imagen);
+    var imgText = this.alt;
 
-    bigImg.src = this.src;
-    imgText.innerHTML = this.alt;
+    $("#bigImg").attr('src',imagen);
+    $("#imgText").text(imgText);  
+    
 }
 
   
