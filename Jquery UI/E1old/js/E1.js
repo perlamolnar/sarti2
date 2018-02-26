@@ -1,16 +1,45 @@
 $(document).ready(function(){
     $("input:radio").on("click",mifuncion);
+    $("#BtnSubmit").on("click", EnviarFormulario);
 });
 
 function mifuncion() {
     var opcion = $(this).attr("id");        //opcion1
     opcion = "html/" + opcion + ".html";    //html/opcion1.html
-    console.log(opcion);
-    console.log($("#violin").text());
+    console.log(opcion);    
 
     $("#subForm").load(opcion); 
    
 }
+
+function EnviarFormulario() {
+    alert("Hola");
+    
+    $("#dialog").dialog();
+    //$("#formulario").submit();
+}
+   
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //https://www.anerbarrena.com/jquery-load-html-div-460/
