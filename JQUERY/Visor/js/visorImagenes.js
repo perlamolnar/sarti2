@@ -2,13 +2,15 @@ $(document).ready(function () {
     $("#smallImg img").on("click", visor);
     
     $("#leftShift").on("click", function () {
-        plusSlides(-1);
         console.log("Has hecho un click izquierda");
+        plusSlides(-1);
+        
     });
     
     $("#rightShift").on("click", function (){
-        plusSlides(1);
         console.log("Has hecho un click derecha");
+        plusSlides(1);
+        
     } );
 
 });
