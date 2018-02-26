@@ -1,9 +1,18 @@
 $(document).ready(function () {   
     $("#smallImg img").on("click", visor);
-    //$("#leftShift").on("click", plusSlides(-1)); 
-    //$("#rightShift").on("click", plusSlides(1));
     
+    $("#leftShift").on("click", function () {
+        plusSlides(-1);
+        console.log("Has hecho un click izquierda");
+    });
+    
+    $("#rightShift").on("click", function (){
+        plusSlides(1);
+        console.log("Has hecho un click derecha");
+    } );
+
 });
+
 
 function visor() {
 
