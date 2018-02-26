@@ -15,26 +15,16 @@ h1{padding:20px}
 
 #smallImg{
     width: 100%;
-    
-    padding-bottom: 60px; 
-    display: flex; 
-    overflow-x: hidden;  
-    justify-content: center;
-    box-sizing: border-box;
+    padding-bottom: 5px; 
+    display: flex;
+    scroll-behavior: auto;    
+    overflow: auto;
 }
 
 #imgText{padding: 20px;}
 
-.mySlides{    
-    width: 30%;    
-    height: 70%;
-    display: none;       
-}
+.mySlides{
+    text-align: justify;
+    width: 20%;    
+    height: 70%;}
 
-#leftShift{
-    
-
-}
-#rightShift{
-    
-}
