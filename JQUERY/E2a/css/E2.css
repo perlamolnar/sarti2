@@ -25,6 +25,7 @@ select{width: 100%;}
 .movil{width: 48%; float: right;}
 img{width: 100px; height: 120px;}
 #Pintor>input{width: auto;}
+#Instrumento>input{width: auto;}
 span{color: red;}
 #boton{
 	float:right; 

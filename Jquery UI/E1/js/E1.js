@@ -1,80 +1,65 @@
 $(document).ready(cargaEventos);
 
-function cargaEventos() {
-    console.log("hola");
+function cargaEventos() {    
     $("#BtnSubmit").on("click", SubmitForm);
     $("#dialogAnimado").hide;
     $("#dialogConfirmado").hide;
 
 }
 
-function SubmitForm(params) {
+function SubmitForm() {
     dialog();
     dialogAnimado();
-    confirmarEnvio();
-    
+    confirmarEnvio();     
 }
 
-
-function dialog() {
-    //console.log("dentro");    
+function dialog() {       
     $("#dialog").dialog();    
 }
 
 function dialogAnimado() {
-    $("#dialogAnimado").dialog({
-        autoOpen: false, 
+    $( "#dialog" ).dialog({
+        autoOpen: false,
         show: {
-            effect:"bling",
-            duration: 1000
+          effect: "blind",
+          duration: 1000
         },
-
-
-
-    }) 
+        hide: {
+          effect: "explode",
+          duration: 1000
+        }
+      });
+   
+      $( "#opener" ).on( "click", function() {
+        $( "#dialog" ).dialog( "open" );
+      });
 
 }  
 
 function confirmarEnvio() {
-    $("dialogconfirmado").dialog({
-        resizable: 
-    })
-
+    $( "#dialog-confirm" ).dialog({
+      resizable: false,
+      height: "auto",
+      width: 400,
+      modal: true,
+      buttons: {
+        "Accepto enviar el formulario": function() {
+          $( this ).dialog( "close" );
+          
+        },
+        Cancel: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    });
     
-}    
+    
+} 
+//enviarForm();
 
-
-
-
-
-
-
-
-
-
-//$("#formulario").submit();
-
-
-
-
-
-
-
-
-
-
-
-//https://www.anerbarrena.com/jquery-load-html-div-460/
-
-// $(document).ready(function () {
-//     $("#boton").click(function (event) {
-//         $("#capa").load("/demos/2013/03-jquery-load03.php", { valor1: 'primer valor', valor2: 'segundo valor' }, function (response, status, xhr) {
-//             if (status == "error") {
-//                 var msg = "Error!, algo ha sucedido: ";
-//                 $("#capa").html(msg + xhr.status + " " + xhr.statusText);
-//             }
-//         });
-//     });
-// });		
+function enviarForm() {    
+    $("form").submit(); 
+    alert("Submitted");
+}
 
 

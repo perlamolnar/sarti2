@@ -20,13 +20,13 @@
     <div id="container">
         <h1>FORMULARIO</h1>
 
-        <form id="formulario" method="POST">
+        <form id="formulario" action="http://daw.iesjoaquimmir.cat/sarti.php" method="POST">
 
             <fieldset>
                 <legend>INFORMACIÓN PERSONAL</legend>
                 <input type="text" name="Nombre" id="Nombre">
                 <br>
-                <label for="Nombre">Nombre2</label>
+                <label for="Nombre">Nombre</label>
 
                 <input type="text" name="Apellidos" id="Apellidos">
                 <br>
@@ -59,6 +59,10 @@
 
         <div id="dialogAnimado" title="Animado dialog">
             <p>Dialogo Animado solo para ti.</p>
+        </div>
+
+        <div id="dialog-confirm" title="Confirmación de envio del formulario.">
+            <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Para enviar el formulario, necesitamos tu confirmación. Todavía puedes cancelar el envio.</p>
         </div>
 
 

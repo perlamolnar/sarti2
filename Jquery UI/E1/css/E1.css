@@ -25,6 +25,7 @@ select{width: 100%;}
 .movil{width: 48%; float: right;}
 img{width: 100px; height: 120px;}
 #Pintor>input{width: auto;}
+#Instrumento>input{width: auto;}
 span{color: red;}
 #boton{
 	float:right; 
@@ -32,8 +33,8 @@ span{color: red;}
 	background-color: #b3aeae; 
 	padding: 5px; 
 	font-size: 16px;
-	background-image: url(img/flecha.png);
-	background-repeat: no-repeat;
+	/* background-image: url(img/flecha.png);
+	background-repeat: no-repeat; */
 	background-size: 15px;
 	background-position: right;
 	padding-right: 30px;
@@ -53,5 +54,13 @@ fieldset:hover .comentario{display: block;}
 progress{width: 100%; height: 30px;}
 
 #dialog{
+	display: none;
+}
+
+#dialogAnimado{
+	display: none;
+}
+
+#dialog-confirm{
 	display: none;
 }
