@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Visor de imágenes</title>
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+
     <script src="js/visorImagenes.js"></script>
     <link rel="stylesheet" href="css/visorImagenes.css">
 
@@ -13,37 +19,32 @@
 <body>
     <div id="container">
     <h1>GALÉRIA DE IMÁGENES</h1>
-    
-        <img id="bigImg"src="img/australia.jpg" name="Australia" alt="Australia">
-        <div id="imgText">Australia</div>
 
-        <div id="smallImg">
+        <div class="slider">
+            <div>
+                <img id="slideIndex0" src="img/australia.jpg" name="Australia" alt="Australia">
+            </div>
+            <div>
+                <img id="slideIndex1"  src="img/china.jpg" alt="China">
+            </div>
+            <div>
+                <img id="slideIndex2"  src="img/grecia.jpg" alt="Grecia">
+            </div>
+            <div>
+                <img id="slideIndex3" src="img/hawaii.jpg" alt="Hawaii">
+            </div>
+            <div>
+                <img id="slideIndex4"  src="img/peru.jpg" alt="Peru">
+            </div>
+            <div>
+                <img id="slideIndex5"  src="img/scotland.jpg" alt="Scotland">
+            </div>
+            <div>
+                <img id="slideIndex6"  src="img/spaincastilloloarre.jpg" alt="Spain">
+            </div>
+            
 
-            <button id="leftShift">&#10094;</button>             
-
-            <!-- <img id="1" class="mySlides" style="display:block" src="img/australia.jpg" name="Australia" alt="Australia">
-            <img id="2" class="mySlides" style="display:block" src="img/china.jpg" alt="China">
-            <img id="3" class="mySlides" style="display:block" src="img/grecia.jpg" alt="Grecia">
-            <img id="4" class="mySlides" src="img/hawaii.jpg" alt="Hawaii">
-            <img id="5" class="mySlides" src="img/peru.jpg" alt="Peru">
-            <img id="6" class="mySlides" src="img/scotland.jpg" alt="Scotland">
-            <img id="7" class="mySlides" src="img/spaincastilloloarre.jpg" alt="Spain">
-            <img id="1" class="mySlides" src="img/australia.jpg" name="Australia" alt="Australia">
-            <img id="2" class="mySlides" src="img/china.jpg" alt="China">  -->
-
-            <img id="slideIndex0" class="mySlides" style="display:block" src="img/australia.jpg" name="Australia" alt="Australia">
-            <img id="slideIndex1" class="mySlides" style="display:block" src="img/china.jpg" alt="China">
-            <img id="slideIndex2" class="mySlides" style="display:block" src="img/grecia.jpg" alt="Grecia">
-            <img id="slideIndex3" class="mySlides" src="img/hawaii.jpg" alt="Hawaii">
-            <img id="slideIndex4" class="mySlides" src="img/peru.jpg" alt="Peru">
-            <img id="slideIndex5" class="mySlides" src="img/scotland.jpg" alt="Scotland">
-            <img id="slideIndex6" class="mySlides" src="img/spaincastilloloarre.jpg" alt="Spain">
-            <img id="slideIndex7" class="mySlides" src="img/australia.jpg" name="Australia" alt="Australia">
-            <img id="slideIndex8" class="mySlides" src="img/china.jpg" alt="China"> 
-
-            <button id="rightShift">&#10095;</button>  
-        
-        </div>
+        </div>          
 
     </div>
 </body>
