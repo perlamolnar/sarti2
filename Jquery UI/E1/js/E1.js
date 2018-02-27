@@ -1,16 +1,15 @@
 $(document).ready(cargaEventos);
 
-function cargaEventos() {    
+function cargaEventos() { 
     $("#BtnSubmit").on("click", SubmitForm);
     $("#dialogAnimado").hide;
     $("#dialogConfirmado").hide;
-
 }
 
-function SubmitForm() {
+function SubmitForm() {  
     dialog();
     dialogAnimado();
-    confirmarEnvio();     
+    confirmarEnvio();
 }
 
 function dialog() {       
@@ -45,21 +44,17 @@ function confirmarEnvio() {
       buttons: {
         "Accepto enviar el formulario": function() {
           $( this ).dialog( "close" );
+          enviarForm();    
+
           
         },
         Cancel: function() {
           $( this ).dialog( "close" );
         }
       }
-    });
-    
-    
+    });    
 } 
-//enviarForm();
 
-function enviarForm() {    
-    $("form").submit(); 
-    alert("Submitted");
+function enviarForm() {
+  $("form").submit();    
 }
-
-
