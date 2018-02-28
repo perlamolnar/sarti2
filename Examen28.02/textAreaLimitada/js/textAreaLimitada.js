@@ -1,70 +1,43 @@
 window.addEventListener("load", cargaEventos);
 
 function cargaEventos() {
-    document.getElementById("Mensaje").addEventListener("keyup", limita);
-    document.getElementById("Mensaje").addEventListener("keydown", limita);
+     document.getElementById("Mensaje").addEventListener("keyup", limita);
+     document.getElementById("Mensaje").addEventListener("keydown", limita);
 }
 
 
 function limita() {
-    var maximoCaracteres = 10;    
-    var text = document.getElementById("Mensaje");
-    if (text.value.length > maximoCaracteres) {
-        return false;        
-    }
-    else {
-        var carEscrito = text.value.length;
-        var carQueda = maximoCaracteres - carEscrito;
+    var text = document.getElementById("Mensaje").value;
+    console.log(text); 
+    
+    var SinLlimonas = text.split("llimona"+" ");
+    console.log(SinLlimonas);
 
-        document.getElementById("caracterEscrito").innerHTML = "El número de caracteres escritos: " +carEscrito;
-        document.getElementById("caracterQueda").innerHTML = "El número de caracteres que quedan: " +carQueda;
+    var SinLlimonas1 = SinLlimonas.join("");
+    console.log(SinLlimonas1);    
 
-        return true;        
-    }
+    text = document.getElementById("Mensaje").value = SinLlimonas1;
+    console.log(text);
+
+
+    
+    var SinPoma = text.split("poma"+" ");
+    console.log(SinPoma);
+
+    var SinPoma1 = SinPoma.join("");
+    console.log(SinPoma1);
+
+    text = document.getElementById("Mensaje").value = SinPoma1;
+
+
+
+    var SinTaronja = text.split("taronja" + " ");
+    console.log(SinPoma);
+
+    var SinTaronja1 = SinTaronja.join("");
+    console.log(SinTaronja1);
+
+    text = document.getElementById("Mensaje").value = SinTaronja1;
 
 }
-
-//Javi
-// window.addEventListener('load', cargaEventos);
-
-// function cargaEventos(){
-//     document.getElementById("tarea").setAttribute("onKeyDown","return limita(10);");
-    
-// }
-
-// function limita(maximoCaracteres) {
-
-
-//     var diferencia=10;
-//     var elemento = document.getElementById("tarea");
-//     var caracter = event.charCode || event.keyCode; 
-
-//     if(elemento.value.length >= maximoCaracteres ) {
-//         if(!(caracter==8||caracter==46||caracter==37||caracter==39)){
-//             diferencia = maximoCaracteres - elemento.value.length;
-//             document.getElementById("ayuda").innerHTML = diferencia + " / " +  maximoCaracteres;
-//             return false;
-//             //event.returnValue=false;
-//         }
-//     }
-
-
-//     if(!(caracter==37||caracter==39||caracter==8||caracter==46)){
-//         diferencia = maximoCaracteres - elemento.value.length -1;
-//         document.getElementById("ayuda").innerHTML = diferencia + " / " +  maximoCaracteres;
-//     }
-//     console.log("hola:"+caracter);
-
-//     if((caracter==8)||(caracter==46)){
-//         console.log(elemento.value.length);
-//         diferencia = maximoCaracteres - elemento.value.length+1;
-//         document.getElementById("ayuda").innerHTML = diferencia + " / " +  maximoCaracteres;
-//     }
-    
-   
-// }
-
-
-
-
-
+ 

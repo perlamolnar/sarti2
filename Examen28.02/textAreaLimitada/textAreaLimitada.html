@@ -7,51 +7,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="js/textAreaLimitada.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/E2.css" title="style">
-    
-    <style>
-        input{color:blue;}
-        textarea{width: 100%;}
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/E2.css" title="style">   
+ 
 
 </head>
 
 <body>
     <div class="container">
-        <h2>Formulario para comentarios</h2>
+        <h2>En comentarios no acceptamos las palabras: llimona, taronja y poma</h2>
         
         <form id="formulario" name="formulario" method="POST" action="http://daw.iesjoaquimmir.cat/sarti.php">
 
-            <hr>
-            <h5>Deja tu mensaje con el máximo de 10 caracteres.</h5>
-            <textarea name="Mensaje" id="Mensaje" maxlength="10"></textarea>
+            <hr>            
+            <textarea name="Mensaje" id="Mensaje"></textarea>
+            <br><br>
             
-            <p id="caracterEscrito"></p>
-            <p id="caracterQueda"></p>
-
-            <hr>
+            <!-- <h4>Tu texto sin la palabra "llimona":</h4>  
+            <div id="tuTexto">
+            
+            <p id="TextLimitado"></p>
+            </div> -->
+            
             <input id="boton" type="submit" value="SUBMIT">
-            <hr>
+            
             <input type="reset" id="reset" value="RESET" />
             
            
         </form>
     </div>
-
-    <!-- <div id="container">
-        <h2>Formulario de alta</h2>
-        <form name="myForm" action="exemplePrintaFormulari.php" enctype="multipart/form-data" method="post">
-
-            <div>
-                <label class="titulo" for="tarea">Text Area</label><br>
-                  <textarea name="message" id="tarea" rows="10" cols="30"></textarea>
-                <p id="ayuda"></p>
-            </div>
-        </form>
-    </div> -->
-
-
-
 
 </body>
 
