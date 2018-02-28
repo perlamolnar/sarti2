@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Visor de imágenes</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+
+    <script src="js/visorImagenes.js"></script>
+    <link rel="stylesheet" href="css/visorImagenes.css">
+
+</head>
+<body>
+    
+    <h1>GALÉRIA DE IMÁGENES</h1> 
+
+    <div class="container">        
+        <div id="myBtnContainer">
+            <button class="btn active" onclick="filterSelection('all')">Todas las imagenes</button>
+            <button class="btn" onclick="filterSelection('mundo')"> Mundo</button>
+            <button class="btn" onclick="filterSelection('vilanova')"> Vilanova</button>
+            
+        </div>
+        
+        <!-- Portfolio Gallery Grid -->
+        <div class="row">
+            <div class="column mundo">
+                <div class="content">
+                    <img src="img/mon/foto1.jpg" alt="1" style="width:100%">
+                    
+                </div>
+            </div>
+            <div class="column mundo">
+                <div class="content">
+                    <img src="img/mon/foto2.jpg" alt="2" style="width:100%">
+                    
+                </div>
+            </div>
+            <div class="column mundo">
+                <div class="content">
+                    <img src="img/mon/foto3.jpg" alt="3" style="width:100%">
+                </div>
+            </div>
+            <div class="column mundo">
+                <div class="content">
+                    <img src="img/mon/foto4.jpg" alt="4" style="width:100%">
+                </div>
+            </div>
+            <div class="column mundo">
+                <div class="content">
+                    <img src="img/mon/foto5.jpg" alt="5" style="width:100%">
+                </div>
+            </div>
+            <div class="column mundo">
+                <div class="content">
+                    <img src="img/mon/foto6.jpg" alt="6" style="width:100%">
+                </div>
+            </div>
+            <div class="column mundo">
+                <div class="content">
+                    <img src="img/mon/foto7.jpg" alt="7" style="width:100%">
+                </div>
+            </div>
+            <div class="column mundo">
+                <div class="content">
+                    <img src="img/mon/foto8.jpg" alt="8" style="width:100%">
+            </div>     
+
+        
+            <div class="column vng">
+                <div class="content">
+                    <img src="img/vilanova/carneval.jpeg" alt="Vilanova" style="width:100%">                    
+                </div>
+            </div>
+            <div class="column vng">
+                <div class="content">
+                    <img src="img/vilanova/drac.jpeg" alt="Vilanova" style="width:100%">
+                    
+                </div>
+            </div>
+            <div class="column vng">
+                <div class="content">
+                    <img src="img/vilanova/pasifae.jpeg" alt="Vilanova" style="width:100%">
+                   
+                </div>
+            </div>
+        
+            <div class="column vng">
+                <div class="content">
+                    <img src="img/vilanova/vila.jpeg" alt="Vilanova" style="width:100%">
+                    
+                </div>
+            </div>
+            <div class="column vng">
+                <div class="content">
+                    <img src="img/vilanova/festaMajor.jpeg" alt="Vilanova" style="width:100%">
+                    
+                </div>
+            </div>
+            <div class="column vng">
+                <div class="content">
+                    <img src="img/vilanova/carnestoltes.jpeg" alt="Vilanova" style="width:100%">
+                   
+                </div>
+            </div>
+            
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>
