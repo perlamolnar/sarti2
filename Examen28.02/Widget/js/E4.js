@@ -12,10 +12,8 @@ $(document).ready(function () {
 function mifuncion() {
     var opcion = $(this).attr("id");        //opcion1
     opcion = "html/" + opcion + ".html";    //html/opcion1.html
-    console.log(opcion);
-    
+    console.log(opcion);   
 
     $("#vizualizar").load(opcion);
-
 }
 
