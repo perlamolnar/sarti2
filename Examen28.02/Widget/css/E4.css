@@ -1,0 +1,23 @@
+body{
+    background-color: #cad1a4; 
+    margin: auto;
+    font-size: 15px;
+    font-family: Ariel;
+}
+#container{
+    background-color: rgb(172, 249, 252);
+    padding: 5% 10% 10% 10%;
+    margin: 0 10% 10% 10%;
+	height: 100%
+}
+	
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+	background-color: rgb(129, 129, 86) !important;
+	color: rgb(95, 34, 5);
+}
+
+h1{color: rgb(211, 2, 2); text-align: center}
+img{width: 100%; padding-bottom: 5%;}
+
+
+.ui-menu { width: 150px; }

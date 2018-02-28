@@ -1,29 +1,52 @@
 $(document).ready(function () { 
-    
-     $('.slider').bxSlider({
+    var animales = document.getElementsByClassName("animales");
+    console.log(animales);
+    var paises = document.getElementsByClassName("paises");
+    console.log(paises);
+
+    //$(animales).hide();
+    //$(paises).hide();
+
+    //document.getElementsById("animales").on("click", showAnimales);
+    //document.getElementsById("paises").on("click", showPaises);  
+   
+    $('.slider').bxSlider({
         auto: true,
         autoControls: true,
         stopAutoOnClick: true,
         pager: true,
         speed: 300,
-        slideWidth: 1000,    
+        slideWidth: 1000,
     });
 
     $("#smallImg img").on("click", visor);
-    
+
     $("#leftShift").on("click", function () {
         console.log("Has hecho un click izquierda");
         plusSlides(-1);
-        
+
     });
-    
-    $("#rightShift").on("click", function (){
+
+    $("#rightShift").on("click", function () {
         console.log("Has hecho un click derecha");
         plusSlides(1);
-        
-    } );
+
+    }); 
+
 
 });
+
+// function showAnimales() {     
+//     $(animales).show();
+          
+//  }
+
+
+// function showPaises() { 
+//     $(paises).show();
+    
+//  }
+
 
 
 function visor() {
