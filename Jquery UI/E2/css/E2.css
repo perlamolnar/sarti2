@@ -1,66 +1,20 @@
 body{
-    background-color: #e2facf; 
+    background-color: #cad1a4; 
     margin: auto;
     font-size: 15px;
     font-family: Ariel;
 }
 #container{
-    background-color: rgb(172, 220, 252);
-    padding: 10%;
-    margin: 10%;
-    height: 100%}
-
-.left{width: 50%;float: left;}
-.right{width: 50%; float: left;}
-
-input{width: 100%; margin-top:  15px;}  
-#opciones input{width: auto;}  
-input:focus {border: 2px solid #E6B700;background: #f3f3f3}
-
-.direccion1{width: 45%;float: left;}
-.direccion2{width: 50%;float: right;}
-
-select{width: 100%;}
-.fijo{width: 48%;float: left;}
-.movil{width: 48%; float: right;}
-img{width: 100px; height: 120px;}
-#Pintor>input{width: auto;}
-#Instrumento>input{width: auto;}
-span{color: red;}
-#boton{
-	float:right; 
-	width: auto; 
-	background-color: #b3aeae; 
-	padding: 5px; 
-	font-size: 16px;
-	/* background-image: url(img/flecha.png);
-	background-repeat: no-repeat; */
-	background-size: 15px;
-	background-position: right;
-	padding-right: 30px;
+    background-color: rgb(172, 249, 252);
+    padding: 5% 10% 10% 10%;
+    margin: 0 10% 10% 10%;
+	height: 100%
 }
-hr{width: 100%}
-fieldset{padding: 25px; border: 1px solid black;}
-fieldset:hover{background-color: #ede797;}
-fieldset .comentario{display: none;}
-fieldset:hover .comentario{display: block;} 
-.vacio{height: 20px; width: 100%; background-color: #efbc60; padding-top: 50px;}
-.grupo{width: 30%; height: 100%; float: left; }
-.preguntas{width: 65%; float: left; padding-top: 20px;}
-.preguntas2 {width: 40%; float: left; padding-top: 20px;}
-.comentario {width: 20%; float: left; padding-top: 10px; padding-left: 25px;}
-.comentario p{padding-right: 0px;margin-right: -60px;}
-
-progress{width: 100%; height: 30px;}
-
-#dialog{
-	display: none;
+	
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+	background-color: rgb(129, 129, 86) !important;
+	color: rgb(95, 34, 5);
 }
 
-#dialogAnimado{
-	display: none;
-}
-
-#dialog-confirm{
-	display: none;
-}
+h1{color: rgb(211, 2, 2); text-align: center}
+img{width: 100%; padding-bottom: 5%;}

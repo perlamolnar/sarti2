@@ -10,7 +10,7 @@ function cargaEventos() {
 
   $("#datepicker2").datepicker();
    $("#format").on("change", function () {
-     $("#datepicker2").datepicker("option", "dateFormat","dd-mm-yy");
+     $("#datepicker2").datepicker("option", "dateFormat",$(this).val());
        });
   
   $("#datepicker3").datepicker({ minDate: -20, maxDate: "+1M +10D" });

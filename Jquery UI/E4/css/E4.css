@@ -1,14 +1,27 @@
 body{
-    background-color: #e2facf; 
+    background-color: #cad1a4; 
     margin: auto;
     font-size: 15px;
     font-family: Ariel;
 }
 #container{
-    background-color: rgb(172, 220, 252);
-    padding: 10%;
-    margin: 10%;
-    height: 100%}
+    background-color: rgb(172, 249, 252);
+    padding: 5% 10% 10% 10%;
+    margin: 0 10% 10% 10%;
+	height: 100%
+}
+	
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+	background-color: rgb(129, 129, 86) !important;
+	color: rgb(95, 34, 5);
+}
 
-h2{color: rgb(94, 78, 39);}
-h1{color: crimson;}
+h1{color: rgb(211, 2, 2); text-align: center}
+img{width: 100%; padding-bottom: 5%;}
+
+.ui-tabs-vertical { width: 55em;}
+  .ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left; width: 12em; }
+  .ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 100%; border-bottom-width: 1px !important; border-right-width: 0 !important; margin: 0 -1px .2em 0; }
+  .ui-tabs-vertical .ui-tabs-nav li a { display:block; }
+  .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; }
+  .ui-tabs-vertical .ui-tabs-panel { padding: 1em; float: right; width: 40em;}

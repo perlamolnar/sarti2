@@ -1,0 +1,45 @@
+body{
+	width: 98%;
+	height: 98%;
+}
+#contenedor{
+	width:70%;
+	margin:0 auto;
+}
+#datos{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+}
+#datos label, #datos input, #datos select{
+	float:left;
+	clear:left;
+}
+label{
+	font-size: .7em;
+	line-height: 3em;
+}
+.izquierda{
+	width: 30%;
+}
+.derecha{
+	width: 30%;
+}
+.inferior, .arriba{
+	margin-bottom: 1%;
+}
+
+.botones{
+	float:right;
+	clear:both;
+}
+hr{
+	clear:both;
+}
+div[id^="dialog"]{
+	display:none;
+}
+/* #dialogDefecte, #dialogAnimat, #dialogConfirm, #dialogAc, #dialogCa{
+	display:none;
+} */
