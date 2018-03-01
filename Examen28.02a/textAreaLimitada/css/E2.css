@@ -1,0 +1,15 @@
+body{
+    background-color: #ede797b0; 
+    margin: auto;
+    font-size: 15px;
+    font-family: Ariel;
+}
+.container{
+    background-color: rgb(202, 232, 235);
+    padding: 10%;
+    margin: 10%;
+	height: 100%}
+	
+hr{width: 100%}
+#tuTexto{background-color: darkkhaki;}
+textarea{width: 100%;}
