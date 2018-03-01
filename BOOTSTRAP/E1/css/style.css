@@ -1,6 +1,24 @@
+body{
+    background-color: #ddd;
+    padding-top: 70px;
+}
 .navbar-right{
     float: right !important;
 }
 nav li a{
     color:#ddd !important
+}
+.jumbotron{background-color: rgb(135, 189, 82) !important}
+
+img{
+    width: 250px;
+    height: 250px;
+}
+
+.label{
+    width: 100%;    
+}
+p{
+    text-align: justify;
+    padding-bottom: 10px;
 }
