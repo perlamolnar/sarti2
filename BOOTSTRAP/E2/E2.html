@@ -66,49 +66,12 @@
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button  class="fas fa-search"></button>
         </form>
+        
         <!-- Button to Open the Modal -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
             LOGIN
         </button>
-        <!-- The Modal -->
-        <div class="modal fade" id="myModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
         
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">INICIAR SESIÓN</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-        
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <form action="" method="POST">
-                            <div class="form-group">
-                                <label for="text">Username:</label>
-                                <input type="text" class="form-control" id="username">
-                            </div>
-                            <div class="form-group">
-                                <label for="pwd">Password:</label>
-                                <input type="password" class="form-control" id="password">
-                            </div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox"> Remember me
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                    </div>
-        
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    </div>
-        
-                </div>
-            </div>
-        </div>
     </div>
 </nav>
 
@@ -174,6 +137,56 @@
 
 
 
+    </div>
+
+
+
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+    
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">INICIAR SESIÓN</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div id="aviso" class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>¿AVISO!</strong> Tienes que rellenar los campos!
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+    
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form id="formulario" action="http://daw.iesjoaquimmir.cat/sarti.php" method="POST">
+                        <div class="form-group">
+                            <label for="text">Username:</label>
+                            <input type="text" name="username" class="form-control" id="username" >
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" name="password" class="form-control" id="password" >
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox"> Remember me
+                            </label>
+                        </div>
+                        <button id="enviar" type="button" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+    
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+    
+            </div>
+        </div>
     </div>
     
 </body>
