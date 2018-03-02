@@ -1,13 +1,12 @@
+
 $(document).ready(function () {
-    $("#aviso").hide();
+
     $("#enviar").on("click", aviso);
-    $("#bclosewarn").on("click", function(){
 
-    });
-
+    $("#aviso").hide();
     $('#aviso').on('close.bs.alert', function () {
-        $("#aviso").hide();
-
+        //hemos eliminado en el html el "dissmiss alert y data-dismiss"
+        $(this).hide();
         return false;
     })
 
@@ -19,25 +18,28 @@ function aviso() {
     console.log(usuario);
     console.log(password);
 
-    if (usuario == "" || password =="") {        
+    if (usuario == "" || password == "") {
         $("#aviso").show();
 
     } else {
-        $('form').submit();        
+        $('form').submit();
     }
     console.log(usuario);
     console.log(password);
 }
 
 
+
 // $(document).ready(function () {
-
-//     $("#enviar").on("click", aviso);
-
 //     $("#aviso").hide();
+//     $("#enviar").on("click", aviso);
+//     // $("#bclosewarn").on("click", function(){
+
+//     // });
+
 //     $('#aviso').on('close.bs.alert', function () {
-        //hemos eliminado en el html el "dissmiss alert y data-dismiss"
-//         $(this).hide();
+//         $("#aviso").hide();
+
 //         return false;
 //     })
 
@@ -49,12 +51,13 @@ function aviso() {
 //     console.log(usuario);
 //     console.log(password);
 
-//     if (usuario == "" || password == "") {
+//     if (usuario == "" || password =="") {        
 //         $("#aviso").show();
 
 //     } else {
-//         $('form').submit();
+//         $('form').submit();        
 //     }
 //     console.log(usuario);
 //     console.log(password);
 // }
+
