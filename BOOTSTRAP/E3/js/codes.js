@@ -1,7 +1,8 @@
 
 $(document).ready(function () {
-
     $("#enviar").on("click", aviso);
+    $("#articulo1").on("click", articuloModificado);
+
 
     $("#aviso").hide();
     $('#aviso').on('close.bs.alert', function () {
@@ -27,6 +28,43 @@ function aviso() {
     console.log(usuario);
     console.log(password);
 }
+
+function articuloModificado() {
+    var articulo = $(this).closest('td').siblings().find('input');
+
+    console.log(articulo);
+    
+    //$('form').submit();
+    
+    console.log();   
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
