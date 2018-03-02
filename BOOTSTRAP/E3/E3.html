@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+    <script src="js/codes.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button  class="fas fa-search"></button>
+        </form>
+        
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            LOGIN
+        </button>
+        
+    </div>
+</nav>
+
+    <div class="jumbotron">
+        <h1>Pantilla Web</h1>
+    </div>
+    <div class="container"> 
+        <div class="row">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Identificador</th>
+                        <th>Titulo</th>
+                        <th>Articulo</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Articulo 1</td>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel culpa numquam fuga iusto quisquam! Iure nulla aliquam rem quasi possimus mollitia quas consectetur nihil nostrum doloremque. Omnis delectus dolore enim?
+                            <br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum maiores quo nulla optio rerum eum, corrupti perspiciatis consectetur vel hic deleniti ipsum cupiditate blanditiis quam unde praesentium sapiente, voluptates itaque!
+                        </td>
+                        <td>
+                            <button id="articulo1" type="button" class="btn btn-primary" data-toggle="modal" data-target="myModalEditarArticulo">
+                            Editar</button>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Articulo 2</td>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum consectetur sit corporis veniam quidem, commodi eos nisi delectus velit quo obcaecati provident labore in exercitationem ab nostrum neque sequi eaque.
+                        <br>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum saepe maxime modi ut officia, atque, ea eaque dicta perferendis totam deleniti distinctio illum libero incidunt tenetur quibusdam ullam voluptas mollitia!</td>
+                        <td><button type="button" class="btn btn-success">Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Articulo 3</td>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis amet tempore hic sunt consequuntur reiciendis dolore sequi, eligendi accusantium aut aspernatur rerum itaque sed numquam consequatur laboriosam, accusamus id ab. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus eum architecto sed voluptate ullam alias quod totam placeat! Labore nesciunt consectetur, rerum aspernatur quidem natus facilis fuga reiciendis. Velit, veniam! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis asperiores illo dolores eos sequi corrupti sint, dignissimos non nihil vero maxime ipsa magnam fugit, laborum officia temporibus repellendus expedita. Nulla?</td>
+                        <td><button type="button" class="btn btn-success">Editar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+    </div>
+
+
+
+
+    <!-- The Modal LOGIN------------------------------------------------------>
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+    
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">INICIAR SESIÓN</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div id="aviso" class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>¿AVISO!</strong> Tienes que rellenar los campos!
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+    
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form id="formulario" action="http://daw.iesjoaquimmir.cat/sarti.php" method="POST">
+                        <div class="form-group">
+                            <label for="text">Username:</label>
+                            <input type="text" name="username" class="form-control" id="username" >
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" name="password" class="form-control" id="password" >
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox"> Remember me
+                            </label>
+                        </div>
+                        <button id="enviar" type="button" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+    
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+
+    <!-- The Modal TEXTAREA-------------------------------------------------------->
+    <div class="modal fade" id="myModalEditarArticulo">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">EDITAR ARTICULO</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                
+                        <!-- <div id="aviso" class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>¿AVISO!</strong> Vas a editar el articulo.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div> -->
+                
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <form id="formularioArticulos" action="http://daw.iesjoaquimmir.cat/sarti.php" method="POST">
+                                <div class="form-group">
+                                    <label for="comment">Comment:</label>
+                                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                                </div>
+                                <button id="enviarArticuloEditado" type="button" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                
+                    </div>
+                </div>
+        
+    </div>
+    
+</body>
+</html>
