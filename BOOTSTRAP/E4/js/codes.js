@@ -67,6 +67,14 @@ $(document).ready(function () {
         return false;
     });
 
+    $('#ModalNuevoArticulo').on('show.bs.modal', function (e) {
+
+        $("#identificadorNew").val("");
+        $("#tituloNew").val("");
+
+        $("#articuloNew").val("");
+
+    })
 
     //EDITAR ARTICULO
     //captar el click, identificar sibling atraves el id de boton, pintar articulo en formulario
@@ -76,8 +84,12 @@ $(document).ready(function () {
 
     //CREAR NUEVO ARTICULO*********************
     $("#BtnAddArticulo").on("click", addArticulo);
+  
 
     function addArticulo () {
+
+  
+
         var identificador = $("#identificadorNew").val();
             console.log(identificador);
         var titulo = $("#tituloNew").val();
@@ -88,7 +100,8 @@ $(document).ready(function () {
         $("tbody").append(
         '<tr>            <td>'+identificador+'</td>            <td>'+titulo+'</td>            <td>'+articulo+'</td>   <td><button  type="button" class="btn btn-primary editar" data-toggle="modal" ata-target="#ModalEditarArticulo">                Editar</button></td>   </tr>');
         $(".editar").click(editar); //fin de editar function
-                  
+        $("#ModalNuevoArticulo").modal('hide');
+                
         //$("#nuevoArticulo").submit();
         
     }//****************end of crear nuevo artuculo *************
