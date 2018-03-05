@@ -93,29 +93,7 @@ $(document).ready(function () {
         
     }//****************end of crear nuevo artuculo *************
 
-
-                    // $("#BtnAddArticulo").click(function() {       
-
-                    //     var identificador = $("#identificador").val();
-                    //         console.log(identificador);
-                    //     var titulo = $("#titulo").val();
-                    //         console.log(titulo);
-                    //     var articulo = $("#articulo").val();
-                    //         console.log(articulo);      
-                    
-                    //     $("tbody").append(
-                    //     `<tr>
-                    //         <td>$(identificador)</td>
-                    //         <td>$(titulo)</td>
-                    //         <td>$(articulo)</td>
-                    //         <td><button id="#+$('articulo + $(identificador)')" type="button" class="btn btn-primary editar" data-toggle="modal" data-target="#ModalEditarArticulo">Editar</button></td>
-                    //     </tr>`);
-                                    
-                    //     //$("#nuevoArticulo").submit();
-
-
-                    // });//****************end of crear nuevo artuculo *************
-
+                 
    
 });//********end of ready function
 
