@@ -1,3 +1,54 @@
+
+$(document).ready(function () {
+    //LOGIN  
+    $("#enviar").on("click", aviso);
+    $("#aviso").hide();
+    $('#aviso').on('close.bs.alert', function () {
+        //hemos eliminado la funcion de "dissmiss alert y data-dismiss" en el html
+        $(this).hide();
+        return false;
+    });
+
+    //NUEVO ARTICULO
+    $('#ModalNuevoArticulo').on('show.bs.modal', function (e) {
+
+        $("#identificadorNew").val("");
+        $("#tituloNew").val("");
+        $("#articuloNew").val("");
+
+    })
+
+    //EDITAR ARTICULO
+    $(".editar").click(editar);
+
+
+    //CREAR NUEVO ARTICULO
+    $("#BtnAddArticulo").on("click", addArticulo);
+
+    function addArticulo() {
+
+        var identificador = $("#identificadorNew").val();
+        console.log(identificador);
+        var titulo = $("#tituloNew").val();
+        console.log(titulo);
+        var articulo = $("#articuloNew").val();
+        console.log(articulo);
+
+        $("tbody").append(
+            '<tr><td>' + identificador + '</td><td>' + titulo + '</td><td>' + articulo + '</td><td><button type="button" class="btn btn-primary editar" data-toggle="modal" ata-target="#ModalEditarArticulo">Editar</button></td></tr>');
+
+        $(".editar").click(editar);
+
+        $("#ModalNuevoArticulo").modal('hide');
+
+        //$("#nuevoArticulo").submit();
+
+    }//end of crear nuevo artuculo
+
+});//********end of ready function
+
+
+
 function guardarModificacion(event) {
 
     if (confirm("Estas seguro/a que quieres modificar el articulo?")) {
@@ -43,55 +94,6 @@ function editar() {
 
 }
 
-$(document).ready(function () {
-    //LOGIN  
-    $("#enviar").on("click", aviso);  
-    $("#aviso").hide();
-    $('#aviso').on('close.bs.alert', function () {
-        //hemos eliminado la funcion de "dissmiss alert y data-dismiss" en el html
-        $(this).hide();
-        return false;
-    });
-
-    //NUEVO ARTICULO
-    $('#ModalNuevoArticulo').on('show.bs.modal', function (e) {
-
-        $("#identificadorNew").val("");
-        $("#tituloNew").val("");
-        $("#articuloNew").val("");
-
-    })
-
-    //EDITAR ARTICULO
-    $(".editar").click(editar); 
-
-
-    //CREAR NUEVO ARTICULO
-    $("#BtnAddArticulo").on("click", addArticulo);  
-
-    function addArticulo () {  
-
-        var identificador = $("#identificadorNew").val();
-            console.log(identificador);
-        var titulo = $("#tituloNew").val();
-            console.log(titulo);
-        var articulo = $("#articuloNew").val();
-            console.log(articulo);
-
-        $("tbody").append(
-        '<tr><td>'+identificador+'</td><td>'+titulo+'</td><td>'+articulo+'</td><td><button type="button" class="btn btn-primary editar" data-toggle="modal" ata-target="#ModalEditarArticulo">Editar</button></td></tr>');
-        
-        $(".editar").click(editar);
-        
-        $("#ModalNuevoArticulo").modal('hide');
-                
-        //$("#nuevoArticulo").submit();
-        
-    }//****************end of crear nuevo artuculo *************
-
-                 
-   
-});//********end of ready function
 
 function aviso() {
     var usuario = $("#username").val();
