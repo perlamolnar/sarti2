@@ -1,9 +1,7 @@
 function guardar(event) {
 
-
     if (confirm("Estas seguro/a que quieres modificar el articulo?")) {
-        console.log("Has confirmado el submit");
-       
+        console.log("Has confirmado el submit");       
 
         $(event.data.padre.children()[0]).text($("#identificador").val());
         $(event.data.padre.children()[1]).text($("#titulo").val());
@@ -17,13 +15,10 @@ function guardar(event) {
     }        
 }
 
-
-
 function editar() {
 
     var tableRow = $(this).closest('td').siblings().find().prevObject;
     console.log(tableRow);
-
 
     var idArticulo = $(this).closest('td').siblings().find().prevObject[0].textContent;
     console.log(idArticulo);
@@ -37,25 +32,17 @@ function editar() {
 
     $("#articulo").val(textArticulo);
 
-    //
+    
     //despues de los cambios del articulo guardamos las modificaciones.
     //submit form y pintar modificacion en html
-
     $("#BtnSaveChanges").off();
-    $("#BtnSaveChanges").on("click", { padre: $(this).parent().parent() }, guardar);
-
-
-    
+    $("#BtnSaveChanges").on("click", { padre: $(this).parent().parent() }, guardar);    
     $('#ModalEditarArticulo').modal('show');
-
-
     $('#close').click(function () {
         $("#ModalEditarArticulo").modal('hide');
     });
 
 }
-
-
 
 $(document).ready(function () {
     //LOGIN  
@@ -67,28 +54,23 @@ $(document).ready(function () {
         return false;
     });
 
+    //NUEVO ARTICULO
     $('#ModalNuevoArticulo').on('show.bs.modal', function (e) {
 
         $("#identificadorNew").val("");
         $("#tituloNew").val("");
-
         $("#articuloNew").val("");
 
     })
 
     //EDITAR ARTICULO
-    //captar el click, identificar sibling atraves el id de boton, pintar articulo en formulario
- 
-    $(".editar").click(editar); //fin de editar function
+    $(".editar").click(editar); 
 
 
-    //CREAR NUEVO ARTICULO*********************
-    $("#BtnAddArticulo").on("click", addArticulo);
-  
+    //CREAR NUEVO ARTICULO
+    $("#BtnAddArticulo").on("click", addArticulo);  
 
-    function addArticulo () {
-
-  
+    function addArticulo () {  
 
         var identificador = $("#identificadorNew").val();
             console.log(identificador);
@@ -98,8 +80,10 @@ $(document).ready(function () {
             console.log(articulo);
 
         $("tbody").append(
-        '<tr>            <td>'+identificador+'</td>            <td>'+titulo+'</td>            <td>'+articulo+'</td>   <td><button  type="button" class="btn btn-primary editar" data-toggle="modal" ata-target="#ModalEditarArticulo">                Editar</button></td>   </tr>');
-        $(".editar").click(editar); //fin de editar function
+        '<tr><td>'+identificador+'</td><td>'+titulo+'</td><td>'+articulo+'</td><td><button type="button" class="btn btn-primary editar" data-toggle="modal" ata-target="#ModalEditarArticulo">Editar</button></td></tr>');
+        
+        $(".editar").click(editar);
+        
         $("#ModalNuevoArticulo").modal('hide');
                 
         //$("#nuevoArticulo").submit();
