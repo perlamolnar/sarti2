@@ -80,6 +80,10 @@
     </div>
     <div class="container"> 
         <div class="row">
+                    <!-- Button to Open the Modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalNuevoArticulo">
+                AÑADIR NUEVO ARTICULO
+            </button>
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -118,6 +122,8 @@
                         <td><button id="articulo3" type="button" class="btn btn-primary editar" data-toggle="modal" data-target="#ModalEditarArticulo">
                             Editar</button></td>
                     </tr>
+                    <!-- <tr id="addHereNuevo"></tr> -->
+
                 </tbody>
             </table>
         </div> 
@@ -171,7 +177,7 @@
         </div>
     </div>
 
-    <!-- The Modal TEXTAREA-------------------------------------------------------->
+    <!-- The Modal EDITAR-------------------------------------------------------->
     <div class="modal fade" id="ModalEditarArticulo">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -185,10 +191,22 @@
                 <!-- Modal body -->
                 <div class="modal-body">
                     <form id="formularioArticulos" action="http://daw.iesjoaquimmir.cat/sarti.php" method="POST">
+                        
                         <div class="form-group">
-                            <label for="comment">Comment:</label>
-                            <textarea id="textArea" name="articulo" class="form-control" rows="5" id="comment"></textarea>
+                            <label for="identificador">Identificador:</label>                                
+                            <input type="number" id="identificador" name="identificador" class="form-control" required />
+                            <!-- <div class="invalid-feedback">Identificador es obligatorio</div> -->
                         </div>
+                        <div class="form-group">
+                            <label for="titulo">Titulo:</label>                                
+                            <input type="text" id="titulo" name="titulo" class="form-control" />
+                            <!-- <div class="invalid-feedback">Titulo es obligatorio</div> -->
+                        </div>                        
+                        <div class="form-group">
+                            <label for="articulo">Texto del Articulo:</label>
+                            <textarea id="articulo" name="articulo" class="form-control" rows="7"></textarea>
+                        </div>
+
                         <button id="BtnSaveChanges" type="button" class="btn btn-primary">Save Changes</button>
                     </form>
                 </div>
@@ -199,6 +217,50 @@
                 </div>        
             </div>
         </div>        
-    </div>    
+    </div> 
+
+    <!-- ModalNuevoArticulo -------------------------------------->
+    <div class="modal fade" id="ModalNuevoArticulo">
+            <div class="modal-dialog">
+                <div class="modal-content">
+            
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">CREAR NUEVO ARTICULO</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+            
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form id="nuevoArticulo" action="http://daw.iesjoaquimmir.cat/sarti.php" method="POST">
+                            <div class="form-group">
+                                <label for="identificadorNew">Identificador:</label>                                
+                                <input type="number" id="identificadorNew" name="identificador" class="form-control" required />
+                                <div class="invalid-feedback">Identificador es obligatorio</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tituloNew">Titulo:</label>                                
+                                <input type="text" id="tituloNew" name="titulo" class="form-control" />
+                                <div class="invalid-feedback">Titulo es obligatorio</div>
+                            </div>                          
+                                                        
+                            <div class="form-group">
+                                <label for="articuloNew">Nueveo Articulo:</label>
+                                <textarea id="articuloNew" name="articulo" class="form-control" required></textarea>
+                                <div class="invalid-feedback">Articulo es obligatorio</div>
+                            </div>
+
+                            <button id="BtnAddArticulo" type="button" class="btn btn-primary">Crear Articulo</button>
+                        </form>
+                    </div>
+            
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button id="close" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>        
+                </div>
+            </div>        
+        </div> 
+
 </body>
 </html>

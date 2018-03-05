@@ -1,17 +1,42 @@
-
 $(document).ready(function () {
-    $("#enviar").on("click", aviso);
-    $("#articulo1").on("click", articuloModificado);
-
-
+    //LOGIN  
+    $("#enviar").on("click", aviso);  
     $("#aviso").hide();
     $('#aviso').on('close.bs.alert', function () {
-        //hemos eliminado en el html el "dissmiss alert y data-dismiss"
+        //hemos eliminado la funcion de "dissmiss alert y data-dismiss" en el html
         $(this).hide();
         return false;
-    })
+    });
 
-});
+    //EDITAR ARTICULO:
+    //captar el click, identificar sibling atraves el id de boton, pintar articulo en formulario
+    $(".editar").click(function() {        
+        var articulo = $(this).closest('td').siblings().find().prevObject[2].textContent;
+        console.log(articulo);    
+        $("#textArea").text(articulo);
+    }); 
+    
+
+    $('#BtnSaveChanges').click(function(){            
+        if (confirm("Estas seguro/a que quieres modificar el articulo?")) {
+            console.log("has confirmado el submit");
+            $('#formularioArticulos').submit();                      
+            
+            //REFRESH MODAL CONTENT:????????????????????????????????????????????????????????
+            //$("#textArea").val(" ");
+            //location.reload();             
+
+            } else {
+            console.log("Form no ha sido enviado.")
+            //return false;            
+            }        
+      });
+
+    $('#close').click(function(){
+        location.reload();    
+    });  
+   
+});//end of ready function
 
 function aviso() {
     var usuario = $("#username").val();
@@ -29,16 +54,10 @@ function aviso() {
     console.log(password);
 }
 
-function articuloModificado() {
-    var articulo = $(this).closest('td').siblings().find('input');
 
-    console.log(articulo);
+
     
-    //$('form').submit();
-    
-    console.log();   
-    
-}
+
 
 
 
