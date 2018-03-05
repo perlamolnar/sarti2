@@ -1,4 +1,4 @@
-function guardar(event) {
+function guardarModificacion(event) {
 
     if (confirm("Estas seguro/a que quieres modificar el articulo?")) {
         console.log("Has confirmado el submit");       
@@ -31,12 +31,11 @@ function editar() {
     var textArticulo = $(this).closest('td').siblings().find().prevObject[2].textContent;
 
     $("#articulo").val(textArticulo);
-
     
     //despues de los cambios del articulo guardamos las modificaciones.
     //submit form y pintar modificacion en html
     $("#BtnSaveChanges").off();
-    $("#BtnSaveChanges").on("click", { padre: $(this).parent().parent() }, guardar);    
+    $("#BtnSaveChanges").on("click", { padre: $(this).parent().parent() }, guardarModificacion);    
     $('#ModalEditarArticulo').modal('show');
     $('#close').click(function () {
         $("#ModalEditarArticulo").modal('hide');
