@@ -48,7 +48,7 @@ footer{
 .row{padding: 30px 0;}
 #myModal{color: black;}
 h3{padding:20px;}
-
+form{margin: auto;}
 
 /* Flipping card */
 .image-flip:hover .backside, .image-flip.hover .backside {
