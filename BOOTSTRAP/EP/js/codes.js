@@ -1,4 +1,11 @@
 $(document).ready(function () {
+    //Aumentar letras - efecto texto con boton
+    $(function () {
+        $("#button").on("click", function () {
+            $(".newClass").switchClass("newClass", "anotherNewClass", 1000);
+            $(".anotherNewClass").switchClass("anotherNewClass", "newClass", 1000);
+        });
+    });
 
     document.querySelector(".card-flip").classList.toggle("flip");
     

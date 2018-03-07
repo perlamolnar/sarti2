@@ -21,7 +21,7 @@ header{width: 100%}
   margin-bottom: 10px;
 }
 
-.dropdown-menu{left: 20%;}
+.dropdown-menu{left: 20%; background-color: #7bd4cd; color: white}
 
 a, .nav-link {
     text-transform: uppercase; 
@@ -320,7 +320,7 @@ border-radius: 0;
 
 .container1 {
   position: relative;
-  width: 50%;
+  width: 100%;
 }
 
 .image {
@@ -359,3 +359,10 @@ border-radius: 0;
 .modal{width: auto;color:black}
 .modal-body{
   align-items: center !important;}
+
+  .toggler { width: 500px; height: 200px; position: relative; }
+  #button { padding: .5em 1em; text-decoration: none; }
+  #effect { position: relative; }
+  .newClass { width: 700px;  padding: 1em; letter-spacing: 0; margin: 0; }
+  .anotherNewClass { text-indent: 40px; letter-spacing: .2em; width: 1100px; height: 100px; padding: 30px; margin: 10px; font-size: 1.1em; }
+  
