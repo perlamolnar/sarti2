@@ -1,0 +1,22 @@
+body{
+	background-color: lightblue;
+	margin: 0 15%;
+}
+header{
+	height: 10%;
+	background-color: olive;
+}
+
+footer{height: 10%;}
+
+.mainBox{height: 80%;}
+
+#paises{
+	background-color: #414169;
+	width: 100%;
+}
+#paises img{
+	width: 90%;
+	padding: 5%;
+	
+	}

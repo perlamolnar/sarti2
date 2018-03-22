@@ -1,0 +1,7 @@
+<?php
+
+	phpinfo(); //Función que nos devuelve informacion sobre PHP. Que verson utiliza, etc...
+
+	
+
+?>
