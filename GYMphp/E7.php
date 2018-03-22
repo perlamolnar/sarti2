@@ -12,12 +12,22 @@
     <?php
         $numeros = array(1,2,3,44,5,6,7,8,23,9,10);
         //echo array_sum($numeros);
+        $contador=0;
         $summa=0;
-        $maximo=0;
-        $minimo=9999999;
+        $maximo=0;        
+        $minimo=9999999; 
         $promedio=0;
+
+
         
-        foreach ($numeros as $value) {
+        foreach ($numeros as $value) {        
+            
+            if ($contador==0) {
+            $minimo=$value;
+            $maximo=$value;
+            $contador++; //para que no entre otravez en el if.
+            }
+
            //echo ($value);
            $summa+=$value; 
            
