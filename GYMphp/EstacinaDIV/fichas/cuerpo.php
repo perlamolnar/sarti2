@@ -7,7 +7,9 @@
         $ficheros  = scandir($directorio);
         foreach ($ficheros as $nombreFichero) {          
             
-            if ($nombreFichero!="." && $nombreFichero!="..") {           echo "<a href=\"receta.php?nomArchivo=$nombreFichero&estacion=$estacion\">$nombreFichero</a><br>";
+            if ($nombreFichero!="." && $nombreFichero!="..") {           
+                //echo "<a href=\"receta.php?nomArchivo=$nombreFichero&estacion=$estacion\">$nombreFichero</a><br>";
+                echo "<a href=\"#\" onclick="cargarContenido('<?=$nomArchivo?>');">$nombreFichero</a><br>";
             }
         }    
     ?>
