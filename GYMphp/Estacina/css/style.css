@@ -4,9 +4,6 @@ body{
 	text-align: center;
 }
 
-.container{padding: 0 10%;
-	
-}
 h1{
 	text-transform: uppercase;
 	font-size: 3.7em;
@@ -15,7 +12,40 @@ h2{
 	font-size: 1.9em;
 }
 
+.container{
+	padding: 0 10%;
+	width: 100%;
+	
+}
 
+#cuerpo{
+	padding: 70px;
+	width: 100%;
+	
+}
+
+#mainBox img{width: 80%;}
+
+#menu{
+	width: 15%;
+	height: 500px;
+	padding: 10px;
+	background-color: #57b7b1;
+	float: left;
+}
+
+#mainBox{
+	width: 85%;
+	padding: 10px;
+	height: 100%;
+	
+
+}
+
+#cuerpoinvierno, #cuerpoprimavera, #cuerpoverano, #cuerpootono{padding:0 15%;}
+
+
+/* ************************************** CABEZERA ***************************** */
 #headinvierno{
 	background-image:url(../img/invierno3.jpg);
 	background-repeat: no-repeat;
@@ -56,20 +86,7 @@ h2{
 	text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
 }
 
-
-#cuerpo{
-	padding: 70px;
-}
-#cuerpo img{width: 80%;}
-
-#cuerpoinvierno, #cuerpoprimavera, #cuerpoverano, #cuerpootono{
-	padding:0 15%;
-
-}
-
-
-
-
+/****************************************** PIE ********************************* */
 #pieinvierno{
 	background-color: #57b7b1;
 	height: 100px;

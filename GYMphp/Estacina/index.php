@@ -41,7 +41,7 @@
 	// include($estacion."/pie.html");
 
 	include("fichas/head.php");
-	include("fichas/cuerpo2.php");
+	include("fichas/cuerpo.php");
 	include("fichas/pie.php");
 
 
