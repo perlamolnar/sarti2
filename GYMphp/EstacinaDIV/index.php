@@ -15,7 +15,7 @@
 <?php
 
 	$mesactual = date('n'); 
-	$mesactual = 8;
+	$mesactual = 12;
 	//echo $mesactual;
 	$estacion ="";
 

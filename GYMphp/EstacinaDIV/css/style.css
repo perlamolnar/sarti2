@@ -27,7 +27,7 @@ h2{
 #mainBox img{width: 80%;}
 
 #menu{
-	width: 15%;
+	width: 20%;
 	height: 500px;
 	padding: 10px;
 	background-color: #57b7b1;
@@ -35,7 +35,7 @@ h2{
 }
 
 #mainBox{
-	width: 85%;
+	width: 75%;
 	padding: 10px;
 	height: 100%;
 	

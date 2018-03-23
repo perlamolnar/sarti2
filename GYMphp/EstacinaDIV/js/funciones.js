@@ -1,5 +1,5 @@
-function cargarContenido(receta, estacion) {
-    $.oist("receta.php", {nomArchivo:receta, nomEstacion:estacion}, function(data){
+function cargarContenido(receta, estacion_) {
+    $.post("receta.php", {nomArchivo:receta, estacion:estacion_}, function(data){
         $("#mainBox").html(data);
     });
     

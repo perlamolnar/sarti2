@@ -12,14 +12,11 @@
     <?php
         
         //recuperamos el nombre de receta i estacion
-
-        $receta=$_GET["nomArchivo"];
-        $estacion=$_GET["estacion"];
-
-        include("fichas/head.php");
+        $receta=$_POST["nomArchivo"];
+        $estacion=$_POST["estacion"];        
         
             $directorio = 'fichas/RecetasTEXTO/'.$estacion; //damos el nombre de la carpeta donde estan los archivos text
-            //$ficheros  = scandir($directorio);                
+            $ficheros  = scandir($directorio);                
 
                     $newRececta=file($directorio."/".$receta); //en la file()function ponemos la ruta al fichero
                     
@@ -30,8 +27,7 @@
 
                 echo "<img src=\"img/invierno1.jpg\">";
             
-        include("fichas/pie.php");
-    ?>
+        ?>
     
 </body>
 </html>

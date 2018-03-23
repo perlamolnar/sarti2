@@ -9,7 +9,7 @@
             
             if ($nombreFichero!="." && $nombreFichero!="..") {           
                 //echo "<a href=\"receta.php?nomArchivo=$nombreFichero&estacion=$estacion\">$nombreFichero</a><br>";
-                echo "<a href=\"#\" onclick="cargarContenido('<?=$nomArchivo?>');">$nombreFichero</a><br>";
+                echo "<a href=\"#\" onclick=\"cargarContenido('$nombreFichero', '$estacion')\";>".$nombreFichero."</a><br>";
             }
         }    
     ?>
@@ -18,26 +18,25 @@
     </div>
 
     <div id="mainBox">
-        <?php
-                // include("cuerpo".$estacion.".html");
+        <?php               
             
-                // $directorio = 'fichas/RecetasTEXTO/'.$estacion; //damos el nombre de la carpeta donde estan los archivos text
-                // $ficheros  = scandir($directorio);
+                $directorio = 'fichas/RecetasTEXTO/'.$estacion; //damos el nombre de la carpeta donde estan los archivos text
+                $ficheros  = scandir($directorio);
 
-                // foreach ($ficheros as $nombreFichero) {           
+                foreach ($ficheros as $nombreFichero) {           
                     
-                //     if ($nombreFichero!="." && $nombreFichero!="..") {          
-                //         //echo utf8_encode($line)."<br>";
-                //         //echo $nombreFichero."<br>";
+                    if ($nombreFichero!="." && $nombreFichero!="..") {          
+                        //echo utf8_encode($line)."<br>";
+                        //echo $nombreFichero."<br>";
 
-                //         $newRececta=file($directorio."/".$nombreFichero); //en la file()function ponemos la ruta al fichero
+                        $newRececta=file($directorio."/".$nombreFichero); //en la file()function ponemos la ruta al fichero
                         
-                //         foreach($newRececta as $line){
-                //         //echo (<img src="img/invierno1.jpg">);
-                //         echo ($line)."<br>";
-                //         } 
-                //     }
-                //} 
-            ?>
+                        foreach($newRececta as $line){
+                        //echo (<img src="img/invierno1.jpg">);
+                        echo ($line)."<br>";
+                        } 
+                    }
+                } 
+        ?>
     </div>	
 </div>
