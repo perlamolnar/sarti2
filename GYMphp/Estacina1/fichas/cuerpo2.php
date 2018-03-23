@@ -1,6 +1,6 @@
 <div id="cuerpo">
 	<?php
-	    include("cuerpo".$estacion.".html");
+	    //include("cuerpo".$estacion.".html");
 	
         $directorio = 'fichas/RecetasTEXTO/'.$estacion; //damos el nombre de la carpeta donde estan los archivos text
         $ficheros  = scandir($directorio);
@@ -13,8 +13,7 @@
 
                 $newRececta=file($directorio."/".$nombreFichero); //en la file()function ponemos la ruta al fichero
                 
-                foreach($newRececta as $line){
-                echo (<img src="img/invierno1.jpg">);
+                foreach($newRececta as $line){ 
                 echo ($line)."<br>";
                 } 
             }
