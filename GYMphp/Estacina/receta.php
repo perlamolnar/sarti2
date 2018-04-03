@@ -28,7 +28,7 @@
                     echo ($line)."<br>";
                     } 
 
-                echo "<img src=\"img/invierno1.jpg\">";
+                echo "<img src=\"img/$receta.jpg\">";
             
         include("fichas/pie.php");
     ?>

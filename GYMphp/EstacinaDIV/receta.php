@@ -11,23 +11,27 @@
 
     <?php
         
-        //recuperamos el nombre de receta i estacion
+        //recuperamos el nombre de receta i estacion que viene del  $.post de cargaContenido funcion
         $receta=$_POST["nomArchivo"];
-        $estacion=$_POST["estacion"];        
+        //echo ($receta."<br>");
+        $estacion=$_POST["estacion"];  
+        //echo ($estacion."<br>");      
         
             $directorio = 'fichas/RecetasTEXTO/'.$estacion; //damos el nombre de la carpeta donde estan los archivos text
-            $ficheros  = scandir($directorio);                
+            //$ficheros  = scandir($directorio);    
+                               
 
                     $newRececta=file($directorio."/".$receta); //en la file()function ponemos la ruta al fichero
                     
-                    foreach($newRececta as $line){                   
+                    foreach($newRececta as $line){             //guardamos su contenido (texto) en $line
                     
-                    echo ($line)."<br>";
+                    echo ($line)."<br>"; //pintamos $line en la página
                     } 
-
-                echo "<img src=\"img/invierno1.jpg\">";
+        
+        $receta = substr($receta, 0, -4); 
+        echo "<img src=\"img/$receta.jpg\">";  //el nombre del archivo es igual que el nombre del imagen
             
-        ?>
+    ?>
     
 </body>
 </html>
