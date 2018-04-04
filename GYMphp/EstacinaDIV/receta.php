@@ -23,7 +23,7 @@
 
                     $newRececta=file($directorio."/".$receta); //en la file()function ponemos la ruta al fichero
                     
-                    foreach($newRececta as $line){             //guardamos su contenido (texto) en $line
+                    foreach($newRececta as $line){             //guardamos su contenido/value (texto) en $line
                     
                     echo ($line)."<br>"; //pintamos $line en la página
                     } 

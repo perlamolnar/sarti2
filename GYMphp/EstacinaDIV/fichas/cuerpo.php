@@ -11,9 +11,12 @@
                         //echo "<a href=\"receta.php?nomArchivo=$nombreFichero&estacion=$estacion\">$nombreFichero</a><br>";  //ir y pintar receta a otra pagina
                         echo "<a href=\"#\" onclick=\"cargarContenido('$nombreFichero', '$estacion')\";>".substr($nombreFichero, 0, -4)."</a><br>"; //pintar receta en la misma pagina en un div
                         //usamos la substr() function para quitar el .txt al final de nombre de fichero
+
+                        echo "<a href=\"#\" onclick=\"cargarContenido('$nombreFichero', '$estacion')\";><img src=\"img/".substr($nombreFichero, 0, -4).".jpg\"></a><br>";
+
+                        //echo "<img src=\"img/$nombreFichero.jpg\">";  
                     }
-                $nombreFichero = substr($nombreFichero, 0, -4); 
-                echo "<img src=\"img/$nombreFichero.jpg\">";    
+                  
                 } 
                 
             ?>
@@ -21,6 +24,7 @@
     </div>
 
     <div id="mainBox">
+        <img src="img/bigmouth.jpg" alt="Big mouth">
         <?php               
             
                 // $directorio = 'fichas/RecetasTEXTO/'.$estacion; //damos el nombre de la carpeta donde estan los archivos text

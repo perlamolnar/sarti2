@@ -19,5 +19,4 @@ function cargarContenido(receta, estacion_) {  //desde el cuerpo, atraves del on
     //     1. parameter of $.post() is the URL we wish to request ("receta.php")
     //     2. Then we pass in some data to send along with the request (receta y estacion).
     //         The <?php script in "receta.php" reads the parameters, processes them, and returns a result.
-    //     3. parameter is a callback function. The first callback parameter holds the content of the page requested, 
-    //     and the second callback parameter holds the status of the request.
+    //     3. parameter is a callback function. The first callback parameter holds the content of the page requested, and the second callback parameter holds the status of the request.
