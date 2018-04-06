@@ -52,6 +52,7 @@
         echo summar($Numeros);
         echo "<br><br>";
 
+        echo "Hola mundo en $idioma es: ";
         echo traductor($idioma);
         echo "<br><br>";
 
