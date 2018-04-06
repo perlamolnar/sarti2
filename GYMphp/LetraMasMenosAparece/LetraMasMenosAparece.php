@@ -10,47 +10,30 @@
         $cadenaSinEspacio= str_replace(" ", "", $cadena);
         //echo $cadenaSinEspacio."<br>";
 
-        $array=preg_split("//", $cadenaSinEspacio, -1, PREG_SPLIT_NO_EMPTY); 
+        //$array=preg_split("//", $cadenaSinEspacio, -1, PREG_SPLIT_NO_EMPTY); 
+        
+        $array=str_split("$cadenaSinEspacio");
         print_r($array);
+
         echo "<br>";
         //se puede hacer con el str_split(string) tambien
 
         $NumeroLetra = array_count_values($array);
+        echo "Valores contados: ";
         print_r($NumeroLetra);
         echo "<br>";
 
-        asort($array);
-        print_r($array);
+        asort($NumeroLetra);
+        echo "Valores contados en orden: ";
+        print_r($NumeroLetra);
         echo "<br>";
 
-        print_r(array_values($array)[0]);
-        print_r(array_values($array[count($array)-1]));
+        print_r(array_values($NumeroLetra)[0]);
+        print_r(array_keys($NumeroLetra)[0]);
+        echo "<br>";
 
-
-    
-        // arsort($NumeroLetra);
-        // print_r($NumeroLetra);
-        // echo "<br>";
+        print_r(array_keys($NumeroLetra)[count(array_keys($NumeroLetra))-1]); //pidemos el ultimo key de del array asociativo
+            
     }
-
-
-
-    
-
-    
-
-
-    // sort($array);
-    // print_r($array);
-    // echo "<br>";
-
-    // rsort($array);
-    // print_r($array);
-    // echo "<br>";
-
-
-    
-
-
 
 ?>
