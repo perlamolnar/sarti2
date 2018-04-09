@@ -12,18 +12,37 @@
 </head>
 <body>
 
-    <h1>FORMULARIO</h1>
     
-     <form action="dos.php" method="POST">  <!--se ejecuta el fichero dos.php -->
-        Edad:
-        <input type="text" name="edad">
-        <input type="submit" value="submit" value="aceptar">
-        
+    
+    <?php
+    
+        // Esto evaluará a TRUE así que el texto se imprimirá.
+        if (isset($_POST['edad'])) {
+            $edad = $_POST['edad'];
+            //echo "Tu edad es: $edad .";
+        ?>
 
+        <h1>BIENVENIDO</h1>
+        <img src="img/verano.jpg" alt="verano">
+
+
+
+        <?php                
+        }else {  ?>
+            <h1>FORMULARIO</h1>
+            <form action="index.php" method="POST">  
+            Edad:
+            <input type="text" name="edad">
+            <input type="submit" value="submit" value="aceptar">
+            </form>
+        <?php
+        }
+        ?>
+
+
+
+  
     
-    
-    </form>
-    <span id="resultado"></span>
     
     
 </body>
