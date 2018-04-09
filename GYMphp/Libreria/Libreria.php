@@ -155,11 +155,11 @@
                 $resultado="Hola Mundo!";
                 break;
 
-                case 'hungaro':
+                case 'húngaro':
                 $resultado="Szia Világ!";
                 break;
 
-                case 'Ingles':
+                case 'ingles':
                 $resultado="Hello world!";
                 break;
 

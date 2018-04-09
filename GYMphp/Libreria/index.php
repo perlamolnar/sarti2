@@ -27,7 +27,7 @@
         $cordenada1 = [15,9];
         $cordenada2 = [11,5];
         $Numeros = array(1,2,5,9,14,26);
-        $idioma = "hungaro";
+        $idioma = "húngaro";
         $number = 14.456367468;
         $fichero = "miImagen.jpg";
         
