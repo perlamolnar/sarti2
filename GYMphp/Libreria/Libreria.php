@@ -126,7 +126,13 @@
         $cordenadasY = pow($cordenadasY,2);
 
         $distancia = sqrt($cordenadasX+$cordenadasY);
-
+        
+        echo "La distancia entre los puntos ";
+        //print_r($cordenada1);
+        //echo " y ";
+        //print_r($cordenada2);
+        echo " es: ";
+        
         return $distancia;
     }
 
@@ -134,7 +140,8 @@
         $resultado=0;
         for ($i=0; $i < count($Numeros) ; $i++) { 
             $resultado += $Numeros[$i];         
-        }               
+        } 
+        echo "La summa de tus numeros es: ";              
         return $resultado;
     }
     
@@ -176,8 +183,76 @@
                 echo "La lengua pedida esta desconocida.";
                 break;
         }
-
+        echo "Hola mundo en $idioma es: ";
         return $resultado;
+    }
+
+    function ParImpar($number){
+
+        $number = round($number);
+
+        if ($number%2!==0) {
+            $resultado = "Impar";
+        } 
+        else {
+            $resultado = "Par";
+        }
+
+        echo "El número $number es: ";                     
+        return $resultado;
+    }
+
+    function extencionFichero($fichero){
+        //echo $fichero;
+        $array = explode(".", $fichero);
+        //print_r ($array);
+        //echo $array[1];
+        $extencion = $array[1];
+              
+
+        switch ($extencion) {
+            case 'pdf':
+            echo "Fichero del tipo $extencion, formato de almacenamiento para documentos digitales.";
+            break;
+
+            case 'exe':
+            echo "Fichero del tipo $extencion, formato de almacenamiento para documentos digitales.";
+            break;
+
+            case 'jpg':
+            echo "Fichero del tipo $extencion (Joint Photographic Group), formato de almacenamiento para imagen.";
+            break;
+
+            case 'png':
+            echo "Fichero del tipo $extencion, formato de almacenamiento para documentos graficos.";
+            break;
+
+            case 'xls':
+            echo "Fichero del tipo $extencion, formato de almacenamiento para documentos hoja de cálculo de Microsoft Office Excel.";
+            break;
+
+            case 'csv':
+            echo "Fichero del tipo $extencion (Comma Separated Values), formato de almacenamiento para documentos de valores separados por comas de Microsoft Office Excel. Cada uno de los datos que conforman están separados por una coma del siguiente.";
+            break;
+             
+            case 'sql':
+            echo "Fichero del tipo $extencion, formato de almacenamiento para documentos Lenguaje de consulta estructurado.";
+            break;
+
+            case 'json':
+            echo "Fichero del tipo $extencion (JavaScript Object Notation), un formato de texto ligero para el intercambio de datos.";
+            break;
+
+            case 'py':
+            echo "Fichero del tipo $extencion, formato de almacenamiento para documentos de script de Python.";
+            break;
+            
+            default:
+                echo "La extencion no esta reconocido.";
+                break;
+        }
+       
+        
     }
 
 

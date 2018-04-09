@@ -28,32 +28,51 @@
         $cordenada2 = [11,5];
         $Numeros = array(1,2,5,9,14,26);
         $idioma = "hungaro";
+        $number = 14.456367468;
+        $fichero = "miImagen.jpg";
         
-
-
-
+      
+      
+        echo "<h2>FUNCTION: Muestrar texto</h2>";
         Pintar($text);
+
+        echo "<h2>FUNCTION: Muestrar texto en parrafo</h2>";
         echo textParrafo($text);
+
+        echo "<h2>FUNCTION: Muestrar texto en titulo H1</h2>";
         echo textH1($text);
+
+        echo "<h2>FUNCTION: Muestrar texto como link dentro en un parrafo</h2>";
         echo textParrafoLink($text);
 
+        echo "<h2>FUNCTION: Muestrar la estacion actual</h2>";
         echo "Estamos en la estación: ";
         echo estacion();
         echo "<br><br>";
-       
+
+        echo "<h2>FUNCTION: Cambiar foto en cada estacion</h2>";       
         echo foto_de_estacion();
         echo "<br><br>";
 
-        echo "La distancia entre los puntos (15,9) y (11,5) es: ";
+        echo "<h2>FUNCTION: Calcular distancia entre dos puntos cartesianos pasados por parámetro</h2>"; 
         echo cordenadas($cordenada1,$cordenada2);
         echo "<br><br>";
 
-        echo "La summa de tus numeros es: ";
+        echo "<h2>FUNCTION: Calcular la suma de todos los elementos de un array pasado por parámetro</h2>"; 
         echo summar($Numeros);
         echo "<br><br>";
 
-        echo "Hola mundo en $idioma es: ";
+        echo "<h2>FUNCTION: Devuelve el string “Hola Mundo” escrito en inglés, catalán o castellano, en función del string (ej: cat,esp,eng) pasado por parámetro
+        </h2>";        
         echo traductor($idioma);
+        echo "<br><br>";
+
+        echo "<h2>FUNCTION: Imprime “es par” o “es impar” en función de el entero que se le ha pasado por parámetro</h2>";
+        echo ParImpar($number);             
+        echo "<br><br>";
+
+        echo "<h2>FUNCTION: Imprime información sobre de qué tipo de fichero se trata</h2>";
+        echo extencionFichero($fichero);             
         echo "<br><br>";
 
 
