@@ -204,46 +204,48 @@
 
     function extencionFichero($fichero){
         //echo $fichero;
+        $fichero = strtoupper($fichero);
         $array = explode(".", $fichero);
+        
         //print_r ($array);
         //echo $array[1];
         $extencion = $array[1];
               
 
         switch ($extencion) {
-            case 'pdf':
+            case 'PDF':
             echo "Fichero del tipo $extencion, formato de almacenamiento para documentos digitales.";
             break;
 
-            case 'exe':
+            case 'EXE':
             echo "Fichero del tipo $extencion, formato de almacenamiento para documentos digitales.";
             break;
 
-            case 'jpg':
+            case 'JPG':
             echo "Fichero del tipo $extencion (Joint Photographic Group), formato de almacenamiento para imagen.";
             break;
 
-            case 'png':
+            case 'PNG':
             echo "Fichero del tipo $extencion, formato de almacenamiento para documentos graficos.";
             break;
 
-            case 'xls':
+            case 'XLS':
             echo "Fichero del tipo $extencion, formato de almacenamiento para documentos hoja de cálculo de Microsoft Office Excel.";
             break;
 
-            case 'csv':
+            case 'CSV':
             echo "Fichero del tipo $extencion (Comma Separated Values), formato de almacenamiento para documentos de valores separados por comas de Microsoft Office Excel. Cada uno de los datos que conforman están separados por una coma del siguiente.";
             break;
              
-            case 'sql':
+            case 'SQL':
             echo "Fichero del tipo $extencion, formato de almacenamiento para documentos Lenguaje de consulta estructurado.";
             break;
 
-            case 'json':
+            case 'JSON':
             echo "Fichero del tipo $extencion (JavaScript Object Notation), un formato de texto ligero para el intercambio de datos.";
             break;
 
-            case 'py':
+            case 'PY':
             echo "Fichero del tipo $extencion, formato de almacenamiento para documentos de script de Python.";
             break;
             
