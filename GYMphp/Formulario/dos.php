@@ -9,7 +9,7 @@
 <body>
     <?php
         $edad = $_POST['edad'];
-        print("La edad es $edad");
+        print("La edad es $edad");//recojemos datos con el post desde el index.php
 
     ?>
 </body>

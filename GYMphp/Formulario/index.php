@@ -14,7 +14,7 @@
 
     <h1>FORMULARIO</h1>
     
-    <form action="dos.php" method="POST">
+     <form action="dos.php" method="POST">  <!--se ejecuta el fichero dos.php -->
         Edad:
         <input type="text" name="edad">
         <input type="submit" value="submit" value="aceptar">
