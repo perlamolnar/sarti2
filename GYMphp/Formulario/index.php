@@ -33,7 +33,7 @@
             <form action="index.php" method="POST">  
             Edad:
             <input type="text" name="edad">
-            <input type="submit" value="submit" value="aceptar">
+            <input type="submit" value="submit">
             </form>
         <?php
         }
