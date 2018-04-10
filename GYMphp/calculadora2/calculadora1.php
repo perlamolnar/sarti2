@@ -14,8 +14,8 @@
 <body>
     <?php 
     //recuperamos variables que viene del  $.post de cargaContenido funcion
-            //echo "hello";
-            if (isset($calcular)){ 
+            
+            if (isset($_POST["calcular"])){ 
                     
                     $numero1=$_POST["number1"];
                     $numero2=$_POST["number2"];        
