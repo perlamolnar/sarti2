@@ -26,7 +26,10 @@
                     
             
             }else {
-                 $resultado="";
+                $resultado="";
+                $numero1="";
+                $numero2="";  
+
             }
 
             function calculadora ( $numero1, $operacion, $numero2){
