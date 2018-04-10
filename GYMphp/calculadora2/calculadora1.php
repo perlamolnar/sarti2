@@ -8,52 +8,53 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <!-- <script src="calculadora.js"></script> -->
     <link rel="stylesheet" href="style.css">
-    
-    
+   
     
 </head>
 <body>
     <?php 
     //recuperamos variables que viene del  $.post de cargaContenido funcion
-            //if (isset($calcular)){} //esto seria en el html
+            //echo "hello";
+            if (isset($calcular)){ 
                     
                     $numero1=$_POST["number1"];
                     $numero2=$_POST["number2"];        
                     $operacion=$_POST["operacion"];
     
-                    $resultado = calculadora($numero1, $operacion, $numero2);
+                    $resultado = calculadora($numero1, $operacion, $numero2);  
                     echo $resultado;
-                            
-                    function calculadora ( $numero1, $operacion, $numero2){
-                        switch ($operacion) {
-                            case '+':
-                                $resultado = $numero1+$numero2;
-                                break;
-    
-                            case '-':
-                                $resultado = $numero1-$numero2;
-                                break;
-    
-                            case '*':
-                                $resultado = $numero1*$numero2;
-                                break;
-    
-                            case '/':
-                                $resultado = $numero1/$numero2;
-                                break;
-                            
-                            default:
-                                echo ("Error! Pruoba de nuevo.");
-                                break;               
-                        }  
-    
-                        
-                        return $resultado; //return tiene que estar fuera de switch!!!!!
-                    }
-                    //echo "El resultado de tu operacion es: ";
-                    //echo calculadora(3, "-", 5);
+                    
             
-    
+            }else {
+                 $resultado="";
+            }
+
+            function calculadora ( $numero1, $operacion, $numero2){
+                    switch ($operacion) {
+                        case '+':
+                            $resultado = $numero1+$numero2;
+                            break;
+
+                        case '-':
+                            $resultado = $numero1-$numero2;
+                            break;
+
+                        case '*':
+                            $resultado = $numero1*$numero2;
+                            break;
+
+                        case '/':
+                            $resultado = $numero1/$numero2;
+                            break;
+                        
+                        default:
+                            echo ("Error! Pruoba de nuevo.");
+                            break;               
+                    }  
+
+                    
+                    return $resultado; //return tiene que estar fuera de switch!!!!!
+            }
     
         ?>
 
@@ -68,7 +69,7 @@
             </select>
             <input id="numero2" type="number" name="number2">
             
-            <button type="submit" id="calcularSELECT">=</button>
+            <button type="submit" name="calcular" id="calcularSELECT">=</button>
             <input type="number" id="resultado" name="resultado" value="<?php echo $resultado; ?>" readonly>
             
         <br>
@@ -76,7 +77,7 @@
         <br>
 </form>
 
-<form action="calculadora.html" method="POST">
+<form action="" method="POST">
         <h1>CALCULADORA 4 CON 4 BOTONES</h1>
             <input id="numero1" type="number">
             <button type="submit" name="+" value="+">+</button>
@@ -92,7 +93,7 @@
         <br>
 </form>
 
-<form action="calculadora.html" method="POST">
+<form action="" method="POST">
         <h1>CALCULADORA RADIO BUTON</h1>
             <input id="numero1" type="number">
 
@@ -110,7 +111,7 @@
 
 </form> 
 
-<form action="calculadora.html" method="POST">
+<form action="" method="POST">
         <h1>CALCULADORA CHECKBOX</h1>
             <input id="numero1" type="number">
             <input type="checkbox" name="operacion" value="+">+

@@ -1,5 +1,8 @@
 $(document).ready(function () {
-    $("#calcular").on("click", calcular);
+    $("#calcularSELECT").on("click", calcular);
+    // $("#calcular4BOTONES").on("click", calcular4BOTONES);
+    // $("#calcularRADIOBUTON").on("click", calcularRADIOBUTON);
+    // $("#calcularSELECT").on("click", calcularCHECBOX);
 
 });
 
