@@ -14,6 +14,27 @@
 
 <?php
 
+	if (isset($_GET['estacion'])){
+		$estacion=$_GET['estacion'];
+		switch ($estacion) {
+			case 'primavera':
+			$estacion="primavera";
+			break;
+
+			case 'verano':
+			$estacion="verano";
+			break;
+			case 'otono':
+			$estacion="otono";
+			break;
+			case 'invierno':
+			$estacion="invierno";
+			break;			
+		}
+	}else {
+		
+	}
+
 	$mesactual = date('n'); 
 	//$mesactual = 12;
 	//echo $mesactual;

@@ -1,0 +1,168 @@
+body{
+	margin:auto;
+	background-color: lightblue;
+	text-align: center;
+}
+
+h1{
+	text-transform: uppercase;
+	font-size: 3.7em;
+}
+h2{
+	font-size: 1.9em;
+}
+
+.container{
+	padding: 0 10%;
+	width: 100%;
+	
+}
+
+#cuerpo{	
+	width: 100%;
+	text-align: left !important;
+	
+}
+
+#cuerpo img{
+	width: 80%;	
+	padding:30px 0px;
+	text-align: center!important;
+}
+
+#menu{
+	width: 20%;
+	height: 550px;
+	padding: 30px;
+	background-color: rgb(255, 212, 71);
+	opacity: 0.8;
+	float: left;
+	text-align: left;
+	color: black;
+	overflow: auto;	
+}
+#menu img{
+	width: 100%;	
+	padding:30px 0px;
+	text-align: center!important;
+
+}
+
+a {color: black;}
+
+div#mainBox{		
+	padding: 20px 30px 20px 30px;
+	height: 550px;
+	width: 80%;
+	margin: 0px 50px;
+	overflow: auto;	
+
+}
+
+#cuerpoinvierno, #cuerpoprimavera, #cuerpoverano, #cuerpootono{padding:0 15%;}
+
+/* ************************************** CABEZERA ***************************** */
+
+#headinvierno{
+	background-image:url(../img/invierno3.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;	
+	height: 200px;
+	padding: 20px 0px;
+	color: #fcf9f9;
+	text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+}
+
+#headprimavera{
+	background-image:url(../img/primavera1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;	
+	height: 200px;
+	padding: 20px 0px;
+	color: #3f5821;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+}
+
+#headverano{
+	background-image:url(../img/verano1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;	
+	height: 200px;
+	padding: 20px 0px;
+	color: #eb0808;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+}
+
+#headotono{
+	background-image:url(../img/otono1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;	
+	height: 200px;
+	padding: 20px 0px;
+	color: #006c74;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+}
+
+/****************************************** PIE ********************************* */
+footer{
+	padding: 50px; 
+	height: 150px;
+	color: #fcf9f9;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+}
+#pieinvierno{
+	background-color: #57b7b1;
+	
+	
+}
+
+#pieprimavera{
+	background-color: #9a963e;
+	
+	
+}
+
+#pieverano{
+	background-color: #ce3616;
+	
+	
+}
+
+#pieotono{
+	background-color: #752b10;
+	
+	
+}
+
+/* *************** nav ************** */
+#nav{width: 100%; margin:0 !important}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+	background-color: #333;
+	
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+.fecha{
+	float: right;
+	padding: 12px;
+	color: white;
+}

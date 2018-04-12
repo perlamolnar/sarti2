@@ -15,7 +15,7 @@
 <?php
 
 	$mesactual = date('n'); 
-	//$mesactual = 12;
+	$mesactual = 8;
 	//echo $mesactual;
 	$estacion ="";
 
@@ -47,7 +47,7 @@
 	// include($estacion."/pie.html");
 
 	include("fichas/head.php");
-	include("fichas/cuerpo.php");
+	include("fichas/verano.php");
 	include("fichas/pie.php");
 
 
