@@ -47,10 +47,10 @@
 
                 $nombreDirectorio= "img/";
                 $idUnico= time();
-                $nombreFichero= $idUnico. "-" . $_FILES['imagen']['name'];
+                $nombreFichero= $idUnico. "-" . $_FILES['Fichero']['name'];
 
                 move_uploaded_file(
-                            $_FILES['fichero']['tmp_name'], 
+                            $_FILES['Fichero']['tmp_name'], 
                             $nombreDirectorio. $nombreFichero);
 
             }else
