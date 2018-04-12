@@ -17,22 +17,50 @@
         $Nombre="";
         $Descripcion="";
         $Precio=""; 
-        //$Fichero="";
-        $FechaActual="";
+        $Fichero="";
+        //$FechaActual="";
         
         if(isset($_POST['enviar'])){//the "name" of the button submit. Recoge los valores del formulario
             $Nombre = $_POST['Nombre'];
             $Descripcion= $_POST['Descripcion'];
             $Precio= $_POST['Precio'];
-            $Fichero= $_FILES['Fichero']['name'];
-            $FechaActual= date('d - m - Y');
+            $Fichero= $_FILES['Fichero']['name'];            
+            //$FechaActual= date('d - m - Y');
 
-            echo $Nombre;
+            //echo $Fichero;
+            echo $Nombre; 
+            echo $_FILES['Fichero']['error'];
+          
+
+            if (is_uploaded_file($_FILES['Fichero']['tmp_name']))
+            {//si se ha subido el fichero….
+
+                echo "Nombre: " ; 
+                echo $Nombre; 
+                echo "<br>Descripcion: "; 
+                echo $Descripcion; 
+                echo "<br>Precio: ";
+                echo $Precio; 
+                echo "<br>Fichero: ";
+                echo $Fichero; 
 
 
-            if(is_uploaded_file($_FILE['fichero']['tmp_name']))
+                $nombreDirectorio= "img/";
+                $idUnico= time();
+                $nombreFichero= $idUnico. "-" . $_FILES['imagen']['name'];
 
-            move_uploaded_file($_FILES['fichero']['tmp_name'].$nombreDirectorio.$nombreFichero);
+                move_uploaded_file(
+                            $_FILES['fichero']['tmp_name'], 
+                            $nombreDirectorio. $nombreFichero);
+
+            }else
+                print("No se ha podido subir el fichero\n");
+
+
+
+
+
+
 
 
         }
