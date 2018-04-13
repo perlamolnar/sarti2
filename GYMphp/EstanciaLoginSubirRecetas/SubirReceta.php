@@ -12,8 +12,7 @@
     
 </head>
 <body>
-    <?php 
-    echo "hola";
+    <?php    
     
         $Titulo="";
         $Estacion="";
@@ -27,16 +26,8 @@
             $Receta= $_FILES['Receta']['name'];
             $Foto= $_FILES['Foto']['name'];            
             $FechaActual= date('d - m - Y');
-            $idUnico= time();
-
-            //echo $Titulo;
-            //echo "<br><br>";
-            //echo $Estacion; 
-            //echo "<br><br>";
-            //echo $_FILES['Foto']['error'];
-            //echo "<br><br>";
+            $idUnico= time();         
           
-
                 if (is_uploaded_file($_FILES['Receta']['tmp_name']))  //devuelve un boleano
                 {//si se ha subido el fichero….                    
 
@@ -140,7 +131,12 @@
                     <br>
                     <br>
                     <label for="Estaction">ESTACIÓN</label><br>
-                    <input type="text" name="Estaction" value="" required>
+                    <select name="Estaction" value="" required>
+                        <option value="primavera">Primavera</option>
+                        <option value="verano">Verano</option>
+                        <option value="otono">Otoño</option>
+                        <option value="invierno">Invierno</option>
+                    </select>                    
                     <br>
                     <br>                    
                     <label for="Receta">SUBIR RECETA (Formato: receta.txt)</label><br>
@@ -172,7 +168,12 @@
                     <br>
                     <br>
                     <label for="Estaction">ESTACIÓN</label><br>
-                    <input type="text" name="Estaction" value="" required>
+                    <select name="Estaction" value="" required>
+                        <option value="primavera">Primavera</option>
+                        <option value="verano">Verano</option>
+                        <option value="otono">Otoño</option>
+                        <option value="invierno">Invierno</option>
+                    </select>     
                     <br>
                     <br>                    
                     <label for="Receta">SUBIR RECETA (Formato: receta.txt)</label><br>
