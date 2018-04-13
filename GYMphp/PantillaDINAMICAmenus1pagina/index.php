@@ -14,8 +14,10 @@
 
 <?php
 
+	
 	if (isset($_GET['estacion'])){
 		$estacion=$_GET['estacion'];
+		
 		switch ($estacion) {
 			case 'primavera':
 			$estacion="primavera";
@@ -24,9 +26,11 @@
 			case 'verano':
 			$estacion="verano";
 			break;
+
 			case 'otono':
 			$estacion="otono";
 			break;
+
 			case 'invierno':
 			$estacion="invierno";
 			break;			
@@ -34,6 +38,33 @@
 	}else {
 		
 	}
+
+	// if (isset($_GET['estacion'])){
+	// 	$estacion=$_GET['estacion'];
+
+	// 	switch ($estacion) {
+	// 		case 'primavera':
+	// 		include("fichas/primavera.php");
+	// 		break;
+
+	// 		case 'verano':
+	// 		include("fichas/verano.php");
+	// 		break;
+
+	// 		case 'otono':
+	// 		include("fichas/otono.php");
+	// 		break;
+
+	// 		case 'invierno':
+	// 		include("fichas/invierno.php");
+	// 		break;			
+	// 	}
+	// }else {
+		
+	// }
+
+
+
 
 	$mesactual = date('n'); 
 	//$mesactual = 12;
@@ -61,18 +92,12 @@
 	        break;
 	}
 
-	//echo $estacion;
-
-	// include("$estacion/head.html"); //include($estacion."/head.html");
-	// include($estacion."/cuerpo.html");
-	// include($estacion."/pie.html");
-
 	include("fichas/head.php");
+	// $_GET['estacion'];
+	// 		error_reporting(0);
+	// 		if ($_GET['estacion']) {include ($_GET['estacion'].".inc");}			
 	include("fichas/cuerpo.php");
 	include("fichas/pie.php");
-
-
-
 ?>
 
 
