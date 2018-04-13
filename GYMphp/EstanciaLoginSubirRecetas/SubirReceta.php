@@ -13,6 +13,7 @@
 </head>
 <body>
     <?php 
+    echo "hola";
     
         $Titulo="";
         $Estacion="";
@@ -36,8 +37,8 @@
             //echo "<br><br>";
           
 
-                    if (is_uploaded_file($_FILES['Receta']['tmp_name']))  //devuelve un boleano
-                    {//si se ha subido el fichero….                    
+                if (is_uploaded_file($_FILES['Receta']['tmp_name']))  //devuelve un boleano
+                {//si se ha subido el fichero….                    
 
                         $nombreDirectorio= "fichas/RecetasTEXTO/.$Estacion";
                         $idUnico= time();
@@ -48,12 +49,12 @@
                             $_FILES['Receta']['tmp_name'], 
                             $nombreDirectorio. $nombreFichero);                  
                             
-                    ?>
+                    
 
-                    if (is_uploaded_file($_FILES['Receta']['tmp_name']))  //devuelve un boleano
-            {//si se ha subido el fichero….
+                    if (is_uploaded_file($_FILES['Foto']['tmp_name']))  //devuelve un boleano
+                    {//si se ha subido el fichero….
 
-            ?>
+                ?>
                     <div class="mainTitle"><h1>NUEVA RECETA SUBIDO</h1></div>
                     
 
@@ -81,11 +82,11 @@
 
                 $nombreDirectorio= "img/";
                 $idUnico= time();
-                $nombreFichero= $idUnico. "-" . $_FILES['Receta']['name'];
+                $nombreFichero= $idUnico. "-" . $_FILES['Foto']['name'];
                 $nombreCompleto= $nombreDirectorio. $nombreFichero;
 
                 move_uploaded_file(
-                    $_FILES['Receta']['tmp_name'], 
+                    $_FILES['Foto']['tmp_name'], 
                     $nombreDirectorio. $nombreFichero);                  
                     
             ?>
@@ -93,8 +94,7 @@
         
         
             <?php
-            }else
-                print("No se ha podido subir el fichero\n");
+                  }else print("No se ha podido subir el fichero\n");
                 //include("SubirReceta.php&ErrorEnvio=error");
                 include("SubirReceta.php");
 
@@ -133,7 +133,7 @@
         <div class="mainTitleBO"><h1>BIENVENIDO A BACKOFFICE</h1></div>
         <div class="containerBO">            
             <h3>SUBIR NUEVA RECETA</h3>            
-            <form action="" method="POST" ENCTYPE="multipart/form-data">        
+            <form action="SubirReceta.php" method="POST" ENCTYPE="multipart/form-data">        
                     
                     <label for="Titulo">TITULO DE RECETA</label><br>
                     <input type="text" name="Titulo" value="<?php echo $Titulo;?>"required>
@@ -159,7 +159,40 @@
         
         </div>
         <?php            
-        }          
+        } 
+    }else {
+        ?>
+        <div class="mainTitleBO"><h1>BIENVENIDO A BACKOFFICE</h1></div>
+        <div class="containerBO">            
+            <h3>SUBIR NUEVA RECETA</h3>            
+            <form action="SubirReceta.php" method="POST" ENCTYPE="multipart/form-data">        
+                    
+                    <label for="Titulo">TITULO DE RECETA</label><br>
+                    <input type="text" name="Titulo" value="<?php echo $Titulo;?>"required>
+                    <br>
+                    <br>
+                    <label for="Estaction">ESTACIÓN</label><br>
+                    <input type="text" name="Estaction" value="" required>
+                    <br>
+                    <br>                    
+                    <label for="Receta">SUBIR RECETA (Formato: receta.txt)</label><br>
+                    <input type="hidden" name="MAX_FILE_SIZE">
+                    <input type="file" name="Receta" value="<?php echo $Receta;?>" required>        
+                    <br>                
+                    <br>
+                    <label for="Foto">SUBIR IMAGEN</label><br>
+                    <input type="hidden" name="MAX_FILE_SIZE">
+                    <input type="file" name="Foto" value="<?php echo $Foto;?>" required> 
+                    <br>                
+                    <br> 
+                    <button type="submit" name="NuevaRecta">Añadir Nueva Recta</button>
+                            
+            </form>
+        
+        </div>
+        <?php            
+        } 
+             
     ?>
 
 </body>
