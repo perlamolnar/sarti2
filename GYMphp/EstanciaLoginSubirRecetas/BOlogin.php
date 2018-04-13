@@ -37,12 +37,26 @@
         //$resultado=true;
         //echo $resultado;
         if ($resultado==1) {
-            $mensaje = "La contraseña es correcta";
+
+            //$mensaje = "La contraseña es correcta";            
+            include("SubirReceta.php");
+
+
         } else {
-            $mensaje = "ERROR! La contraseña NO es correcta";
+            $mensaje = "<p class=\"red\">ERROR! La contraseña NO es correcta</p>";
+        ?>
+            <h1>COMPROBAR CONTRASEÑA</h1>   
+                <form action="" method="POST">        
+                    PASSWORD:
+                    <input id="password" name="password" type="text">
+                    <button type="submit" id="sendContrasena" name="sendContrasena">LOGIN</button>
+                    <span id="resultado"></span>
+                </form>
+        <?php
+        
         }
 
-        echo $mensaje;
+        //echo $mensaje;
     }
     else{
     
@@ -57,15 +71,12 @@
         <button type="submit" id="sendContrasena" name="sendContrasena">LOGIN</button>
         <span id="resultado"></span>  
 
-    </form>
-    
-    
+    </form>   
+
     <?php
         }
     ?>
-
-
-    
+   
     
 </body>
 </html>
