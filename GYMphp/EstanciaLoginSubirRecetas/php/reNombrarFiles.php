@@ -2,7 +2,7 @@
 
 function reNombrarFiles($Titulo,$Receta,$Foto){       
     $resultado = 0; //inicializamos con false 
-    $Receta = strtolower($Receta);
+    //$Receta = strtolower($Receta);
     echo $Receta;
     echo "<br>";
 

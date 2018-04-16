@@ -18,7 +18,7 @@
    
     <?php 
         include_once("headBO.php");        
-        include("../php/checkTitulo.php");
+        include("../php/checkTituloTXT.php");
         include("../php/checkTXT.php");               
     
         $Titulo="";
@@ -28,27 +28,15 @@
         $FechaActual="";
         
         if(isset($_POST['NuevaRecta'])){//the "name" of the button submit. Recoge los valores del formulario
-            
             $Titulo = $_POST['Titulo'];
             $estacion= $_POST['estacion'];
             $Receta= $_FILES['Receta']['name'];
             $Foto= $_FILES['Foto']['name'];            
             $FechaActual= date('d - m - Y');
             $idUnico= time();
-            $ERRORFATAL="1";       
-           
-                if (is_uploaded_file($_FILES['Receta']['tmp_name']) )  //devuelve un boleano
-                {//si se ha subido el fichero….                                  
+            $ERRORFATAL="1";
 
-                    $nombreDirectorio= "../fichas/RecetasTEXTO/".$estacion."/";
-                    //echo $nombreDirectorio;
-                    $idUnico= time();
-                    $nombreFichero= $idUnico. "-" . $_FILES['Receta']['name'];
-                    $nombreCompleto= $nombreDirectorio. $nombreFichero;
-
-
-
-            //ANTES de subir el file en MI CARPETA 
+            //ANTES de subir el file en MI CARPETA
                 //comprobamos si el TITULO YA EXISTE O NO:
                     
                     $resultado = checkTitulo($estacion,$Titulo);
@@ -74,7 +62,7 @@
                         $ERRORFATAL="1";
                     }//echo $mensaje; 
 
-                //Hay que hacer control de imagen?????
+                
 
                     
                 //Si el TITULO y la EXTENCION SON CORRECTAS => if $ERRORFATAL== 0
@@ -91,15 +79,16 @@
                 }
 
                 
+   
+          
+                if (is_uploaded_file($_FILES['Receta']['tmp_name']) )  //devuelve un boleano
+                {//si se ha subido el fichero….                                  
 
-
-
-
-
-
-
-
-
+                    $nombreDirectorio= "../fichas/RecetasTEXTO/".$estacion."/";
+                    //echo $nombreDirectorio;
+                    $idUnico= time();
+                    $nombreFichero= $idUnico. "-" . $_FILES['Receta']['name'];
+                    $nombreCompleto= $nombreDirectorio. $nombreFichero;
 
                     move_uploaded_file(
                         $_FILES['Receta']['tmp_name'], 
