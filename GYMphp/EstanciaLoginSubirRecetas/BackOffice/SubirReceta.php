@@ -70,7 +70,7 @@
 
                 
    
-          
+          if($ERRORFATAL!=1){
                 if (is_uploaded_file($_FILES['Receta']['tmp_name']) )  //devuelve un boleano
                 {//si se ha subido el fichero….                                  
 
@@ -93,7 +93,11 @@
 
                         $nombreDirectorio= "../img/";
                         //$idUnico= time();
-                        //$nombreFichero= $idUnico. "-" . $_FILES['Foto']['name'];
+
+                        //$nombreFichero= $_FILES['Foto']['name'];
+
+
+
                         $nombreFoto=$Titulo."jpg";
                         $nombreCompletoFoto= $nombreDirectorio. $nombreFichero;
                         $Foto = trim($Foto);
@@ -152,10 +156,85 @@
 
                     <?php
                         
-                }else print("<h2>No se ha podido subir el fichero</h2>");
+                }else{ print("<h2>No se ha podido subir el fichero</h2>");
                     //include("SubirReceta.php&ErrorEnvio=error");
-                    include("SubirReceta.php");                
+                  ?>
+
+        
+        <div class="containerBO">            
+            <h3>SUBIR NUEVA RECETA</h3>            
+            <form action="SubirReceta.php" method="POST" ENCTYPE="multipart/form-data">        
+                    
+                    <label for="Titulo">TITULO DE RECETA</label><br>
+                    <input type="text" name="Titulo" value="<?php echo $Titulo;?>"required>
+                    <br>
+                    <br>
+                    <label for="estaction">ESTACIÓN</label><br>
+                    <select name="estacion" required>
+                        <option value="primavera">Primavera</option>
+                        <option value="verano">Verano</option>
+                        <option value="otono">Otoño</option>
+                        <option value="invierno">Invierno</option>
+                    </select>
+                    <br>
+                    <br>                    
+                    <label for="Receta">SUBIR RECETA (Formato: receta.txt)</label><br>
+                    <input type="hidden" name="MAX_FILE_SIZE">
+                    <input type="file" name="Receta" value="<?php echo $Receta;?>" required>        
+                    <br>                
+                    <br>
+                    <label for="Foto">SUBIR IMAGEN</label><br>
+                    <input type="hidden" name="MAX_FILE_SIZE">
+                    <input type="file" name="Foto" value="<?php echo $Foto;?>" required> 
+                    <br>                
+                    <br> 
+                    <button type="submit" name="NuevaRecta">Añadir Nueva Recta</button>
+                            
+            </form>
+        
+        </div>
+        <?php         
+                }           
             }
+        }else{
+ ?>
+
+        
+        <div class="containerBO">            
+            <h3>SUBIR NUEVA RECETA</h3>            
+            <form action="SubirReceta.php" method="POST" ENCTYPE="multipart/form-data">        
+                    
+                    <label for="Titulo">TITULO DE RECETA</label><br>
+                    <input type="text" name="Titulo" value="<?php echo $Titulo;?>"required>
+                    <br>
+                    <br>
+                    <label for="estaction">ESTACIÓN</label><br>
+                    <select name="estacion" required>
+                        <option value="primavera">Primavera</option>
+                        <option value="verano">Verano</option>
+                        <option value="otono">Otoño</option>
+                        <option value="invierno">Invierno</option>
+                    </select>
+                    <br>
+                    <br>                    
+                    <label for="Receta">SUBIR RECETA (Formato: receta.txt)</label><br>
+                    <input type="hidden" name="MAX_FILE_SIZE">
+                    <input type="file" name="Receta" value="<?php echo $Receta;?>" required>        
+                    <br>                
+                    <br>
+                    <label for="Foto">SUBIR IMAGEN</label><br>
+                    <input type="hidden" name="MAX_FILE_SIZE">
+                    <input type="file" name="Foto" value="<?php echo $Foto;?>" required> 
+                    <br>                
+                    <br> 
+                    <button type="submit" name="NuevaRecta">Añadir Nueva Recta</button>
+                            
+            </form>
+        
+        </div>
+        <?php      
+
+        }
         
     }else {
 

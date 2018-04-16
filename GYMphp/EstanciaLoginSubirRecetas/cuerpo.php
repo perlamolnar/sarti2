@@ -3,7 +3,7 @@
     <div id="menu">
         <h2>MENU</h2>
             <?php 
-                
+                if (isset($_GET['estacion'])){
                 $estacion = $_GET['estacion'];
                 //echo $estacion;
                                 
@@ -22,6 +22,7 @@
                     }
                   
                 } 
+            }
                 
             ?>
 

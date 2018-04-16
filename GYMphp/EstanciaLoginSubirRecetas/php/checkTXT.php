@@ -3,8 +3,8 @@
 function checkTXT($Receta){       
     $resultado = 0; //inicializamos con false 
     $Receta = strtolower($Receta);
-    echo $Receta;
-    echo "<br>";
+   // echo $Receta;
+  //  echo "<br>";
 
     $extNuevaReceta = substr("$Receta", -4); 
     $extFormaCorrecta = substr("formaCorrecta.txt", -4); 
