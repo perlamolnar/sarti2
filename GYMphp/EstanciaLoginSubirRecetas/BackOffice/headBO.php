@@ -5,11 +5,11 @@
            
     <ul id="nav">
         <li><a class="active" href="indexBO.php">Home</a></li>
-        <li><a href="loginBO.php">Login</a></li>
+        <li><a href="loginBO.php">LOGIN</a></li>
         <li><a href="SubirReceta.php">Subir Receta</a></li>
         <li><a href="#">Link1</a></li>
         <li><a href="#">Link2</a></li>
-        <li><a href="#">Link3</a></li>    
+        <li><a href="#">LOGOUT</a></li>    
         <li class="fecha">
             <?php
             // Prints the day, date, month, year, time, AM or PM

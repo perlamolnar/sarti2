@@ -19,9 +19,15 @@ session_start();
     <?php
     include_once("headBO.php");
 
-    if(isset($_SESSION["username"])){ //si el login esta hecho y registrad y puedes pasar
-        header("location:SubirReceta.php");
-    }  
+    // if(isset($_SESSION["usuario_valido"]))
+    //             // Código para usuarios autorizados
+    // else
+    //             // Mensaje de acceso no autorizado
+  
+
+    
+
+
     
     function passwordCheck($password){ 
         session_register("username");

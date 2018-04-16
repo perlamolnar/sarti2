@@ -20,6 +20,8 @@
 		<li><a href="index.php?estacion=verano">Verano</a></li>
 		<li><a href="index.php?estacion=otono">Otoño</a></li>
 		<li><a href="index.php?estacion=invierno">Inviero</a></li>
+		
+
 		<li class="fecha">
 
 			<?php
