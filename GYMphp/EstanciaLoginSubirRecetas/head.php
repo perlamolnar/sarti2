@@ -1,9 +1,7 @@
-<?php
 
-	$estacion = $_GET['estacion'];
-
-?>
-
+	<?php
+		$estacion = $_GET['estacion'];
+	?>
 <header id="head<?=$estacion?>">
 
 	<div >
@@ -12,7 +10,7 @@
 
 	
 	<ul id="nav">
-		<!-- <li><a class="active" href="index.php?estacion=primavera">Home</a></li> -->
+		<!-- <li><a class="active" href="index.php">Home</a></li> -->
 		<!-- <a href="index.php?func=funcion1($param1)">Pulsame</a> //llamar a funcion PHP desde un enlace HTML --> 
 		<li><a href="index.php?estacion=primavera">Primavera</a></li>
 		<li><a href="index.php?estacion=verano">Verano</a></li>
@@ -22,7 +20,7 @@
 
 			<?php
 
-			$estacion = $_GET['estacion'];
+			
 
 
 			// Prints the day, date, month, year, time, AM or PM

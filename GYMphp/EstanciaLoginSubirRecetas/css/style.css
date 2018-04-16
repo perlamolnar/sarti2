@@ -4,8 +4,59 @@ body{
 	text-align: center;
 }
 .red{color: red}
-.containerBO{padding:10%; text-align: left;float: left}
-.mainTitleBO{background-color: #9a963e;color: rgb(255, 255, 255)}
+
+/********************* BACKOFFICE ******************/
+.containerBO{
+	padding:5% 10%; 
+	text-align: left;
+	min-height: 300px;
+}
+.mainTitleBO{
+	background-color: #9a963e;
+	color: rgb(255, 255, 255);
+	text-align: left;
+}
+.newProduct{
+	text-align: left;
+	padding: 20px 200px;
+	margin: auto;
+
+}
+#headBO{
+	background-color: #9a963e !important; 
+	padding: 5%;
+	text-align: center;
+	height: 20%;
+	width: 100%;
+	padding: 20px 0px; 
+	text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+	color: white;
+	margin: auto;
+}
+#leftIMG{
+	float: left;
+	width: 10%;
+	padding: 20px;
+}
+#rightIMG{
+	float: right;
+	width: 10%;
+	padding: 20px;
+}
+#cuerpoBO{
+	height: 70%;	
+	width: 100%;
+	text-align: left;
+}
+#pieBO{
+	height: 10%;
+	width: 100%;
+	background-color: #9a963e !important; 	
+	text-align: center;
+}
+
+/********************************************************/
+
 h1{
 	text-transform: uppercase;
 	font-size: 3.7em;
@@ -111,6 +162,7 @@ footer{
 	height: 150px;
 	color: #fcf9f9;
 	text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+	
 }
 #pieinvierno{
 	background-color: #57b7b1;

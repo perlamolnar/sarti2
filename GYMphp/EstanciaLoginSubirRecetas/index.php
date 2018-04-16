@@ -92,12 +92,12 @@
 	        break;
 	}
 
-	include("fichas/head.php");
+	include("head.php");
 	// $_GET['estacion'];
 	// 		error_reporting(0);
 	// 		if ($_GET['estacion']) {include ($_GET['estacion'].".inc");}			
-	include("fichas/cuerpo.php");
-	include("fichas/pie.php");
+	include("cuerpo.php");
+	include("pie.php");
 ?>
 
 

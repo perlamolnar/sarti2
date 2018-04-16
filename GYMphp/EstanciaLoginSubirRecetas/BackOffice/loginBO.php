@@ -7,11 +7,15 @@
     <title>Document</title>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <!-- <script src="js/Password.js"></script> -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
 </head>
 <body>
     <?php
+
+    include_once("headBO.php");
+
+
     
     function passwordCheck($password){    
         $pw=false; //inicializamos con 0/false   
@@ -62,8 +66,9 @@
     
     ?>
 
-    <h1>COMPROBAR CONTRASEÑA</h1>
     
+    <div class="containerBO">
+    <h1>COMPROBAR CONTRASEÑA</h1>
     <form action="" method="POST">
     
         PASSWORD:
@@ -75,8 +80,14 @@
 
     <?php
         }
+        
+
     ?>
+   </div>
+
+   <?php
+   include_once("pieBO.php");
+   ?>
    
-    
 </body>
 </html>

@@ -2,10 +2,11 @@
     
     <div id="menu">
         <h2>MENU</h2>
-            <?php           
+            <?php 
+                
                 $estacion = $_GET['estacion'];
                 //echo $estacion;
-                
+                                
                 $directorio = 'fichas/RecetasTEXTO/'.$estacion; //damos el nombre de la carpeta donde estan los archivos
                 $ficheros  = scandir($directorio); //scaneamos la carpeta para leer sus archivos/ficheros y los guardamos en un array
                 foreach ($ficheros as $nombreFichero) {    //recorremos el array para ver sus elementos: expresión_array as $valor       
