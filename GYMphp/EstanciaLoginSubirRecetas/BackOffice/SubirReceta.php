@@ -19,7 +19,8 @@
     <?php 
         include_once("headBO.php");        
         include("../php/checkTituloTXT.php");
-        include("../php/checkTXT.php");               
+        include("../php/checkTXT.php");  
+                
     
         $Titulo="";
         $estacion="";
@@ -67,16 +68,6 @@
                 //Si el TITULO y la EXTENCION SON CORRECTAS => if $ERRORFATAL== 0
                 //pondramos el TITULO para el nombre del imagen y la receta.
 
-                // $resultadoReNombrarFiles = checkTXT($Titulo,$Receta,$Foto);
-
-                // if ($reNombrarFiles==0) {
-                //     $mensajeReNombrarFiles = "Unificar los nombres ha sido con EXITO";
-                //     $ERRORFATAL="0";
-                // } else {
-                //     $mensajeReNombrarFiles = "ERROR al unificar los nombres de los archivos.";
-                //     $ERRORFATAL="1";
-                // }
-
                 
    
           
@@ -85,13 +76,15 @@
 
                     $nombreDirectorio= "../fichas/RecetasTEXTO/".$estacion."/";
                     //echo $nombreDirectorio;
-                    $idUnico= time();
-                    $nombreFichero= $idUnico. "-" . $_FILES['Receta']['name'];
-                    $nombreCompleto= $nombreDirectorio. $nombreFichero;
+                    //$idUnico= time();
+                    //$nombreFichero= $idUnico. "-" . $_FILES['Receta']['name'];
+                    $Titulo = trim($Titulo);//qutar espacio planco del principio y al final
+                    $nombreFichero =$Titulo."txt";
+                    $nombreCompletoReceta= $nombreDirectorio. $nombreFichero;
 
                     move_uploaded_file(
                         $_FILES['Receta']['tmp_name'], 
-                        $nombreDirectorio. $nombreFichero);                 
+                        $nombreCompletoReceta);                 
                             
                     
 
@@ -99,13 +92,15 @@
                     {//si se ha subido el fichero….                
 
                         $nombreDirectorio= "../img/";
-                        $idUnico= time();
-                        $nombreFichero= $idUnico. "-" . $_FILES['Foto']['name'];
-                        $nombreCompleto= $nombreDirectorio. $nombreFichero;
+                        //$idUnico= time();
+                        //$nombreFichero= $idUnico. "-" . $_FILES['Foto']['name'];
+                        $nombreFoto=$Titulo."jpg";
+                        $nombreCompletoFoto= $nombreDirectorio. $nombreFichero;
+                        $Foto = trim($Foto);
 
                         move_uploaded_file(
                             $_FILES['Foto']['tmp_name'], 
-                            $nombreDirectorio. $nombreFichero); 
+                            $nombreCompletoFoto); 
                         
                         ?>
                         <div class="mainTitle">
