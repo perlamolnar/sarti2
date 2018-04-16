@@ -1,11 +1,10 @@
 <?php
 
 function checkTitulo($estacion,$Titulo){     
-    echo $estacion;
-    echo "<br>";
-    echo $Titulo;
-    echo "<br>";
-    $NOduplicacion = false; //inicializamos con 0/false   
+    // echo $estacion;
+    // echo "<br>";
+    // echo $Titulo;
+    // echo "<br>";     
     
     //buscar archivos en la carpeta de recetas
     $carpeta = "../fichas/REcetasTEXTO/".$estacion; //damos el nombre de la carpeta donde estan los archivos
@@ -23,17 +22,18 @@ function checkTitulo($estacion,$Titulo){
 
 
 //$estacion = "otono";
-//$Titulo="Ensalada Vegetarianhhha"; 
-$Titulo =$_POST["Titulo"];
-$resultado = checkTitulo($estacion,$Titulo);
+//$Titulo="Ensalada Vegetariana"; 
 
-if ($resultado==1) {
-    $controlTitulo = "<br><br>El TILULO es CORRECTO, no hay peligro de duplicación.";
-} else {
-    $controlTitulo = "ERROR! Este TITULO YA EXISTE! Da otro titulo!";
-}
+// $Titulo =$_POST["Titulo"];
+// $resultado = checkTitulo($estacion,$Titulo);
 
-echo $controlTitulo;
+// if ($resultado==1) {
+//     $controlTitulo = "<br><br>El TILULO es CORRECTO, no hay peligro de duplicación.";
+// } else {
+//     $controlTitulo = "ERROR! Este TITULO YA EXISTE! Da otro titulo!";
+// }
+
+// echo $controlTitulo;
 
 ?>
 

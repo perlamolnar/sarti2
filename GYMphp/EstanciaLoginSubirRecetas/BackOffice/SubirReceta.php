@@ -36,12 +36,11 @@
             $idUnico= time();
             $ERRORFATAL="1";
 
-            //ANTES de subir el file en MI CARPETA
+            //ANTES de subir el file 
                 //comprobamos si el TITULO YA EXISTE O NO:
                     
                     $resultado = checkTitulo($estacion,$Titulo);
-                    //$resultado=0;
-                    echo $resultado;
+                    
                     if ($resultado==1) {
                         $controlTitulo = "El TILULO es CORRECTO, no hay peligro de duplicación.";
                         $ERRORFATAL="0";
@@ -60,7 +59,7 @@
                     } else {
                         $mensajeExtencion = "ERROR! La extencion de tu archivo receta NO termina en .txt";
                         $ERRORFATAL="1";
-                    }//echo $mensaje; 
+                    }
 
                 
 
@@ -68,15 +67,15 @@
                 //Si el TITULO y la EXTENCION SON CORRECTAS => if $ERRORFATAL== 0
                 //pondramos el TITULO para el nombre del imagen y la receta.
 
-                $resultadoReNombrarFiles = checkTXT($Titulo,$Receta,$Foto);
+                // $resultadoReNombrarFiles = checkTXT($Titulo,$Receta,$Foto);
 
-                if ($reNombrarFiles==0) {
-                    $mensajeReNombrarFiles = "Unificar los nombres ha sido con EXITO";
-                    $ERRORFATAL="0";
-                } else {
-                    $mensajeReNombrarFiles = "ERROR al unificar los nombres de los archivos.";
-                    $ERRORFATAL="1";
-                }
+                // if ($reNombrarFiles==0) {
+                //     $mensajeReNombrarFiles = "Unificar los nombres ha sido con EXITO";
+                //     $ERRORFATAL="0";
+                // } else {
+                //     $mensajeReNombrarFiles = "ERROR al unificar los nombres de los archivos.";
+                //     $ERRORFATAL="1";
+                // }
 
                 
    
