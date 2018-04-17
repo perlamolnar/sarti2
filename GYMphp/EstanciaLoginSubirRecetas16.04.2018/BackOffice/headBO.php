@@ -9,12 +9,7 @@
         <li><a href="SubirReceta.php">Subir Receta</a></li>
         <!-- <li><a href="#">Link1</a></li>
         <li><a href="#">Link2</a></li> -->
-        <li><a href="#">LOGOUT</a></li>
-        <li class="username"><?php
-		if (isset($_SESSION["username"])) {
-		
-		echo  $_SESSION["username"];
-		} ?></li>    
+        <li><a href="#">LOGOUT</a></li>    
         <li class="fecha">
             <?php
             // Prints the day, date, month, year, time, AM or PM

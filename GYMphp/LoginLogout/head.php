@@ -8,7 +8,9 @@
 	<ul id="nav">
 		<li><a class="active" href="#">Home</a></li>
 		<li><a href="login.php">Login</a></li>
-		<li><a href="subirRecetas.php">Subir Producto</a></li>				
+		<li><a href="subirRecetas.php">Subir Producto</a></li>	
+		<li><a href="subirFoto.php">Subir Foto</a></li>
+		<li><a href="contacto.php">Subir Contacto</a></li>			
 		<li><a href="logout.php">Logout</a></li> 
 		<!-- Click here to clean <a href = "logout.php" tite = "Logout">Session. -->		
 		<li class="username"><?php
