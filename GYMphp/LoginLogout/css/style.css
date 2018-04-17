@@ -117,8 +117,8 @@ li a:hover {
     background-color: #111;
 }
 
-.fecha{
+.fecha, .username{
 	float: right;
 	padding: 12px;
-	color: white;
+	color: #57b7b1;
 }

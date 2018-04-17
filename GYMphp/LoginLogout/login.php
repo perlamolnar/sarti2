@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+/*if (!isset($_SESSION["username"])) {
+       header("Location:login.php");
+    }else{
+        $username=$_SESSION["username"];
+    }*/
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +30,7 @@ session_start();
         
         if(passwordControl($username,$password)){ // if ($_POST['username'] == 'Perla' && $_POST['password'] == 'perla') {
             $_SESSION['valid'] = true;
-            $_SESSION['timeout'] = time();
+           // $_SESSION['timeout'] = time();
             $_SESSION["username"] = $_POST["username"]; //$_SESSION['username'] = 'Perla';                     
 
             header("Location:subirRecetas.php");
