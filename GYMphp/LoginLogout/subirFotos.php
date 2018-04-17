@@ -25,9 +25,7 @@ session_start();
     <?php 
         include("head.php"); 
 
-        $Nombre="";
-        $Descripcion="";
-        $Precio=""; 
+        $FotoTitle="";        
         //$Fichero="";
         $FechaActual="";
         

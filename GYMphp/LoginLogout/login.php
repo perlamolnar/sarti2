@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -20,25 +21,28 @@ session_start();
     
     if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password'])) {    
         $username = $_POST["username"]; 
-        $password = $_POST["password"];       
+        $password = $_POST["password"];  
         
-        if(passwordControl($username,$password)){ // if ($_POST['username'] == 'Perla' && $_POST['password'] == 'perla') {
-            $_SESSION['valid'] = true;
-           // $_SESSION['timeout'] = time();
+        
+        
+       // if(passwordControl($username,$password,"Perla","1234")){ 
+        if ($_POST['username'] == 'Perla' && $_POST['password'] == '1234') {
+            $_SESSION['tipo'] = "admin";
             $_SESSION["username"] = $_POST["username"]; //$_SESSION['username'] = 'Perla';                     
 
             header("Location:subirRecetas.php");
             //echo 'You have entered valid use name and password';
-        }
-        else{
+        }else if ($_POST['username'] == 'Tom' && $_POST['password'] == '987'){
+            $_SESSION['tipo'] = "user";
+            $_SESSION["username"] = $_POST["username"]; //$_SESSION['username'] = 'Perla';                     
+
+            header("Location:subirRecetas.php");
+        }else{
             echo $avisoError="<p class=\"red\"> Username o contraseña INCORRECTA! Vuelva a intentarlo!</p>";
         }
     }
 
-    function passwordControl($userEscrito,$pwEscrito){
-
-        $userGardado="Perla";
-        $pwGuardada="1234";
+    function passwordControl($userEscrito,$pwEscrito,$userGardado,$pwGuardada){
 
         $userHASH=md5($userGardado);        
         $pwHASH=md5($pwGuardada);
