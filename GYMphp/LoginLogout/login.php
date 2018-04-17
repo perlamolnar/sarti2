@@ -19,23 +19,23 @@ session_start();
     include("head.php");  
     
     if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password'])) {    
-        
+        $username = $_POST["username"]; 
         $password = $_POST["password"];       
         
-        if(passwordControl($password)){ // if ($_POST['username'] == 'Perla' && $_POST['password'] == 'perla') {
+        if(passwordControl($username,$password)){ // if ($_POST['username'] == 'Perla' && $_POST['password'] == 'perla') {
             $_SESSION['valid'] = true;
             $_SESSION['timeout'] = time();
-            $_SESSION["username"] = $_POST["username"];  //$_SESSION['username'] = 'Perla';                       
+            $_SESSION["username"] = $_POST["username"]; //$_SESSION['username'] = 'Perla';                     
 
             header("Location:subirRecetas.php");
             //echo 'You have entered valid use name and password';
         }
         else{
-            $avisoError="<p class=\"red\"> Username o contraseña INCORRECTA! Vuelva a intentarlo!</p>";
+            echo $avisoError="<p class=\"red\"> Username o contraseña INCORRECTA! Vuelva a intentarlo!</p>";
         }
     }
 
-    function passwordControl($pwEscrito){
+    function passwordControl($userEscrito,$pwEscrito){
 
         $userGardado="Perla";
         $pwGuardada="1234";
@@ -62,7 +62,7 @@ session_start();
     <form class="modal-content animate" action="" method="POST">
         <div class="container">
 
-            <?php echo $avisoError; ?>
+            <?php //echo $avisoError; ?>
 
             <label for="username"><b>Username: </b></label>
             <input type="text" placeholder="Enter Username" name="username" required>
