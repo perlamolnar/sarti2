@@ -4,11 +4,11 @@
     <!-- <img id="rightIMG" src="../img/cocinero.jpg" alt="Cocinero">    -->
            
     <ul id="nav">
-        <li><a class="active" href="indexBO.php">Home</a></li>
+        <!-- <li><a class="active" href="indexBO.php">Home</a></li> -->
         <li><a href="loginBO.php">LOGIN</a></li>
         <li><a href="SubirReceta.php">Subir Receta</a></li>
-        <li><a href="#">Link1</a></li>
-        <li><a href="#">Link2</a></li>
+        <!-- <li><a href="#">Link1</a></li>
+        <li><a href="#">Link2</a></li> -->
         <li><a href="#">LOGOUT</a></li>    
         <li class="fecha">
             <?php

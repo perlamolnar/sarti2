@@ -2,7 +2,6 @@
 session_start();
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,18 +18,14 @@ session_start();
     <?php
     include_once("headBO.php");
 
-    if(isset($_SESSION["username"])){ //si el login esta hecho y registrad y puedes pasar
-        header("location:SubirReceta.php");
+    if(isset($_SESSION["password"])){ //si ya esta loged in, puede pasar entre paginas de backoffice
+         header("location:SubirReceta.php");
     }  
     
-    function passwordCheck($password){ 
-        session_register("username");
-        $_SESSION[username] = $username;
-
-             
+    function passwordCheck($password){                    
 
         $pw=false; //inicializamos con 0/false   
-        $pwGuardado = "Cocinero";
+        $pwGuardado = "perla";
         $HASH = md5($pwGuardado);      
         
         //echo $password;
@@ -50,31 +45,33 @@ session_start();
         //echo $password;
         
         $resultado = passwordCheck($password);
-        //$resultado=true;
-        //echo $resultado;
+        
         if ($resultado==1) {
-
             //$mensaje = "La contraseña es correcta";            
             include("SubirReceta.php");
-
-
         } else {
-            $mensaje = "<p class=\"red\">ERROR! La contraseña NO es correcta</p>";
-        ?>
-            <h1>COMPROBAR CONTRASEÑA</h1>   
-                <form action="" method="POST">        
-                    USERNAME:
-                    <input id="username" name="username" type="text">
-                    PASSWORD:
-                    <input id="password" name="password" type="text">
-                    <button type="submit" id="sendContrasena" name="sendContrasena">LOGIN</button>
-                    <span id="resultado"></span>
-                </form>
-        <?php
+            $mensaje = "<p class=\"red\">ERROR! La contraseña NO es correcta. Vuelva a escribirla.</p>";
+            
+            ?>
+                <div class="containerBO">
+                    <h1>COMPROBAR CONTRASEÑA</h1>
+                    <?php echo $mensaje;?>
+                    <form action="" method="POST">
+                        USERNAME:
+                        <input id="username" name="username" type="text" value="Perla">
+                        <br><br>
+                        PASSWORD:
+                        <input id="password" name="password" type="text"><br><br>
+                        <button type="submit" id="sendContrasena" name="sendContrasena">LOGIN</button>
+                        <span id="resultado"></span>  
+
+                    </form>   
+                </div>
+            <?php
         
         }
 
-        //echo $mensaje;
+        
     }
     else{
     
@@ -85,7 +82,7 @@ session_start();
     <h1>COMPROBAR CONTRASEÑA</h1>
     <form action="" method="POST">
         USERNAME:
-        <input id="username" name="username" type="text">
+        <input id="username" name="username" type="text" value="Perla">
         <br><br>
         PASSWORD:
         <input id="password" name="password" type="text"><br><br>
