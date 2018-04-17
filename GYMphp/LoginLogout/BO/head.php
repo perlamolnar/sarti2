@@ -8,13 +8,13 @@
 			?>
 			<ul id="nav">
 				<li><a class="active" href="index.php">Home</a></li>
-				<li><a href="BO/login.php">Login</a></li>
-				<li><a href="BO/galeria.php">Galeria</a></li>
-				<li><a href="BO/subirRecetas.php">Subir Producto</a></li>
-				<li><a href="BO/subirFotos.php">Subir Fotos</a></li>
+				<li><a href="login.php">Login</a></li>
+				<li><a href="galeria.php">Galeria</a></li>
+				<li><a href="subirRecetas.php">Subir Producto</a></li>
+				<li><a href="subirFotos.php">Subir Fotos</a></li>
 				<li><a href="#">Produción</a></li>				
-				<li><a href="BO/contacto.php">Contacto</a></li>			
-				<li><a href="BO/logout.php">Logout</a></li> 		
+				<li><a href="contacto.php">Contacto</a></li>			
+				<li><a href="logout.php">Logout</a></li> 		
 				<li class="username">
 					<?php
 					if (isset($_SESSION["username"])) {

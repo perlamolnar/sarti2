@@ -17,7 +17,7 @@ session_start();
     <title>Document</title>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <!-- <script src="calculadora.js"></script> -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
    
     
 </head>
@@ -25,7 +25,9 @@ session_start();
     <?php 
         include("head.php"); 
 
-        $FotoTitle="";        
+        $Nombre="";
+        $Descripcion="";
+        $Precio=""; 
         //$Fichero="";
         $FechaActual="";
         
@@ -40,7 +42,7 @@ session_start();
             if (is_uploaded_file($_FILES['Fichero']['tmp_name']))  //devuelve un boleano
             {//si se ha subido el fichero….          
 
-                $nombreDirectorio= "img/";
+                $nombreDirectorio= "../img/";
                 $idUnico= time();
                 // $nombreFichero= $idUnico. "-" . $_FILES['Fichero']['name'];
                 $nombreFichero=  $_FILES['Fichero']['name'];
@@ -51,7 +53,7 @@ session_start();
                 ?>
         
         <div class="mainTitle">
-            <h1>SUBIR NUEVA FOTO</h1>
+            <h1>SUBIR NUEVO PRODUCTO</h1>
         </div>
         
         <div class="container">
@@ -91,7 +93,7 @@ session_start();
     ?>
     
     
-            <div class="mainTitle"><h1>NUEVA FOTO</h1></div>
+            <div class="mainTitle"><h1>NUEVO PRODUCTO SUBIDO</h1></div>
                 <div class="container">
 
                     <div class='newProduct'><strong>NOMBRE DE PRODUCTO: </strong>
