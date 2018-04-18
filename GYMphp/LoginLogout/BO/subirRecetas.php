@@ -155,12 +155,17 @@ session_start();
                                 <br><br>
                                 
                                 <strong>RECETA: </strong>
-                                <?php echo $Receta?>                    
+                                    <?php
+                                        $newRececta=file($nombreCompletoReceta); //en la file()function ponemos la ruta al fichero  
+                                            foreach($newRececta as $line){         //guardamos su contenido/value (texto) en $line 
+                                            echo ($line)."<br>"; //pintamos $line en la página
+                                            }   
+                                    ?>                 
                                 <br><br>
     
                                 <strong>FOTO: </strong>
                                 <?php echo $Foto ?>
-                                <?php echo "<img src=\"$nombreCompletoFoto\" alt="Foto de nueva receta"> ?>
+                                <?php echo "<img src=\"$nombreCompletoFoto\" alt=\"Foto de nueva receta\">" ?>
                                 
                                 <br><br>               
     
@@ -176,7 +181,7 @@ session_start();
         
 
 
-        }//fin de "isset NuevaReceta"
+        }//fin de isset NuevaReceta
         else {
             ?>
                 <div class="containerBO">            
