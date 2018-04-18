@@ -6,13 +6,29 @@ function checkImage($Foto){
     // echo $Foto;
     //  echo "<br>";
 
-    $extNuevaFoto = substr("$Foto", -4); 
-    $extFormaCorrecta = substr("formaCorrecta.txt", -4); 
+    //$extNuevaFoto = end(explode(".",$Foto ));
+    $extNuevaFoto = substr($Foto,strripos($Foto,".")+1);
+    
+    switch ($extNuevaFoto) {
+            case 'jpg':
+            $resultado=1;
+            break;
 
-    if($extFormaCorrecta != $extNuevaFoto){
-        $resultado = 1;
+            case 'jpeg':
+            $resultado=1;
+            break;
+
+            case 'png':
+            $resultado=1;
+            break;
+
+            case 'bmp':
+            $resultado=1;
+            break;        
     }
+    
     return $resultado;
+    
 }
 
 

@@ -29,56 +29,69 @@ session_start();
    
     <?php 
         include_once("head.php");        
-        include("../php/checkTituloTXT.php");
+        include("../php/checkTitulo.php");
         include("../php/checkTXT.php");
-    
+        include("../php/checkImage.php");
+            
         $Titulo="";
         $estacion="";
         $Receta=""; 
         $Foto="";
         $extension="";
         $FechaActual="";
-        
+        $mensajeERROR="";
+
+        //CODOGO DE ERRORES
+        $codigoERROR="";
+        if (isset ($_GET['codigoERROR'])) {
+            $numERROR=$_GET['codigoERROR'];
+            switch ($numERROR) {
+                case 1:
+                   $mensajeERROR="<p class=\"red\">ERROR! Este TITULO YA EXISTE! Da otro titulo!</p>";
+                    break;
+
+                case 2:                   
+                    $mensajeERROR="<p class=\"red\">ERROR! La extencion de tu archivo receta NO termina en .txt</p>";
+                    break;
+
+                case 3:                   
+                    $mensajeERROR="<p class=\"red\">ERROR! La extencion de tu imagen NO es correcta.</p>";
+                    break;
+
+                case 4:
+                   $mensajeERROR="<p class=\"red\">ERROR! No se ha podido subir el fichero!</p>";
+                    break;             
+                
+            }
+        }//fin de codigo errores
+
+       
         if(isset($_POST['NuevaRecta'])){//the "name" of the button submit. Recoge los valores del formulario
             $Titulo = $_POST['Titulo'];
             $estacion= $_POST['estacion'];
             $Receta= $_FILES['Receta']['name'];
             $Foto= $_FILES['Foto']['name'];            
             $FechaActual= date('d - m - Y');
-            $idUnico= time();
-            $ERRORFATAL="1";
-
-            //ANTES de subir el file 
-                //comprobamos si el TITULO YA EXISTE O NO:
-                    
-                    $resultado = checkTitulo($estacion,$Titulo);
-                    
-                    if ($resultado==1) {
-                        $controlTitulo = "<p class=\"green\">El TILULO es CORRECTO, no hay peligro de duplicación.</p>";
-                        $ERRORFATAL="0";
-                    } else {
-                        $controlTitulo = "<p class=\"red\">ERROR! Este TITULO YA EXISTE! Da otro titulo!</p>";
-                        //$ERRORFATAL="1";
-                        header("Location: subirRecetas.php");
-                    } 
-                        
-                //comprobamos si LA EXTENCIÓN es .txt
+            $idUnico= time(); 
+            
+        //comprobamos si el TITULO YA EXISTE O NO:
                 
-                    $resultadoExtencion = checkTXT($Receta);
-
-                    if ($resultadoExtencion==0) {
-                        $mensajeExtencion = "<p class=\"green\">La receta tiene la extención correcta.</p>";
-                        $ERRORFATAL="0";
-                    } else {
-                        $mensajeExtencion = "<p class=\"red\">ERROR! La extencion de tu archivo receta NO termina en .txt</p>";
-                        //$ERRORFATAL="1";
-                        header("Location: subirRecetas.php");
-                    }              
+            $resultado = checkTitulo($estacion,$Titulo);
+            
+            if ($resultado!=1) {                        
+                header("Location: subirRecetas.php?codigoERROR=1");
+            } 
                     
-        //Si el TITULO y la EXTENCION SON CORRECTAS => if $ERRORFATAL== 0
-        //pondramos el TITULO para el nombre del imagen y la receta.               
-   
-            if($ERRORFATAL!=1){
+        //comprobamos si LA EXTENCIÓN es .txt
+            
+            $resultadoExtencion = checkTXT($Receta);
+
+            if ($resultadoExtencion!=0) {
+                
+                header("Location: subirRecetas.php?codigoERROR=2");
+            }              
+                
+            
                 if (is_uploaded_file($_FILES['Receta']['tmp_name']) )  //devuelve un boleano
                 {//si se ha subido el fichero de la Receta ….                                  
 
@@ -94,28 +107,45 @@ session_start();
                         $nombreCompletoReceta);                     
 
                     if (is_uploaded_file($_FILES['Foto']['tmp_name']))  //devuelve un boleano
-                    {//si se ha subido el fichero Foto….                
+                    {  //si se ha subido el fichero Foto….                
 
-                        $nombreDirectorio= "../img/";                        
-                        $extension = end(explode(".", $_FILES['Foto']['name']));
+                        $nombreDirectorio= "../img/";               
+                        
+
+                        //$extension = end(explode(".", $_FILES['Foto']['name']));   //esto no funciona por algo...
+                        $extension = substr($Foto,strripos($Foto,".")+1);
+
+                        //echo $extension;
+                        $fotoOk = checkImage($_FILES['Foto']['name']);
+                        if ($fotoOk==0) {
+                            header("Location: subirRecetas.php?codigoERROR=3");
+                        }
                         //echo $extension;
                         $nombreFoto=$Titulo.".". $extension;
                         
                         $nombreCompletoFoto= $nombreDirectorio. $nombreFoto;
-                        echo $nombreCompletoFoto;
+                        //echo $nombreCompletoFoto;
 
                         move_uploaded_file(
                             $_FILES['Foto']['tmp_name'], 
                             $nombreCompletoFoto); 
                         
-                        ?>
+                    }else{ 
+                        //print("<h2>No se ha podido subir el fichero</h2>");
+                        header("Location: subirRecetas.php?codigoERROR=4");                               
+                    }
+
+            }else{  
+                //print("<h2>No se ha podido subir el fichero</h2>");
+                header("Location: subirRecetas.php?codigoERROR=4");              
+            }       
+        //Pintamos el resultado aquí:
+        ?>
                         <div class="mainTitle">
                             
-                            <!-- <h2>NUEVA RECETA SUBIDO CON EXITO</h2></div> -->
-                            <div class='newProduct'>
+                            <h2>NUEVA RECETA SUBIDO CON EXITO</h2></div>
+                            <div class='newProduct'>                             
                                 
-                                <h2>DATOS PARA ANALIZAR</h2>
-
                                 <strong>TITULO: </strong>
                                 <?php echo $Titulo?>
                                 <br><br>
@@ -130,84 +160,61 @@ session_start();
     
                                 <strong>FOTO: </strong>
                                 <?php echo $Foto ?>
+                                <?php echo "<img src=\"$nombreCompletoFoto\" alt="Foto de nueva receta"> ?>
+                                
                                 <br><br>               
     
                                 <strong>FECHA DE SUBIDA: </strong>
                                 <?php echo $FechaActual?>
                                 <br><br>
-
-                                <h2>VALORACIÓN DEL PROCESO</h2>
-
-                                <strong>CONTROL TITULO PARA NO DUPLICAR  (Si es .txt): </strong>
-                                <?php echo $controlTitulo?>
-                                <br><br> 
-                                
-                                <strong>EXTENCIÓN DE LA RECETA (Si es .txt): </strong>
-                                <?php echo $mensajeExtencion?>
-                                <br><br>
-
+                               
                             </div>
                        </div>
 
                     <?php
-                        
-                }else{ print("<h2>No se ha podido subir el fichero</h2>");
-                    
-                    ?>       
-                        header("Location: subirRecetas.php"); 
-                                                
-                    <?php         
-                    }           
-                }
-            }else{  
-            ?> 
-                header("Location: subirRecetas.php");
-                
-            <?php 
-        }        
-    }else {
-
         
-        ?>
-
         
-        <div class="containerBO">            
-            <h3>SUBIR NUEVA RECETA</h3>            
-            <form action="subirRecetas.php" method="POST" ENCTYPE="multipart/form-data">        
-                    
-                    <label for="Titulo">TITULO DE RECETA</label><br>
-                    <input type="text" name="Titulo" value="<?php echo $Titulo;?>"required>
-                    <br>
-                    <br>
-                    <label for="estaction">ESTACIÓN</label><br>
-                    <select name="estacion" required>
-                        <option value="primavera">Primavera</option>
-                        <option value="verano">Verano</option>
-                        <option value="otono">Otoño</option>
-                        <option value="invierno">Invierno</option>
-                    </select>
-                    <br>
-                    <br>                    
-                    <label for="Receta">SUBIR RECETA (Formato: receta.txt)</label><br>
-                    <input type="hidden" name="MAX_FILE_SIZE">
-                    <input type="file" name="Receta" value="<?php echo $Receta;?>" required>        
-                    <br>                
-                    <br>
-                    <label for="Foto">SUBIR IMAGEN</label><br>
-                    <input type="hidden" name="MAX_FILE_SIZE">
-                    <input type="file" name="Foto" value="<?php echo $Foto;?>" required> 
-                    <br>                
-                    <br> 
-                    <button type="submit" name="NuevaRecta">Añadir Nueva Recta</button>
+
+
+        }//fin de "isset NuevaReceta"
+        else {
+            ?>
+                <div class="containerBO">            
+                    <h3>SUBIR NUEVA RECETA</h3>  
+                    <span><?php echo $mensajeERROR ?></span>          
+                    <form action="subirRecetas.php" method="POST" ENCTYPE="multipart/form-data">        
                             
-            </form>
-        
-        </div>
-        <?php            
-        } 
-        
+                            <label for="Titulo">TITULO DE RECETA</label><br>
+                            <input type="text" name="Titulo" value="<?php echo $Titulo;?>"required>
+                            <br>
+                            <br>
+                            <label for="estaction">ESTACIÓN</label><br>
+                            <select name="estacion" required>
+                                <option value="primavera">Primavera</option>
+                                <option value="verano">Verano</option>
+                                <option value="otono">Otoño</option>
+                                <option value="invierno">Invierno</option>
+                            </select>
+                            <br>
+                            <br>                    
+                            <label for="Receta">SUBIR RECETA (Formato: receta.txt)</label><br>
+                            <input type="hidden" name="MAX_FILE_SIZE">
+                            <input type="file" name="Receta" value="<?php echo $Receta;?>" required>        
+                            <br>                
+                            <br>
+                            <label for="Foto">SUBIR IMAGEN</label><br>
+                            <input type="hidden" name="MAX_FILE_SIZE">
+                            <input type="file" name="Foto" value="<?php echo $Foto;?>" required> 
+                            <br>                
+                            <br> 
+                            <button type="submit" name="NuevaRecta">Añadir Nueva Recta</button>
+                                    
+                    </form>                
+                </div>
+            <?php          
+        }
+            
     ?>
-</div> 
 
 </body>
 </html>
