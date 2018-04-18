@@ -1,11 +1,18 @@
 <?php   
 session_start();
 
-    if (!isset($_SESSION["username"])) {
-       header("Location:login.php");
-    }else{
-        $username=$_SESSION["username"];
-    }
+        if (isset($_SESSION["username"]) && ($_SESSION['tipo'] == "admin"||$_SESSION['tipo'] == "user")  ) {
+            $TIPO= $_SESSION['tipo'];
+            $USER= $_SESSION['username'];                  
+        }else{
+        header("Location:login.php");
+     }
+
+    // if (!isset($_SESSION["username"])) {
+    //    header("Location:login.php");
+    // }else{
+    //     $username=$_SESSION["username"];
+    // }
 ?>          
 
 <!DOCTYPE html>

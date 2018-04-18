@@ -1,6 +1,17 @@
 <?php
 session_start();
+    $TIPO= "";
+    $USER= ""; 
 
+    if (isset($_SESSION["username"])) {
+        $TIPO= $_SESSION['tipo'];
+        $USER= $_SESSION['username']; 
+    }  
+
+    //  if (isset($_SESSION["username"])) {
+    //         $_SESSION['tipo'] = "admin";
+    //         $_SESSION["username"] = $_POST["username"];       
+    //     }
 ?>
 
 <!DOCTYPE html>

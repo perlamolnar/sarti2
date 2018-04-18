@@ -1,11 +1,15 @@
 <?php   
 session_start();
-
-    if (!isset($_SESSION["username"])) {
-       header("Location:login.php");
-    }else{
-        $username=$_SESSION["username"];
+    if (isset($_SESSION["username"])) {
+        $TIPO= $_SESSION['tipo'];
+        $USER= $_SESSION['username'];          
     }
+    
+    // if (!isset($_SESSION["username"])) {
+    //    header("Location:login.php");
+    // }else{
+    //     $username=$_SESSION["username"];
+    // }
 ?>          
 
 <!DOCTYPE html>
