@@ -1,0 +1,132 @@
+body{
+	margin:auto;
+	background-color: rgb(228, 211, 163);
+	text-align: center;
+}
+
+h1{
+	text-transform: uppercase;
+	font-size: 3.7em;
+}
+h2{
+	font-size: 1.9em;
+}
+.red{color: red}
+.green{color: green}
+
+.container{
+	padding: 20PX 10%;
+	width: 100%;
+	text-align: left;
+	
+}
+
+#cuerpo{	
+	width: 100%;
+	text-align: left !important;
+	
+}
+
+img{
+	width: 200px;	
+	padding:30px 0px;
+	text-align: center!important;
+}
+.galeria{
+	width: 200px;
+	height: 200px;
+	padding: 30px;
+}
+.fotoYtitulo{
+	float: left;
+	
+}
+#menu{
+	width: 20%;
+	height: 550px;
+	padding: 30px;
+	background-color: rgb(255, 212, 71);
+	opacity: 0.8;
+	float: left;
+	text-align: left;
+	color: black;
+	overflow: auto;	
+}
+#menu img{
+	width: 100%;	
+	padding:30px 0px;
+	text-align: center!important;
+
+}
+
+a {color: black;}
+
+div#mainBox{		
+	padding: 20px 30px 20px 30px;
+	height: 550px;
+	width: 80%;
+	margin: 0px 50px;
+	overflow: auto;	
+
+}
+
+#cuerpo{padding:0 15%;}
+
+
+#head{
+	background-image:url(../img/primavera1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;	
+	height: 200px;
+	padding: 20px 0px;
+	color: #960b0b;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+}
+
+
+footer{
+	padding: 50px; 
+	height: 150px;
+	color: #fcf9f9;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+	
+}
+#pie{
+	background-color: #57b7b1;
+	
+	
+}
+
+
+/* *************** nav ************** */
+#nav{width: 100%; margin:0 !important}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+	background-color: #333;
+	
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+.fecha, .username{
+	float: right;
+	padding: 12px;
+	color: #57b7b1;
+}

@@ -1,5 +1,8 @@
 <?php   
 session_start();
+    $TIPO= "";
+    $USER= ""; 
+    
     if (isset($_SESSION["username"])) {
         $TIPO= $_SESSION['tipo'];
         $USER= $_SESSION['username'];          
@@ -21,7 +24,7 @@ session_start();
     <title>Document</title>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <!-- <script src="calculadora.js"></script> -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styleBO.css">
    
     
 </head>
