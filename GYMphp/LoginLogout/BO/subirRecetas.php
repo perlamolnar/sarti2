@@ -146,10 +146,7 @@ session_start();
                             <h2>NUEVA RECETA SUBIDO CON EXITO</h2></div>
                             <div class='newProduct'>                             
                                 
-                                <strong>TITULO: </strong>
-                                <?php echo $Titulo?>
-                                <br><br>
-    
+                                
                                 <strong>ESTACIÓN: </strong>
                                 <?php echo $estacion ?>
                                 <br><br>
@@ -162,10 +159,15 @@ session_start();
                                             }   
                                     ?>                 
                                 <br><br>
-    
+
+                                
+                                <?php //Foto de imagen:
+                                echo "<img src=\"$nombreCompletoFoto\" alt=\"Foto de nueva receta\">" 
+                                ?>
                                 <strong>FOTO: </strong>
-                                <?php echo $Foto ?>
-                                <?php echo "<img src=\"$nombreCompletoFoto\" alt=\"Foto de nueva receta\">" ?>
+                                                                
+                                
+
                                 
                                 <br><br>               
     
