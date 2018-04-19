@@ -1,4 +1,18 @@
 <?php 
+    // function passwordControl($userEscrito,$pwEscrito,$userGardado,$pwGuardada){
+
+    //     $userHASH=md5($userGardado);        
+    //     $pwHASH=md5($pwGuardada);
+
+    //     $userEscritoHASH=md5($userEscrito);
+    //     $pwEscritoHASH=md5($pwEscrito);
+
+    //     if($userHASH == $userEscritoHASH && $pwHASH == $pwEscritoHASH){
+    //         return true;
+    //     }
+    //         return false;
+    // }
+
     function CheckAge($Edad){
         //echo $Edad;
         $error=2; //no es un numero
@@ -85,6 +99,11 @@
             $resultado = 1;
         }
         return $resultado;
+    }
+
+    function eliminar($somefile){
+        unlink($somefile);
+
     }
    
     
