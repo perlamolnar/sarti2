@@ -4,8 +4,8 @@
     </div>	
 </div>
 
-
     <?php 
+    include("php/functions.php");
         
         $ERRORnombre="";
         $ERRORemail="";
@@ -22,7 +22,7 @@
             if (isset($_POST["validar"])){ //the "name" of the button submit
                  
                 if (empty($_POST["Nombre"] )) {
-                    $ERRORnombre = "Es obligatorio rellenar el campo de NOMBRE!";
+                    $ERRORnombre = "<p class=\"red\">Es obligatorio rellenar el campo de NOMBRE!</p>";
                     $Nombre = "";
                     $ErrorName=1;
                 } else {
@@ -31,7 +31,7 @@
                 } 
                 
                 if (empty($_POST["Email"] )) {
-                    $ERRORemail = "Es obligatorio rellenar el campo de Email!";
+                    $ERRORemail = "<p class=\"red\">Es obligatorio rellenar el campo de Email!</p>";
                     $Email = "";
                     $ErrorMail=1;
                 } else {
@@ -50,12 +50,12 @@
 
                     }elseif($resultado==1) {
                         $Edad="";
-                        $ERRORedad = "Eres menor de 18 años!!!";
+                        $ERRORedad = "<p class=\"red\">Eres menor de 18 años!!!</p>";
                         $ErrorAge=1;
 
                     }else {
                        
-                        $ERRORedad = "Error! Los caracteres no son númericos!Prueba de nuevo!";
+                        $ERRORedad = "<p class=\"red\">Error! Los caracteres no son númericos!Prueba de nuevo!</p>";
                         $Edad="";
                         $ErrorAge=1;
                     }                 
@@ -64,20 +64,15 @@
                     $Edad ="";
                     $ErrorAge=0;
 
-                } 
+                } //fin de control edad
 
                 $Apellidos=$_POST["Apellidos"]; 
                 $Mensaje=$_POST["Mensaje"];
 
                 
-                if ($ErrorName==1 && $ErrorMail==1 && $ErrorAge==1) {
-
-                    $yaSePuedeEnviar="";
-                    
-                    } else {
-                        $yaSePuedeEnviar= "<hr><br><br>La valoración ha sido con exito, todos los campos estan correctos.<br><br>";    
-                        $yaSePuedeEnviar .= "<button type=\"submit\" name=\"enviar\">ENVIAR</button>";
-                                
+                if ($ErrorName==0 && $ErrorMail==0 && $ErrorAge==0) { 
+                    $yaSePuedeEnviar= "<hr><br><br>La valoración ha sido con exito, todos los campos estan correctos.<br><br>"; 
+                    $yaSePuedeEnviar .= "<button type=\"submit\" name=\"enviar\">ENVIAR</button>";
                 }                    
              
             }else {
@@ -86,12 +81,7 @@
                 $Edad="";
                 $Email="";
                 $Mensaje="";
-
             }
-        
-        
-                    
-        
     
         ?>
 
