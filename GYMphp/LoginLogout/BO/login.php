@@ -27,7 +27,8 @@ session_start();
 </head>
 <body>
     
-<?php 
+<?php
+    include("../php/functions.php");
     include("head.php");  
     
     if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password'])) {    
@@ -72,7 +73,7 @@ session_start();
     <h2>Enter usuario y contraseña</h2>       
 </div>
         
-<div class="container"> 
+<div> 
     
     <form class="modal-content animate" action="" method="POST">
         <div class="container">

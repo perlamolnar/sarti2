@@ -13,9 +13,10 @@
 <body>
 
 <?php
+	
 	include("head.php");			
-	include("cuerpo.php");
-	include("pie.php");
+	include("cuerpoHome.php");
+	//include("pie.php");
 ?>
 
 

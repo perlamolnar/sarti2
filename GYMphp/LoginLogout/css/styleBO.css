@@ -15,9 +15,10 @@ h2{
 .green{color: green}
 
 .container{
-	padding: 20PX 10%;
+	padding: 5%;
 	width: 100%;
-	text-align: left;
+	text-align: center;
+	margin: auto;
 	
 }
 
@@ -32,13 +33,18 @@ img{
 	padding:30px 0px;
 	text-align: center!important;
 }
-.galeria{
-	width: 200px;
+.line{float: left;margin: auto; text-align: center}
+
+.galeria{	
 	height: 200px;
 	padding: 30px;
+	
 }
 .fotoYtitulo{
 	float: left;
+	width:60px;
+	margin: auto;
+	text-align: center
 	
 }
 #menu{
@@ -92,10 +98,24 @@ footer{
 	
 }
 #pie{
-	background-color: #57b7b1;
-	
-	
+	background-color: #57b7b1;	
 }
+form{
+	text-align: left !important;	
+	width: 500px;
+	margin: auto;
+}
+input{width: 100%;}
+
+.estacion{
+	width: 25%;
+	float: left;
+}
+.estaciones{
+	width: 100%;
+}
+
+
 
 
 /* *************** nav ************** */

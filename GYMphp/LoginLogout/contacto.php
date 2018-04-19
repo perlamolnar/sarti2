@@ -13,8 +13,9 @@
 <body>
 
 <?php
+    
 	include("head.php");			
-	include("cuerpo.php");
+	include("cuerpoContacto.php");
 	include("pie.php");
 ?>
 

@@ -28,10 +28,11 @@ session_start();
 <div id="cuerpoBO">
    
     <?php 
+        include("../php/functions.php");
         include_once("head.php");        
-        include("../php/checkTitulo.php");
-        include("../php/checkTXT.php");
-        include("../php/checkImage.php");
+        //include("../php/checkTitulo.php");
+        //include("../php/checkTXT.php");
+        //include("../php/checkImage.php");
             
         $Titulo="";
         $estacion="";
@@ -187,7 +188,7 @@ session_start();
         else {
             ?>
                 <div class="containerBO">            
-                    <h3>SUBIR NUEVA RECETA</h3>  
+                    <h2>SUBIR NUEVA RECETA</h2>  
                     <span><?php echo $mensajeERROR ?></span>          
                     <form action="subirRecetas.php" method="POST" ENCTYPE="multipart/form-data">        
                             

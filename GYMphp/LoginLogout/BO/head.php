@@ -5,22 +5,21 @@
 	</div>
 
 	<ul id="nav">	
-		<li><a class="active" href="../index.php">Home</a></li>
+		<li><a class="active" href="../home.php">Home</a></li>
 		<li><a href="login.php">Login</a></li>
-		<li><a href="galeria.php">Galeria</a></li>
-		<li><a href="contacto.php">Contacto</a></li>
+		<li><a href="galeria.php">Galeria</a></li>		
 		
 		<?php
 		
 			if ( $USER !="" && ($TIPO == "admin" || $TIPO == "user")) {
-				echo "<li><a href=\"subirFotos.php\">Subir Fotos</a></li>";
+				echo "<li><a href=\"subirProductos.php\">Subir Productos</a></li>";
 			}
 		?>
 
 		<?php
 			if ( $USER !="" && $TIPO == "admin" ) {
-				echo "<li><a href=\"subirRecetas.php\">Subir Producto</a></li>";					
-				echo "<li><a href=\"#\">Produción</a></li>";
+				echo "<li><a href=\"subirRecetas.php\">Subir Recetas</a></li>";					
+				echo "<li><a href=\"listaRecetas.php\">Lista Recetas</a></li>";
 			}
 		?>
 										

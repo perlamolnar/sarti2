@@ -60,7 +60,7 @@ session_start();
                 ?>
         
         <div class="mainTitle">
-            <h1>SUBIR NUEVA FOTO</h1>
+            <h1>SUBIR NUEVO PRODUCTO</h1>
         </div>
         
         <div class="container">
@@ -100,7 +100,7 @@ session_start();
     ?>
     
     
-            <div class="mainTitle"><h1>NUEVA FOTO</h1></div>
+            <div class="mainTitle"><h1>NUEVO PRUDUCTO</h1></div>
                 <div class="container">
 
                     <div class='newProduct'><strong>NOMBRE DE PRODUCTO: </strong>
@@ -146,7 +146,7 @@ session_start();
         else {
         ?>
         <div class="mainTitle">
-            <h2>SUBIR RECETAS</h2>
+            <h2>SUBIR PRODUCTOS</h2>
         </div>
         
         <div class="container">

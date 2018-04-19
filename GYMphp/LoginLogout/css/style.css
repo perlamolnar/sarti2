@@ -1,6 +1,6 @@
 body{
 	margin:auto;
-	background-color: lightblue;
+	background-color: #86afa6;
 	text-align: center;
 }
 .red{color: red}
@@ -83,6 +83,30 @@ h2{
 	padding:30px 0px;
 	text-align: center!important;
 }
+
+#cuerpoHome{
+	background-image: url("../img/Vegetables.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;		
+}
+#home{
+	height: 600px;
+	color:rgb(49, 43, 36);
+	padding:100px;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+#home h1{
+	background-color: #86afa6;
+	padding: 15px;
+}
+form{
+	text-align: left !important;	
+	width: 500px;
+	margin: auto;
+}
+input{width: 100%;}
+textarea{width: 100%}
 
 #menu{
 	width: 20%;

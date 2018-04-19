@@ -29,7 +29,8 @@ session_start();
     
 </head>
 <body>
-    <?php 
+    <?php
+        include("functions.php"); 
         include("head.php");            
     ?>
 
