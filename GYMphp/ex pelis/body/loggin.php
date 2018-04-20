@@ -1,5 +1,5 @@
 <form action="index.php">
-  <div class="imgcontainer" class="loggin>
+  <div class="imgcontainer" class="loggin">
     <img style="width:10%" src="img/img_avatar.png" alt="Avatar" class="avatar">
   </div>
 

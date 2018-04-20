@@ -1,29 +1,45 @@
 <?php 
+ 
     function initCfg(){
+    
+    $cfg['username']="";    //si no hay username
+    $cfg['password']="";    //si no hay password
+    
+    $cfg['saved_admin']="Perla";
+    $cfg['saved_pwAdmin']="123";    
+    $cfg['saved_hashAdmin']=md5($cfg['saved_pwAdmin']);
+    
+    $cfg['saved_user']="Tom";
+    $cfg['saved_pwUser']="789";    
+    $cfg['saved_hashUser']=md5($cfg['saved_pwUser']);
+    
+	$cfg['TIPO']=$_SESSION['TIPO']="none";
 
-        $cfg['user']="";
-        $cfg['pass']="";
-        $cfg['saved_user']="Perla";
-        $cfg['saved_pass']="123";
-        $cfg['saved_user']="Perla";
-        $cfg['saved_pass']="123";
+	return $cfg; //devuelve: ['username'], ['password']
+    }
+
+    function checkUser($username,$password){
+	if($username==$_SESSION ['cfg']['saved_user'] && md5($password)==$_SESSION ['cfg']['saved_hashUser']){
+		$_session['TIPO']=="user";
+	}
+	elseif($username==$_SESSION ['cfg']['saved_admin'] && md5($password)==$_SESSION ['cfg']['saved_hashAdmin'])
+	{
+        $_session['TIPO']=="admin";
         
-        return $cfg; //devuelve: ['user'], ['pass']
-    }
+	}else{
+		$_session['TIPO']=="none";
+		return false;
+	}
+	return true;
+}
 
-    function passwordControl($userEscrito,$pwEscrito,$userGardado,$pwGuardada){
-
-        $userHASH=md5($userGardado);        
-        $pwHASH=md5($pwGuardada);
-
-        $userEscritoHASH=md5($userEscrito);
-        $pwEscritoHASH=md5($pwEscrito);
-
-        if($userHASH == $userEscritoHASH && $pwHASH == $pwEscritoHASH){
-            return true;
-        }
-            return false;
-    }
+    function getFiles($dir){
+		// Sort in ascending order - this is default
+		$files = scandir($dir);
+		unset($files[0]);
+		unset($files[1]);		
+		return $files;
+}
 
     function ListRelatos(){
         $directorio = 'fichas/RecetasTEXTO/primavera'; //damos el nombre de la carpeta donde estan los archivos para listar

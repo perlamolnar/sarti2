@@ -28,7 +28,7 @@
 <div>
    
     <?php 
-        include("php/functions.php");           
+        //include("php/functions.php");           
                     
         $Titulo="";
         $estacion="";

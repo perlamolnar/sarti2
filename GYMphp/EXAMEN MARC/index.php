@@ -1,6 +1,24 @@
 <?php
-session_start();    
-    include("php/functions.php");
+session_start(); 
+session_destroy();
+session_start(); 
+
+include("php/functions.php");
+
+//comprobo si esta iniciado la session
+if (!isset($_SESSION['cfg'])){
+	$_SESSION['cfg']=initCfg();  //si sí/no esta inicializao, vamos a function initCfg
+	//$_SESSION es un "array" y "cfg" es el valor que la funcion me devuelve
+}	
+
+if(isset($_POST['login'])){
+	$username=$_POST['username'];
+	$password=$_POST['password'];
+	checkUser($username,$password);
+}
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -19,12 +37,6 @@ session_start();
 <body>
 
 <?php
-
-//comprobo si esta iniciado la session
-if (!isset($_SESSION['cfg'])){
-	$_SESSION['cfg']=initCfg();  //si sí/no esta inicializao, vamos a function initCfg
-	//$_SESSION es un array y cfg es el valor que la funcion me devuelve
-}
 
 	include("head.php");			
 	include("cuerpo.php");

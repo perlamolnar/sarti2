@@ -124,6 +124,9 @@ h2{
 	padding:100px;
 	font-weight: bold;
 	font-size: 1.3em;
+	background-image: url("img/fruta.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 #home h1{
 	background-color: #86afa6;
@@ -131,12 +134,12 @@ h2{
 }
 form{
 	text-align: left !important;	
-	width: 500px;
+	
 	margin: auto;
 }
 input{width: 100%;}
 textarea{width: 100%}
-
+button{background-color:transparent}
 #menu{
 	width: 20%;
 	height: 550px;

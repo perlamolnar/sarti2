@@ -32,7 +32,7 @@
 </head>
 <body>
     <?php 
-        include("head.php"); 
+        //include("head.php"); 
 
         $FotoTitle="";        
         //$Fichero="";

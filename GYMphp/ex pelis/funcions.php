@@ -20,14 +20,14 @@ function getFiles($dir){
 }
 
 function checkUser($user,$pass){
-	if($user==$saved_user || $saved_userhash==md5($pass)){
+	if($user==$_SESSION ['cfg']['saved_user'] && $_SESSION ['cfg']['saved_pass']==md5($pass)){
 		$_session['tipus']=="user";
 	}
 	elseif($user=$saved_admin || $saved_adminhash==md5($pass))
 	{
 		$_session['tipus']=="admin";
 	}else{
-		$_session['tipus']=="";
+		$_session['tipus']=="none";
 		return false;
 	}
 	return true;

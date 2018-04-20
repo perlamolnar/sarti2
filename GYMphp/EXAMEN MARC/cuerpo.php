@@ -1,48 +1,36 @@
 <?php
-    
 
-   if (isset($TIPO)) {
-    //mostrar lo comun   
+		if(isset($_POST['seccio'])){
+            
 
-    
-    
-         
 
-    if($TIPO=="admin"){
-        //haz una cosa, añadir parte de admin
+			if($_POST['seccio']=="home"){
+				include("cuerpo/home.php");
+			}
+			if($_POST['seccio']=="pelis"){
+				$dir="obras/pelis";
+				include("cuerpo/obras.php");
+			}
+			elseif ($_POST['seccio']=="galeria") {
+				$dir="obras/series";
+				include("galeria.php");
+			}
+			elseif ($_POST['seccio']=="upload") {
+				include("cuerpo/upload.php");
+			}
+			elseif ($_POST['seccio']=="login") {
 
-        if (isset($_GET['pagina'])){
-            $pagina = $_GET['pagina'];                     
-            include("$pagina.php");
-        }
-        
-        ?>
-       
-        <h2>BORRAR FICHEROS</h2>       
-        
-        <?php 
-        //$ficheros = ListRelatos();
-        //GetContenido($ficheros);             
-        
-        
-        
-        
-    }
-    elseif ($TIPO=="user") {
-        //solo muestra relatos
-        ?>
-        
-        <?php 
-          
-      
-    }else{
-        //mostrar formulario 
-        include("login.php");   
-        
-    }
-}
+				include("login.php");
+			}
+			// elseif ($_POST['seccio']=="unlogin") {
+			// 	session_destroy();
+			// 	include("cuerpo/home.php");
+			// }
+			elseif ($_POST['seccio']=="libros") {
+				$dir="obras/libros";
+				include("cuerpo/obras.php");
+			}
+		}else{
+				include("home.php");
+			}
 ?>
-     
-
-
-    
