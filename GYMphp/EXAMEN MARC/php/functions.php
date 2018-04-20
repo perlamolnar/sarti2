@@ -20,14 +20,14 @@
 
     function checkUser($username,$password){
 	if($username==$_SESSION ['cfg']['saved_user'] && md5($password)==$_SESSION ['cfg']['saved_hashUser']){
-		$_session['TIPO']=="user";
+		$_session['TIPO']="user";
 	}
 	elseif($username==$_SESSION ['cfg']['saved_admin'] && md5($password)==$_SESSION ['cfg']['saved_hashAdmin'])
 	{
-        $_session['TIPO']=="admin";
+        $_session['TIPO']="admin";
         
 	}else{
-		$_session['TIPO']=="none";
+		$_session['TIPO']="none";
 		return false;
 	}
 	return true;
