@@ -1,30 +1,4 @@
-<?php   
-// session_start();
 
-//     $TIPO= "";
-//     $USER= ""; 
-
-//         if (isset($_SESSION["username"]) && ($_SESSION['tipo'] == "admin"||$_SESSION['tipo'] == "user")  ) {
-//             $TIPO= $_SESSION['tipo'];
-//             $USER= $_SESSION['username'];                  
-//         }else{
-//         header("Location:index.php");
-//      }
-?> 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>    
-     
-    
-</head>
-<body>
-	
 <div>
    
     <?php 
@@ -219,6 +193,3 @@
         }
             
     ?>
-
-</body>
-</html>

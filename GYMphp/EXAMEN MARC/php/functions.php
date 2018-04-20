@@ -1,4 +1,16 @@
 <?php 
+    function initCfg(){
+
+        $cfg['user']="";
+        $cfg['pass']="";
+        $cfg['saved_user']="Perla";
+        $cfg['saved_pass']="123";
+        $cfg['saved_user']="Perla";
+        $cfg['saved_pass']="123";
+        
+        return $cfg; //devuelve: ['user'], ['pass']
+    }
+
     function passwordControl($userEscrito,$pwEscrito,$userGardado,$pwGuardada){
 
         $userHASH=md5($userGardado);        

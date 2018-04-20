@@ -1,22 +1,13 @@
 <header id="head">
-
 	<div >	
 		<h1>RELATOS LITERARIOS</h1>
 	</div>
 
-<!-- 	
-	<ul id="nav">
-		<li><a class="active" href="index.php">Home</a></li>
-		<li><a href="index.php?estacion=primavera">Primavera</a></li>
-		<li><a href="index.php?estacion=verano">Verano</a></li>
-		<li><a href="index.php?estacion=otono">Otoño</a></li>
-		<li><a href="index.php?cuerpo=galeria">Inviero</a></li>
-		<li><a class="active" href="contacto.php">Contacto</a></li>	
-		
-	</ul> -->
-
 <ul id="nav">
 		<!-- todo el mundo puede ver	 -->
+		<li><a class="active" href="index.php">Home</a></li>
+		<li><a class="active" href="index.php">Pelis</a></li>
+		<li><a class="active" href="index.php">Home</a></li>
 		<li><a class="active" href="index.php">Home</a></li>		
 		
 		<?php
