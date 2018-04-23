@@ -70,6 +70,28 @@ function uploadFiles($seccio){
 		}
 	}
 }
+function uploadExperiencia($seccio){
+	if(isset($_FILES['fileToUpload']['tmp_name'])){
+
+		if ((is_uploaded_file($_FILES['fileToUpload']['tmp_name']))){
+			if(isset($_POST['tipus'])){
+				$tipus=$_POST['tipus'];
+			}
+			$nombreDirectorio= "publicContent/experiencias/";
+			$nombreFichero= $_FILES['fileToUpload']['name'];
+			move_uploaded_file($_FILES['fileToUpload']['tmp_name'],$nombreDirectorio. $nombreFichero);
+
+			// $nombreDirectorio= "img/".$seccio."/";
+			// $filename = preg_replace('/\\.[^.\\s]{3,4}$/', '', $_FILES['fileToUpload']['name']);
+			// $nombreFichero= $filename.".jpg";
+			// move_uploaded_file($_FILES['imageToUpload']['tmp_name'],$nombreDirectorio. $nombreFichero);
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+}
 
 function ListRelatos(){
         $directorio = 'publicContent/primavera'; //damos el nombre de la carpeta donde estan los archivos para listar

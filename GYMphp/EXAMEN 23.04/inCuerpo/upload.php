@@ -1,7 +1,7 @@
 <?php 
 if($subsec=="uploading"){
 	if(uploadFiles($_POST['sec'])==true){ echo "<h1>Archivo esta subido con exito</h1> ";} 
-	else{ echo "<h1>ERROR al subir el archivo.</h1> ";} 
+	else{ echo "<h1>ERROR al subir el archivo</h1> ";} 
 }
 else{
 ?>
