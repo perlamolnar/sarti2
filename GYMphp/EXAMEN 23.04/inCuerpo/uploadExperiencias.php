@@ -13,10 +13,10 @@ else{
 	<input type="file" name="fileToUpload" id="fileToUpload"  required><br><br>
 	AÑADIR IMAGEN: 
 	<input type="file" name="imageToUpload" id="imageToUpload" required><br><br>
-	<input class="radioBtn" type="radio" name="sec" value="aire" CHECKED>Peli
-	<input class="radioBtn" type="radio" name="sec" value="agua">Serie
-	<input class="radioBtn" type="radio" name="sec" value="montana">Libro
-	<input type="submit" value="uploading" name="seccio">
+	<input class="radioBtn" type="radio" name="sec" value="experiencias" CHECKED>Peli
+	<!-- <input class="radioBtn" type="radio" name="sec" value="agua">Serie
+	<input class="radioBtn" type="radio" name="sec" value="montana">Libro -->
+	<input type="submit" value="uploadingExperiencias" name="seccio">
 </form>
 </div>
 <?php 

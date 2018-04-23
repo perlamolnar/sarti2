@@ -2,17 +2,14 @@
 	
 	<div id="logo">
 		<img  src="img/logo.png" alt="Logo">	
-		<h1>TITULO DE LA WEB</h1>	
+		<h1>DEPORTES DE AVENTURA</h1>	
 	</div>	
 
 <form class="" action="index.php" method ="post"> 
 	<ul id="nav">
 		<!-- menu para todo el mundo -->
-		<li><button class="" value="home" name="seccio" type="submit">Home</button></li>
-		<li><button class="" value="pelis" name="seccio" type="submit">Pelis</button></li>
-		<li><button class="" value="series" name="seccio" type="submit">Series</button></li>
-		<li><button class="" value="libros" name="seccio" type="submit">Libros</button></li>
-		<li><button class="" value="contacto" name="seccio" type="submit">Contacto</button></li>
+		<li><button class="" value="home" name="seccio" type="submit">Home</button></li>		
+		<!-- <li><button class="" value="contacto" name="seccio" type="submit">Contacto</button></li> -->
 		<li class="fecha">		
 			<?php
 			// Prints the day, date, month, year, time, AM or PM
@@ -30,12 +27,11 @@
 		}//menu para SOLO ADMIN
 		elseif($_SESSION['tipo']=="admin"){
 		?>
-		<!-- <li><button class="" value="galeria" name="seccio" type="submit">Galeria</button></li> -->
-		<li><button class="" value="upload" name="seccio" type="submit">Subir Ficheros</button></li>
-		<li><button class="" value="eliminar" name="seccio" type="submit">Eliminar Ficheros</button></li>		
-		<!-- <li><button class="" value="listaRecetas" name="seccio" type="submit">Lista Relatos</button></li>	 -->
-		<!-- <li><button class="" value="subirRecetas" name="seccio" type="submit">Subir Recetas</button></li> -->
-		<!-- <li><button class="" value="subirProductos" name="seccio" type="submit">Subir Productos</button></li>	 -->
+		<li><button class="" value="aire" name="seccio" type="submit">Aire</button></li>
+		<li><button class="" value="agua" name="seccio" type="submit">Agua</button></li>
+		<li><button class="" value="montana" name="seccio" type="submit">Montaña</button></li>
+		<li><button class="" value="experiencias" name="seccio" type="submit">Experiencias</button></li>
+		<li><button class="" value="uploadDeportes" name="seccio" type="submit">Subir Deportes</button></li>		
 		<li><button class="" value="logout" name="seccio" type="submit">LOGOUT</button></li>
 		<li class="username">
 			<?php				
@@ -53,8 +49,11 @@
 		//menu para USER		
 		elseif($_SESSION['tipo']=="user"){
 		?>
-		<!-- <li><button class="" value="listaRecetas" name="seccio" type="submit">Lista Relatos</button></li>		 -->
-		<li><button class="" value="upload" name="seccio" type="submit">Subir Ficheros</button></li>
+		<li><button class="" value="aire" name="seccio" type="submit">Aire</button></li>
+		<li><button class="" value="agua" name="seccio" type="submit">Agua</button></li>
+		<li><button class="" value="montana" name="seccio" type="submit">Montaña</button></li>
+		<li><button class="" value="experencias" name="seccio" type="submit">Experencias</button></li>
+		<li><button class="" value="uploadExperencias" name="seccio" type="submit">Subir Experencias</button></li>		
 		<li><button class="" value="logout" name="seccio" type="submit">LOGOUT</button></li>
 		<li class="username">
 			<?php

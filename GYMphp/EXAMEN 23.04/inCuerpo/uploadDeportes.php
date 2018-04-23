@@ -16,7 +16,7 @@ else{
 	<input class="radioBtn" type="radio" name="sec" value="aire" CHECKED>Peli
 	<input class="radioBtn" type="radio" name="sec" value="agua">Serie
 	<input class="radioBtn" type="radio" name="sec" value="montana">Libro
-	<input type="submit" value="uploading" name="seccio">
+	<input type="submit" value="uploadingDeportes" name="seccio">
 </form>
 </div>
 <?php 

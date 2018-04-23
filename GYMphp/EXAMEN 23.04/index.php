@@ -11,7 +11,7 @@ include("php/functions.php");
 <!DOCTYPE html>
 <html>
 <head>
-	<title>EXAMEN</title>
+	<title>DEPORTES DE AVENTURA</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

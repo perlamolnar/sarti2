@@ -38,10 +38,10 @@ body{
 }
 
 #home{
-	/* background-image: url("../img/bgHead.jpg");
+	background-image: url("../img/homepage.jpg");
 	background-repeat: no-repeat;
-	background-size: cover; */
-	background-color: #86afa6;
+	background-size: cover;
+	/* background-color: #86afa6; */
 	height: 500px;
 	color:rgb(49, 43, 36);
 	padding:100px;
@@ -50,7 +50,7 @@ body{
 	
 }
 #home h1{
-	background-color: #86afa6;
+	
 	padding: 15px;
 }
 
