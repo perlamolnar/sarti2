@@ -22,8 +22,7 @@
 		<?php
 			//solo puede ver y usar el admin
 			if ( $USER !="" && $TIPO == "admin" ) {
-				echo "<li><a href=\"index.php?pagina=listaRecetas\">Lista Recetas</a></li>";
-				echo "<li><a href=\"index.php?pagina=listaRecetas\">Lista Recetas</a></li>";
+				echo "<li><a href=\"index.php?pagina=listaRecetas\">Lista Recetas</a></li>";				
 				echo "<li><a href=\"subirRecetas.php\">Subir Recetas</a></li>";
 				echo "<li><a href=\"subirProductos.php\">Subir Productos</a></li>";
 				

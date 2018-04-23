@@ -18,7 +18,7 @@
 	if(!isset($_SESSION['cfg'])){
 		$_SESSION['cfg']=initCfg();
 	}
-	
+	//print_r ($_SESSION['cfg']);
 	include("cabecera.php");
 	include("body.php");
 	include("pie.php");

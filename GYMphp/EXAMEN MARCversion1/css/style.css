@@ -1,0 +1,172 @@
+body{
+	margin:auto;
+	background-color: #86afa6;
+	text-align: center;
+	color: #111;
+}
+
+#head{
+	background-image:url(../img/bgHead.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;	
+	height: 180px;
+	padding: 20px 0px;
+	color:black;
+	/* text-shadow: 1px 1px 0px rgba(0, 0, 0, 1); */
+}
+
+#cuerpo{	
+	width: 100%;
+	text-align: left !important;
+	min-height: 400px;	
+}
+
+#pie{
+	background-color: #9a963e;
+	padding: 30px; 
+	height: 200px;
+	color: #fcf9f9;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+		
+}
+
+#cuerpo img{
+	width: 80%;	
+	height: 500px;
+	padding:30px 0px;
+	text-align: center!important;
+}
+
+#home{
+	/* background-image: url("../img/bgHead.jpg");
+	background-repeat: no-repeat;
+	background-size: cover; */
+	background-color: #86afa6;
+	height: 500px;
+	color:rgb(49, 43, 36);
+	padding:100px;
+	font-weight: bold;
+	font-size: 1.3em;
+	
+}
+#home h1{
+	background-color: #86afa6;
+	padding: 15px;
+}
+
+.red{color: red}
+
+.green{color: green}
+
+img{
+	width: 200px;	
+	padding:30px 0px;
+	text-align: center!important;
+}
+.line{float: left;margin: auto; text-align: center}
+
+.galeria{	
+	height: 200px;
+	padding: 30px;
+	
+}
+.fotoYtitulo{
+	float: left;
+	width:60px;
+	margin: auto;
+	text-align: center;	
+}
+.estacion{
+	width: 25%;
+	float: left;
+}
+.estaciones{
+	width: 100%;
+	height: 400px;
+}
+
+h1{
+	text-transform: uppercase;
+	font-size: 3.7em;
+	color: #9a963e;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+	padding: 20px;
+}
+h2{	font-size: 1.9em;}
+
+.container{
+	padding: 0 10%;
+	width: 100%;	
+	overflow: auto;	
+}
+.welcome{padding:8%}
+
+
+form{
+	text-align: left !important;	
+	margin: auto;	
+}
+div.newProduct img{width: 50px}
+
+.login{width:50%}
+input{width: 100%;}
+
+textarea{width: 100%}
+
+button{background-color:black; color:#9a963e;padding: 10px; border: none;}
+button:hover{background-color: rgb(66, 61, 61); color:#f00e0e;padding: 10px; border: none;}
+
+#menu{
+	width: 20%;
+	height: 550px;
+	padding: 30px;
+	background-color: rgb(255, 212, 71);
+	opacity: 0.8;
+	float: left;
+	text-align: left;
+	color: black;
+	overflow: auto;	
+}
+#logo img{
+	width: 10%;	
+	padding:0px 0px 30px 30px;
+	float: left;
+	
+}
+
+
+div#mainBox{		
+	padding: 20px 30px 20px 30px;
+	height: 550px;
+	width: 80%;
+	margin: 0px 50px;
+	overflow: auto;	
+}
+
+/**************** nav ***************/
+#nav{width: 100%; margin:0 !important}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+	background-color:black;	
+}
+
+li {float: left;}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {background-color: #111;}
+
+.fecha,  .username{
+	float: right;
+	padding: 12px;
+	color: white;
+}

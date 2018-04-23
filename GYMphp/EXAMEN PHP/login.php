@@ -15,7 +15,7 @@
 
         }else if (passwordControl($username,$password,"Marc","987")){
             $_SESSION['tipo'] = "user";
-            $_SESSION["username"] = $_POST["username"]; //$_SESSION['username'] = 'Perla';                     
+            $_SESSION["username"] = $_POST["username"]; //$_SESSION['username'] = 'Marc';                     
             header("Location:index.php");
 
         }else{
