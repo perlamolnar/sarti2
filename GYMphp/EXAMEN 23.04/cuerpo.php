@@ -32,17 +32,16 @@
 			elseif ($_POST['seccio']=="experiencias") {
 				$dir="publicContent/experiencias";
 				$dir2="img/experiencias";
-				include("inCuerpo/publicarContent.php");
+				include("inCuerpo/publicarExperiencias.php");
 			}
-			elseif ($_POST['seccio']=="uploadDeportes"|| $_POST['seccio']=="uploadingDeportes") {
+			elseif ($_POST['seccio']=="upload"|| $_POST['seccio']=="uploading") {
 				$subsec=$_POST['seccio'];
-				include("inCuerpo/uploadDeportes.php");
-			}
+				include("inCuerpo/upload.php");
+			}			
 			elseif ($_POST['seccio']=="uploadExperiencias"|| $_POST['seccio']=="uploadingExperiencias") {
 				$subsec=$_POST['seccio'];
 				include("inCuerpo/uploadExperiencias.php");
-			}
-			
+			}			
 			elseif ($_POST['seccio']=="contacto" || $_POST['seccio']=="validarContacto") {				
 				include("inCuerpo/contacto.php");
 		   	} 		

@@ -31,7 +31,7 @@
 		<li><button class="" value="agua" name="seccio" type="submit">Agua</button></li>
 		<li><button class="" value="montana" name="seccio" type="submit">Montaña</button></li>
 		<li><button class="" value="experiencias" name="seccio" type="submit">Experiencias</button></li>
-		<li><button class="" value="uploadDeportes" name="seccio" type="submit">Subir Deportes</button></li>		
+		<li><button class="" value="upload" name="seccio" type="submit">Subir Deportes</button></li>		
 		<li><button class="" value="logout" name="seccio" type="submit">LOGOUT</button></li>
 		<li class="username">
 			<?php				
@@ -52,8 +52,8 @@
 		<li><button class="" value="aire" name="seccio" type="submit">Aire</button></li>
 		<li><button class="" value="agua" name="seccio" type="submit">Agua</button></li>
 		<li><button class="" value="montana" name="seccio" type="submit">Montaña</button></li>
-		<li><button class="" value="experencias" name="seccio" type="submit">Experencias</button></li>
-		<li><button class="" value="uploadExperencias" name="seccio" type="submit">Subir Experencias</button></li>		
+		<li><button class="" value="experiencias" name="seccio" type="submit">Experiencias</button></li>
+		<li><button class="" value="uploadExperiencias" name="seccio" type="submit">Subir Experencias</button></li>		
 		<li><button class="" value="logout" name="seccio" type="submit">LOGOUT</button></li>
 		<li class="username">
 			<?php
