@@ -34,13 +34,15 @@
 
         echo $$title."<br>";
         
-    $consulta = mysqli_query($conexion, $$sql )or die ("Fallo en la consulta".mysqli_error($conexion));
-    
-    $fila=mysqli_fetch_assoc($consulta);
-    foreach ($fila as $key => $value) {
-       echo "$value <br><hr>";
-    }    
-} 
+        $consulta = mysqli_query($conexion, $$sql )or die ("Fallo en la consulta".mysqli_error($conexion));
+        
+        while ($fila=mysqli_fetch_assoc($consulta)) {
+        foreach ($fila as $key => $value) {
+        echo "$value <br><hr>";
+        } 
+        } 
+   
+    } 
     mysqli_close($conexion);
     ?>
 
