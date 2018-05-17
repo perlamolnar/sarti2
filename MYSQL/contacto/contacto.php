@@ -127,8 +127,7 @@
         <br>
       
 
-        <label for="Mensaje">Mensaje</label><br><br>
-        <textarea name="Mensaje" id="Mensaje" cols="30" rows="10" value="<?php echo $Mensaje;?>"></textarea>
+        
         <br>
         <p>* Campos obligatorios</p>
         <p>Aviso: Solo para majores de edad 18 años.</p>
