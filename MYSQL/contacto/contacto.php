@@ -119,11 +119,11 @@
         <input type="email" name="Email" value="<?php echo $Email;?>">
         <?=  $ERRORemail;?>
         <br> <br> 
-        <label for="username">Usuario *</label><br><br>
-        <input type="username" id="username"><br>
+        <label for="Username">Usuario *</label><br><br>
+        <input type="username" id="Username" name="Username"><br>
         <br>
-        <label for="password">Password *</label><br>
-        <input type="password" name="password" id="password"><br>
+        <label for="Password">Password *</label><br>
+        <input type="password" name="Password" id="Password"><br>
         <br>
       
 
