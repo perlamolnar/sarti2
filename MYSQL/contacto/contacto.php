@@ -17,6 +17,9 @@
 </div>
 
     <?php 
+    //include("php/contacto.php");
+    include("php/functions.php");
+
             
         $ERRORnombre="";
         $ERRORemail="";
@@ -79,12 +82,13 @@
                 } //fin de control edad
 
                 $Apellidos=$_POST["Apellidos"]; 
-                $Mensaje=$_POST["Mensaje"];
+                $Username= $_POST['Username'];
+                $Password= md5($_POST['Password']);
 
                 
                 if ($ErrorName==0 && $ErrorMail==0 && $ErrorAge==0) { 
                     $yaSePuedeEnviar= "<hr><br><br>La valoración ha sido con exito, todos los campos estan correctos.<br><br>"; 
-                    $yaSePuedeEnviar .= "<button type=\"submit\" name=\"enviar\">ENVIAR</button>";
+                    $yaSePuedeEnviar .= "<button type=\"submit\" name=\"enviar\" formaction=\"php/contacto.php\">ENVIAR</button>";
                 }                    
              
             }else {
@@ -93,12 +97,14 @@
                 $Edad="";
                 $Email="";
                 $Mensaje="";
+                $Username="";
+                $Password="";
             }
     
         ?>
 
 <br>          
-<form class="container" action="index.php" method="POST">
+<form class="container" action="" method="POST">
         
         
         <label for="Nombre">Nombre *</label><br>
@@ -106,8 +112,8 @@
         <?php echo $ERRORnombre;?>
         <br>
         <br>
-        <label for="Apellidos">Apellidos</label><br>
-        <input type="text" name="Apellidos" value="<?php echo $Apellidos;?>">
+        <label for="Apellido">Apellido</label><br>
+        <input type="text" name="Apellido" value="<?php echo $Apellidos;?>">
         <br>
         <br>
         <label for="Edad">Edad</label><br>
