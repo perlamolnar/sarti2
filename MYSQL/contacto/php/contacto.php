@@ -16,7 +16,7 @@
         $Username= $_POST['Username'];
         $Password= md5($_POST['Password']);
 
-        $conexion = mysqli_connect ('localhost', 'root', 'perla', 'contacto') or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+        $conexion = mysqli_connect ('localhost', 'root', 'perla', 'ejercicios') or die ("No se puede conectar con el servidor".mysqli_error($conexion));
 
         $sql="INSERT INTO contacto (Nombre, Apellido, Edad, Email, Username, Password) VALUES ('$Nombre', '$Apellido', '$Edad', '$Email', '$Username','$Password')";
 

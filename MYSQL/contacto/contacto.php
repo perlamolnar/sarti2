@@ -129,7 +129,7 @@
         <input type="username" id="Username" name="Username" value="<?php echo $Username;?>" required><br>
         <br>
         <label for="Password">Password *</label><br>
-        <input type="password" name="Password" id="Password" value="<?php echo $Password;?> required><br>
+        <input type="password" name="Password" id="Password" value="<?php echo $Password;?>" required><br>
         <br>        
         <br>
         <p>* Campos obligatorios</p>
