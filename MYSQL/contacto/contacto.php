@@ -81,7 +81,7 @@
 
                 } //fin de control edad
 
-                $Apellidos=$_POST["Apellidos"]; 
+                $Apellido=$_POST["Apellido"]; 
                 $Username= $_POST['Username'];
                 $Password= md5($_POST['Password']);
 
@@ -93,7 +93,7 @@
              
             }else {
                 $Nombre="";
-                $Apellidos="";        
+                $Apellido="";        
                 $Edad="";
                 $Email="";
                 $Mensaje="";
@@ -113,7 +113,7 @@
         <br>
         <br>
         <label for="Apellido">Apellido</label><br>
-        <input type="text" name="Apellido" value="<?php echo $Apellidos;?>">
+        <input type="text" name="Apellido" value="<?php echo $Apellido;?>">
         <br>
         <br>
         <label for="Edad">Edad</label><br>
@@ -126,14 +126,11 @@
         <?=  $ERRORemail;?>
         <br> <br> 
         <label for="Username">Usuario *</label><br><br>
-        <input type="username" id="Username" name="Username"><br>
+        <input type="username" id="Username" name="Username" value="<?php echo $Username;?>" required><br>
         <br>
         <label for="Password">Password *</label><br>
-        <input type="password" name="Password" id="Password"><br>
-        <br>
-      
-
-        
+        <input type="password" name="Password" id="Password" value="<?php echo $Password;?> required><br>
+        <br>        
         <br>
         <p>* Campos obligatorios</p>
         <p>Aviso: Solo para majores de edad 18 años.</p>
@@ -144,7 +141,6 @@
             echo $yaSePuedeEnviar;
         ?>
 </form>
-
 
 </body>
 </html>
