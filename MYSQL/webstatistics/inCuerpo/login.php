@@ -7,11 +7,11 @@
             <?php //echo $avisoError; ?>
 
             <label for="username"><b>Username: </b></label>
-            <input type="text" placeholder="Perla o Marc" name="username" required>
+            <input type="text" placeholder="Perla o Tom" name="username" required>
             <br>
             <br>
             <label for="password"><b>Password: </b></label>
-            <input type="password" placeholder="123 / 987" name="password" required>
+            <input type="password" placeholder="123 / 789" name="password" required>
             <br>
             <br>
             <input type="submit" value="LOGIN" name="login">
