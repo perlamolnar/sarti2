@@ -16,7 +16,8 @@
     </div>	
 </div>
 
-    <?php 
+    <?php   
+
             
         $ERRORnombre="";
         $ERRORemail="";
