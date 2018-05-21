@@ -17,9 +17,6 @@
 </div>
 
     <?php 
-    //include("php/contacto.php");
-    include("php/functions.php");
-
             
         $ERRORnombre="";
         $ERRORemail="";
