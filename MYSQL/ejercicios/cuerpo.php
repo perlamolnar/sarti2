@@ -26,6 +26,9 @@
 			if($_POST['seccio']=="subirproducto"){
 				include("inCuerpo/SubirProducto.php");
 			}
+			if($_POST['seccio']=="products"){
+				include("inCuerpo/products.php");
+			}
 			if($_POST['seccio']=="agua"){
 				$dir="publicContent/agua";
 				$dir2="img/agua";
