@@ -11,142 +11,10 @@
    
     
 </head>
-<body>
-    <?php 
-    
-        $Nombre="";
-        $Descripcion="";
-        $Precio=""; 
-        //$Fichero="";
-        $FechaActual="";
-        
-        if(isset($_POST['enviar'])){//the "name" of the button submit. Recoge los valores del formulario
-            $Nombre = $_POST['Nombre'];
-            $Descripcion= $_POST['Descripcion'];
-            $Precio= $_POST['Precio'];
-            $Fichero= $_FILES['Fichero']['name'];            
-            $FechaActual= date('d - m - Y');
-            $idUnico= time();
+<body>   
 
-            //echo $Fichero;
-            //echo "<br><br>";
-            //echo $Nombre; 
-            //echo "<br><br>";
-            //echo $_FILES['Fichero']['error'];
-            //echo "<br><br>";
-          
-
-            if (is_uploaded_file($_FILES['Fichero']['tmp_name']))  //devuelve un boleano
-            {//si se ha subido el fichero….          
-
-                // echo "<h1>NUEVO PRODUCTO SUBIDO</h1>" ; 
-
-                // echo "<div class='newProduct'><strong>Nombre de producto: </strong>" ; 
-                // echo $Nombre; 
-                // echo "<br><br>";
-
-                // echo "<strong>Descripcion: </strong>"; 
-                // echo $Descripcion;
-                // echo "<br><br>";
-                 
-                // echo "<strong>Precio: </strong>";
-                // echo $Precio;
-                // echo " €";
-                // echo "<br><br>";
-
-                // echo "<strong>Fichero: </strong>";
-                // echo $Fichero;
-                // echo "<br><br>";
-
-                // echo "<strong>Fecha de subida: </strong>";
-                // echo $FechaActual;
-                // echo "<br><br></div>"; 
-
-            ?>
-                <!-- <div class="mainTitle"><h1>NUEVO PRODUCTO SUBIDO</h1></div>
-                
-
-                <div class='newProduct'><strong>NOMBRE DE PRODUCTO: </strong>
-                <?php echo $Nombre?>
-                <br><br>
-
-                <strong>DESCRIPCIÓN: </strong>
-                <?php echo $Descripcion ?>
-                <br><br>
-                 
-                <strong>PRECIO: </strong>
-                <?php echo $Precio?>
-                €
-                <br><br>
-
-                <strong>ARCHIVO: </strong>
-                <?php echo $Fichero ?>
-                <br><br>               
-
-                <strong>FECHA DE SUBIDA: </strong>
-                <?php echo $FechaActual?>
-                <br><br></div>  -->
-
-            <?php
-
-                $nombreDirectorio= "img/";
-                $idUnico= time();
-                $nombreFichero= $idUnico. "-" . $_FILES['Fichero']['name'];
-                $nombreCompleto= $nombreDirectorio. $nombreFichero;
-
-                move_uploaded_file(
-                    $_FILES['Fichero']['tmp_name'], 
-                    $nombreDirectorio. $nombreFichero);                  
-                    
-            ?>
-           
-            <div class="mainTitle"><h1>NUEVO PRODUCTO SUBIDO</h1></div>
-                <div class="container">
-
-                    <div class='newProduct'><strong>NOMBRE DE PRODUCTO: </strong>
-                        <?php echo $Nombre?>
-                        <br><br>
-
-                        <strong>DESCRIPCIÓN: </strong>
-                        <?php echo $Descripcion ?>
-                        <br><br>
-                        
-                        <strong>PRECIO: </strong>
-                        <?php echo $Precio?>
-                        €
-                        <br><br>
-
-                        <strong>ARCHIVO: </strong>
-                        <?php echo $Fichero ?>
-                        <br><br>               
-
-                        <strong>FECHA DE SUBIDA: </strong>
-                        <?php echo $FechaActual?>
-                        <br><br>
-
-                        <strong>NUEVO NOMBRE DEL ARCHIVO: </strong>
-                        <?php echo $nombreFichero ?>
-                        <br><br>
-                    </div> 
-
-                    <div class="divIMG">
-                        <img src="<?php echo $nombreDirectorio. $nombreFichero;?>" alt="<?php echo $Nombre?>" width="50%">
-                    </div>
-                </div>
-                
-                
-                
-
-            <?php
-            }else
-                print("No se ha podido subir el fichero\n");
-
-        }
-        else {
-        ?>
-
-        <div class="mainTitle">
-            <h1>SUBIR NUEVOS PRODUCTO</h1>
+    <div class="mainTitle">
+        <h1>SUBIR NUEVOS PRODUCTO</h1>
         </div>
         
         <div class="container">
@@ -172,13 +40,10 @@
                     <input type="file" name="Fichero">        
                     <br>                
                     <br>
-                    <button type="submit" name="enviar">Enviar</button>
+                    <button type="submit" name="enviar">Enviar</button>                  
                             
             </form>
-        </div>
-        <?php            
-        }          
-    ?>
-
+    </div>
+        
 </body>
 </html>
