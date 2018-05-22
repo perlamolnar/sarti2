@@ -51,14 +51,10 @@
                         echo "<td><img src=\"img/$Foto\"></td>"; 
                         
                         echo    "<td>
-                                    <button type=\"button\" class=\"btn btn-default\">
-                                    <span class=\".glyphicon .glyphicon-pencil\"></span>
-                                    </button>
+                                    <button class=\"btn\"><i class=\"fa fa-edit\"></i></button>
                                 </td>"; 
                         echo    "<td>
-                                    <button type=\"button\" class=\"btn btn-default\">
-                                    <span class=\".glyphicon .glyphicon-remove\"></span>
-                                    </button>
+                                    <button class=\"btn\"><i class=\"fa fa-close\"></i></button>
                                 </td>"; 
 
 

@@ -115,8 +115,8 @@ input{width: 80%;}
 
 textarea{width: 80%}
 
-button{background-color:black; color:#9a963e;padding: 10px; border: none;}
-button:hover{background-color: rgb(66, 61, 61); color:#f00e0e;padding: 10px; border: none;}
+button{background-color: #c13f6c; color:#ffffff;padding: 10px; border: none;}
+button:hover{ color:#8ae6e9;padding: 10px; border: none;}
 
 #menu{
 	width: 20%;
@@ -154,7 +154,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-	background-color:black;	
+	background-color:#c13f6c;	
 }
 
 li {float: left;}
