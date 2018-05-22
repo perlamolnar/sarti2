@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/funciones.js"></script>
     
     <title>Document</title>
 </head>
@@ -51,15 +52,11 @@
                         echo "<td><img src=\"img/$Foto\"></td>"; 
                         
                         echo    "<td>
-                                    <button class=\"btn\"><i class=\"fa fa-edit\"></i></button>
+                                    <button onclick=\"editar($ID);\" class=\"btn\"><i class=\"fa fa-edit\"></i></button>
                                 </td>"; 
                         echo    "<td>
-                                    <button class=\"btn\"><i class=\"fa fa-close\"></i></button>
-                                </td>"; 
-
-
-
-                       
+                                    <button onclick=\"borrar($ID);\" class=\"btn\"><i class=\"fa fa-close\"></i></button>
+                                </td>";                        
 
                     echo "<tr>";          
                     }
