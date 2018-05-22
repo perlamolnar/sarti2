@@ -21,7 +21,27 @@
 //         });
 //     });
 // });
-
+function showenmodal(id) {
+    //console.log(id);        
+    $.ajax({
+        type: 'POST',
+        url: 'php/editproducto.php',
+        //dataType: "json",
+        data: { id: id },
+        success: function (data) {
+            if (data.status == 'ok') {
+                // $('#userName').text(data.result.name);
+                // $('#userEmail').text(data.result.email);
+                // $('#userPhone').text(data.result.phone);
+                // $('#userCreated').text(data.result.created);
+                // $('.user-content').slideDown();
+            } else {
+                //$('.user-content').slideUp();
+                alert("Error al editar producto.");
+            }
+        }
+    }); //fin de ajax
+} //fin function editar
 
     function editar(id){
         //console.log(id);        
@@ -32,11 +52,7 @@
             data:{id:id},
             success:function(data){
                 if(data.status == 'ok'){
-                    // $('#userName').text(data.result.name);
-                    // $('#userEmail').text(data.result.email);
-                    // $('#userPhone').text(data.result.phone);
-                    // $('#userCreated').text(data.result.created);
-                    // $('.user-content').slideDown();
+                    
                 }else{
                    //$('.user-content').slideUp();
                     alert("Error al editar producto.");
@@ -50,15 +66,16 @@
         $.ajax({
             type: 'POST',
             url: 'php/deleteproducto.php',
-            dataType: "json",
+            //dataType: "json",
             data: { id:Id },
-            success: function (data) {
-
+            success: function(data) {
+                console.log(data);
                 window.location.reload();
-                alert("Producto borrado correctamente.");
+                //alert("Producto borrado correctamente.");
             },
             error:function(e){
-               console.log("Error");
+                console.log(e);
+                console.log("Error");
 
             }
             
