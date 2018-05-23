@@ -13,10 +13,7 @@ function borrar(Id) {
         error: function (e) {
             console.log(e);
             console.log("Error");
-
         }
-
-
     }); //fin de ajax
 } //fin function editar
 
@@ -24,35 +21,40 @@ function borrar(Id) {
 
 function openModal(Id, Nombre, Descripcion, Precio, Foto) {
     //console.log(Nombre);
+    $('#Id_producto').val(Id);
     $('#Nombre').val(Nombre);
     $('#Descripcion').val(Descripcion);
     $('#Precio').val(Precio);
-    $('#Foto').attr('src',"img/" + Foto); 
+    $('#Foto').attr('src',"img/" + Foto);
 
-    $('#myModal').modal('show');
-           
+    $('#myModal').modal('show');   //abrir el modal
+
 } //fin function 
 
-    function editar(id){
-        //console.log(id);        
-        $.ajax({
-            type:'POST',
-            url:'php/editproducto.php',
-            dataType: "json",
-            data:{id:id},
-            success:function(data){
-                if(data.status == 'ok'){
-                    
-                }else{
-                   //$('.user-content').slideUp();
-                    alert("Error al editar producto.");
-                } 
-            }
-        }); //fin de ajax
-    } //fin function editar
+function editProduco(){
 
+    datos = $("#formProducto").serialize();
+    //console.log(datos);
 
-
+    $.ajax({
+        type:'POST',
+        url:'php/editproducto.php',
+        dataType: "json",
+        data:{datos},
+        success:function(data){
+            /* if(data.status == 'ok'){
+                
+            }else{
+                //$('.user-content').slideUp();
+                alert("Error al editar producto.");
+            }  */
+        },
+        error: function (e) {
+            console.log(e);
+            console.log("Error");
+        }
+    }); //fin de ajax
+} //fin function editar
 
 
 

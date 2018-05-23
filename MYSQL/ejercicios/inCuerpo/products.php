@@ -120,7 +120,7 @@
 			</form>
         </div>
         <div class="modal-footer">
-            <button type="button" onclick="modificarProduco();" class="btn btn-primary">GUARDAR</button>
+            <button type="button" onclick="editProduco();" class="btn btn-primary">GUARDAR</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
         </div>
       </div>
