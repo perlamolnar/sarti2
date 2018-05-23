@@ -3,7 +3,7 @@
         $Nombre = $_POST['Nombre'];
         $Descripcion= $_POST['Descripcion'];
         $Precio= $_POST['Precio'];
-        $Fichero= $_FILES['Fichero']['name'];  
+        $Fichero= $_FILES['Foto']['name'];  
         
 
         if (is_uploaded_file($_FILES['Fichero']['tmp_name'])) //devuelve un boleano
@@ -19,6 +19,7 @@
                 $nombreDirectorio. $nombreFichero);  
 
  echo "hola3";
+
             $conexion = mysqli_connect ('localhost', 'root', 'perla', 'ejercicios') or die ("No se puede conectar con el servidor".mysqli_error($conexion));  
             //se puede hacer un include(conexion.php) preparado con los datos de conection. 
 

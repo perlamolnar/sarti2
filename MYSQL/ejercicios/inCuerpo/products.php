@@ -112,7 +112,7 @@
 							<input type="file" name="Foto">
 							</div>
 							<div class="file-path-wrapper">
-							<input class="file-path validate" id="Foto2" name="Foto2" type="text">
+							<input class="file-path validate" id="Foto" name="Foto" type="text">
 							</div>
 						</div>
 					</div>

@@ -37,11 +37,17 @@ function editProduco(){
     datos = $("#formProducto").serialize();
     console.log(datos);
 
+    var formData = new FormData(document.getElementById("Foto"));
+    formData.append("dato", "valor");
+
     $.ajax({
         type:'POST',
         url:'php/editproducto.php',
-        //dataType: "json",
-        data:datos,
+        dataType: "html",
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false,
         success:function(data){  
             alert(data);
             if (data="ok") {
