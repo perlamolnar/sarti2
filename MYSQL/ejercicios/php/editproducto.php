@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
     <?php  
-        $ID = $_POST['id'];  
+        $ID = $_POST['Id_producto'];
         $Nombre = $_POST['Nombre'];
         $Descripcion= $_POST['Descripcion'];
         $Precio= $_POST['Precio'];
@@ -18,24 +8,41 @@
 
         if (is_uploaded_file($_FILES['Fichero']['tmp_name'])) //devuelve un boleano
         {//si se ha subido el fichero….  
-
+ echo "hola1";
             $nombreDirectorio= "../img/";            
             $nombreFichero= $Nombre.".jpg"; //damos el mismo nombre que el nombre del producto
             $nombreCompleto= $nombreDirectorio. $nombreFichero;
             //echo $nombreCompleto;
-
+ echo "hola2";
             move_uploaded_file(
                 $_FILES['Fichero']['tmp_name'], 
                 $nombreDirectorio. $nombreFichero);  
 
+ echo "hola3";
+            $conexion = mysqli_connect ('localhost', 'root', 'perla', 'ejercicios') or die ("No se puede conectar con el servidor".mysqli_error($conexion));  
+            //se puede hacer un include(conexion.php) preparado con los datos de conection. 
 
-            $conexion = mysqli_connect ('localhost', 'root', 'perla', 'ejercicios') or die ("No se puede conectar con el servidor".mysqli_error($conexion));           
+/*             $sql="UPDATE productos SET Nombre='$Nombre',Descripcion='$Descripcion',Precio='$Precio' WHERE Id_producto=$ID"; */
 
-            $sql="UPDATE productos SET Nombre='$Nombre',Descripcion='$Description',Precio='$Precio',Foto='$nombreFichero' WHERE Id_producto=$ID";
+            //echo $sql;
+
+                        $sql="UPDATE productos SET Nombre='$Nombre',Descripcion='$Descripcion',Precio='$Precio',Foto='$nombreFichero' WHERE Id_producto=$ID";
 
             $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la consulta".mysqli_error($conexion));
+
+                if ($consulta) {
+                    echo "ok";
+                } else {
+                    echo "Error";
+                }
+
+                mysqli_close($conexion);
+
+            }else{
+                echo "error";
+            }
                
-            echo "
+           /*  echo "
             
                     <div><h1>NUEVO PRODUCTO SUBIDO CORRECTAMENTE</h1></div>
                         <div>
@@ -73,14 +80,11 @@
         else{
             print("No se ha podido subir el fichero\n");
 
-        }
+        } */
                    
 
 
 
     ?>
-
-</body>
-</html>
 
 

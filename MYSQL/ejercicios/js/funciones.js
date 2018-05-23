@@ -31,56 +31,32 @@ function openModal(Id, Nombre, Descripcion, Precio, Foto) {
 
 } //fin function 
 
+
 function editProduco(){
 
     datos = $("#formProducto").serialize();
-    //console.log(datos);
+    console.log(datos);
 
     $.ajax({
         type:'POST',
         url:'php/editproducto.php',
-        dataType: "json",
-        data:{datos},
-        success:function(data){
-            /* if(data.status == 'ok'){
+        //dataType: "json",
+        data:datos,
+        success:function(data){  
+            alert(data);
+            if (data="ok") {
+                $('#myModal').modal('hide');
+                window.location.reload();  
+            } else {
+
                 
-            }else{
-                //$('.user-content').slideUp();
-                alert("Error al editar producto.");
-            }  */
+            }
+                     
         },
         error: function (e) {
             console.log(e);
             console.log("Error");
-        }
+        }//error de ajax
     }); //fin de ajax
 } //fin function editar
 
-
-
-
-
-
-// $(document).ready(function(){
-//     $('#btnEdit').on('click',function(){
-//         var user_id = $('#user_id').val();
-//         $.ajax({
-//             type:'POST',
-//             url:'getData.php',
-//             dataType: "json",
-//             data:{user_id:user_id},
-//             success:function(data){
-//                 if(data.status == 'ok'){
-//                     $('#userName').text(data.result.name);
-//                     $('#userEmail').text(data.result.email);
-//                     $('#userPhone').text(data.result.phone);
-//                     $('#userCreated').text(data.result.created);
-//                     $('.user-content').slideDown();
-//                 }else{
-//                     $('.user-content').slideUp();
-//                     alert("User not found...");
-//                 } 
-//             }
-//         });
-//     });
-// });

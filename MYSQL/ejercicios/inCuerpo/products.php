@@ -102,17 +102,17 @@
 						</div>					
 		
 						<div class="col s12 m12 l12">
-							<img id="Foto" name="Foto" scr="" width="20%" >
+							<img id="Foto1" name="Foto1" scr="" width="20%" >
 						</div>
 						
-						<!-- materialize "input field" codes -->
+						
 						<div class="col s12 m12 l12 file-field input-field">
 							<div class="btn">
 							Subir Imagen: <br>
 							<input type="file" name="Foto">
 							</div>
 							<div class="file-path-wrapper">
-							<input class="file-path validate" id="Foto" name="Foto" type="text">
+							<input class="file-path validate" id="Foto2" name="Foto2" type="text">
 							</div>
 						</div>
 					</div>
