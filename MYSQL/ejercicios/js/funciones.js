@@ -22,15 +22,8 @@ function borrar(Id) {
 
 
 
-function Modal1(Id, Nombre, Descripcion, Precio, Foto) {
-    console.log(Nombre);
-/* 
-    $Foto = $fila['Foto'];
-    $Nombre = $fila['Nombre'];
-    $Descripcion = $fila['Descripcion'];
-    $Precio = $fila['Precio'];
-    $ID = $fila['Id_producto'];  */
-
+function openModal(Id, Nombre, Descripcion, Precio, Foto) {
+    //console.log(Nombre);
     $('#Nombre').val(Nombre);
     $('#Descripcion').val(Descripcion);
     $('#Precio').val(Precio);
