@@ -80,9 +80,14 @@
           <h4 class="modal-title">MODIFICAR PRODUCTO</h4>
         </div>
         <div class="modal-body ">
+
+           
+
           	<form id="formProducto" enctype="multipart/form-data">
 				<div class="container">
 
+                <div class="ErrorMSG"></div>
+                
 					<input type="hidden" name="Id_producto" id="Id_producto" >
 
 					<div class="row">

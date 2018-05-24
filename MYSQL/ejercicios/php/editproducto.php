@@ -1,13 +1,23 @@
 <?php
 
 //$test = 1;
+
+$ID = $_POST['Id_producto'];
+    $Nombre = $_POST['Nombre'];
+    $Descripcion= $_POST['Descripcion'];
+    $Precio= $_POST['Precio'];
+
 if ($_POST){ // comprueba si se han recibido datos con POST
 		
     //subida de archivos
     if ($_FILES) {
         $files = array();        
         $uploadDir="../img/"; 		
-        //direccion a donde hacemos el upload del imagen	
+		//direccion a donde hacemos el upload del imagen	
+		
+		$nombreFoto= $Nombre.".jpg"; //damos el mismo nombre que el nombre del producto
+        $nombreCompleto= $uploadDir. $nombreFoto;
+        //echo $nombreCompleto;
 
         foreach($_FILES as $file){	
         //move_upload_file hace subir el archivo 
@@ -15,7 +25,7 @@ if ($_POST){ // comprueba si se han recibido datos con POST
         //echo $file;
 		//echo $file['error'];
 
-            if (move_uploaded_file($file['tmp_name'], "$uploadDir".basename($file['name'])))
+            if (move_uploaded_file($file['tmp_name'], $nombreCompleto))
             {//para la respuesta del Json:
                 $files[]=$uploadDir.$file['name'];
                 echo $file;
@@ -33,15 +43,12 @@ if ($_POST){ // comprueba si se han recibido datos con POST
         $Foto = $_POST['Foto1'];			
     }
 
-    $ID = $_POST['Id_producto'];
-    $Nombre = $_POST['Nombre'];
-    $Descripcion= $_POST['Descripcion'];
-    $Precio= $_POST['Precio'];
+    
 
     $conexion = mysqli_connect ('localhost', 'root', 'perla', 'ejercicios') or die ("No se puede conectar con el servidor".mysqli_error($conexion));  
 	//se puede hacer un include(conexion.php) preparado con los datos de conection. 
 	
-    $sql="UPDATE productos SET Nombre='$Nombre', Descripcion='$Descripcion', Precio='$Precio', Foto='$Foto' WHERE Id_producto=$ID";
+    $sql="UPDATE productos SET Nombre='$Nombre', Descripcion='$Descripcion', Precio='$Precio', Foto='$nombreCompleto' WHERE Id_producto=$ID";
     echo $sql;
 
     $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la consulta".mysqli_error($conexion));

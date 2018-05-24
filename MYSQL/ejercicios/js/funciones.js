@@ -18,14 +18,15 @@ function borrar(Id) {
 } //fin function editar
 
 
-
 function openModal(Id, Nombre, Descripcion, Precio, Foto) {
     //console.log(Nombre);
     $('#Id_producto').val(Id);
     $('#Nombre').val(Nombre);
     $('#Descripcion').val(Descripcion);
     $('#Precio').val(Precio);
-    $('#Foto').attr('src',"img/" + Foto);
+    $('#ShowFoto').attr('src',"img/" + Foto);
+    $('#Foto1').val(Foto);
+
 
     $('#myModal').modal('show');   //abrir el modal
 
@@ -52,15 +53,15 @@ function editProduco(){
         data: formData,        
         contentType: false, // tell jQuery not to set contentType
         processData: false, // tell jQuery not to process the data
-        success:function(data){  
+        success:function(data){  //data es el echo que el php devuelve
             //alert(data);
             if (data="ok") {                
                 $('#myModal').modal('hide');
                 window.location.reload();
                 //alert("OK. Todo ha ido bien.");  
             } else {
-                alert("Error en la consulta.");
-                $('.statusMsg').html('<span style="color:red;">Some problem occurred, please try again.</span>');
+                //alert("Error en la consulta.");
+                $('.ErrorMSG').html('<span style="color:red;">Error en la consulta. Some problem occurred, please try again.</span>');
             }  
         }, //fin de success         
         error: function (e) {
