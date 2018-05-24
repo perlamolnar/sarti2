@@ -39,39 +39,25 @@ if ($_POST){ // comprueba si se han recibido datos con POST
     $Precio= $_POST['Precio'];
 
     $conexion = mysqli_connect ('localhost', 'root', 'perla', 'ejercicios') or die ("No se puede conectar con el servidor".mysqli_error($conexion));  
-    //se puede hacer un include(conexion.php) preparado con los datos de conection. 
-
-    /*$sql="UPDATE productos SET Nombre='$Nombre',Descripcion='$Descripcion',Precio='$Precio' WHERE Id_producto=$ID"; */
-
+	//se puede hacer un include(conexion.php) preparado con los datos de conection. 
+	
     $sql="UPDATE productos SET Nombre='$Nombre', Descripcion='$Descripcion', Precio='$Precio', Foto='$Foto' WHERE Id_producto=$ID";
     echo $sql;
 
     $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la consulta".mysqli_error($conexion));
 
         if ($consulta) {
-            $error= 0;
+            echo "ok";
         } else {
-            $error= 1;
+            echo "error";
         }
 
     mysqli_close($conexion);
 
-    echo json_encode([ // codifica datos para enviar de vuelta con json
-                        "campos" => "Usuario actualizado correctamente",
-                        "error" => $error,
-                        "valores" => "Datos Producto",
-                        "sql" => $sql    
-                    ]);
-
     }//fin del "if ($_POST)"
 
 else {
-    echo json_encode([ // codifica datos para enviar de vuelta con json	en caso de conexión fallida	
-            "campos" => "Datos no correctos",
-            "error" => 2,
-            "valores" => "Datos no corrrectos",
-            "sql" => $sql
-        ]);
+    echo "NO HAY _POST";
 }  
  
   
