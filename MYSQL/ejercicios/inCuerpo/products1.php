@@ -101,21 +101,18 @@
 							<input type="number" id="Precio" name="Precio"</input>
 						</div>					
 		
-						<div class="col s12 m12 l12"><!--Show imagen -->  
-							<img id="ShowFoto" name="ShowFoto" scr="" width="20%" >
+						<div class="col s12 m12 l12">
+							<img id="Foto1" name="Foto1" scr="" width="20%" >
 						</div>
 						
 						
 						<div class="col s12 m12 l12 file-field input-field">
-							<!--Upload file -->    
-                            <div>                       
-							 <input type="file" id="Foto" name="Foto"> 
+							<div class="btn">
+							Subir Imagen: <br>
+							<input type="file" name="imagen" id ="imagen">
 							</div>
-
-                            <br>
-                            <!--Show the name of the actual file -->    
 							<div class="file-path-wrapper">
-							<input class="file-path validate" id="Foto1" name="Foto1" type="text">
+							<input class="file-path validate" id="Foto2" name="Foto2" type="text">
 							</div>
 						</div>
 					</div>

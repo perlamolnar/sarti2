@@ -1,91 +1,157 @@
-    <?php  
-        $ID = $_POST['Id_producto'];
-        $Nombre = $_POST['Nombre'];
-        $Descripcion= $_POST['Descripcion'];
-        $Precio= $_POST['Precio'];
-        $Fichero= $_FILES['Foto']['name'];  
-        
+<?php
 
-        if (is_uploaded_file($_FILES['Fichero']['tmp_name'])) //devuelve un boleano
-        {//si se ha subido el fichero….  
- echo "hola1";
-            $nombreDirectorio= "../img/";            
-            $nombreFichero= $Nombre.".jpg"; //damos el mismo nombre que el nombre del producto
-            $nombreCompleto= $nombreDirectorio. $nombreFichero;
-            //echo $nombreCompleto;
- echo "hola2";
-            move_uploaded_file(
-                $_FILES['Fichero']['tmp_name'], 
-                $nombreDirectorio. $nombreFichero);  
+//$test = 1;
+if ($_POST){ // comprueba si se han recibido datos con POST
+		
+    //subida de archivos
+    if ($_FILES) {
+        $files = array();        
+        $uploadDir="../img/"; 		
+        //direccion a donde hacemos el upload del imagen	
 
- echo "hola3";
+        foreach($_FILES as $file){	
+        //move_upload_file hace subir el archivo 
+        //si ha ido bien el upload:	
+        //echo $file;
+		//echo $file['error'];
 
-            $conexion = mysqli_connect ('localhost', 'root', 'perla', 'ejercicios') or die ("No se puede conectar con el servidor".mysqli_error($conexion));  
-            //se puede hacer un include(conexion.php) preparado con los datos de conection. 
-
-/*             $sql="UPDATE productos SET Nombre='$Nombre',Descripcion='$Descripcion',Precio='$Precio' WHERE Id_producto=$ID"; */
-
-            //echo $sql;
-
-                        $sql="UPDATE productos SET Nombre='$Nombre',Descripcion='$Descripcion',Precio='$Precio',Foto='$nombreFichero' WHERE Id_producto=$ID";
-
-            $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la consulta".mysqli_error($conexion));
-
-                if ($consulta) {
-                    echo "ok";
-                } else {
-                    echo "Error";
-                }
-
-                mysqli_close($conexion);
-
-            }else{
-                echo "error";
+            if (move_uploaded_file($file['tmp_name'], "$uploadDir".basename($file['name'])))
+            {//para la respuesta del Json:
+                $files[]=$uploadDir.$file['name'];
+                echo $file;
+            }			
+            else {
+                $files[]="No se ha subido archivo.";
             }
-               
-           /*  echo "
-            
-                    <div><h1>NUEVO PRODUCTO SUBIDO CORRECTAMENTE</h1></div>
-                        <div>
 
-                            <div class='newProduct'><strong>NOMBRE DE PRODUCTO: </strong>
-                                $Nombre
-                                <br><br>
+        }//fin de foreach
 
-                                <strong>DESCRIPCIÓN: </strong>
-                                $Descripcion
-                                <br><br>
-                                
-                                <strong>PRECIO: </strong>
-                                $Precio
-                                €
-                                <br><br>
+        $Foto = $file['name'];
+    }
+    else {	
+        //echo "NO HAY FILES";
+        $Foto = $_POST['Foto1'];			
+    }
 
-                                <strong>ARCHIVO: </strong>
-                                $nombreFichero 
-                                <br><br>                                
-                            </div> 
+    $ID = $_POST['Id_producto'];
+    $Nombre = $_POST['Nombre'];
+    $Descripcion= $_POST['Descripcion'];
+    $Precio= $_POST['Precio'];
 
-                            <div class=\"divIMG\">
-                                <img src=\"$nombreDirectorio$nombreFichero\" alt=\"$Nombre\" width=\"50%\">
-                            </div>
-                        </div>   
-                         <a href=\"../index.php\">VOLVER</a>
+    $conexion = mysqli_connect ('localhost', 'root', 'perla', 'ejercicios') or die ("No se puede conectar con el servidor".mysqli_error($conexion));  
+    //se puede hacer un include(conexion.php) preparado con los datos de conection. 
 
-                    ";
+    /*$sql="UPDATE productos SET Nombre='$Nombre',Descripcion='$Descripcion',Precio='$Precio' WHERE Id_producto=$ID"; */
 
-            mysqli_close($conexion);
+    $sql="UPDATE productos SET Nombre='$Nombre', Descripcion='$Descripcion', Precio='$Precio', Foto='$Foto' WHERE Id_producto=$ID";
+    echo $sql;
 
+    $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la consulta".mysqli_error($conexion));
 
+        if ($consulta) {
+            $error= 0;
+        } else {
+            $error= 1;
         }
-        else{
-            print("No se ha podido subir el fichero\n");
 
-        } */
-                   
+    mysqli_close($conexion);
 
+    echo json_encode([ // codifica datos para enviar de vuelta con json
+                        "campos" => "Usuario actualizado correctamente",
+                        "error" => $error,
+                        "valores" => "Datos Producto",
+                        "sql" => $sql    
+                    ]);
+
+    }//fin del "if ($_POST)"
+
+else {
+    echo json_encode([ // codifica datos para enviar de vuelta con json	en caso de conexión fallida	
+            "campos" => "Datos no correctos",
+            "error" => 2,
+            "valores" => "Datos no corrrectos",
+            "sql" => $sql
+        ]);
+}  
+ 
+  
+	// $test = 1;
+	// if ($_POST){ // comprueba si se han recibido datos con POST
+		
+	// 	//subida de archivos
+	// 	if ($_FILES) {
+	// 		$files = array();
+	// 		$uploadDir="../../img/blog/"; 		
+	// 		//direccion a donde hacemos el upload del imagen	
+	
+	// 	foreach($_FILES as $file){	
+	// 	//move_upload_file hace subir el archivo 
+	// 	//si ha ido bien el upload:	
+	// 	//echo $file['error'];
+	
+	// 		if (move_uploaded_file($file['tmp_name'], "$uploadDir".basename($file['name'])))
+	// 		{//para la respuesta del Json:
+	// 			$files[]=$uploadDir.$file['name'];
+	// 		}			
+	// 		else {
+	// 			$files[]="No se ha subido archivo.";
+	// 			}
+
+	// 	}//fin de foreach
+
+	// 	$Foto = $file['name'];
+	// 	}
+	// 	else {	
+	// 		//echo "NO HAY FILES";
+	// 		$Foto = $_POST['Foto1'];
+			
+	// 	}
+	
+	// 	//crear sentencia SQL para modificar los datos de cliente
+	// 	$idArticulo = $_POST['idArticulo'];
+	// 	$Titulo = $_POST['Titulo'];
+	// 	$Descripcion = $_POST['Descripcion'];
+	// 	$Articulo = $_POST['Articulo'];	
+	
+	// 	$sql = "UPDATE blog SET Titulo= '$Titulo', Descripcion='$Descripcion', Articulo='$Articulo', Foto='$Foto'   WHERE idArticulo = '$idArticulo';";
+				
+	// 	// abre conexión con la base de datos crm
+	// 	$mysqli = new mysqli('localhost','root','','fede');
+	// 	mysqli_set_charset($mysqli,'utf8');
+	// 	if ($mysqli->connect_error) {
+	// 		// comprobar que no hay errores en la conexión 
+	// 		die("Connection failed: " . $mysqli->connect_error);
+	// 		$error = 1;
+	// 	}
+	// 	else {
+	// 		/* Asignar a la variable $sql la sentencia SQL para agregar el registro*/			
+	// 		// echo $sql;
+	// 		/* Ejecutar el SQL en la database y guardar el resultado en la variable $query */
+	// 		 if ( $mysqli->query($sql)=== TRUE) {
+	// 			 $error = 0;
+	// 		 } else {
+	// 			 $error = 1;
+	// 		 }
+
+	// 	}
+	// 	/* Cierra la conexión con la base de datos*/
+	// 	$mysqli->close();
+	// 	echo json_encode([ // codifica datos para enviar de vuelta con json
+	// 			"campos" => "Usuario actualizado correctamente",
+	// 			"error" => $error,
+	// 			"valores" => "Datos usuario",
+	// 			"sql" => $sql
+
+	// 		]);
+	// }
+	// else {
+	// 	echo json_encode([ // codifica datos para enviar de vuelta con json	en caso de conexión fallida	
+	// 			"campos" => "Datos no correctos",
+	// 			"error" => 2,
+	// 			"valores" => "Datos no corrrectos",
+	// 			"sql" => $sql
+	// 		]);
+	// }  
 
 
     ?>
-
-
