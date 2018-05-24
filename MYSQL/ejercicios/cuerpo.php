@@ -29,6 +29,12 @@
 			if($_POST['seccio']=="products"){
 				include("inCuerpo/products.php");
 			}
+			if($_POST['seccio']=="galeria"){
+				include("inCuerpo/galeria.php");
+			}
+			if($_POST['seccio']=="BOgaleria"){
+				include("inCuerpo/BOgaleria.php");
+			}
 			if($_POST['seccio']=="agua"){
 				$dir="publicContent/agua";
 				$dir2="img/agua";

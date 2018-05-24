@@ -13,7 +13,9 @@
 		<li><button class="" value="productos" name="seccio" type="submit">Productos</button></li>
 		<li><button class="" value="estadisticas" name="seccio" type="submit">Estadisticas</button></li>
 		<li><button class="" value="subirproducto" name="seccio" type="submit">Subir Producto</button></li>	
-		<li><button class="" value="products" name="seccio" type="submit">Products</button></li>	
+		<li><button class="" value="products" name="seccio" type="submit">Products</button></li>
+		<li><button class="" value="BOgaleria" name="seccio" type="submit">BO Galeria</button></li>	
+		<li><button class="" value="galeria" name="seccio" type="submit">Galeria</button></li>		
 		<li><button class="" value="contacto" name="seccio" type="submit">Contacto</button></li>
 		<li class="fecha">		
 			<?php

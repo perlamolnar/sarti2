@@ -1,5 +1,5 @@
 
-<h1>GALÉRIA DE FOTOS</h1>
+<h1>BACKOFICE DE FOTOS</h1>
 <?php
 
     $conexion = mysqli_connect ("localhost", "root", "perla", "ejercicios") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
@@ -13,12 +13,12 @@
         <table class="table table-striped">
             
             <tr>
-                <!-- <th>ID Imagen</th> 
+                <th>ID</th> 
                 <th>Titulo</th>
                 <th>Nombre Archivo</th>              
                 <th>Foto</th>               
                 <th>Modificar</th>
-                <th>Borrar</th> -->
+                <th>Borrar</th>
             </tr>
             
             <tbody>
@@ -26,24 +26,26 @@
                 <?php
                 
                 while($fila=mysqli_fetch_assoc($consulta)){ 
-                   
+                    echo "<tr>";
                         $ID = $fila['Id_imagen']; 
                         $Titulo= $fila['Titulo'];
                         $Titulo= $fila['Titulo'];
-                        $NombreArchivo = $fila['Foto'];                                   
+                        $NombreArchivo = $fila['Foto']; 
+
+                        echo "<td>$ID</td>";                       
+                        echo "<td>$Titulo</td>";
+                        echo "<td>$NombreArchivo</td>";
+                        echo "<td><img src=\"img/$NombreArchivo\"></td>"; 
                         
-                        echo "
-                            <div class='line'>
-                
-                                <div class='fotoYtitulo'>  
-                                    <img src=\"img/$NombreArchivo\"> 
-                                    <br>
-                                    $Titulo
-                                </div>
-                            </div>
-                        
-                        ";
-                        
+                        echo    "<td>
+                                    <button onclick=\"openModal('$ID',  '$Titulo', '$NombreArchivo');\" class=\"btn\"><i class=\"fa fa-edit\"></i></button>
+                                </td>"; 
+
+                        echo    "<td>
+                                    <button onclick=\"borrarEnFotoGaleria($ID);\" class=\"btn\"><i class=\"fa fa-close\"></i></button>
+                                </td>";                        
+
+                    echo "<tr>";          
                     }
                 ?>
                 

@@ -17,6 +17,24 @@ function borrar(Id) {
     }); //fin de ajax
 } //fin function editar
 
+function borrarEnFotoGaleria(Id) {
+    //console.log(Id);
+    $.ajax({
+        type: 'POST',
+        url: 'php/deleteFotoGaleria.php',        
+        data: { id: Id },
+        success: function (data) {
+            console.log(data);
+            window.location.reload();
+            //alert("Producto borrado correctamente.");
+        },
+        error: function (e) {
+            console.log(e);
+            console.log("Error");
+        }
+    }); //fin de ajax
+} //fin function editar
+
 
 function openModal(Id, Nombre, Descripcion, Precio, Foto) {
     //console.log(Nombre);
