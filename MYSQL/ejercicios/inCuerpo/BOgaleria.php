@@ -30,17 +30,17 @@
                     echo "<tr>";
                         $ID = $fila['Id_imagen']; 
                         $Titulo= $fila['Titulo'];
-                        $Estado= $fila['Activ'];
+                        $Activ= $fila['Activ'];
                         $NombreArchivo = $fila['Foto']; 
 
                         echo "<td>$ID</td>";                       
                         echo "<td>$Titulo</td>";
                         echo "<td>$NombreArchivo</td>";
                         echo "<td><img src=\"img/$NombreArchivo\"></td>"; 
-                        echo "<td>$Estado</td>";
+                        echo "<td>$Activ</td>";
                         
                         echo    "<td>
-                                    <button onclick=\"openModal('$ID',  '$Titulo', '$NombreArchivo', '$Estado');\" class=\"btn\"><i class=\"fa fa-edit\"></i></button>
+                                    <button onclick=\"openModalFotoGaleria('$ID',  '$Titulo', '$NombreArchivo', '$Activ');\" class=\"btn\"><i class=\"fa fa-edit\"></i></button>
                                 </td>"; 
 
                         echo    "<td>
@@ -61,7 +61,7 @@
   
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
+  <div class="modal fade" id="ModalFotoGaleria" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -86,13 +86,23 @@
 						</div><br>	
 					                       
 
-                        <div class="col s12 m12 l12 input-field">
+                        <!-- <div class="col s12 m12 l12 input-field">
 							Estado:<br>
                             <label class="switch">
-                                <input type="checkbox" id="Estado" name="Activ" checked>
+                                <input type="checkbox" id="Estado" name="Activ">
                                 <span class="slider round"></span>
                             </label>
 							
+						</div>	 -->
+
+                        <div class="col s12 m12 l12 input-field">
+							Estado: <input type="checkbox" id="Activ" name="Activ" value="<?= $Activ;?>">
+
+                            <!-- <input type="checkbox" id="Activ" name="Activ" onclick="checkbox()"> -->
+
+                            <p id="text" style="display:none">ACTIVA</p>
+                            </label>
+                            							
 						</div>					 
 		
 						<div class="col s12 m12 l12"><!--Show imagen -->  

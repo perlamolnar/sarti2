@@ -95,20 +95,38 @@ function borrarEnFotoGaleria(Id) {
 } //fin function editar
 
 
-function openModalFotoGaleria(Id, Nombre, Descripcion, Precio, Foto) {
+
+function openModalFotoGaleria(Id, Titulo, Foto, Activ) {
     //console.log(Nombre);
-    $('#Id_producto').val(Id);
-    $('#Nombre').val(Nombre);
-    $('#Descripcion').val(Descripcion);
-    $('#Precio').val(Precio);
+    $('#Id_imagen').val(Id);
+    $('#Titulo').val(Titulo);
+    //$('#Activ').val(Activ); 
+        console.log(Activ);
+        if (Activ == "on") {
+            $('#Activ').attr('checked',true);
+            //console.log(Activ);
+        } else{
+            console.log("xxx");
+
+            $('#Activ').attr('checked',false);
+        }
     $('#ShowFoto').attr('src', "img/" + Foto);
     $('#FotoActual').val(Foto);
 
-
-    $('#myModal').modal('show');   //abrir el modal
+    $('#ModalFotoGaleria').modal('show');   //abrir el modal
 
 } //fin function 
 
+
+// function checkbox() {
+//     var checkBox = document.getElementById("Activ");
+//     var text = document.getElementById("text");
+//     if (checkBox.checked == true) {
+//         text.style.display = "block";
+//     } else {
+//         text.style.display = "none";
+//     }
+// }
 
 function editFotoGaleria() {
 

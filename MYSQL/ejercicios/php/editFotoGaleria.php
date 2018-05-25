@@ -3,8 +3,8 @@
 //$test = 1;
 
 $ID = $_POST['Id_producto'];
-    $Nombre = $_POST['Nombre'];
-    $Descripcion= $_POST['Descripcion'];
+    $('#Id_imagen').val(Id);
+    $('#Titulo').val(Titulo);
     $Precio= $_POST['Precio'];
 
 if ($_POST){ // comprueba si se han recibido datos con POST
