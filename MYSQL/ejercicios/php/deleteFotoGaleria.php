@@ -19,8 +19,9 @@
         $result= "ERROR";        
     } 
 
-    //returns data as JSON format
-    echo $result;
+    
+    echo $result; //returns data a la function en javascript.
+    //SOLO PODEMOS TENER UN ECHO, NO MAS!!!! POR QUE NO VA A ENTENDER QUE ES EL MENSAJE FINAL
 
     ?>
 
