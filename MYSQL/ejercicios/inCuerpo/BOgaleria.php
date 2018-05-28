@@ -56,7 +56,7 @@
                         echo "<td>$Activ</td>";
                         
                         echo    "<td>
-                                    <button onclick=\"openModalFotoGaleria('$ID',  '$Titulo', '$NombreArchivo', '$Activ');\" class=\"btn\"><i class=\"fa fa-edit\"></i></button>
+                                    <button onclick=\"openModalEditFotoGaleria('$ID',  '$Titulo', '$NombreArchivo', '$Activ');\" class=\"btn\"><i class=\"fa fa-edit\"></i></button>
                                 </td>"; 
 
                         echo    "<td>
@@ -133,7 +133,7 @@
 			</form>
         </div>
         <div class="modal-footer">
-            <button type="button" onclick="openModalEditFotoGaleria();" class="btn btn-primary">GUARDAR</button>
+            <button type="button" onclick="editFotoGaleria();" class="btn btn-primary">GUARDAR</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
         </div>
       </div>

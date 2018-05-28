@@ -83,7 +83,7 @@ function borrarEnFotoGaleria(Id) {
 
 
 
-function openModalFotoGaleria(Id, Titulo, Foto, Activ) {
+function openModalEditFotoGaleria(Id, Titulo, Foto, Activ) {
     //console.log(Nombre);
     $('#Id_imagen').val(Id);
     $('#Titulo').val(Titulo);

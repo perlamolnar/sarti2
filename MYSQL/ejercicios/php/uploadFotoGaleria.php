@@ -39,7 +39,7 @@
     $conexion = mysqli_connect ('localhost', 'root', 'perla', 'ejercicios') or die ("No se puede conectar con el servidor".mysqli_error($conexion));  
 	//se puede hacer un include(conexion.php) preparado con los datos de conection. 
 	
-    $sql="INSERT INTO GALERIA SET Titulo='$Titulo', Foto='$nombreFoto';";
+    $sql="INSERT INTO galeria SET Titulo='$Titulo', Foto='$nombreFoto';";
     echo $sql; 
 
     $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la consulta".mysqli_error($conexion));
