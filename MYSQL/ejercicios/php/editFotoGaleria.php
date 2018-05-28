@@ -2,10 +2,10 @@
 
 //$test = 1;
 
-$ID = $_POST['Id_producto'];
+	$ID = $_POST['Id_producto'];
     $('#Id_imagen').val(Id);
     $('#Titulo').val(Titulo);
-    $Precio= $_POST['Precio'];
+    
 
 if ($_POST){ // comprueba si se han recibido datos con POST
 		
