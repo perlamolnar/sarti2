@@ -13,13 +13,13 @@
 
 			if($_POST['seccio']=="home"){
 				include("inCuerpo/home.php");
+			}				
+			if($_POST['seccio']=="noticias"){
+				include("inCuerpo/noticias.php");
 			}
-			if($_POST['seccio']=="clientes"){
-				include("inCuerpo/clientes.php");
-			}
-			if($_POST['seccio']=="productos"){
-				include("inCuerpo/productos.php");
-			}
+			if($_POST['seccio']=="registrar"){
+				include("inCuerpo/registrar.php");
+			}		
 			if($_POST['seccio']=="estadisticas"){
 				include("inCuerpo/estadisticas.php");
 			}
@@ -45,16 +45,7 @@
 				$dir2="img/aire";
 				include("inCuerpo/publicarContent.php");
 			}
-			elseif ($_POST['seccio']=="montana") {
-				$dir="publicContent/montana";
-				$dir2="img/montana";
-				include("inCuerpo/publicarContent.php");
-			}
-			elseif ($_POST['seccio']=="experiencias") {
-				$dir="publicContent/experiencias";
-				$dir2="img/experiencias";
-				include("inCuerpo/publicarExperiencias.php");
-			}
+			
 			elseif ($_POST['seccio']=="upload"|| $_POST['seccio']=="uploading") {
 				$subsec=$_POST['seccio'];
 				include("inCuerpo/upload.php");
