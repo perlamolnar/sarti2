@@ -31,7 +31,7 @@
 		elseif($_SESSION['tipo']=="admin"){
 		?>
 		
-		<li><button class="" value="subirnoticia" name="seccio" type="submit">Subir Noticia</button></li>
+		<li><button class="" value="BOnoticia" name="seccio" type="submit">Tratar Noticias</button></li>
 		<li><button class="" value="logout" name="seccio" type="submit">LOGOUT</button></li>
 		<li class="username">
 			<?php				

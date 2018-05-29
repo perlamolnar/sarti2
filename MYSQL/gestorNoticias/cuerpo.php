@@ -23,8 +23,8 @@
 			if($_POST['seccio']=="estadisticas"){
 				include("inCuerpo/estadisticas.php");
 			}
-			if($_POST['seccio']=="subirproducto"){
-				include("inCuerpo/SubirProducto.php");
+			if($_POST['seccio']=="BOnoticia"){
+				include("inCuerpo/BOnoticia.php");
 			}
 			if($_POST['seccio']=="products"){
 				include("inCuerpo/products.php");
