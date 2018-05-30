@@ -25,6 +25,7 @@ include("php/functions.php");
 
 	<link rel="stylesheet" type="text/css" href="css/style.css">	
 	<script src="js/funciones.js"></script>
+	<script src="js/Productos.js"></script>
 </head>
 <body>
 

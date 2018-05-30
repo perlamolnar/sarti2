@@ -181,3 +181,21 @@ li a:hover {background-color: #111;}
 }
 
 .left{align-content: left}
+
+
+/******** PAGINACION ********/
+.pagination button {
+    color: black;
+    float: left;
+    margin: 50px !important;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination button.active {
+    background-color: dodgerblue;
+	color: white;
+	
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
