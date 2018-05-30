@@ -32,7 +32,7 @@
     //echo $total_paginas;  
     $inicio=$pagina*$num_item;      //ceil() — Redondear fracciones hacia arriba
 
-    $sql="SELECT * FROM productos";
+    $sql="SELECT * FROM productos WHERE index>$inicio LIMIT 10";
 
     $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la consulta".mysqli_error($conexion));
     
