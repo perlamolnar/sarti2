@@ -5,8 +5,9 @@ $(document).ready(function () {
 });
 
 function findPaginaActual() {
+    //console.log("hola");
     var paginaActual=$(this).text();
-    //console.log(paginaActual);
+    console.log(paginaActual);
 
-    
+
 }

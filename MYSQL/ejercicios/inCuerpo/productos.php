@@ -22,10 +22,7 @@
             //echo "<td>$value<br></td>";            
         }       
     }
-    
-    $sql="SELECT * FROM productos";
-
-    $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la consulta".mysqli_error($conexion));
+        
 
     $num_item=5;
     $total_itmes= $value; //consulta sql  contar total_items
@@ -35,7 +32,9 @@
     //echo $total_paginas;  
     $inicio=$pagina*$num_item;      //ceil() — Redondear fracciones hacia arriba
 
-    
+    $sql="SELECT * FROM productos";
+
+    $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la consulta".mysqli_error($conexion));
     
    ?>
     <div class="table-responsive container d">          
