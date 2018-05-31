@@ -4,11 +4,11 @@
         
         $conexion = mysqli_connect ("localhost", "root", "perla", "ejercicios") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
                 
-        $num_item = 5;
+        $num_item = 3;
         $pagina = $_GET["page"];
         $inicio = ($pagina-1)*$num_item;      
 
-        $sql="SELECT * FROM contacto LIMIT $inicio, 5";    
+        $sql="SELECT * FROM contacto LIMIT $inicio, 3";    
 
         $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la consulta".mysqli_error($conexion));
         

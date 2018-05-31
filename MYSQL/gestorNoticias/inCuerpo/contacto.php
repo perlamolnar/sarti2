@@ -20,9 +20,10 @@
         $consulta1 = mysqli_query($conexion, $sql1 )or die ("Fallo en la consulta".mysqli_error($conexion));    
         $fila1=mysqli_fetch_assoc($consulta1);       
     
-        $num_item = 5;
+        $num_item = 3;
         $total_itmes = $fila1["nfilas"]; //consulta sql  contar total_items
         $total_paginas = ceil($total_itmes/$num_item); //ceil() — Redondear fracciones hacia arriba
+        //echo $total_paginas;
   
     ?>
 
@@ -47,7 +48,7 @@
             <button href="#">&laquo;</button>
                 <?php            
                     for ($i=1; $i <= $total_paginas ; $i++) {                
-                    echo "<button id='paginaActual' value='$i' onclick=\"PaginacionContacto('$i')\">$i</button>";                  
+                    echo "<button id='paginaActual' onclick=\"PaginacionContacto('$i')\">$i</button>";                  
                     }
                 ?>       
             <button href="#">&raquo;</button>

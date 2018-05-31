@@ -60,6 +60,7 @@ function PaginacionContacto(page) {
             $("#listado tbody").html(tbl_row);
             //$("#paginaActual").html(pagination);
             //$('#paginaActual').html(result[0]);
+            
 
         },
         // funcion ejecutada si ajax tiene un error
