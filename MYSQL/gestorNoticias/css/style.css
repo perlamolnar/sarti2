@@ -191,8 +191,6 @@ li a:hover {background-color: #111;}
 
 .left{align-content: left}
 
-
-
 /******** PAGINACION ********/
 
 .pagination button {
@@ -211,3 +209,4 @@ li a:hover {background-color: #111;}
 }
 
 .pagination a:hover:not(.active) {background-color: #ddd;}
+

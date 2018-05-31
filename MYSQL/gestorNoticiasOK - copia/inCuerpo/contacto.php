@@ -48,7 +48,7 @@
             <button href="#">&laquo;</button>
                 <?php            
                     for ($i=1; $i <= $total_paginas ; $i++) {                
-                    echo "<button id='paginaActual' onclick=\"PaginacionContacto('$i')\">$i</button>";                  
+                    echo "<button  class='active paginationbtn' id='paginaActual' onclick=\"PaginacionContacto('$i')\">$i</button>";                  
                     }
                 ?>       
             <button href="#">&raquo;</button>

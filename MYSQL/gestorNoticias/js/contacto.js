@@ -1,3 +1,7 @@
+// $(document).ready(function () {
+//     $("#paginaActual").on("click", findPaginaActual); 
+// });
+
 // function findPaginaActual() {
 //     var paginaActual=$(this).text();
 //     console.log(paginaActual);    
@@ -5,18 +9,9 @@
 
 $(document).ready(function() {    
     //console.log("hola");
-    PaginacionContacto(1);  
-    //$("#menosUno").on("click", menosUno); 
-    //$("#masUno").on("click", masUno);      
+    PaginacionContacto(1);      
    
 }); //fin de document ready;
-
-// function menosUno() {
-    
-// }
-// function menosUno() {
-    
-// }
 
 function PaginacionContacto(page) {
     $.ajax({
@@ -65,7 +60,7 @@ function PaginacionContacto(page) {
             $("#listado tbody").html(tbl_row);
             //$("#paginaActual").html(pagination);
             //$('#paginaActual').html(result[0]);
-
+            
 
         },
         // funcion ejecutada si ajax tiene un error
