@@ -11,11 +11,25 @@ $(document).ready(function() {
     //console.log("hola");
     PaginacionContacto(1);  
     $("#masUno").on("click", masUno); 
-    $("#menosUno").on("click", menosUno); 
-    
-    
+    $("#menosUno").on("click", menosUno);   
    
 }); //fin de document ready;
+
+function masUno() {
+    //console.log('hola');
+    //coger el valor del, añadir 1, pasar a la funcion paginacionContacto
+    $pageActual = $(".active").val();
+    //console.log($pageActual);    
+    $next=parseInt($pageActual)+1;
+    //console.log($next);
+    PaginacionContacto($next);     
+}
+
+function menossUno() {
+
+}
+
+
 
 function PaginacionContacto(page) {
 

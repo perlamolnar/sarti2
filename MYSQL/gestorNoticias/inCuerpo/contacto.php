@@ -45,14 +45,14 @@
         </table>
 
         <div class="pagination">
-            <button id='masUno' href="#">&laquo;</button>
+            <button id='menosUno' href="#">&laquo;</button>
                 <?php            
                    
                     for ($i=1; $i <= $total_paginas ; $i++) {                
                     echo "<button  class='paginationbtn' id='paginaActual$i' value='$i' onclick=\"PaginacionContacto('$i')\">$i</button>";                  
                     }
                 ?>       
-            <button id='menosUno' href="#">&raquo;</button>
+            <button id='masUno' href="#">&raquo;</button>
         </div>			
     </div>
 </body>
