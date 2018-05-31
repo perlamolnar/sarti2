@@ -30,7 +30,7 @@
 		}//menu para SOLO ADMIN
 		elseif($_SESSION['tipo']=="admin"){
 		?>
-		<li><button class="" value="contactos" name="seccio" type="submit">Contactos</button></li>
+		
 		<li><button class="" value="BOnoticias" name="seccio" type="submit">Tratar Noticias</button></li>
 		<li><button class="" value="logout" name="seccio" type="submit">LOGOUT</button></li>
 		<li class="username">

@@ -23,9 +23,6 @@
 			if($_POST['seccio']=="BOnoticias"){
 				include("inCuerpo/BOnoticias.php");
 			}
-			if($_POST['seccio']=="contactos"){
-				include("inCuerpo/contacto.php");
-			}
 			if($_POST['seccio']=="products"){
 				include("inCuerpo/products.php");
 			}
