@@ -9,11 +9,19 @@
 
 $(document).ready(function() {    
     //console.log("hola");
-    PaginacionContacto(1);      
+    PaginacionContacto(1);  
+    $("#masUno").on("click", masUno); 
+    $("#menosUno").on("click", menosUno); 
+    
+    
    
 }); //fin de document ready;
 
 function PaginacionContacto(page) {
+
+    $(".paginationbtn").removeClass("active");
+    $("#paginaActual"+page).addClass("active");
+
     $.ajax({
         url: 'php/contacto.php', // archivo php que tratara los datos
         type: 'GET', // forma de enviar los datos

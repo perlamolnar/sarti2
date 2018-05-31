@@ -202,11 +202,10 @@ li a:hover {background-color: #111;}
 	background-color: transparent !important;
 }
 
-.paginationbtn .active {
+/* .paginationbtn .active {
     background-color: dodgerblue;
-	color: white;
-	
+	color: white;	
 }
 
 .pagination a:hover:not(.active) {background-color: #ddd;}
-
+ */
