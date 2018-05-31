@@ -11,6 +11,21 @@
 <body>
     <h1>CONTACTOS</h1>
 
+    <?php  
+    
+    $conexion = mysqli_connect ("localhost", "root", "perla", "ejercicios") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+        
+         $sql1="SELECT COUNT(Id) as nfilas FROM contacto"; // contar total_items
+         $consulta1 = mysqli_query($conexion, $sql1 )or die ("Fallo en la consulta".mysqli_error($conexion));
+        
+         $fila1=mysqli_fetch_assoc($consulta1);       
+       
+         $num_item = 5;
+         $total_itmes = $fila1["nfilas"]; //consulta sql  contar total_items
+         $total_paginas = ceil($total_itmes/$num_item);
+  
+    ?>
+
     <div class="container" style="padding-top: 70px;min-height: 800px">
                             
         <table id="listado">
@@ -31,9 +46,9 @@
         <div class="pagination">
             <button href="#">&laquo;</button>
                 <?php            
-                    // for ($i=1; $i <= $total_paginas ; $i++) {                
-                    // echo "<button id='paginaActual' value='$i' href=\"#\">$i</button>";                  
-                    // }
+                     for ($i=1; $i <= $total_paginas ; $i++) {                
+                     echo "<button id='paginaActual' value='$i' onclick=\"PaginacionContacto('$i')\">$i</button>";                  
+                     }
                 ?>       
             <button href="#">&raquo;</button>
         </div>			

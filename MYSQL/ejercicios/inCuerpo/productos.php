@@ -28,11 +28,12 @@
     $total_itmes= $value; //consulta sql  contar total_items
     //echo $total_itmes;
     $pagina=1;
+    if(isset($_GET["page"])) $pagina = $_GET["page"];
     $total_paginas=ceil($total_itmes/$num_item);
     //echo $total_paginas;  
-    $inicio=$pagina*$num_item;      //ceil() — Redondear fracciones hacia arriba
+    $inicio=($pagina-1)*$num_item;      //ceil() — Redondear fracciones hacia arriba
 
-    $sql="SELECT * FROM productos WHERE index>$inicio LIMIT 10";
+    $sql="SELECT * FROM productos LIMIT $inicio, 10";
 
     $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la consulta".mysqli_error($conexion));
     
@@ -78,7 +79,7 @@
                     echo "<a  href=\"#\">$i</a>";     
                 }  */
 
-                echo "<button id='paginaActual' value='$i' href=\"#\">$i</button>";  
+                echo "<button id='paginaActual' value='$i' onclick=findPaginaActual($i)>$i</button>";  
                 
                 }
 
@@ -86,6 +87,17 @@
         <button href="#">&raquo;</button>
     </div>
 
+
+<script>
+
+
+
+function findPaginaActual(value) {
+  //  window.location.reload();
+   // console.log(value);
+}
+
+</script>
 </body>
 </html>
 

@@ -2,27 +2,16 @@
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET'){ // comprueba si se han recibido datos con GET
 	
-		$conexion = mysqli_connect ("localhost", "root", "", "ejercicios") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+		$conexion = mysqli_connect ("localhost", "root", "perla", "ejercicios") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
         
-        // $sql1="SELECT COUNT(Id) FROM contacto"; // contar total_items
-        // $consulta1 = mysqli_query($conexion, $sql1 )or die ("Fallo en la consulta".mysqli_error($conexion));
-        
-        // while($fila1=mysqli_fetch_assoc($consulta1)){         
-        //     foreach ($fila1 as $key => $value1) {  //en $value guardamos el resultado de COUNT(id_producto)
-        //         //echo "<td>$value1<br></td>";            
-        //     }       
-        // }
+   
                 
-        // $num_item = 5;
-        // $total_itmes = $value1; //consulta sql  contar total_items
-        // echo $total_itmes;
-        // $pagina = 1;
-        // $total_paginas = ceil($total_itmes/$num_item);
-        // echo $total_paginas;  
-        //$inicio = $pagina*$num_item;      //ceil() — Redondear fracciones hacia arriba
+         $num_item = 5;
+         $pagina = $_GET["page"];
+         $inicio = ($pagina-1)*$num_item;      //ceil() — Redondear fracciones hacia arriba
 
-        //$sql="SELECT * FROM contacto WHERE Id > $inicio LIMIT 5";
-        $sql="SELECT * FROM contacto";
+        $sql="SELECT * FROM contacto  LIMIT $inicio, 5";
+    
 
         $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la consulta".mysqli_error($conexion));
         
