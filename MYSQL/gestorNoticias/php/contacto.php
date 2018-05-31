@@ -1,17 +1,14 @@
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] === 'GET'){ // comprueba si se han recibido datos con GET
-	
-		$conexion = mysqli_connect ("localhost", "root", "perla", "ejercicios") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+    if ($_SERVER['REQUEST_METHOD'] === 'GET'){ // comprueba si se han recibido datos con GET
         
-   
+        $conexion = mysqli_connect ("localhost", "root", "perla", "ejercicios") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
                 
-         $num_item = 5;
-         $pagina = $_GET["page"];
-         $inicio = ($pagina-1)*$num_item;      //ceil() — Redondear fracciones hacia arriba
+        $num_item = 5;
+        $pagina = $_GET["page"];
+        $inicio = ($pagina-1)*$num_item;      
 
-        $sql="SELECT * FROM contacto  LIMIT $inicio, 5";
-    
+        $sql="SELECT * FROM contacto LIMIT $inicio, 5";    
 
         $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la consulta".mysqli_error($conexion));
         
@@ -19,14 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET'){ // comprueba si se han recibido datos
             $error = "Registros leídos correctamente";                      
             $datos = array();
             while($fila=mysqli_fetch_assoc($consulta)){                 
-                $datos [] = $fila;   
-                     
-            }
-
-            // for ($i=1; $i <= $total_paginas ; $i++) {          
-                // echo "<button id='paginaActual' value='$i' href=\"#\">$i</button>";
-                // echo $i;
-            // }           
+                $datos [] = $fila;
+            }                    
         }
         
         else {
