@@ -31,8 +31,7 @@
 		echo json_encode([ // codifica datos para enviar de vuelta con json
 				"consulta" => $datos,
 				"error" => $error,
-				"resultado" => "Conexión con la base de datos correcta";
-                //"paginaActual" => $pagina
+				"resultado" => "Conexión con la base de datos correcta"
 
 			]);
 	}
@@ -40,8 +39,7 @@
 		echo json_encode([ // codifica datos para enviar de vuelta con json	en caso de conexión fallida	
 				"consulta" => "Datos no correctos",
 				"error" => "Error al codificar json_encode",
-                "resultado" => "Datos no corrrectos",
-                "paginaActual" =>
+				"resultado" => "Datos no corrrectos"
 			]);
 	}    
 ?>

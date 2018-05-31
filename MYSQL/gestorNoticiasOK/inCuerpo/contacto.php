@@ -45,17 +45,19 @@
         </table>
 
         <div class="pagination">
-            <button id="menosUno" href="#" onclick=\"menosUno()\">&laquo;</button>
+            <button href="#">&laquo;</button>
                 <?php            
                     for ($i=1; $i <= $total_paginas ; $i++) {                
-                    echo "<button class='active paginationbtn' id='paginaActual' onclick=\"PaginacionContacto('$i')\">$i</button>";                  
+                    echo "<button id='paginaActual' onclick=\"PaginacionContacto('$i')\">$i</button>";                  
                     }
                 ?>       
-            <button id="masUno" href="#">&raquo;</button>
-</div>		
+            <button href="#">&raquo;</button>
+        </div>			
     </div>
 </body>
 </html>
+
+
 
 
 
