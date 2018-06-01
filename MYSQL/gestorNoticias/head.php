@@ -10,7 +10,7 @@
 		<!-- menu para todo el mundo -->
 		<li><button class="" value="home" name="seccio" type="submit">Home</button></li>
 		<li><button class="" value="noticias" name="seccio" type="submit">Noticias</button></li>			
-		<li><button class="" value="registrar" name="seccio" type="submit">Registrar</button></li>		
+			
 		<li class="fecha">		
 			<?php
 			// Prints the day, date, month, year, time, AM or PM
@@ -21,7 +21,8 @@
 
 		<?php		
  		if($_SESSION['tipo']=="none"){
-		?>		
+		?>
+		<li><button class="" value="registrar" name="seccio" type="submit">Registrar</button></li>			
 		<li><button value="login" name="seccio" type="submit">LOGIN</button></li>		
 		<?php
 		} //fin session NONE
@@ -31,33 +32,33 @@
 		if($_SESSION['tipo']=="Admin"){
 		?>
 		<li><button class="" value="contactos" name="seccio" type="submit">Contactos</button></li>
-		<li><button class="" value="BOnoticias" name="seccio" type="submit">Tratar Noticias</button></li>
 		
 		<li class="username">
 			<?php				
 			$username = $_SESSION['user'];
 			if ($username != "none") {
-			echo  $username." ";			
+			//echo  $username." ";			
 			$tipo=($_SESSION['tipo']);
-			echo $tipo;
+			//echo $tipo;
 			}
 			?>
 		</li>
 
 		<?php
 		}
+		
 		//menu para Editor		
 		if($_SESSION['tipo']=="Editor"){
 		?>
 			
-		<li><button class="" value="logout" name="seccio" type="submit">LOGOUT</button></li>
+		
 		<li class="username">
 			<?php
 			$username = $_SESSION['user'];
 			if ($username != "none") {
-			echo  $username." ";			
+			//echo  $username." ";			
 			$tipo=($_SESSION['tipo']);
-			echo $tipo;
+			//echo $tipo;
 			}
 			?>
 		</li>
@@ -68,7 +69,8 @@
 
 		//menu para COLABORADOR, EDIRTOR, ADMIN
 		if($_SESSION['tipo']=="Colaborador" || $_SESSION['tipo']=="Admin" || $_SESSION['tipo']=="Editor"){
-		?>		
+		?>
+		<li><button class="" value="BOnoticias" name="seccio" type="submit">Tratar Noticias</button></li>		
 		<li><button class="" value="logout" name="seccio" type="submit">LOGOUT</button></li>
 		<li class="username">
 			<?php				
@@ -76,7 +78,9 @@
 			if ($username != "none") {
 			echo  $username." ";			
 			$tipo=($_SESSION['tipo']);
-			echo $tipo;
+			echo $tipo." ";
+			$Id_usuario=($_SESSION['Id_usuario']);
+			echo "ID: $Id_usuario";
 			}
 			?>
 		</li>
