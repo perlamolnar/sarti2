@@ -4,7 +4,7 @@ var files=null;
 $(document).ready(function () {
     $("#UploadNewItem").on("click", openModalUpload);
     $("#GardarNewItem").on("click", GardarNewItem);  
-    $("#editFotoGaleria").on("click", editFotoGaleria );  
+    $("#editNoticia").on("click", editNoticia );  
     
     
 });
@@ -148,7 +148,8 @@ function editNoticia() {
             //alert(data);
             if (data = "ok") {
                 $('#ModalEditNoticia').modal('hide');
-                //window.location.reload();
+                
+                window.location.reload();
                 //alert("OK. Todo ha ido bien.");  
             } else {
                 //alert("Error en la consulta.");

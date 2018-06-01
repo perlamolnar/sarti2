@@ -58,18 +58,34 @@
                         echo "<td>$Fid_usuario</td>";
                         echo "<td>$Activ</td>";
                         
-                        echo    "<td>
+                ?>        
+                <td>   
+                <?php     
+                        if ($Fid_usuario == $_SESSION['Id_usuario']) {
+                            echo    "
                                     <button onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><i class=\"fa fa-edit\"></i></button>
-                                </td>"; 
+                                "; 
+                          
+                        }
+                ?>        
+                </td> 
+                <td>  
+                <?php 
 
-                        echo    "<td>
+                        if ( $Fid_usuario == $_SESSION['Id_usuario']  && ($_SESSION['tipo'] == "Editor" || $_SESSION['tipo'] == "Admin" )  ) {
+                              echo    "
                                     <button onclick=\"borrarNoticia($ID);\" class=\"btn\"><i class=\"fa fa-close\"></i></button>
-                                </td>";                        
+                                ";  
+                            
+                        } 
+
+                        
+                                           
 
                     echo "<tr>";          
                     }
                 ?>
-                
+                </td>
             </tbody>
         </table>
     </div>   
@@ -104,9 +120,10 @@
 
                         <div class="active col s12 m12 l12 input-field">
                             Articulo:<br>
-                            <input id="Articulo" name="Articulo" type="text" class="validate">                            
-						</div><br>
-
+                            <!-- <input id="Articulo" name="Articulo" type="text" class="validate"> -->
+                            <textarea name="Articulo" id="Articulo"></textarea>                            
+                        </div><br>
+                       
                         <div class="col s12 m12 l12 input-field">
 							Estado: <input type="checkbox" id="Activ" name="Activ" value="<?= $Activ;?>">
                             
@@ -137,7 +154,7 @@
 
                         <div class="active col s12 m12 l12 input-field">
                             Id Usuario:<br>
-                            <input id="Fid_usuario" name="Fid_usuario" type="text" class="validate">                            
+                            <input readonly id="Fid_usuario" name="Fid_usuario" type="text" class="validate">                            
 						</div><br>
 
 
@@ -147,8 +164,7 @@
 			</form>
         </div>
         <div class="modal-footer">
-            <button type="button" onclick="editNoticia();" class="btn btn-primary">GUARDAR</button>
-            <!-- <button type="button" id="editFotoGaleria" class="btn btn-primary">GUARDAR</button> -->
+            <button type="button" onclick="editNoticia();" class="btn btn-primary">GUARDAR</button>            
           <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
         </div>
       </div>
@@ -183,7 +199,8 @@
 
                         <div class="active col s12 m12 l12 input-field">
                             Articulo:<br>
-                            <input id="Articulo1" name="Articulo" type="text" class="validate">                            
+                            <textarea name="Articulo" id="Articulo1" required></textarea>
+                            
 						</div><br>  						
 						
 						<div class="col s12 m12 l12 file-field input-field">
@@ -197,7 +214,7 @@
 
                         <div class="active col s12 m12 l12 input-field">
                             Id Usuario:<br>
-                            <input id="Fid_usuario1" name="Fid_usuario" type="text" class="validate">                            
+                            <input readonly id="Fid_usuario1" name="Fid_usuario" type="text" class="validate" value="<?php echo $Fid_usuario ?> ">                            
 						</div><br>
 
 					</div>
