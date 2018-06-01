@@ -10,7 +10,7 @@
 		<!-- menu para todo el mundo -->
 		<li><button class="" value="home" name="seccio" type="submit">Home</button></li>
 		<li><button class="" value="noticias" name="seccio" type="submit">Noticias</button></li>			
-		<li><button class="" value="registrar" name="seccio" type="submit">Registrar</button></li>
+		<li><button class="" value="registrar" name="seccio" type="submit">Registrar</button></li>		
 		<li class="fecha">		
 			<?php
 			// Prints the day, date, month, year, time, AM or PM
@@ -21,18 +21,18 @@
 
 		<?php		
  		if($_SESSION['tipo']=="none"){
-		?>
-		
-		<li><button value="login" name="seccio" type="submit">LOGIN</button></li>
-		
+		?>		
+		<li><button value="login" name="seccio" type="submit">LOGIN</button></li>		
 		<?php
-
-		}//menu para SOLO ADMIN
-		elseif($_SESSION['tipo']=="admin"){
+		} //fin session NONE
+		
+		
+		//menu para SOLO ADMIN
+		if($_SESSION['tipo']=="Admin"){
 		?>
 		<li><button class="" value="contactos" name="seccio" type="submit">Contactos</button></li>
 		<li><button class="" value="BOnoticias" name="seccio" type="submit">Tratar Noticias</button></li>
-		<li><button class="" value="logout" name="seccio" type="submit">LOGOUT</button></li>
+		
 		<li class="username">
 			<?php				
 			$username = $_SESSION['user'];
@@ -47,7 +47,7 @@
 		<?php
 		}
 		//menu para Editor		
-		elseif($_SESSION['tipo']=="editor"){
+		if($_SESSION['tipo']=="Editor"){
 		?>
 			
 		<li><button class="" value="logout" name="seccio" type="submit">LOGOUT</button></li>
@@ -65,9 +65,10 @@
 		<?php
 		
 		}
-		elseif($_SESSION['tipo']=="colaborador"){
-		?>
-		<li><button class="" value="noticias" name="seccio" type="submit">Noticias</button></li>		
+
+		//menu para COLABORADOR, EDIRTOR, ADMIN
+		if($_SESSION['tipo']=="Colaborador" || $_SESSION['tipo']=="Admin" || $_SESSION['tipo']=="Editor"){
+		?>		
 		<li><button class="" value="logout" name="seccio" type="submit">LOGOUT</button></li>
 		<li class="username">
 			<?php				
@@ -79,9 +80,9 @@
 			}
 			?>
 		</li>
-
 		<?php
 		}
+
 
 		?>	
 	</ul>

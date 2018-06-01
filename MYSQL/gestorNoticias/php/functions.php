@@ -1,44 +1,75 @@
 <?php 
+
  
 function initCfg(){
     
     $cfg['username']="";    //si no hay username
-    $cfg['password']="";    //si no hay password    
-    
-    $cfg['saved_admin']="Perla";
-    $cfg['saved_pwAdmin']="123";    
-    $cfg['saved_hashAdmin']=md5($cfg['saved_pwAdmin']);
-    
-    $cfg['saved_user']="Marc";
-    $cfg['saved_pwUser']="987";    
-    $cfg['saved_hashUser']=md5($cfg['saved_pwUser']);
-    
-	$cfg['tipo']=$_SESSION['tipo']="none";
-
+    $cfg['password']="";    //si no hay password     
+    $cfg['tipo']=$_SESSION['tipo']="none";
+    $cfg['server']="localhost";
+    $cfg['userBD']="root";
+    $cfg['passwordBD']="perla";
+    $cfg['BD']="gestornoticias";
 	return $cfg; //devuelve: ['username'], ['password']
 }
 
-function checkUser($username,$password){
-    if($username==$_SESSION ['cfg']['saved_admin'] && md5($password)==$_SESSION ['cfg']['saved_hashAdmin']){
-    //if($username=="Perla" && $password=="123") {   
-        $_SESSION['tipo']="admin";        
-		$_SESSION['user']="$username";
-		$_SESSION['hash']=md5($password); 
+function connectBD(){
+   
+    $server=$_SESSION ['cfg']['server'];
+    $user=$_SESSION ['cfg']['userBD'];
+    $pw=$_SESSION ['cfg']['passwordBD'];
+    $basedatos=$_SESSION ['cfg']['BD'];
+//echo $server;
+    $conexion = mysqli_connect ($server, $user, $pw, $basedatos) or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+    //$conexion = mysqli_connect ('localhost', 'root', 'perla', 'empresa') or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+    return $conexion;
 
-	}
-    elseif($username==$_SESSION['cfg']['saved_user'] && $_SESSION['cfg']['saved_hashUser']==md5($password))
-    //elseif($username=="Marc" && $password=="987")
-	{
-        $_SESSION['tipo']="user";        
-		$_SESSION['user']="$username";
-		$_SESSION['hash']=md5($password); 
-        
-	}else{
-		$_SESSION['tipo']="none";
-		return false;
-	}
-	return true;
 }
+
+
+function checkUser($username,$password){
+    $salida=true;
+    
+    $conexion= connectBD();
+
+    $sql="SELECT * FROM usuarios WHERE Username='$username'";
+    //echo $sql;
+
+    $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la consulta".mysqli_error($conexion));
+
+    $CheckLogin=mysqli_num_rows($consulta); //devuelve 1 row si exsiste el usuario y no devuelve nada si no existe
+
+    if ($CheckLogin==0) {
+        echo "Usuario no existe.";
+        $salida = false;
+    } else {
+        $fila=mysqli_fetch_assoc($consulta);
+        $pw=$fila['Password'];
+        $tipo=$fila['Tipo'];
+        $Id_usuario=$fila['Id_usuario'];
+
+        if ($pw==md5($password)) {
+            $_SESSION['tipo']=$tipo;        
+            $_SESSION['user']=$username;
+            $_SESSION['Id_usuario']=$Id_usuario;
+
+            	    
+        } else {
+           echo "La contraseña no es corrrecta.";
+           $salida = false;
+
+        }
+              
+    }  
+    
+
+    mysqli_close($conexion);
+    
+	return $salida;
+}
+
+
+
 
 function getFiles($dir){
 		// Sort in ascending order - this is default
