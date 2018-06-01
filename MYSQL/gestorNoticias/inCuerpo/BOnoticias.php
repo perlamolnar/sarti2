@@ -29,7 +29,7 @@
             <tr>
                 <th>ID</th> 
                 <th>Titulo</th>
-                <!-- <th>Articulo</th>               -->
+                <!-- <th>Articulo</th> -->
                 <th>Imagen</th>
                 <th>Id Usuario</th>
                 <th>Activ</th>               
@@ -50,14 +50,29 @@
                         $Activ= $fila['Activ'];
                         $Fid_usuario= $fila['Fid_usuario'];
                        
-
                         echo "<td>$ID</td>";                       
                         echo "<td>$Titulo</td>";
                         // echo "<td>$Articulo</td>";
                         echo "<td><img src=\"img/$Imagen\"></td>"; 
                         echo "<td>$Fid_usuario</td>";
-                        echo "<td>$Activ</td>";
+                        echo "<td>$Activ</td>";         
                         
+                if ( $_SESSION['tipo'] == "Admin" )   {
+                            
+                        echo    "<td>
+                                <button onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><i class=\"fa fa-edit\"></i></button>
+                                </td>"; 
+                
+                
+                        echo    
+                                "<td>
+                                    <button onclick=\"borrarNoticia($ID);\" class=\"btn\"><i class=\"fa fa-close\"></i></button>
+                                </td>";  
+                        
+                    }   
+
+
+
                 ?>  
                 
                 <!-- 
@@ -65,6 +80,10 @@
                     Editor: crear notícias, editarlas (todas) y eliminarlas (sólo las suyas).
                     Colaborador: crear notícias, editarlas (sólo las suyas) y eliminarlas (solo las suyas). 
                 -->
+
+
+
+
 
                 <td>   
                 <?php     
@@ -83,18 +102,22 @@
                 <td>  
                 <?php 
 
-                        if ( $Fid_usuario == $_SESSION['Id_usuario']  && ($_SESSION['tipo'] == "Editor" || $_SESSION['tipo'] == "Admin" )  ) {
-                              echo    "
-                                    <button onclick=\"borrarNoticia($ID);\" class=\"btn\"><i class=\"fa fa-close\"></i></button>
-                                ";  
+                        if ( $Fid_usuario == $_SESSION['Id_usuario']  && $_SESSION['tipo'] == "Editor" ) {
+                              echo " <button onclick=\"borrarNoticia($ID);\" class=\"btn\"><i class=\"fa fa-close\"></i></button>";  
                             
                         }                       
                                            
-
-                    echo "<tr>";          
-                    }
                 ?>
-                </td>
+                </td> 
+                
+                <?php
+                
+                echo "</tr>";          
+                    
+            }
+            
+            ?>
+
             </tbody>
         </table>
     </div>   
