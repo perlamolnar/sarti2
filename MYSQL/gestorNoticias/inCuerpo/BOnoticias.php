@@ -24,7 +24,7 @@
 
    ?>
     <div class="table-responsive container d">          
-        <table class="table table-striped">
+        <table class="table">
             
             <tr>
                 <th>ID</th> 
@@ -55,62 +55,57 @@
                         // echo "<td>$Articulo</td>";
                         echo "<td><img src=\"img/$Imagen\"></td>"; 
                         echo "<td>$Fid_usuario</td>";
-                        echo "<td>$Activ</td>";         
+                        echo "<td>$Activ</td>";   
                         
+                        
+                // Administrador: crear notícias, editarlas y eliminarlas (todas).        
                 if ( $_SESSION['tipo'] == "Admin" )   {
                             
                         echo    "<td>
                                 <button onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><i class=\"fa fa-edit\"></i></button>
-                                </td>"; 
-                
+                                </td>";               
                 
                         echo    
                                 "<td>
                                     <button onclick=\"borrarNoticia($ID);\" class=\"btn\"><i class=\"fa fa-close\"></i></button>
                                 </td>";  
                         
-                    }   
-
-
-
-                ?>  
+                    }
+                    
+                // Editor: crear notícias, editarlas (todas) y eliminarlas (sólo las suyas).    
+                if ( $_SESSION['tipo'] == "Editor" )   {
+                        
+                    echo    "<td>
+                            <button onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><i class=\"fa fa-edit\"></i></button>
+                            </td>";               
+            
+                    echo    
+                            "<td>
+                                <button onclick=\"borrarNoticia($ID);\" class=\"btn\"><i class=\"fa fa-close\"></i></button>
+                            </td>";  
+                    
+                }                               
                 
-                <!-- 
-                    Administrador: crear notícias, editarlas y eliminarlas (todas).
-                    Editor: crear notícias, editarlas (todas) y eliminarlas (sólo las suyas).
-                    Colaborador: crear notícias, editarlas (sólo las suyas) y eliminarlas (solo las suyas). 
-                -->
+                // Colaborador: crear notícias, editarlas (sólo las suyas) y eliminarlas (solo las suyas). 
+                if ( $_SESSION['tipo'] == "Colaborador" )   {
+                        
+                    echo    "<td>
+                            <button onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><i class=\"fa fa-edit\"></i></button>
+                            </td>";               
+            
+                    echo    
+                            "<td>
+                                <button onclick=\"borrarNoticia($ID);\" class=\"btn\"><i class=\"fa fa-close\"></i></button>
+                            </td>";  
+                    
+                }  
 
 
 
 
 
-                <td>   
-                <?php     
-                        if ($Fid_usuario == $_SESSION['Id_usuario']) {
-                            echo    "
-                                    <button onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><i class=\"fa fa-edit\"></i></button>
-                                "; 
-                          
-                        }
-                ?>        
-                </td> 
-
-
-
-
-                <td>  
-                <?php 
-
-                        if ( $Fid_usuario == $_SESSION['Id_usuario']  && $_SESSION['tipo'] == "Editor" ) {
-                              echo " <button onclick=\"borrarNoticia($ID);\" class=\"btn\"><i class=\"fa fa-close\"></i></button>";  
-                            
-                        }                       
-                                           
-                ?>
-                </td> 
                 
-                <?php
+                
                 
                 echo "</tr>";          
                     
