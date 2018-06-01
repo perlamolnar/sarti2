@@ -2,7 +2,7 @@
 	
 	<div id="logo">
 		<img  src="img/logo.png" alt="Logo">	
-		<h1>MUNDO DE LECTORES</h1>	
+		<h1>MUNDO DE ESCRITORES Y LECTORES</h1>	
 	</div>	
 
 <form class="" action="index.php" method ="post"> 
@@ -22,7 +22,7 @@
 		<?php		
  		if($_SESSION['tipo']=="none"){
 		 ?>
-		<li><button class="" value="registrar" name="seccio" type="submit">Registrar</button></li>
+		
 		<li><button value="login" name="seccio" type="submit">LOGIN</button></li>
 		
 		<?php
@@ -30,8 +30,8 @@
 		}//menu para SOLO ADMIN
 		elseif($_SESSION['tipo']=="admin"){
 		?>
-		
-		<li><button class="" value="BOnoticia" name="seccio" type="submit">Tratar Noticias</button></li>
+		<li><button class="" value="contactos" name="seccio" type="submit">Contactos</button></li>
+		<li><button class="" value="BOnoticias" name="seccio" type="submit">Tratar Noticias</button></li>
 		<li><button class="" value="logout" name="seccio" type="submit">LOGOUT</button></li>
 		<li class="username">
 			<?php				

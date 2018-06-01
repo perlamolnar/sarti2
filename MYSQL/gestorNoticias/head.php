@@ -21,7 +21,7 @@
 
 		<?php		
  		if($_SESSION['tipo']=="none"){
-		 ?>
+		?>
 		
 		<li><button value="login" name="seccio" type="submit">LOGIN</button></li>
 		
@@ -67,18 +67,7 @@
 		}
 		elseif($_SESSION['tipo']=="colaborador"){
 		?>
-		<li><button class="" value="noticias" name="seccio" type="submit">Noticias</button></li>
-		<li><button class="" value="subirnoticia" name="seccio" type="submit">Subir Noticia</button></li>	
-
-		<!-- <li><button class="" value="clientes" name="seccio" type="submit">Clientes</button></li>
-		<li><button class="" value="productos" name="seccio" type="submit">Productos</button></li>
-		<li><button class="" value="estadisticas" name="seccio" type="submit">Estadisticas</button></li>
-		<li><button class="" value="subirproducto" name="seccio" type="submit">Subir Producto</button></li>	
-		<li><button class="" value="products" name="seccio" type="submit">Products</button></li>
-		<li><button class="" value="BOgaleria" name="seccio" type="submit">BO Galeria</button></li>	
-		<li><button class="" value="galeria" name="seccio" type="submit">Galeria</button></li>
-
-		-->
+		<li><button class="" value="noticias" name="seccio" type="submit">Noticias</button></li>		
 		<li><button class="" value="logout" name="seccio" type="submit">LOGOUT</button></li>
 		<li class="username">
 			<?php				

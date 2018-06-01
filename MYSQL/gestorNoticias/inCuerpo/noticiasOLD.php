@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="js/noticias.js"></script>
 </head>
 <body>
     
@@ -13,7 +14,7 @@
 
 <?php
 
-    $conexion = mysqli_connect ("localhost", "root", "perla", "gestornoticias") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+    $conexion = mysqli_connect ("localhost", "root", "", "gestornoticias") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
 
     $sql="select * from noticias";
 
@@ -27,21 +28,15 @@
             $FechaCreacion = $fila['FechaCreacion'];
             $Fid_usuario = $fila['Fid_usuario'];       
             
-            echo "
-            
+            echo "            
                 <div class=\"row\">
-
-                    <div class=\"sidebar\">
-                         
+                    <div class=\"sidebar\">                         
                         <a id='goToArticulo' href=\"#\">$Titulo</a>
                         <br> 
-                        <span>$FechaCreacion</span>
-                        
+                        <span>$FechaCreacion</span>                        
                     </div>
 
-                    <div class=\"noticias\">                    
-                            
-                                             
+                    <div class=\"noticias\">                                           
                                                              
                     
                     </div>

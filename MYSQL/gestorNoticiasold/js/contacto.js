@@ -1,53 +1,40 @@
+// $(document).ready(function () {
+//     $("#paginaActual").on("click", findPaginaActual); 
+// });
+
 // function findPaginaActual() {
 //     var paginaActual=$(this).text();
-//        
+//     console.log(paginaActual);    
 // }
 
 $(document).ready(function() {    
     //console.log("hola");
-    PaginacionContacto(1);
-    $("#back").on("click", menosUno);    
-    $("#next").on("click", masUno); 
-    
+    PaginacionContacto(1);  
+    $("#masUno").on("click", masUno); 
+    $("#menosUno").on("click", menosUno);   
    
 }); //fin de document ready;
 
-function masUno() {    
-    //coger el valor de la pagina con el class active, añadir 1, y pasar lo a la funcion paginacionContacto
+function masUno() {
+    //console.log('hola');
+    //coger el valor del, añadir 1, pasar a la funcion paginacionContacto
     $pageActual = $(".active").val();
     //console.log($pageActual);    
-    $nextPage=parseInt($pageActual)+1;
-    //console.log($next);    
-    PaginacionContacto($nextPage);
-    
+    $next=parseInt($pageActual)+1;
+    //console.log($next);
+    PaginacionContacto($next);     
 }
 
-function menosUno() {    
-    $pageActual1 = $(".active").val();
-    //console.log($pageActual1);    
-    $backPage=$pageActual1-1;
-    //console.log($back);
-    PaginacionContacto($backPage);    
+function menossUno() {
+
 }
+
+
 
 function PaginacionContacto(page) {
-    
+
     $(".paginationbtn").removeClass("active");
     $("#paginaActual"+page).addClass("active");
-
-    if (page == 1) {            
-        $("#back").hide();
-    } else {             
-        $("#back").show();
-    }
-
-    $total_paginas = $("#next").val();
-    //console.log($total_paginas);
-    if (page == $total_paginas) {  //poner total_number of pages
-        $("#next").hide();
-    } else {        
-        $("#next").show();
-    }
 
     $.ajax({
         url: 'php/contacto.php', // archivo php que tratara los datos

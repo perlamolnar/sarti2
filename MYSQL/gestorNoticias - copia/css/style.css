@@ -202,10 +202,42 @@ li a:hover {background-color: #111;}
 	background-color: transparent !important;
 }
 
-/* .paginationbtn .active {
-    background-color: dodgerblue;
-	color: white;	
+.pagination button.active {
+    background-color: rgb(114, 167, 164) !important;
+	color: white !important;
+	border:  solid 1px #aa4e4e !important;	
 }
 
 .pagination a:hover:not(.active) {background-color: #ddd;}
- */
+
+
+/************* tablas *********************/
+td{width: 200px; }
+th{
+	text-align: center; 
+	background-color: rgb(114, 167, 164); 
+	padding: 20px; 
+	color: white; 
+	text-shadow: 2px 2px 2px rgba(50, 50, 50, 1); 
+	font-size: 1.2em;
+}
+
+
+/************** articulos *****/
+
+#menuArticulos{
+	width: 20% !important;
+	float: left;
+	padding: 0 0 0 60px;
+	
+  }
+  
+  #Titulo{text-align: left;}
+  
+  #Articulos{
+	width: 80%;
+	float: left;
+	padding: 0 200px 0 100px;   
+  }
+
+ 

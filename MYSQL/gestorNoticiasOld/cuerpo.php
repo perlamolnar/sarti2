@@ -19,12 +19,12 @@
 			}
 			if($_POST['seccio']=="registrar"){
 				include("inCuerpo/registrar.php");
-			}		
-			if($_POST['seccio']=="estadisticas"){
-				include("inCuerpo/estadisticas.php");
 			}
-			if($_POST['seccio']=="BOnoticia"){
-				include("inCuerpo/BOnoticia.php");
+			if($_POST['seccio']=="BOnoticias"){
+				include("inCuerpo/BOnoticias.php");
+			}
+			if($_POST['seccio']=="contactos"){
+				include("inCuerpo/contacto.php");
 			}
 			if($_POST['seccio']=="products"){
 				include("inCuerpo/products.php");

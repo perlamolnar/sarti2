@@ -42,17 +42,17 @@ $(document).ready(function() {
 																					
 					menu += "<a href='' onClick='goToArticulo("+JSON.stringify(v)+");'>"+titulo+"</a><br><span id=\"FechaAlta\">"+fechacreacion+"</span><hr>";
 					
-					articuloPintado += `<div class="">
+					articuloPintado += `<div class="col s12 m12 l12 ">
 										<h2 id="Titulo">`+titulo+`</h2><br>								
 										<hr>
 										</div>
-										<div class="articulo" id="Articulo" comment><img id="Foto" width="400px" src="img/`+imagen+`" alt="`+titulo+`">`+articulo+`</div>            
+										<div class="col s12 m12 l12 more mySlides" id="Articulo" comment><img id="Foto" width="400px" src="img/`+imagen+`" alt="`+titulo+`">`+articulo+`</div>            
 										`
-					articuloPintadoMobil += `<div class="">
+					articuloPintadoMobil += `<div class="col s12 m12 l12 ">
 											<br><h4 class="corners animated slideInRight" id="Titulo">`+titulo+`</h4>								
 											<hr>
 											</div>
-											<div class="" id="Articulos" comment><img class="TextWrapRight" id="Foto" width="200px" src="img/`+imagen+`" alt="`+titulo+`">`+articulo+`</div>            
+											<div class="col s12 m12 l12 comment more mySlides" id="Articulo" comment><img class="TextWrapRight" id="Foto" width="200px" src="img/`+imagen+`" alt="`+titulo+`">`+articulo+`</div>            
 											`											
 				})
 			$("#menuTitulo").html(menu);	
