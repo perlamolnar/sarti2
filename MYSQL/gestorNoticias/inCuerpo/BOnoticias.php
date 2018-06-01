@@ -58,7 +58,14 @@
                         echo "<td>$Fid_usuario</td>";
                         echo "<td>$Activ</td>";
                         
-                ?>        
+                ?>  
+                
+                <!-- 
+                    Administrador: crear notícias, editarlas y eliminarlas (todas).
+                    Editor: crear notícias, editarlas (todas) y eliminarlas (sólo las suyas).
+                    Colaborador: crear notícias, editarlas (sólo las suyas) y eliminarlas (solo las suyas). 
+                -->
+
                 <td>   
                 <?php     
                         if ($Fid_usuario == $_SESSION['Id_usuario']) {
@@ -69,6 +76,10 @@
                         }
                 ?>        
                 </td> 
+
+
+
+
                 <td>  
                 <?php 
 
@@ -77,9 +88,7 @@
                                     <button onclick=\"borrarNoticia($ID);\" class=\"btn\"><i class=\"fa fa-close\"></i></button>
                                 ";  
                             
-                        } 
-
-                        
+                        }                       
                                            
 
                     echo "<tr>";          
