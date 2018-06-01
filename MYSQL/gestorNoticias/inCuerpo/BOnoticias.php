@@ -78,11 +78,14 @@
                     echo    "<td>
                             <button onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><i class=\"fa fa-edit\"></i></button>
                             </td>";               
-            
-                    echo    
+                    
+                    if ($_SESSION['Id_usuario'] == "$Fid_usuario") {
+                         echo    
                             "<td>
                                 <button onclick=\"borrarNoticia($ID);\" class=\"btn\"><i class=\"fa fa-close\"></i></button>
                             </td>";  
+                    }
+                   
                     
                 }                               
                 
