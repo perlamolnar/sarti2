@@ -9,8 +9,8 @@
 </head>
 <body>
     <?php
-        //session_start();
-        //include('../php/functions.php');   
+        session_start();
+        include('../php/functions.php');   
     
         $Nombre=$_POST["Nombre"]; 
         $Telefono=$_POST["Telefono"];       

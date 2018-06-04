@@ -1,6 +1,6 @@
 <?php
-    //session_start();
-    //include('../php/functions.php');
+    session_start();
+    include('../php/functions.php');
 
     $ID = $_POST['Id_usuario'];
     $Nombre= $_POST['Nombre'];

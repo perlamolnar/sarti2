@@ -1,7 +1,7 @@
 <?php
 
-    //session_start();
-    //include('../php/functions.php');
+    session_start();
+    include('../php/functions.php');
     
     $Titulo= $_POST['Titulo'];
     $Articulo=$_POST['Articulo'];
