@@ -7,6 +7,7 @@ $(document).ready(function() {
    
 }); //fin de document ready;
 
+
 function masUno() {    
     //coger el valor de la pagina con el class active, añadir 1, y pasar lo a la funcion paginacionContacto
     $pageActual = $(".active").val();
@@ -88,7 +89,7 @@ function PaginacionContacto(page) {
                 tbl_row += "<td>" + username + "</td>";
                 tbl_row += "<td>" + tipo + "</td>";
 
-                tbl_row += "<td><a href=''><i class='material-icons' style='color:#26A69A' onClick='openModalEditUsuario("+JSON.stringify(v)+");'>Edit</i></a></td>";
+                tbl_row += "<td><button onClick='openModalEditUsuario("+JSON.stringify(v)+");'>Edit<button></td>";
                 tbl_row += "<td><a href=''><i class='material-icons' style='color:#26A69A' onClick='borrarUsuario("+JSON.stringify(v.Id_usuario)+");'>Delete</i></a></td>";
                 
                 tbl_row += "</tr>"
@@ -108,4 +109,85 @@ function PaginacionContacto(page) {
     });
       
 }
+
+
+// **************** TRATAR USUARIOS - BORRAR Y MODIFICAR ***********************
+
+function borrarUsuario(Id) {
+    console.log(Id);
+
+    if (confirm("¿Estas seguro que quieres BORRAR este usuario????")) {
+        $.ajax({
+            type: 'POST',
+            url: 'php/deleteUsuario.php',
+            data: { id: Id },
+            success: function (data) {
+                console.log(data);
+                window.location.reload();
+                //alert("Producto borrado correctamente.");
+            },
+            error: function (e) {  // cuando no entiende lo que php devuelve. eg.no hay echo, hay mas echos que uno, etc.
+                console.log(e);
+                console.log("Error con Ajax!");
+            }
+        }); //fin de ajax
+    } else {
+        console.log("La noticia no esta borrado.");
+    }
+} //fin function borrar
+
+
+function openModalEditUsuario(miUsuario) {
+    console.log(miUsuario.Nombre);
+    $('#Id_usuario').val(miUsuario.Id_usuario);
+    $('#Nombre').val(miUsuario.Nombre);
+    $('#Email').val(miUsuario.Email);
+    $('#Telefono').val(miUsuario.Telefono);
+    $('#Direccion').val(miUsuario.Direccion);
+    $('#Username').val(miUsuario.Username);
+    $('#Tipo').val(miUsuario.Tipo);
+
+    $('#ModalEditUsuario').modal('show');   //abrir el modal
+
+} //fin function 
+
+
+function EditUsuario() {
+
+    var formData = new FormData();
+
+    //Form data
+    var form_data = $('#formModificarUsuario').serializeArray();
+    $.each(form_data, function (key, input) {
+        formData.append(input.name, input.value);
+    });
+
+    //File data
+    //alert(file_data);
+    //formData.append('file', $('#Foto')[0].files[0]);    
+
+    $.ajax({
+        type: 'POST',
+        url: 'php/editUsuario.php',
+        data: formData,
+        contentType: false, // tell jQuery not to set contentType
+        processData: false, // tell jQuery not to process the data
+        success: function (data) {  //data es el echo que el php devuelve
+            //alert(data);
+            if (data = "ok") {
+                $('#myModal').modal('hide');
+                window.location.reload();
+                //alert("OK. Todo ha ido bien.");  
+            } else {
+                //alert("Error en la consulta.");
+                $('.ErrorMSG').html('<span style="color:red;">Error en la consulta. Some problem occurred, please try again.</span>');
+            }
+        }, //fin de success         
+        error: function (e) {
+            console.log(e);
+            console.log("NO HAY _POST");
+        }
+    }); //fin de ajax
+} //fin function editar
+
 
