@@ -175,8 +175,8 @@ function EditUsuario() {
         success: function (data) {  //data es el echo que el php devuelve
             //alert(data);
             if (data = "ok") {
-                $('#myModal').modal('hide');
-                window.location.reload();
+                $('#ModalEditUsuario').modal('hide');
+                //window.location.reload();
                 //alert("OK. Todo ha ido bien.");  
             } else {
                 //alert("Error en la consulta.");

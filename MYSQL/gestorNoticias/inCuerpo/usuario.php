@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="js/usuario.js"></script>
-    <script src="js/BOusuarios.js"></script>
+    <!-- <script src="js/BOusuarios.js"></script> -->
 
 </head>
 <body>
@@ -72,7 +72,7 @@
         </div>
         <div class="modal-body ">        
 
-          	<form id="formModificarUsuario" enctype="multipart/form-data">
+          	<form id="formModificarUsuario" action='' enctype="multipart/form-data">
 				<div class="container">
 
                 <!-- <div class="ErrorMSG"></div> -->
