@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    include('../php/functions.php');
 
     if ($_SERVER['REQUEST_METHOD'] === 'GET'){ // comprueba si se han recibido datos con GET
         

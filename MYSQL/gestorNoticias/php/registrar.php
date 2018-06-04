@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <?php     
+    <?php
+        //session_start();
+        //include('../php/functions.php');   
     
         $Nombre=$_POST["Nombre"]; 
         $Telefono=$_POST["Telefono"];       

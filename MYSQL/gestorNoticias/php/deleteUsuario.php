@@ -1,5 +1,10 @@
 
-    <?php    
+    <?php  
+    
+    //session_start();
+    //include('../php/functions.php');
+
+
     $ID = $_POST['id'];         
              
     if ($ID != 0) { 

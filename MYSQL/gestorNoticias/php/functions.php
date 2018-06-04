@@ -21,7 +21,7 @@ function connectBD(){
     $basedatos=$_SESSION ['cfg']['BD'];
     //echo $server;
     $conexion = mysqli_connect ($server, $user, $pw, $basedatos) or die ("No se puede conectar con el servidor".mysqli_error($conexion));
-    //$conexion = mysqli_connect ('localhost', 'root', '', 'gestornoticias') or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+    //$conexion = mysqli_connect ('localhost', 'root', 'perla', 'gestornoticias') or die ("No se puede conectar con el servidor".mysqli_error($conexion));
     return $conexion;
 
 }

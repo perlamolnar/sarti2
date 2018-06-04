@@ -1,6 +1,6 @@
 <?php
-		 
-// Operaciones con la BD en función de los datos recibidos
+	session_start();
+    include('../php/functions.php');
  
 	$test = 1;
 	if ($_SERVER['REQUEST_METHOD'] === 'GET'){ // comprueba si se han recibido datos con GET

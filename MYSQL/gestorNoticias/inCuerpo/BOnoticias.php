@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
     <script src="js/BOnoticias.js"></script>
+    
 </head>
 <body> 
 
@@ -14,7 +15,7 @@
 <p class="left"><button id="UploadNewItem" type="button" class="btn btn-lg">UPLOAD NEW ITEM</button></p>
 
 
-<?php  
+<?php   
 
     //$conexion = mysqli_connect ("localhost", "root", "", "gestornoticias") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
     $conexion = connectBD(); 
