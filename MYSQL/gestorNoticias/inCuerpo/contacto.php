@@ -13,7 +13,7 @@
 
     <?php  
     
-    $conexion = mysqli_connect ("localhost", "root", "perla", "ejercicios") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+    $conexion = mysqli_connect ("localhost", "root", "", "ejercicios") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
         
         $sql1="SELECT COUNT(Id) as nfilas FROM contacto"; // contar total_items
         
@@ -27,7 +27,7 @@
   
     ?>
 
-    <div class="container" style="padding-top: 70px;min-height: 800px">
+    <div class="container">
                             
         <table id="listado" class="table-striped">
             <thead class="fijo">
@@ -47,7 +47,7 @@
         <div class="pagination">
             <button id='back' href="#">&laquo;</button>
                 <?php            
-                   
+                    //pintamos los botones de paginacion:
                     for ($i=1; $i <= $total_paginas ; $i++) {                
                     echo "<button  class='paginationbtn' id='paginaActual$i' value='$i' onclick=\"PaginacionContacto('$i')\">$i</button>";                  
                     }

@@ -4,7 +4,7 @@
              
     if ($ID != 0) { 
     
-        $conexion = mysqli_connect ('localhost', 'root', 'perla', 'gestornoticias') or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+        $conexion = mysqli_connect ('localhost', 'root', '', 'gestornoticias') or die ("No se puede conectar con el servidor".mysqli_error($conexion));
 
         $sql1="SELECT * FROM noticias WHERE Id_noticia='$ID'";
         //echo $sql1;

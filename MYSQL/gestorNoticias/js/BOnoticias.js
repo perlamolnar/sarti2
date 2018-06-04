@@ -88,7 +88,7 @@ function borrarNoticia(Id) {
         console.log("La noticia no esta borrado.");        
     }
 
-} //fin function editar
+} //fin function borrar
 
 
 
@@ -99,14 +99,14 @@ function openModalEditNoticia(ID, Titulo, Articulo, Imagen, Fid_usuario, Activ) 
     $('#Articulo').val(Articulo);
     $('#Activ').val(Activ); 
     $('#Fid_usuario').val(Fid_usuario);
-    //console.log(Activ);
-    if (Activ == "on") {
-        $('#Activ').attr('checked', true);
-        //console.log("ON");
-    } else {
-        //console.log("OFF");
-        $('#Activ').attr('checked', false);
-    }
+    //console.log(Activ);         
+    // if (Activ == "on") {
+    //     $('#Activ').attr('checked', true);
+    //     //console.log("ON");
+    // } else {
+    //     //console.log("OFF");
+    //     $('#Activ').attr('checked', false);
+    // }
     $('#ShowFoto').attr('src', "img/" + Imagen);
     $('#FotoActual').val(Imagen); //???
 
@@ -119,9 +119,9 @@ function checkbox() {
     var checkBox = document.getElementById("Activ");
     var text = document.getElementById("text");
     if (checkBox.checked == true) {
-        text.style.display = "block";
+        text.style.display = "block";        
     } else {
-        text.style.display = "none";
+        text.style.display = "none";       
     }
 }
 

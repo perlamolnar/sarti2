@@ -2,13 +2,13 @@
 
     if ($_SERVER['REQUEST_METHOD'] === 'GET'){ // comprueba si se han recibido datos con GET
         
-        $conexion = mysqli_connect ("localhost", "root", "", "ejercicios") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+        $conexion = mysqli_connect ("localhost", "root", "", "gestornoticias") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
                 
         $num_item = 3;
         $pagina = $_GET["page"];
         $inicio = ($pagina-1)*$num_item;      
 
-        $sql="SELECT * FROM contacto LIMIT $inicio, 3";    
+        $sql="SELECT * FROM usuarios LIMIT $inicio, 3";    
 
         $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la conexion".mysqli_error($conexion));
         

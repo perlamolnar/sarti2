@@ -12,7 +12,7 @@
 <h1>PRODUCTOS</h1>
 <?php
 
-    $conexion = mysqli_connect ("localhost", "root", "perla", "ejercicios") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+    $conexion = mysqli_connect ("localhost", "root", "", "ejercicios") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
 
     $sql="select * from productos";
 

@@ -16,9 +16,9 @@
 
 <?php  
 
-    $conexion = mysqli_connect ("localhost", "root", "perla", "gestornoticias") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+    $conexion = mysqli_connect ("localhost", "root", "", "gestornoticias") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
 
-    $sql="select * from noticias";
+    $sql="SELECT * FROM noticias ORDER BY Fid_usuario";
 
     $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la consulta".mysqli_error($conexion));
 
@@ -27,12 +27,12 @@
         <table class="table">
             
             <tr>
-                <th>ID</th> 
+                <!-- <th>ID</th>  -->
                 <th>Titulo</th>
                 <!-- <th>Articulo</th> -->
                 <th>Imagen</th>
                 <th>Id Usuario</th>
-                <th>Activ</th>               
+                <th>Publicar</th>               
                 <th>Modificar</th>
                 <th>Borrar</th>
             </tr>
@@ -50,7 +50,7 @@
                         $Activ= $fila['Activ'];
                         $Fid_usuario= $fila['Fid_usuario'];
                        
-                        echo "<td>$ID</td>";                       
+                        //echo "<td>$ID</td>";                       
                         echo "<td>$Titulo</td>";
                         // echo "<td>$Articulo</td>";
                         echo "<td><img src=\"img/$Imagen\"></td>"; 
@@ -59,55 +59,48 @@
                         
                         
                 // Administrador: crear notícias, editarlas y eliminarlas (todas).        
-                if ( $_SESSION['tipo'] == "Admin" )   {
-                            
-                        echo    "<td>
-                                <button onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><i class=\"fa fa-edit\"></i></button>
-                                </td>";               
-                
+                if ( $_SESSION['tipo'] == "Admin" )   {                            
                         echo    
-                                "<td>
-                                    <button onclick=\"borrarNoticia($ID);\" class=\"btn\"><i class=\"fa fa-close\"></i></button>
-                                </td>";  
-                        
-                    }
+                            "<td>
+                            <button class='greenBG' onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><i title='EDITAR'class=\"fa fa-edit\"></i></button>
+                            </td>";
+
+                        echo    
+                            "<td>
+                                <button class='greenBG' onclick=\"borrarNoticia($ID);\" class=\"btn\"><i title='ELIMINAR' class=\"fa fa-close\"></i></button>
+                            </td>";
+                        }
                     
                 // Editor: crear notícias, editarlas (todas) y eliminarlas (sólo las suyas).    
-                if ( $_SESSION['tipo'] == "Editor" )   {
+                if ( $_SESSION['tipo'] == "Editor" )   {                        
+                        echo    "<td>
+                                <button class='greenBG' onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><i title='EDITAR' class=\"fa fa-edit\"></i></button>
+                                </td>";               
                         
-                    echo    "<td>
-                            <button onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><i class=\"fa fa-edit\"></i></button>
-                            </td>";               
-                    
-                    if ($_SESSION['Id_usuario'] == "$Fid_usuario") {
-                         echo    
-                            "<td>
-                                <button onclick=\"borrarNoticia($ID);\" class=\"btn\"><i class=\"fa fa-close\"></i></button>
-                            </td>";  
-                    }
-                   
-                    
-                }                               
+                        if ($_SESSION['Id_usuario'] == "$Fid_usuario") {
+                        echo    "<td><button class='greenBG' onclick=\"borrarNoticia($ID);\" class=\"btn\"><i title='ELIMINAR' class=\"fa fa-close\"></i></button></td>";  
+                        }
+                        
+                        if ( $_SESSION['Id_usuario'] <> "$Fid_usuario" )   {  
+                            echo "<td><img style='width: 70px'; src='img/lock.png' alt='SIN PERMISO' title='NO TIENES PERMISO'></td>";   
+                        }   
+                          
+                }                            
                 
                 // Colaborador: crear notícias, editarlas (sólo las suyas) y eliminarlas (solo las suyas). 
-                if ( $_SESSION['tipo'] == "Colaborador" )   {
-                    
-                    if ($_SESSION['Id_usuario'] == "$Fid_usuario") {
-
-                          echo    "<td>
-                            <button onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><i class=\"fa fa-edit\"></i></button>
-                            </td>"; 
-
-                    }
-                                 
-            
-                   if ($_SESSION['Id_usuario'] == "$Fid_usuario") {
-                         echo    
+                if ( $_SESSION['tipo'] == "Colaborador" && $_SESSION['Id_usuario'] == "$Fid_usuario" )   { 
+                        echo    
                             "<td>
-                                <button onclick=\"borrarNoticia($ID);\" class=\"btn\"><i class=\"fa fa-close\"></i></button>
-                            </td>";  
-                    }
-                    
+                            <button class='greenBG' onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><i title='EDITAR' class=\"fa fa-edit\"></i></button>
+                            </td>"; 
+                        echo    
+                            "<td>
+                                <button class='greenBG' onclick=\"borrarNoticia($ID);\" class=\"btn\"><i title='ELIMINAR' class=\"fa fa-close\"></i></button>
+                            </td>";
+                }
+                if( $_SESSION['tipo'] == "Colaborador" && $_SESSION['Id_usuario'] <> "$Fid_usuario") {
+                    echo "<td><img style='width: 70px'; src='img/lock.png' alt='SIN PERMISO' title='NO TIENES PERMISO'></td>";
+                    echo "<td><img style='width: 70px'; src='img/lock.png' alt='SIN PERMISO' title='NO TIENES PERMISO'></td>";
                 }                
                 
             echo "</tr>";          
@@ -138,7 +131,7 @@
           	<form id="formModificarNoticia" enctype="multipart/form-data">
 				<div class="container">
 
-                <div class="ErrorMSG"></div>
+                <!-- <div class="ErrorMSG"></div> -->
                 
 					<input type="hidden" name="Id_noticia" id="Id_noticia" >
 
@@ -155,13 +148,14 @@
                         </div><br>
                        
                         <div class="col s12 m12 l12 input-field">
-							Estado: <input type="checkbox" id="Activ" name="Activ" value="<?= $Activ;?>">
-                            
-                            <p id="text" style="display:none">ACTIVA</p>
-                            </label>
+							Visualisación para el publico: 
+                            <select id="Activ" name="Activ">
+                                <option value="on">on</option>
+                                <option value="off">off</option>                                
+                            </select>  
                             							
-						</div>					 
-		
+						</div>
+                   		
 						<div class="col s12 m12 l12"><!--Show imagen -->  
 							<img id="ShowFoto" name="ShowFoto" scr="" width="20%" >
 						</div>
@@ -187,15 +181,13 @@
                             <input readonly id="Fid_usuario" name="Fid_usuario" type="text" class="validate">                            
 						</div><br>
 
-
-
 					</div>
 				</div>							
 			</form>
         </div>
         <div class="modal-footer">
             <button type="button" onclick="editNoticia();" class="btn btn-primary">GUARDAR</button>            
-          <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">CERRAR</button>
         </div>
       </div>
     </div>
@@ -244,7 +236,7 @@
 
                         <div class="active col s12 m12 l12 input-field">
                             Id Usuario:<br>
-                            <input readonly id="Fid_usuario1" name="Fid_usuario" type="text" class="validate" value="<?php echo $Fid_usuario ?> ">                            
+                            <input readonly id="Fid_usuario1" name="Fid_usuario" type="text" value="<?php echo $_SESSION['Id_usuario'] ?> ">                            
 						</div><br>
 
 					</div>

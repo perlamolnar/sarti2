@@ -2,7 +2,7 @@
 	
 	<div id="logo">
 		<img  src="img/logo.png" alt="Logo">	
-		<h1>MUNDO DE ESCRITORES Y LECTORES</h1>	
+		<h1 class='headtitle'>EL MUNDO DE <br>ESCRITORES Y LECTORES</h1>	
 	</div>	
 
 <form class="" action="index.php" method ="post"> 
@@ -31,7 +31,8 @@
 		//menu para SOLO ADMIN
 		if($_SESSION['tipo']=="Admin"){
 		?>
-		<li><button class="" value="contactos" name="seccio" type="submit">Contactos</button></li>
+		
+		<li><button class="" value="usuario" name="seccio" type="submit">Usuarios</button></li>
 		
 		<li class="username">
 			<?php				

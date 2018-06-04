@@ -1,16 +1,10 @@
 <?php
     $ID = $_POST['Id_noticia'];
     $Titulo= $_POST['Titulo'];
-    $Articulo=$_POST['Articulo'];   
-    //$Imagen = $_POST['Imagen']; 
-    
+    $Articulo=$_POST['Articulo'];
     $Fid_usuario= $_POST['Fid_usuario'];
-
-	$Activ = $_POST['Activ'];	
-	if ($Activ!= "on") {
-		$Activ="off";
-	}
-  
+    $Activ = $_POST['Activ'];
+      
 if ($_POST){ // comprueba si se han recibido datos con POST
 		
     //subida de archivos
@@ -49,11 +43,11 @@ if ($_POST){ // comprueba si se han recibido datos con POST
 
     
 
-    $conexion = mysqli_connect ('localhost', 'root', 'perla', 'gestornoticias') or die ("No se puede conectar con el servidor".mysqli_error($conexion));  
+    $conexion = mysqli_connect ('localhost', 'root', '', 'gestornoticias') or die ("No se puede conectar con el servidor".mysqli_error($conexion));  
 	//se puede hacer un include(conexion.php) preparado con los datos de conection. 
 	
     $sql="UPDATE noticias SET Titulo='$Titulo', Articulo='$Articulo', Activ='$Activ', Imagen='$nombreFoto' WHERE Id_noticia=$ID";
-    echo $sql;
+    //echo $sql;
 
     $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la consulta".mysqli_error($conexion));
 
