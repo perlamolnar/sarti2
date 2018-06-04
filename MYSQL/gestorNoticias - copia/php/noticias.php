@@ -1,18 +1,20 @@
 <?php
-
-    if ($_SERVER['REQUEST_METHOD'] === 'GET'){ // comprueba si se han recibido datos con GET
-        
-        $conexion = mysqli_connect ("localhost", "root", "", "gestornoticias") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
-                
-        $num_item = 3;
-        $pagina = $_GET["page"];
-        $inicio = ($pagina-1)*$num_item;      
-
-        $sql="SELECT * FROM usuarios LIMIT $inicio, 3";    
-
-        $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la conexion".mysqli_error($conexion));
-        
-        if ($consulta){
+		 
+// Operaciones con la BD en función de los datos recibidos
+ 
+	$test = 1;
+	if ($_SERVER['REQUEST_METHOD'] === 'GET'){ // comprueba si se han recibido datos con GET
+		
+		// abre conexión con la base de datos 
+		//$conexion = mysqli_connect ("localhost", "root", "", "gestornoticias") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+        $conexion = connectBD(); 
+		
+		$sql = "SELECT * FROM noticias WHERE Activ ='on';";	
+		
+		$consulta = mysqli_query($conexion, $sql )or die ("Fallo en la connexion".mysqli_error($conexion));
+		//mysqli_set_charset($mysqli,'utf8');
+		
+		if ($consulta){
             $error = "Registros leídos correctamente";                      
             $datos = array();
             while($fila=mysqli_fetch_assoc($consulta)){                 
@@ -26,8 +28,8 @@
         }
         
         /* Cierra la conexión con la base de datos*/
-        mysqli_close($conexion);        
-        
+		mysqli_close($conexion);    
+		
 		echo json_encode([ // codifica datos para enviar de vuelta con json
 				"consulta" => $datos,
 				"error" => $error,
@@ -41,7 +43,5 @@
 				"error" => "Error al codificar json_encode",
 				"resultado" => "Datos no corrrectos"
 			]);
-	}    
+	}
 ?>
-
-

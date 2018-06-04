@@ -1,12 +1,12 @@
-<?php   
-    
+<?php
+    $ID = $_POST['Id_noticia'];
     $Titulo= $_POST['Titulo'];
     $Articulo=$_POST['Articulo'];
-    //$Imagen = $_POST['Imagen']; 
-    //$Activ= $_POST['Activ'];
-    $Fid_usuario= $_POST['Fid_usuario'];   
-
-	
+    $Fid_usuario= $_POST['Fid_usuario'];
+    $Activ = $_POST['Activ'];
+      
+if ($_POST){ // comprueba si se han recibido datos con POST
+		
     //subida de archivos
     if ($_FILES) {
         $files = array();        
@@ -34,15 +34,20 @@
 
         }//fin de foreach
 
-       
+        $nombreFoto = $file['name'];    //??????
     }
-        echo $nombreCompleto;
+    else {	
+        //echo "NO HAY FILES";
+        $nombreFoto = $_POST['Foto1'];	//mantener nombre de foto actual		
+    }
 
-    $conexion = mysqli_connect ('localhost', 'root', '', 'gestornoticias') or die ("No se puede conectar con el servidor".mysqli_error($conexion));  
-	//se puede hacer un include(conexion.php) preparado con los datos de conection. 
+    
+
+    //$conexion = mysqli_connect ('localhost', 'root', '', 'gestornoticias') or die ("No se puede conectar con el servidor".mysqli_error($conexion));  
+	$conexion = connectBD(); 
 	
-    $sql="INSERT INTO noticias SET Titulo='$Titulo', Articulo='$Articulo', Imagen='$nombreFoto', Fid_usuario='$Fid_usuario';";
-    echo $sql; 
+    $sql="UPDATE noticias SET Titulo='$Titulo', Articulo='$Articulo', Activ='$Activ', Imagen='$nombreFoto' WHERE Id_noticia=$ID";
+    //echo $sql;
 
     $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la consulta".mysqli_error($conexion));
 
@@ -53,3 +58,13 @@
         }
 
     mysqli_close($conexion);
+
+    }//fin del "if ($_POST)"
+
+else {
+    echo "NO HAY _POST";
+}  
+ 
+
+
+?>
