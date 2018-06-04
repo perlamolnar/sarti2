@@ -6,8 +6,8 @@
 	if ($_SERVER['REQUEST_METHOD'] === 'GET'){ // comprueba si se han recibido datos con GET
 		
 		// abre conexión con la base de datos 
-		$conexion = mysqli_connect ("localhost", "root", "", "gestornoticias") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
-        //$mysqli = new mysqli('localhost','root','','gestornoticias');		
+		//$conexion = mysqli_connect ("localhost", "root", "", "gestornoticias") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+        $conexion = connectBD(); 
 		
 		$sql = "SELECT * FROM noticias WHERE Activ ='on';";	
 		

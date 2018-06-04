@@ -4,7 +4,8 @@
              
     if ($ID != 0) { 
     
-        $conexion = mysqli_connect ('localhost', 'root', '', 'gestornoticias') or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+        //$conexion = mysqli_connect ('localhost', 'root', '', 'gestornoticias') or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+        $conexion = connectBD(); 
 
         $sql="DELETE FROM usuarios WHERE Id_usuario=$ID";
 

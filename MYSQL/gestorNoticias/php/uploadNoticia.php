@@ -38,8 +38,8 @@
     }
         echo $nombreCompleto;
 
-    $conexion = mysqli_connect ('localhost', 'root', '', 'gestornoticias') or die ("No se puede conectar con el servidor".mysqli_error($conexion));  
-	//se puede hacer un include(conexion.php) preparado con los datos de conection. 
+    //$conexion = mysqli_connect ('localhost', 'root', '', 'gestornoticias') or die ("No se puede conectar con el servidor".mysqli_error($conexion));  
+	$conexion = connectBD(); 
 	
     $sql="INSERT INTO noticias SET Titulo='$Titulo', Articulo='$Articulo', Imagen='$nombreFoto', Fid_usuario='$Fid_usuario';";
     echo $sql; 

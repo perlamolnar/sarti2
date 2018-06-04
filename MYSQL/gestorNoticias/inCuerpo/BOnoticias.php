@@ -16,7 +16,8 @@
 
 <?php  
 
-    $conexion = mysqli_connect ("localhost", "root", "", "gestornoticias") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+    //$conexion = mysqli_connect ("localhost", "root", "", "gestornoticias") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+    $conexion = connectBD(); 
 
     $sql="SELECT * FROM noticias ORDER BY Fid_usuario";
 

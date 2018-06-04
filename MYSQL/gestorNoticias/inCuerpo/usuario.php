@@ -14,7 +14,8 @@
 
     <?php  
     
-    $conexion = mysqli_connect ("localhost", "root", "", "gestornoticias") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+    //$conexion = mysqli_connect ("localhost", "root", "", "gestornoticias") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+    $conexion = connectBD(); 
         
         $sql1="SELECT COUNT(Id_usuario) as nfilas FROM usuarios"; // contar total_items
         

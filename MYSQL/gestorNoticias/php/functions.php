@@ -8,7 +8,7 @@ function initCfg(){
     $cfg['tipo']=$_SESSION['tipo']="none";
     $cfg['server']="localhost";
     $cfg['userBD']="root";
-    $cfg['passwordBD']="";  //perla en el curso
+    $cfg['passwordBD']="perla";  //perla en el curso
     $cfg['BD']="gestornoticias";
 	return $cfg; //devuelve: ['username'], ['password']
 }
@@ -19,9 +19,9 @@ function connectBD(){
     $user=$_SESSION ['cfg']['userBD'];
     $pw=$_SESSION ['cfg']['passwordBD'];
     $basedatos=$_SESSION ['cfg']['BD'];
-//echo $server;
-    //$conexion = mysqli_connect ($server, $user, $pw, $basedatos) or die ("No se puede conectar con el servidor".mysqli_error($conexion));
-    $conexion = mysqli_connect ('localhost', 'root', '', 'gestornoticias') or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+    //echo $server;
+    $conexion = mysqli_connect ($server, $user, $pw, $basedatos) or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+    //$conexion = mysqli_connect ('localhost', 'root', '', 'gestornoticias') or die ("No se puede conectar con el servidor".mysqli_error($conexion));
     return $conexion;
 
 }

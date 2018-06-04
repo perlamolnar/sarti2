@@ -46,8 +46,8 @@
 
     
 
-    $conexion = mysqli_connect ('localhost', 'root', '', 'gestornoticias') or die ("No se puede conectar con el servidor".mysqli_error($conexion));  
-	//se puede hacer un include(conexion.php) preparado con los datos de conection. 
+    //$conexion = mysqli_connect ('localhost', 'root', '', 'gestornoticias') or die ("No se puede conectar con el servidor".mysqli_error($conexion));  
+	$conexion = connectBD(); 
 	
     $sql="UPDATE usuarios SET Nombre='$Nombre', Email='$Email', Telefono='$Telefono', Direccion='$Direccion', Username='$Username', Tipo='$Tipo' WHERE Id_usuario=$ID";
     //echo $sql;

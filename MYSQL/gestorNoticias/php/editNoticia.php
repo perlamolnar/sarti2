@@ -43,8 +43,8 @@ if ($_POST){ // comprueba si se han recibido datos con POST
 
     
 
-    $conexion = mysqli_connect ('localhost', 'root', '', 'gestornoticias') or die ("No se puede conectar con el servidor".mysqli_error($conexion));  
-	//se puede hacer un include(conexion.php) preparado con los datos de conection. 
+    //$conexion = mysqli_connect ('localhost', 'root', '', 'gestornoticias') or die ("No se puede conectar con el servidor".mysqli_error($conexion));  
+	$conexion = connectBD(); 
 	
     $sql="UPDATE noticias SET Titulo='$Titulo', Articulo='$Articulo', Activ='$Activ', Imagen='$nombreFoto' WHERE Id_noticia=$ID";
     //echo $sql;
