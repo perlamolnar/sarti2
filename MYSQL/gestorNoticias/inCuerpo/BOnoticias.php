@@ -13,6 +13,7 @@
 <h1>BACKOFFICE DE NOTICIAS</h1>
 
 <p class="left"><button id="UploadNewItem" type="button" class="btn btn-lg">UPLOAD NEW ITEM</button></p>
+<p class="left"><button id="misArticulos" type="button" class="btn btn-lg">MIS ARTICULOS</button></p>
 
 
 <?php   
@@ -25,93 +26,95 @@
     $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la consulta".mysqli_error($conexion));
 
    ?>
-    <div class="table-responsive container d">          
-        <table class="table">
-            
-            <tr>
-                <!-- <th>ID</th>  -->
-                <th>Titulo</th>
-                <!-- <th>Articulo</th> -->
-                <th>Imagen</th>
-                <th>Id Usuario</th>
-                <th>Publicar</th>               
-                <th>Modificar</th>
-                <th>Borrar</th>
-            </tr>
-            
-            <tbody>
-            
-                <?php
-                
-                while($fila=mysqli_fetch_assoc($consulta)){ 
-                    echo "<tr>";
-                        $ID = $fila['Id_noticia']; 
-                        $Titulo= $fila['Titulo'];
-                        $Articulo= $fila['Articulo'];
-                        $Imagen = $fila['Imagen']; 
-                        $Activ= $fila['Activ'];
-                        $Fid_usuario= $fila['Fid_usuario'];
-                       
-                        //echo "<td>$ID</td>";                       
-                        echo "<td>$Titulo</td>";
-                        // echo "<td>$Articulo</td>";
-                        echo "<td><img src=\"img/$Imagen\"></td>"; 
-                        echo "<td>$Fid_usuario</td>";
-                        echo "<td>$Activ</td>";   
-                        
-                        
-                // Administrador: crear notícias, editarlas y eliminarlas (todas).        
-                if ( $_SESSION['tipo'] == "Admin" )   {                            
-                        echo    
-                            "<td>
-                            <button onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><img class='icon' src='img/edit1.png' alt='Modificar Icon' title='Editar'></button>
-                            </td>";
-
-                        echo    
-                            "<td>
-                                <button onclick=\"borrarNoticia($ID);\" class=\"btn\"><img class='icon' src='img/borrar.png' alt='Borrar Icon' title='Borrar'></button>
-                            </td>";
-                        }
+    <div id="listado" class="table-responsive container d">
+            <table class="table">
+                <tr>
+                    <!-- <th>ID</th>  -->
+                    <th>Titulo</th>
+                    <!-- <th>Articulo</th> -->
+                    <th>Imagen</th>
+                    <th>Id Usuario</th>
+                    <th>Publicar</th>               
+                    <th>Modificar</th>
+                    <th>Borrar</th>
+                </tr>
+             </table>   
+        <div id="tcuerpo">    
+            <table class="table">
+                <tbody>
                     
-                // Editor: crear notícias, editarlas (todas) y eliminarlas (sólo las suyas).    
-                if ( $_SESSION['tipo'] == "Editor" )   {                        
-                        echo    "<td>
-                                <button onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><img class='icon' src='img/edit1.png' alt='Modificar Icon' title='Editar'></button>
-                                </td>";               
+                        <?php
                         
-                        if ($_SESSION['Id_usuario'] == "$Fid_usuario") {
-                        echo    "<td><button onclick=\"borrarNoticia($ID);\" class=\"btn\"><img class='icon' src='img/borrar.png' alt='Borrar Icon' title='Borrar'></button></td>";  
-                        }
-                        
-                        if ( $_SESSION['Id_usuario'] <> "$Fid_usuario" )   {  
-                            echo "<td><img style='width: 70px'; src='img/lock.png' alt='SIN PERMISO' title='NO TIENES PERMISO'></td>";   
-                        }   
-                          
-                }                            
-                
-                // Colaborador: crear notícias, editarlas (sólo las suyas) y eliminarlas (solo las suyas). 
-                if ( $_SESSION['tipo'] == "Colaborador" && $_SESSION['Id_usuario'] == "$Fid_usuario" )   { 
-                        echo    
-                            "<td>
-                            <button onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><img class='icon' src='img/edit1.png' alt='Modificar Icon' title='Editar'></button>
-                            </td>"; 
-                        echo    
-                            "<td>
-                                <button onclick=\"borrarNoticia($ID);\" class=\"btn\"><img class='icon' src='img/borrar.png' alt='Borrar Icon' title='Borrar'></button>
-                            </td>";
-                }
-                if( $_SESSION['tipo'] == "Colaborador" && $_SESSION['Id_usuario'] <> "$Fid_usuario") {
-                    echo "<td><img style='width: 70px'; src='img/lock.png' alt='SIN PERMISO' title='NO TIENES PERMISO'></td>";
-                    echo "<td><img style='width: 70px'; src='img/lock.png' alt='SIN PERMISO' title='NO TIENES PERMISO'></td>";
-                }                
-                
-            echo "</tr>";          
-                    
-            }
-            
-            ?>
+                        while($fila=mysqli_fetch_assoc($consulta)){ 
+                            echo "<tr>";
+                                $ID = $fila['Id_noticia']; 
+                                $Titulo= $fila['Titulo'];
+                                $Articulo= $fila['Articulo'];
+                                $Imagen = $fila['Imagen']; 
+                                $Activ= $fila['Activ'];
+                                $Fid_usuario= $fila['Fid_usuario'];
+                            
+                                //echo "<td>$ID</td>";                       
+                                echo "<td>$Titulo</td>";
+                                // echo "<td>$Articulo</td>";
+                                echo "<td><img src=\"img/$Imagen\"></td>"; 
+                                echo "<td>$Fid_usuario</td>";
+                                echo "<td>$Activ</td>";   
+                                
+                                
+                        // Administrador: crear notícias, editarlas y eliminarlas (todas).        
+                        if ( $_SESSION['tipo'] == "Admin" )   {                            
+                                echo    
+                                    "<td>
+                                    <button onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><img class='icon' src='img/edit1.png' alt='Modificar Icon' title='Editar'></button>
+                                    </td>";
 
-            </tbody>
+                                echo    
+                                    "<td>
+                                        <button onclick=\"borrarNoticia($ID);\" class=\"btn\"><img class='icon' src='img/borrar.png' alt='Borrar Icon' title='Borrar'></button>
+                                    </td>";
+                                }
+                            
+                        // Editor: crear notícias, editarlas (todas) y eliminarlas (sólo las suyas).    
+                        if ( $_SESSION['tipo'] == "Editor" )   {                        
+                                echo    "<td>
+                                        <button onclick=\"openModalEditNoticia('$ID', '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><img class='icon' src='img/edit1.png' alt='Modificar Icon' title='Editar'></button>
+                                        </td>";               
+                                
+                                if ($_SESSION['Id_usuario'] == "$Fid_usuario") {
+                                echo    "<td><button onclick=\"borrarNoticia($ID);\" class=\"btn\"><img class='icon' src='img/borrar.png' alt='Borrar Icon' title='Borrar'></button></td>";  
+                                }
+                                
+                                if ( $_SESSION['Id_usuario'] <> "$Fid_usuario" )   {  
+                                    echo "<td><img style='width: 70px'; src='img/lock.png' alt='SIN PERMISO' title='NO TIENES PERMISO'></td>";   
+                                }   
+                                
+                        }                            
+                        
+                        // Colaborador: crear notícias, editarlas (sólo las suyas) y eliminarlas (solo las suyas). 
+                        if ( $_SESSION['tipo'] == "Colaborador" && $_SESSION['Id_usuario'] == "$Fid_usuario" )   { 
+                                echo    
+                                    "<td>
+                                    <button onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><img class='icon' src='img/edit1.png' alt='Modificar Icon' title='Editar'></button>
+                                    </td>"; 
+                                echo    
+                                    "<td>
+                                        <button onclick=\"borrarNoticia($ID);\" class=\"btn\"><img class='icon' src='img/borrar.png' alt='Borrar Icon' title='Borrar'></button>
+                                    </td>";
+                        }
+                        if( $_SESSION['tipo'] == "Colaborador" && $_SESSION['Id_usuario'] <> "$Fid_usuario") {
+                            echo "<td><img style='width: 70px'; src='img/lock.png' alt='SIN PERMISO' title='NO TIENES PERMISO'></td>";
+                            echo "<td><img style='width: 70px'; src='img/lock.png' alt='SIN PERMISO' title='NO TIENES PERMISO'></td>";
+                        }                
+                        
+                    echo "</tr>";          
+                            
+                    }
+                    
+                    ?>
+
+                </tbody>
+            </div>
         </table>
     </div>   
 

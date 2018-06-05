@@ -4,12 +4,69 @@ var files=null;
 $(document).ready(function () {
     $("#UploadNewItem").on("click", openModalUpload);
     $("#GardarNewItem").on("click", GardarNewItem);  
-    $("#editNoticia").on("click", editNoticia );  
-    
+    $("#editNoticia").on("click", editNoticia ); 
+    $("#misArticulos").on("click", misArticulos);   
     
 });
 
+function misArticulos() {    
+    $("tbody").html(' ');  //vaciar tabla pintada por defecto  
 
+    $.ajax({
+        url: 'php/misArticulos.php', // archivo php que tratara los datos
+        type: 'GET', // forma de enviar los datos
+        dataType: 'json', // tipo de datos que se envían
+        //data: { "page": page },
+        // funcion que se ejecuta cuando ha funcionado la llamada ajax correctamente
+        success: function (result) {     
+               
+            //console.log(result.consulta);
+            // console.log(result.resultado);
+            // console.log(result.error);
+            // crear la variable para contener el cuerpo de la tabla:  
+            var tbl_body = "";
+            //recorre el array que recogemos del php en result.query
+            var tbl_row = "";
+            //recorre todos los valores del array y los coloca en un formato tabla
+            $.each(result.consulta, function (k, v) {
+                 //console.log(v.Id_noticia);
+                var Id_noticia = 0;
+                var Titulo = "";
+                var Articulo ="";
+                var Imagen = "";
+                var Fid_usuario = "";
+                var Activ = "";
+
+                Id_noticia = v.Id_noticia;
+                Titulo = v.Titulo;
+                Articulo = v.Articulo;
+                Imagen = v.Imagen;
+                Fid_usuario = v.Fid_usuario;
+                Activ = v.Activ;
+
+                tbl_row += "<tr>"
+                tbl_row += "<td>" + Titulo + "</td>";                
+                tbl_row += "<td>" + Imagen + "</td>";
+                tbl_row += "<td>" + Fid_usuario + "</td>";
+                tbl_row += "<td>" + Activ + "</td>";
+                
+                //, Id_noticia, Titulo, Articulo, Imagen, Fid_usuario, Activ,
+                tbl_row += "<td><button onclick=\"openModalEditNoticia('" + Id_noticia + "','" + Titulo + "','" + Articulo + "','" + Imagen + "','" + Fid_usuario + "','" + Activ +"');\" class=\"btn\"><img class='icon' src='img/edit1.png' alt='Modificar Icon' title='Editar'></button></td>";
+                
+                tbl_row += "<td><button onclick=\"borrarNoticia(" + JSON.stringify(v.Id_noticia) +");\" class=\"btn\"><img class='icon' src='img/borrar.png' alt='Borrar Icon' title='Borrar'></button></td>";                
+
+                tbl_row += "</tr>"
+            })
+            $("#tcuerpo").html(tbl_row);            
+        },
+        // funcion ejecutada si ajax tiene un error
+        error: function (result) {
+            console.log("Error de Ajax.");
+            console.error(result.error);
+        }
+        // el resultado de la función queda guardado en la variable result
+    });
+}
 
 function openModalUpload() {
     $('#ModalUploadNoticia').modal('show');   //abrir el modal  
@@ -115,15 +172,15 @@ function openModalEditNoticia(ID, Titulo, Articulo, Imagen, Fid_usuario, Activ) 
 } //fin function 
 
 
-function checkbox() {
-    var checkBox = document.getElementById("Activ");
-    var text = document.getElementById("text");
-    if (checkBox.checked == true) {
-        text.style.display = "block";        
-    } else {
-        text.style.display = "none";       
-    }
-}
+// function checkbox() {
+//     var checkBox = document.getElementById("Activ");
+//     var text = document.getElementById("text");
+//     if (checkBox.checked == true) {
+//         text.style.display = "block";        
+//     } else {
+//         text.style.display = "none";       
+//     }
+// }
 
 function editNoticia() {
     var formData = new FormData();
