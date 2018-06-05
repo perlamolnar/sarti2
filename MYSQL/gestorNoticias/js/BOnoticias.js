@@ -50,10 +50,10 @@ function misArticulos() {
                 tbl_row += "<td>" + Fid_usuario + "</td>";
                 tbl_row += "<td>" + Activ + "</td>";
                 
-                //, Id_noticia, Titulo, Articulo, Imagen, Fid_usuario, Activ,
-                tbl_row += "<td><button onclick=\"openModalEditNoticia('" + Id_noticia + "','" + Titulo + "','" + Articulo + "','" + Imagen + "','" + Fid_usuario + "','" + Activ +"');\" class=\"btn\"><img class='icon' src='img/edit1.png' alt='Modificar Icon' title='Editar'></button></td>";
                 
-                tbl_row += "<td><button onclick=\"borrarNoticia(" + JSON.stringify(v.Id_noticia) +");\" class=\"btn\"><img class='icon' src='img/borrar.png' alt='Borrar Icon' title='Borrar'></button></td>";                
+                tbl_row += "<td><button onclick=\"openModalEditNoticia('" + Id_noticia + "','" + Titulo + "','" + Articulo + "','" + Imagen + "','" + Fid_usuario + "','" + Activ +"');\" class=\"btn\"><img class='icon' src='img/edit1.png' alt='Modificar Icon' title='Editar'></button></td>";                
+                
+                tbl_row += "<td><button onclick=\"borrarNoticia('" + Id_noticia + "');\" class=\"btn\"><img class='icon' src='img/borrar.png' alt='Borrar Icon' title='Borrar'></button></td>";                
 
                 tbl_row += "</tr>"
             })
