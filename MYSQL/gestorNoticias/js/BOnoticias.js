@@ -11,8 +11,7 @@ $(document).ready(function () {
 });
 
 function todosArticulos() {
-    window.location.reload();
-    
+    window.location.reload();    
 }
 
 function misArticulos() {    
