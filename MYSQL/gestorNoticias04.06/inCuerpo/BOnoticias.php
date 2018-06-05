@@ -64,23 +64,23 @@
                 if ( $_SESSION['tipo'] == "Admin" )   {                            
                         echo    
                             "<td>
-                            <button onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><img class='icon' src='img/edit1.png' alt='Modificar Icon' title='Editar'></button>
+                            <button class='greenBG' onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><i title='EDITAR'class=\"fa fa-edit\"></i></button>
                             </td>";
 
                         echo    
                             "<td>
-                                <button onclick=\"borrarNoticia($ID);\" class=\"btn\"><img class='icon' src='img/borrar.png' alt='Borrar Icon' title='Borrar'></button>
+                                <button class='greenBG' onclick=\"borrarNoticia($ID);\" class=\"btn\"><i title='ELIMINAR' class=\"fa fa-close\"></i></button>
                             </td>";
                         }
                     
                 // Editor: crear notícias, editarlas (todas) y eliminarlas (sólo las suyas).    
                 if ( $_SESSION['tipo'] == "Editor" )   {                        
                         echo    "<td>
-                                <button onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><img class='icon' src='img/edit1.png' alt='Modificar Icon' title='Editar'></button>
+                                <button class='greenBG' onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><i title='EDITAR' class=\"fa fa-edit\"></i></button>
                                 </td>";               
                         
                         if ($_SESSION['Id_usuario'] == "$Fid_usuario") {
-                        echo    "<td><button onclick=\"borrarNoticia($ID);\" class=\"btn\"><img class='icon' src='img/borrar.png' alt='Borrar Icon' title='Borrar'></button></td>";  
+                        echo    "<td><button class='greenBG' onclick=\"borrarNoticia($ID);\" class=\"btn\"><i title='ELIMINAR' class=\"fa fa-close\"></i></button></td>";  
                         }
                         
                         if ( $_SESSION['Id_usuario'] <> "$Fid_usuario" )   {  
@@ -93,11 +93,11 @@
                 if ( $_SESSION['tipo'] == "Colaborador" && $_SESSION['Id_usuario'] == "$Fid_usuario" )   { 
                         echo    
                             "<td>
-                            <button onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><img class='icon' src='img/edit1.png' alt='Modificar Icon' title='Editar'></button>
+                            <button class='greenBG' onclick=\"openModalEditNoticia('$ID',  '$Titulo', '$Articulo', '$Imagen', '$Fid_usuario', '$Activ');\" class=\"btn\"><i title='EDITAR' class=\"fa fa-edit\"></i></button>
                             </td>"; 
                         echo    
                             "<td>
-                                <button onclick=\"borrarNoticia($ID);\" class=\"btn\"><img class='icon' src='img/borrar.png' alt='Borrar Icon' title='Borrar'></button>
+                                <button class='greenBG' onclick=\"borrarNoticia($ID);\" class=\"btn\"><i title='ELIMINAR' class=\"fa fa-close\"></i></button>
                             </td>";
                 }
                 if( $_SESSION['tipo'] == "Colaborador" && $_SESSION['Id_usuario'] <> "$Fid_usuario") {

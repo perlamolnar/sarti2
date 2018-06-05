@@ -58,7 +58,6 @@ a {color: #952b1d}
 	padding: 15px;	
 }
 
-
 .red{color: red}
 
 .green{color: green}
@@ -135,10 +134,10 @@ form{
 	margin: auto;
 	
 }
-.icon{width: 50px;}
+
 .login{width:50%}
 input{width: 100%;}
-button{background-color:transparent; color:#ffffff;padding: 10px; border: none;}
+button{background-color: #952b1d; color:#ffffff;padding: 10px; border: none;}
 button:hover{ color:#8ae6e9;padding: 10px; border: none;}
 
 #menu{

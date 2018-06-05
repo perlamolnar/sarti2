@@ -1,9 +1,7 @@
 <?php
     session_start();
-    include('../php/functions.php');    
-      
- if ($_POST){ // comprueba si se han recibido datos con POST
-    
+    include('../php/functions.php');
+
     $ID = $_POST['Id_usuario'];
     $Nombre= $_POST['Nombre'];
     $Email=$_POST['Email'];
@@ -12,6 +10,9 @@
     $Username = $_POST['Username'];
     $Tipo = $_POST['Tipo'];
     
+      
+// if ($_POST){ // comprueba si se han recibido datos con POST
+		
 //     //subida de archivos
 //     if ($_FILES) {
 //         $files = array();        
@@ -64,7 +65,7 @@
 
     mysqli_close($conexion);
 
-    }     //fin del "if ($_POST)"
+    //}     //fin del "if ($_POST)"
 
 else {
     echo "NO HAY _POST";

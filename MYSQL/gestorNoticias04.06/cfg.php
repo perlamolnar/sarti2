@@ -7,5 +7,5 @@
       
         
         
-}  //print_r($_SESSION['cfg']['server']);
+}  print_r($_SESSION['cfg']['server']);
 ?>

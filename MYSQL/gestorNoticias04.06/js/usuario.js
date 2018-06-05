@@ -3,7 +3,6 @@ $(document).ready(function() {
     PaginacionContacto(1);
     $("#back").on("click", menosUno);    
     $("#next").on("click", masUno); 
-    $('#editUsuario').on('click', editUsuario);
     
    
 }); //fin de document ready;
@@ -90,8 +89,8 @@ function PaginacionContacto(page) {
                 tbl_row += "<td>" + username + "</td>";
                 tbl_row += "<td>" + tipo + "</td>";
 
-                tbl_row += "<td><button onClick='openModalEditUsuario("+JSON.stringify(v)+");'><img class='icon' src='img/edit1.png' alt='Modificar Icon' title='Editar'></button></td>";
-                tbl_row += "<td><button onClick='borrarUsuario("+JSON.stringify(v.Id_usuario)+");'><img class='icon' src='img/borrar.png' alt='Borrar Icon' title='Borrar'></button></td>";
+                tbl_row += "<td><button onClick='openModalEditUsuario("+JSON.stringify(v)+");'>Edit<button></td>";
+                tbl_row += "<td><a href=''><i class='material-icons' style='color:#26A69A' onClick='borrarUsuario("+JSON.stringify(v.Id_usuario)+");'>Delete</i></a></td>";
                 
                 tbl_row += "</tr>"
             })
@@ -139,7 +138,7 @@ function borrarUsuario(Id) {
 
 
 function openModalEditUsuario(miUsuario) {
-    //console.log(miUsuario.Nombre);
+    console.log(miUsuario.Nombre);
     $('#Id_usuario').val(miUsuario.Id_usuario);
     $('#Nombre').val(miUsuario.Nombre);
     $('#Email').val(miUsuario.Email);
@@ -153,13 +152,12 @@ function openModalEditUsuario(miUsuario) {
 } //fin function 
 
 
-function editUsuario() {
-    
+function EditUsuario() {
+
     var formData = new FormData();
 
     //Form data
     var form_data = $('#formModificarUsuario').serializeArray();
-    console.log(form_data);
     $.each(form_data, function (key, input) {
         formData.append(input.name, input.value);
     });
@@ -171,14 +169,14 @@ function editUsuario() {
     $.ajax({
         type: 'POST',
         url: 'php/editUsuario.php',
-        data: formData,        
+        data: formData,
         contentType: false, // tell jQuery not to set contentType
         processData: false, // tell jQuery not to process the data
         success: function (data) {  //data es el echo que el php devuelve
             //alert(data);
             if (data = "ok") {
                 $('#ModalEditUsuario').modal('hide');
-                window.location.reload();
+                //window.location.reload();
                 //alert("OK. Todo ha ido bien.");  
             } else {
                 //alert("Error en la consulta.");
