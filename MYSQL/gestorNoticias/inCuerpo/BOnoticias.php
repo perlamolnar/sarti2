@@ -14,6 +14,7 @@
 
 <p class="left"><button id="UploadNewItem" type="button" class="btn btn-lg">UPLOAD NEW ITEM</button></p>
 <p class="left"><button id="misArticulos" type="button" class="btn btn-lg">MIS ARTICULOS</button></p>
+<p class="left"><button id="todosArticulos" type="button" class="btn btn-lg">TODOS LOS ARTICULOS</button></p>
 
 
 <?php   

@@ -5,9 +5,15 @@ $(document).ready(function () {
     $("#UploadNewItem").on("click", openModalUpload);
     $("#GardarNewItem").on("click", GardarNewItem);  
     $("#editNoticia").on("click", editNoticia ); 
-    $("#misArticulos").on("click", misArticulos);   
+    $("#misArticulos").on("click", misArticulos); 
+    $("#todosArticulos").on("click", todosArticulos);   
     
 });
+
+function todosArticulos() {
+    window.location.reload();
+    
+}
 
 function misArticulos() {    
     $("tbody").html(' ');  //vaciar tabla pintada por defecto  
