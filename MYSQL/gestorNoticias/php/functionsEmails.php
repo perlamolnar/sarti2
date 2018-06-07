@@ -1,4 +1,6 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 function sendEmail ($Nombre, $To, $Subject, $Message){
 
@@ -12,8 +14,7 @@ function sendEmail ($Nombre, $To, $Subject, $Message){
         //use PHPMailer\PHPMailer\PHPMailer;
         //require '../vendor/autoload.php';
         //Create a new PHPMailer instance
-        use PHPMailer\PHPMailer\PHPMailer;
-        use PHPMailer\PHPMailer\Exception;
+       
 
         require 'PHPMailer/src/Exception.php';
         require 'PHPMailer/src/PHPMailer.php';
@@ -25,7 +26,7 @@ function sendEmail ($Nombre, $To, $Subject, $Message){
         // 0 = off (for production use)
         // 1 = client messages
         // 2 = client and server messages
-        $mail->SMTPDebug = 2;
+        $mail->SMTPDebug = 0;
         //Set the hostname of the mail server
         $mail->Host = 'smtp.gmail.com';
         // use
@@ -46,13 +47,13 @@ function sendEmail ($Nombre, $To, $Subject, $Message){
         //Set an alternative reply-to address
         $mail->addReplyTo('perlamolnar@hotmail.com', 'Perla Molnar');
         //Set who the message is to be sent to
-        $mail->addAddress('$To', '$Nombre');
+        $mail->addAddress($To, $Nombre);
         //Set the subject line
         //$mail->Subject = 'PHPMailer GMail SMTP test from Gyongyi';
-        $mail->Subject = '$Subject';        
+        $mail->Subject = $Subject;        
         //Read an HTML message body from an external file, convert referenced images to embedded,
         //convert HTML into a basic plain-text alternative body
-        $mail->msgHTML("$Message");
+        $mail->msgHTML($Message);
         //Replace the plain text body with one created manually
         $mail->AltBody = 'This is a plain-text message body';
         //Attach an image file
@@ -61,7 +62,7 @@ function sendEmail ($Nombre, $To, $Subject, $Message){
         if (!$mail->send()) {
             echo "Mailer Error: " . $mail->ErrorInfo;
         } else {
-            echo "Message sent!";
+            echo "<br>Message sent!";
             //Section 2: IMAP
             //Uncomment these to save your message in the 'Sent Mail' folder.
             #if (save_mail($mail)) {
@@ -73,7 +74,10 @@ function sendEmail ($Nombre, $To, $Subject, $Message){
         //Function to call which uses the PHP imap_*() functions to save messages: https://php.net/manual/en/book.imap.php
         //You can use imap_getmailboxes($imapStream, '/imap/ssl') to get a list of available folders or labels, this can
         //be useful if you are trying to get this working on a non-Gmail IMAP server.
-        function save_mail($mail)
+       
+
+}//fin de function sendEmail 
+function save_mail($mail)
         {
             //You can change 'Sent Mail' to any other folder or tag
             $path = "{imap.gmail.com:993/imap/ssl}[Gmail]/Sent Mail";
@@ -83,5 +87,3 @@ function sendEmail ($Nombre, $To, $Subject, $Message){
             imap_close($imapStream);
             return $result;
         }
-
-}//fin de function sendEmail

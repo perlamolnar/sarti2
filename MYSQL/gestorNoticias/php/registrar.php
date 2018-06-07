@@ -33,18 +33,19 @@
                     <a href=\"../index.php\">VOLVER</a>";
 
                     $Subject = "Confirmacion del registro.";
+                   
                     $Message = "                                
-                                <h3>Bienvenido, <?php echo $Nombre ?></h3>
+                                <h3>Bienvenido, $Nombre</h3>
                                 <p>
                                 Le informamos que ha registrado con exito al \"MUNDO DE ESCRITORES Y LECTORES\".
                                 <br><br>
                                 Reconfirmamos sus datos intorducidos:
                                 <br><br>
-                                Nombre: <?php echo $Nombre?><br>
-                                Teléfono: <?php echo $Telefono?><br>
-                                Dirección: <?php echo $Direccion?><br>
-                                Email: <?php echo $Email?><br>
-                                Username: <?php echo $Username?><br>
+                                Nombre: $Nombre<br>
+                                Teléfono: $Telefono<br>
+                                Dirección: $Direccion<br>
+                                Email: $Email<br>
+                                Username: $Username<br>
                                 <br>
                                 Si necesita hacer qualquier cambio, porfavor contacta el administrador: perlamolnar@hotmail.com 
                                 <br><br>
@@ -54,7 +55,7 @@
                                 </p>                               
                                 ";
 
-                    sendEmail($Nombre, $Email, $Subjecto, $Message);
+                    sendEmail($Nombre, $Email, $Subject, $Message);
 
         } else {
            echo "<h1>Error al registrar usuario. Intenta registrar de nuevo.</h1>
