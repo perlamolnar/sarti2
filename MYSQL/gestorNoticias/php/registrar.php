@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+
     <?php
         session_start();
-        include('../php/functions.php');   
+        include('../php/functions.php');  
+        include('functionsEmails.php'); 
     
         $Nombre=$_POST["Nombre"]; 
         $Telefono=$_POST["Telefono"];       
@@ -29,6 +31,31 @@
         if ($consulta) {
             echo "<h1>Los datos estan enviados correctamente</h1>
                     <a href=\"../index.php\">VOLVER</a>";
+
+                    $Subject = "Confirmacion del registro.";
+                    $Message = "                                
+                                <h3>Bienvenido, <?php echo $Nombre ?></h3>
+                                <p>
+                                Le informamos que ha registrado con exito al \"MUNDO DE ESCRITORES Y LECTORES\".
+                                <br><br>
+                                Reconfirmamos sus datos intorducidos:
+                                <br><br>
+                                Nombre: <?php echo $Nombre?><br>
+                                Teléfono: <?php echo $Telefono?><br>
+                                Dirección: <?php echo $Direccion?><br>
+                                Email: <?php echo $Email?><br>
+                                Username: <?php echo $Username?><br>
+                                <br>
+                                Si necesita hacer qualquier cambio, porfavor contacta el administrador: perlamolnar@hotmail.com 
+                                <br><br>
+                                Saludos,<br>
+                                Gyöngyi Molnár<br>
+                                Administradora<br>
+                                </p>                               
+                                ";
+
+                    sendEmail($Nombre, $Email, $Subjecto, $Message);
+
         } else {
            echo "<h1>Error al registrar usuario. Intenta registrar de nuevo.</h1>
                     <a href=\"../index.php\">VOLVER</a>";
