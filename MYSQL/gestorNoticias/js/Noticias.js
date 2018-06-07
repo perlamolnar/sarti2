@@ -96,6 +96,10 @@ $(document).ready(function() {
 						</div>
 						<div class="" id="Articulo" comment><img id="Foto" width="400px" src="img/`+imagen+`" alt="`+titulo+`">`+articulo+`</div>            
 						`
-	$("#Articulos").html(articuloPintado);		
+	$("#Articulos").html(articuloPintado);	
+
+	
+	
+	
 	
 }

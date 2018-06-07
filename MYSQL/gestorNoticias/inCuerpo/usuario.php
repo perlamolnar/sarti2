@@ -30,6 +30,8 @@
     ?>
 
     <div class="container">
+
+    <button id="descargarPDF">DESCARGAR EN PDF</button>
                             
         <table id="listado" class="table-striped">
             <thead class="fijo">

@@ -4,10 +4,17 @@ $(document).ready(function() {
     $("#back").on("click", menosUno);    
     $("#next").on("click", masUno); 
     $('#editUsuario').on('click', editUsuario);
+    $('#descargarPDF').on('click', descargarPDF);
     
    
 }); //fin de document ready;
 
+function descargarPDF() {
+
+
+
+    
+}
 
 function masUno() {    
     //coger el valor de la pagina con el class active, añadir 1, y pasar lo a la funcion paginacionContacto
