@@ -13,8 +13,8 @@
         session_start();
         include('../php/functions.php'); 
 
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
+        use PHPMailer\PHPMailer\PHPMailer;
+        use PHPMailer\PHPMailer\Exception;
 
         $conexion = connectBD(); 
 
