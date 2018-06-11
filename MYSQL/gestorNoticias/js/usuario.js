@@ -4,16 +4,12 @@ $(document).ready(function() {
     $("#back").on("click", menosUno);    
     $("#next").on("click", masUno); 
     $('#editUsuario').on('click', editUsuario);
-    $('#descargarPDF').on('click', descargarPDF);
-    
+    $('#descargarPDF').on('click', descargarPDF);   
    
 }); //fin de document ready;
 
 function descargarPDF() {
-
-
-
-    
+    window.open("php/generatePDF.php");
 }
 
 function masUno() {    

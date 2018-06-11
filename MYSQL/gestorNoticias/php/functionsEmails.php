@@ -49,15 +49,14 @@ function sendEmail ($Nombre, $To, $Subject, $Message){
         //Set who the message is to be sent to
         $mail->addAddress($To, $Nombre);
         //Set the subject line
-        //$mail->Subject = 'PHPMailer GMail SMTP test from Gyongyi';
-        $mail->Subject = $Subject;        
+        $mail->Subject = utf8_decode($Subject);        
         //Read an HTML message body from an external file, convert referenced images to embedded,
         //convert HTML into a basic plain-text alternative body
         $mail->msgHTML($Message);
         //Replace the plain text body with one created manually
         $mail->AltBody = 'This is a plain-text message body';
         //Attach an image file
-        //$mail->addAttachment('images/phpmailer_mini.png');
+        $mail->addAttachment('../img/edit1.png');
         //send the message, check for errors
         if (!$mail->send()) {
             echo "Mailer Error: " . $mail->ErrorInfo;

@@ -1,0 +1,260 @@
+body{
+	margin:auto;
+	background-color: #cbddd9;
+	text-align: center;
+	color: #111;
+}
+
+#head{
+	background-image:url(../img/head.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;	 
+	/* background-color: #cbddd9; */
+	height: 250px;
+	padding: 20px 0px;
+	color:black;
+	/* text-shadow: 1px 1px 0px rgba(0, 0, 0, 1); */
+}
+
+.headtitle{font-size: 60px;}
+
+#cuerpo{	
+	width: 100%;
+	text-align: left !important;
+	min-height: 650px;	
+}
+
+#pie{
+	background-color: #541d16;
+	padding: 30px; 
+	height: 200px;
+	color: #fcf9f9;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+		
+}
+
+a {color: #952b1d}
+
+#cuerpo img{
+	width: 80%;	
+	height: 500px;
+	padding:30px 0px;
+	text-align: center!important;
+}
+
+#home{
+	background-image: url("../img/home.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* background-color: #86afa6; */
+	height: 600px;
+	color:#6d953d;
+	padding:100px;
+	font-weight: bold;
+	font-size: 1.3em;
+	
+}
+#home h1{	
+	padding: 15px;	
+}
+
+
+.red{color: red}
+
+.green{color: green}
+
+img{
+	width: 100px;	
+	/* padding:30px 0px; */
+	text-align: center!important;
+}
+.prohibido{width: 50px; padding-top: 0px;}
+.prohibido:hover{width: 70px;}
+
+.greenBG{background-color: #8faf54;border-radius: 50%; width: 50px; height: 50px; color:red; font-size: 2em}
+
+.line{float: left; margin: auto; text-align: center}
+
+.galeria{	
+	height: 200px;
+	padding: 30px;
+	
+}
+.fotoYtitulo{
+	float: left;	
+	text-align: center;	
+	padding: 50px;
+}
+.fotoYtitulo img{
+	width: 250px;
+	height: 250px;
+}
+
+
+h1{
+	text-transform: uppercase;
+	font-size: 3.1em;
+	color: #952b1d;
+	text-shadow: 1px 1px 0px rgb(247, 244, 244);
+	padding: 20px;
+}
+h2{	font-size: 1.9em;}
+
+.container{
+	padding: 0 5%;
+	width: 100%;	
+	overflow: auto;	
+}
+.formContainer{
+	padding: 0 30%;
+	width: 100%;	
+	overflow: auto;
+
+}
+.welcome{padding:8%}
+
+.sidebar{
+	width: 30%;
+	float: left;
+
+}
+.noticias{
+	width: 60%; 
+	float: left; 
+	text-align: justify;}
+
+.fotoArticulo{
+	float: right;
+	padding: 0 0 30px 30px;
+
+	width: 200px !important;
+}
+
+form{
+	text-align: left !important;	
+	margin: auto;
+	
+}
+.icon{width: 50px;}
+.login{width:50%}
+input{width: 100%;}
+button{background-color:transparent; color:#ffffff;padding: 10px; border: none;}
+button:hover{ color:#8ae6e9;padding: 10px; border: none;}
+
+#menu{
+	width: 20%;
+	height: 550px;
+	padding: 30px;
+	background-color: rgb(255, 212, 71);
+	opacity: 0.8;
+	float: left;
+	text-align: left;
+	color: black;
+	overflow: auto;	
+}
+#logo img{
+	width: 10%;	
+	padding:0px 0px 30px 30px;
+	float: left;
+	
+}
+table{padding: 10px;margin: auto}
+td{padding:10px; margin: auto}
+input.radioBtn{width: 50px}
+
+div#mainBox{		
+	padding: 20px 30px 20px 30px;
+	height: 550px;
+	width: 80%;
+	margin: 0px 50px;
+	overflow: auto;	
+}
+
+/**************** nav ***************/
+#nav{width: 100%; margin:0 !important}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+	background-color:#952b1d;	
+}
+
+li {float: left;}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {background-color: #111;}
+
+.fecha,  .username{
+	float: right;
+	padding: 12px;
+	color: white;
+}
+
+.left{align-content: left}
+
+/******** PAGINACION ********/
+
+.pagination button {
+    color: black;
+    float: left;
+    margin: 10px !important;
+    text-decoration: none;
+	/* transition: background-color .3s; */
+	background-color: transparent !important;
+}
+
+.pagination button.active {
+    background-color: rgb(114, 167, 164) !important;
+	color: white !important;
+	border:  solid 1px #952b1d !important;	
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+
+/************* tablas *********************/
+td{width: 200px; }
+th{
+	text-align: center; 
+	background-color: #4c1c16; 
+	padding: 20px; 
+	color: white; 
+	text-shadow: 2px 2px 2px rgba(50, 50, 50, 1); 
+	font-size: 1.2em;
+}
+
+
+/************** articulos *****/
+
+#menuArticulos{
+	width: 20% !important;
+	float: left;
+	padding: 0 0 0 60px;
+	
+  }
+  
+  #Titulo{text-align: left;}
+  
+  #Articulos{
+	width: 80%;
+	float: left;
+	padding: 0 100px 100px 100px; 
+	text-align: justify; 
+	
+  }
+
+  #Foto{
+	  float: right; 
+	  padding: 10px;
+	  width: 200px;
+	}
+
+ textarea{width: 100%; height: 250px}

@@ -13,7 +13,7 @@
     <h1>CONTACTOS</h1>
 
     <?php  
-    
+        
     //$conexion = mysqli_connect ("localhost", "root", "", "gestornoticias") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
     $conexion = connectBD(); 
         

@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 // include autoloader
 require_once 'dompdf/autoload.inc.php';
@@ -12,7 +13,7 @@ use Dompdf\Dompdf;
         $conexion = connectBD(); 
         $sql="SELECT * FROM usuarios";  
         $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la conexion".mysqli_error($conexion));
-         $tbl_row ="";
+        $tbl_row ="";
         if (mysqli_num_rows($consulta)>0){
             while($fila=mysqli_fetch_assoc($consulta)){                 
                $tbl_row .= "<tr>";
@@ -32,7 +33,7 @@ use Dompdf\Dompdf;
 $html = "<!DOCTYPE html>
 <html>
 <head>
-	<title>NOTICIAS DE LECTORES</title>
+	<title>USUARIOS REGISTRADOS</title>
 	<meta charset=\"utf-8\">
 	<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">	
 	<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>	
@@ -50,9 +51,7 @@ $html = "<!DOCTYPE html>
                     <th>Telefono</th>
                     <th>Dirección</th> 
                     <th>Username</th>
-                    <th>Tipo</th>  
-                    <th>Editar</th>
-                    <th>Borrar</th>                  
+                    <th>Tipo</th>                                    
                 </tr>
             </thead>
             <tbody >
@@ -62,7 +61,7 @@ $html = "<!DOCTYPE html>
 
 </body>
 </html>";
- $filename = "newpdffile";
+$filename = "Lista de Usuarios";
 
 // instantiate and use the dompdf class
 $dompdf = new Dompdf();

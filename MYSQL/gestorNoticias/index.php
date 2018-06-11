@@ -4,6 +4,7 @@ session_start();
 //session_start(); 
 
 include("php/functions.php");
+//include("php/generatePDF.php");
 //$tipo = $_SESSION['cfg']['tipo'];        
 //$username = $_SESSION['cfg']['user'];
 ?>

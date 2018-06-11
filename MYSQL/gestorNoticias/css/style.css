@@ -221,14 +221,14 @@ li a:hover {background-color: #111;}
 
 
 /************* tablas *********************/
-td{width: 200px; }
+td{width: 110px; }
 th{
 	text-align: center; 
 	background-color: #4c1c16; 
-	padding: 20px; 
+	padding: 20px 0px; 
 	color: white; 
 	text-shadow: 2px 2px 2px rgba(50, 50, 50, 1); 
-	font-size: 1.2em;
+	font-size: 1.1em;
 }
 
 
