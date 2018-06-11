@@ -2,7 +2,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-function sendEmail ($Nombre, $To, $Subject, $Message){
+function SendEmailNuevoRegistro ($Nombre, $To, $Subject, $Message){
 
         /**
          * This example shows settings to use when sending via Google's Gmail servers.

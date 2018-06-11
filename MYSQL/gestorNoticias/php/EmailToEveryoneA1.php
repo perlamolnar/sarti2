@@ -12,7 +12,7 @@
     <?php
         session_start();
         include('../php/functions.php');  
-        include('functionsEmailsToEveryone.php'); 
+        include('EmailToEveryoneA2.php'); 
 
         $conexion = connectBD(); 
 

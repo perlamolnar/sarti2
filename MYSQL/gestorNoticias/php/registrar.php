@@ -12,7 +12,7 @@
     <?php
         session_start();
         include('../php/functions.php');  
-        include('functionSendEmails.php'); 
+        include('SendEmailNuevoRegistro.php'); 
     
         $Nombre=$_POST["Nombre"]; 
         $Telefono=$_POST["Telefono"];       
@@ -55,7 +55,7 @@
                                 </p>                               
                                 ";
 
-                    sendEmail($Nombre, $Email, $Subject, $Message);
+                    SendEmailNuevoRegistro($Nombre, $Email, $Subject, $Message);
 
         } else {
            echo "<h1>Error al registrar usuario. Intenta registrar de nuevo.</h1>
