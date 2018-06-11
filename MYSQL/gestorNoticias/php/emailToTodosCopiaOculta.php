@@ -69,18 +69,18 @@
                 //Set an alternative reply-to address
                 $mail->addReplyTo('perlamolnar@hotmail.com', 'Perla Molnar');
                 //Set who the message is to be sent to
-                $mail->addAddress('perlamolnar@hotmail.com', 'Gyöngyi');
+                $mail->addAddress('perlamolnar@hotmail.com', 'Gyongyi');
 
                     while($fila=mysqli_fetch_assoc($consulta)){ 
                         foreach($fila as $key => $value) {
                             //do something with $field and $value   
                             echo "$value<br>";                                       
 
-                            $ID = $fila['Id_usuario'];                         
-                            //$Nombre= $fila['Nombre'];
-                            $Email= $fila['Email'];
+                            //$ID = $fila['Id_usuario'];                         
+                            //$Nombre= $fila['Nombre'];                            
                             //$Username = $fila['Username']; 
-                            //$Tipo= $fila['Tipo'];                            
+                            //$Tipo= $fila['Tipo'];
+                            $Email= $fila['Email'];                            
 
                             $Subject = "Información sobre migración de datos.";
 
@@ -100,11 +100,10 @@
                                         </p>                               
                                         ";     
 
-                        //$mailer->AddCC("something@gmail.com", "bla");    //enviar copias           
-                        $mail->AddBCC($Email, "Migración de datos");           // enviar copias ocultas
-
                         } //fin de foreach   
                     
+                        //  $mail->AddCC($Email, "bla");        //enviar copias           
+                        $mail->AddBCC($Email, "Usuario Registrado");       // enviar copias ocultas
                     }//fin de while
 
                 //Set the subject line
