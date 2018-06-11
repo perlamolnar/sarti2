@@ -12,7 +12,7 @@
     <?php
         session_start();
         include('../php/functions.php');  
-        include('functionsEmails.php'); 
+        include('functionSendEmails.php'); 
     
         $Nombre=$_POST["Nombre"]; 
         $Telefono=$_POST["Telefono"];       
