@@ -9,7 +9,7 @@ $(document).ready(function() {
 }); //fin de document ready;
 
 function descargarPDF() {
-    window.open("php/generatePDF.php");
+    window.location.href = "php/generatePDF.php";
 }
 
 function masUno() {    

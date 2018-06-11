@@ -12,7 +12,7 @@
     <?php
         session_start();
         include('../php/functions.php');  
-        include('functionsEmails.php'); 
+        include('functionsEmailsToEveryone.php'); 
 
         $conexion = connectBD(); 
 
@@ -53,9 +53,7 @@
                                     Gyöngyi Molnár<br>
                                     Administradora<br>
                                     </p>                               
-                                    ";
-                    
-
+                                    ";     
                                                                              
                     } //fin de foreach   
                 sendEmail($Nombre, $Email, $Subject, $Message);     

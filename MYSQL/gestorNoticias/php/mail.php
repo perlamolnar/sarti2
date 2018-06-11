@@ -45,7 +45,7 @@ $mail->addReplyTo('replyto@example.com', 'First Last');
 //Set who the message is to be sent to
 $mail->addAddress('whoto@example.com', 'John Doe');
 //Set the subject line
-$mail->Subject = utf_8decode('PHPMailer GMail SMTP test from Gyongyi');
+$mail->Subject = 'PHPMailer GMail SMTP test from Gyongyi';
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 $mail->msgHTML("hola");

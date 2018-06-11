@@ -8,7 +8,7 @@ function initCfg(){
     $cfg['tipo']=$_SESSION['tipo']="none";
     $cfg['server']="localhost";
     $cfg['userBD']="root";
-    $cfg['passwordBD']="";  //perla en el curso
+    $cfg['passwordBD']="perla";  //perla en el curso
     $cfg['BD']="gestornoticias";
 	return $cfg; //devuelve: ['username'], ['password']
 }

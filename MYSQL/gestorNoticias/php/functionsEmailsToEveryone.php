@@ -1,6 +1,9 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 
 function sendEmail ($Nombre, $To, $Subject, $Message){
 
@@ -13,12 +16,8 @@ function sendEmail ($Nombre, $To, $Subject, $Message){
         //Import PHPMailer classes into the global namespace
         //use PHPMailer\PHPMailer\PHPMailer;
         //require '../vendor/autoload.php';
-        //Create a new PHPMailer instance
-       
+        //Create a new PHPMailer instance       
 
-        require 'PHPMailer/src/Exception.php';
-        require 'PHPMailer/src/PHPMailer.php';
-        require 'PHPMailer/src/SMTP.php';
         $mail = new PHPMailer;
         //Tell PHPMailer to use SMTP
         $mail->isSMTP();
@@ -48,21 +47,35 @@ function sendEmail ($Nombre, $To, $Subject, $Message){
         $mail->addReplyTo('perlamolnar@hotmail.com', 'Perla Molnar');
         //Set who the message is to be sent to
         $mail->addAddress($To, $Nombre);
+
+
         //Set the subject line
         $mail->Subject = utf8_decode($Subject);        
         //Read an HTML message body from an external file, convert referenced images to embedded,
         //convert HTML into a basic plain-text alternative body
-        $mail->msgHTML(utf8_decode ($Message));
+        $mail->msgHTML($Message);
         //Replace the plain text body with one created manually
         $mail->AltBody = 'This is a plain-text message body';
         //Attach an image file
-        //$mail->addAttachment('../img/edit1.png');
+        $mail->addAttachment('../img/edit1.png');
         //send the message, check for errors
         if (!$mail->send()) {
             echo "Mailer Error: " . $mail->ErrorInfo;
         } else {
             echo "<br>Message sent!";
             //Section 2: IMAP
+
+            function save_mail($mail)
+            {
+                //You can change 'Sent Mail' to any other folder or tag
+                $path = "{imap.gmail.com:993/imap/ssl}[Gmail]/Sent Mail";
+                //Tell your server to open an IMAP connection using the same username and password as you used for SMTP
+                $imapStream = imap_open($path, $mail->Username, $mail->Password);
+                $result = imap_append($imapStream, $path, $mail->getSentMIMEMessage());
+                imap_close($imapStream);
+                return $result;
+            }
+            
             //Uncomment these to save your message in the 'Sent Mail' folder.
             #if (save_mail($mail)) {
             #    echo "Message saved!";
@@ -76,13 +89,3 @@ function sendEmail ($Nombre, $To, $Subject, $Message){
        
 
 }//fin de function sendEmail 
-function save_mail($mail)
-        {
-            //You can change 'Sent Mail' to any other folder or tag
-            $path = "{imap.gmail.com:993/imap/ssl}[Gmail]/Sent Mail";
-            //Tell your server to open an IMAP connection using the same username and password as you used for SMTP
-            $imapStream = imap_open($path, $mail->Username, $mail->Password);
-            $result = imap_append($imapStream, $path, $mail->getSentMIMEMessage());
-            imap_close($imapStream);
-            return $result;
-        }
