@@ -40,28 +40,39 @@ function checkUser($username,$password){
     $CheckLogin=mysqli_num_rows($consulta); //devuelve 1 row si exsiste el usuario y no devuelve nada si no existe
 
     if ($CheckLogin==0) {
-        echo "Usuario no existe.";
+        echo "<h3 class='red'>El usuario no existe.</h3>";
         $salida = false;
     } else {
         $fila=mysqli_fetch_assoc($consulta);
-        $pw=$fila['Password'];
-        $tipo=$fila['Tipo'];
-        $Id_usuario=$fila['Id_usuario'];
+        $activo=$fila['Activo'];
+        
+        if ($activo == "Activo") {
+            $pw=$fila['Password'];
+            $tipo=$fila['Tipo'];
+            $Id_usuario=$fila['Id_usuario'];
 
-        if ($pw==md5($password)) {
-            $_SESSION['tipo']=$tipo;        
-            $_SESSION['user']=$username;
-            $_SESSION['Id_usuario']=$Id_usuario;
+            if ($pw==md5($password)) {
+                $_SESSION['tipo']=$tipo;        
+                $_SESSION['user']=$username;
+                $_SESSION['Id_usuario']=$Id_usuario;
 
-            	    
-        } else {
-           echo "La contraseña no es corrrecta.";
-           $salida = false;
+                        
+            } else {
+            echo "<h3 class='red'>La contraseña no es corrrecta.</h3>";
+            $salida = false;
+            }
+            
+        }else{
+            echo "<h3 class='red'>El usuario no esta activado.</h3>";
+            $salida = false;
 
         }
+
+
               
     }  
     
+   
 
     mysqli_close($conexion);
     
