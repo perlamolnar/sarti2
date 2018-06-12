@@ -18,16 +18,23 @@ use Dompdf\Dompdf;
         $articuloPintado ="";
         if (mysqli_num_rows($consulta)>0){
             while($fila=mysqli_fetch_assoc($consulta)){
+                
 
-                $articuloPintado =
-                "<div><h2 id='TituloPDF'>". $fila['Titulo'] ."</h2><br>
-                <hr>
-                </div>
+                    $Titulo= $fila['Titulo'];
+                    $Articulo= $fila['Articulo'];
+                    $Imagen= $fila['Imagen'];
+                    
+                    
+                    $articuloPintado .=         // CONCATEAR!!!!!!!!!!!!!!!!!! CON EL PUNTO!!!!!!!
+                    "<div><h2 id='TituloPDF'>". $Titulo ."</h2><br>
+                    <hr>
+                    </div>
 
-                <div id='ArticuloPDF' comment>
-                <img id='Foto' width='400px' src='../img/".$fila['Imagen'] ."' alt=". $fila['Titulo'] .">". $fila['Articulo'] ."</div>";
-            }                    
-        }
+                    <div id='ArticuloPDF' comment  style='page-break-after:always; float: left;'>
+                    <img style='float: right;' id='Foto' width='400px' src='../img/".$Imagen."' alt='". $Titulo."'>'". $Articulo ."</div>";
+                             
+            } //fin de while                
+        } //fin de if
 
 //CONDENIDO que sera el pdf
 $html = "<!DOCTYPE html>

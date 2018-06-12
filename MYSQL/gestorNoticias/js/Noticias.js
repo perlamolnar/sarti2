@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
 	$("#descargarNoticias").on("click", descargarNoticias);   
+	//$("#NoticiasPorFecha").on("click", NoticiasPorFechaModal); 
 	
 	$.ajax({
 		url: 'php/noticias.php', // archivo php que tratara los datos
@@ -18,6 +19,7 @@ $(document).ready(function() {
 			var menu = "";
 			var articuloPintado ="";
 			var articuloPintadoMobil="";
+			var selectFecha="";
 				//recorre todos los valores del array y los coloca en un formato tabla
 				$.each(result.consulta, function(k , v) {
 					//console.log(v.id);									
@@ -25,7 +27,7 @@ $(document).ready(function() {
 					var titulo ="";					
 					var articulo = "";
 					var imagen = "";
-					var fechaalta = "";
+					var fechaCreacion = "";
 					var options = {year: 'numeric', month: 'long', day: 'numeric' };
 					
 					idarticulo = v.Id_noticia;
@@ -51,7 +53,13 @@ $(document).ready(function() {
 											<hr>
 											</div>
 											<div class="" id="Articulos" comment><img class="TextWrapRight" id="Foto" width="200px" src="img/`+imagen+`" alt="`+titulo+`">`+articulo+`</div>            
-											`											
+											`
+					selectFecha += `   
+									<option id='FechaCreacion' name='FechaCreacion' value='Fecha'><$FechaCreacion></option>
+					
+									`
+											
+											
 				})
 			$("#menuTitulo").html(menu);	
 			$("#Articulos").html(articuloPintado);

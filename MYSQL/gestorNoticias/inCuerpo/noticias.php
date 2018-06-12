@@ -8,9 +8,41 @@
     <script src="js/Noticias.js"></script>
 </head>
 <body>
+
     
 <h1>ÚLTIMAS NOTICIAS</h1>
-<button id="descargarNoticias">DESCARGAR NOTICIAS EN PDF</button>
+
+<div class="row">
+
+	<div class="halfBox"><button id="descargarNoticias">TODAS LAS NOTICIAS EN PDF</button></div>
+
+	<div  class="halfBox">
+<!-- 		
+		<button id="NoticiasPorFecha">NOTICIAS EN PDF POR FECHA</button> -->
+
+		<form class="formContainer" action="php/registrar.php" method="POST">        
+				
+				<label for="Fecha">Articulos en PDF por Fecha</label><br>
+				
+				<select id="FechaOptions">
+					
+					
+				</select>
+				<button type="submit" id="registrar" name="registrar">ENVIAR</button> 
+				<br>
+				<br>       
+			
+		</form>
+	</div>
+</div>
+
+
+
+
+
+
+
+
 	<div class="row">
 		<div class="hide-on-small-only" style="margin-top: 1%; font-size:15px;">
 			<div class="container">

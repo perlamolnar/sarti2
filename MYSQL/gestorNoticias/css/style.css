@@ -256,7 +256,7 @@ th{
 	  float: left;
 	  padding: 30px; }
 
-  #TituloPDF{text-align: left;padding: 30px}
+  #TituloPDF{text-align: left; padding: 30px}
 
 
   #Foto{
@@ -264,5 +264,6 @@ th{
 	  padding: 10px;
 	  width: 200px;
 	}
+.halfBox{width: 40%; float:left}
 
  textarea{width: 100%; height: 250px}
