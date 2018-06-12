@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+	$("#descargarNoticias").on("click", descargarNoticias);   
 	
 	$.ajax({
 		url: 'php/noticias.php', // archivo php que tratara los datos
@@ -96,10 +98,12 @@ $(document).ready(function() {
 						</div>
 						<div class="" id="Articulo" comment><img id="Foto" width="400px" src="img/`+imagen+`" alt="`+titulo+`">`+articulo+`</div>            
 						`
-	$("#Articulos").html(articuloPintado);	
+	$("#Articulos").html(articuloPintado);
+	
+}//fin de goToArticulo
 
-	
-	
-	
+
+function descargarNoticias() {
+	window.location.href = "php/generatePDFnoticias.php";
 	
 }

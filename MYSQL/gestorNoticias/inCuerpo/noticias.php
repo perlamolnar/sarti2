@@ -10,7 +10,7 @@
 <body>
     
 <h1>ÚLTIMAS NOTICIAS</h1>
-
+<button id="descargarNoticias">DESCARGAR NOTICIAS EN PDF</button>
 	<div class="row">
 		<div class="hide-on-small-only" style="margin-top: 1%; font-size:15px;">
 			<div class="container">
