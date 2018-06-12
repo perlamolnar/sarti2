@@ -1,6 +1,9 @@
 <?php
     session_start();
-    include('../php/functions.php');    
+    include('../php/functions.php'); 
+    
+    $code= $_GET['codigo']; //recogemos del url el valor de "?codigo=blabla"
+    //echo $code;
 
     $host= $_SERVER["HTTP_HOST"];
     $url= $_SERVER["REQUEST_URI"];

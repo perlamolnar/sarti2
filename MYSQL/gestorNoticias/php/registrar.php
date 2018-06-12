@@ -54,7 +54,7 @@
                                 Para activar su cuenta, haga click en el siguiente enlace:
                                 <br>
                                 <br>
-                                <a href=\"http://localhost/sarti/MYSQL/gestorNoticias/php/activacionUsuario.php/?codigo=$CodigoActivacion\">ACTIVAME AHORA</a>
+                                <a href=\"http://localhost/GYM/MYSQL/gestorNoticias/php/activacionUsuario.php/?codigo=$CodigoActivacion\">ACTIVAME AHORA</a>
                                 <br>
                                 <br>
                                 En caso de cualquier duda, porfavor contacta el administrador: perlamolnar@hotmail.com 
