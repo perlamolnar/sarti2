@@ -7,6 +7,8 @@
 
 <?php 
 
+    //include("php/functions.php");
+
     //recuperamos variables que viene del formulario:
     if (isset($_POST["registrar"])){ 
 
@@ -16,7 +18,8 @@
         $Email=$_POST["Email"]; 
         $Username= $_POST['Username'];
         $Password= md5($_POST['Password']);
-        $CodigoActivacion= md5($_POST['CodigoActivacion']);
+        $CodigoActivacion= $randomString;
+        //print_r($CodigoActivacion);
 
     }       
     else {
@@ -27,6 +30,7 @@
         $Username="";
         $Password="";
         $CodigoActivacion="";
+        $randomString="";
     }
     
 ?>
@@ -57,23 +61,9 @@
         <br>        
         <br>
 
-        <?php
+        
 
-        //Método con rand()
-        function generateRandomString($length = 10) {
-            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            $charactersLength = strlen($characters);
-            $randomString = '';
-            for ($i = 0; $i < $length; $i++) {
-                $randomString .= $characters[rand(0, $charactersLength - 1)];
-            }
-            return $randomString;
-        } 
-
-        generateRandomString();
-        ?>
-
-        <input type="text" name="CodigoActivacion" id="CodigoActivacion" value="<?php echo $randomString;?>" required><br>
+        <input type="hidden" name="CodigoActivacion" id="CodigoActivacion" value="<?php  generateRandomString()//llalmamos la function;?>" required><br>
         
         <button type="submit" id="registrar" name="registrar">REGISTRAR</button> 
         <br>

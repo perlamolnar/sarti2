@@ -20,16 +20,19 @@
         $Email=$_POST["Email"]; 
         $Username= $_POST['Username'];
         $Password= md5($_POST['Password']);
+        $CodigoActivacion= $_POST['CodigoActivacion'];
 
         //$conexion = mysqli_connect ('localhost', 'root', '', 'gestornoticias') or die ("No se puede conectar con el servidor".mysqli_error($conexion));
         $conexion = connectBD(); 
 
-        $sql="INSERT INTO usuarios (Nombre, Telefono, Direccion, Email, Username, Password) VALUES ('$Nombre', '$Telefono', '$Direccion', '$Email', '$Username','$Password')";
+        $sql="INSERT INTO usuarios (Nombre, Telefono, Direccion, Email, Username, Password, CodigoActivacion) VALUES ('$Nombre', '$Telefono', '$Direccion', '$Email', '$Username','$Password', '$CodigoActivacion')";
 
         $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la consulta".mysqli_error($conexion));
 
         if ($consulta) {
-            echo "<h1>Los datos estan enviados correctamente</h1>
+            echo "  <h1>Los datos estan enviados correctamente</h1>
+                    <h1>En breve recibiras un email<br>para activar tu cuenta.</h1>
+
                     <a href=\"../index.php\">VOLVER</a>";
 
                     $Subject = "Confirmacion del registro.";
@@ -47,7 +50,14 @@
                                 Email: $Email<br>
                                 Username: $Username<br>
                                 <br>
-                                Si necesita hacer qualquier cambio, porfavor contacta el administrador: perlamolnar@hotmail.com 
+                                <br>
+                                Para activar su cuenta, haga click en el siguiente enlace:
+                                <br>
+                                <br>
+                                <a href=\"http://localhost/sarti/MYSQL/gestorNoticias/php/activacionUsuario.php/?codigo=$CodigoActivacion\">ACTIVAME AHORA</a>
+                                <br>
+                                <br>
+                                En caso de cualquier duda, porfavor contacta el administrador: perlamolnar@hotmail.com 
                                 <br><br>
                                 Saludos,<br>
                                 Gyöngyi Molnár<br>

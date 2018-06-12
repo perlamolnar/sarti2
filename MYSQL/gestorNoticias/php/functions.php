@@ -8,7 +8,7 @@ function initCfg(){
     $cfg['tipo']=$_SESSION['tipo']="none";
     $cfg['server']="localhost";
     $cfg['userBD']="root";
-    $cfg['passwordBD']="perla";  //perla en el curso
+    $cfg['passwordBD']="";  //perla en el curso
     $cfg['BD']="gestornoticias";
 	return $cfg; //devuelve: ['username'], ['password']
 }
@@ -68,6 +68,18 @@ function checkUser($username,$password){
 	return $salida;
 }
 
+//Create random string 
+function generateRandomString($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    print_r($randomString);
+    return $randomString;
+} 
+       
 
 
 
