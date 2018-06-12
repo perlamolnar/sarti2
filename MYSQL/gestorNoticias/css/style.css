@@ -251,6 +251,14 @@ th{
 	
   }
 
+  #ArticuloPDF{
+	  text-align: justify; 
+	  float: left;
+	  padding: 30px; }
+
+  #TituloPDF{text-align: left;padding: 30px}
+
+
   #Foto{
 	  float: right; 
 	  padding: 10px;

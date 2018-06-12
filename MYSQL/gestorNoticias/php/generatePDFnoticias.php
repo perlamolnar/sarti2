@@ -15,19 +15,17 @@ use Dompdf\Dompdf;
         $sql = "SELECT * FROM noticias WHERE Activ ='on';";	
         $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la conexion".mysqli_error($conexion));
 
-        //$tbl_row ="";
+        $articuloPintado ="";
         if (mysqli_num_rows($consulta)>0){
-            while($fila=mysqli_fetch_assoc($consulta)){                 
-               $tbl_row .= "<tr>";
-                $tbl_row .= "<td>" . $fila['Id_usuario'] . "</td>";
-                $tbl_row .= "<td>" . $fila['Nombre'] . "</td>";
-                $tbl_row .= "<td>" . $fila['Email'] . "</td>";
-                $tbl_row .= "<td>" . $fila['Telefono'] . "</td>";
-                $tbl_row .= "<td>" . $fila['Direccion'] . "</td>";
-                $tbl_row .= "<td>" . $fila['Username'] . "</td>";
-                $tbl_row .= "<td>" . $fila['Tipo'] . "</td>";
-                $tbl_row .= "</tr>";
+            while($fila=mysqli_fetch_assoc($consulta)){
 
+                $articuloPintado =
+                "<div><h2 id='TituloPDF'>". $fila['Titulo'] ."</h2><br>
+                <hr>
+                </div>
+
+                <div id='ArticuloPDF' comment>
+                <img id='Foto' width='400px' src='../img/".$fila['Imagen'] ."' alt=". $fila['Titulo'] .">". $fila['Articulo'] ."</div>";
             }                    
         }
 
@@ -35,7 +33,7 @@ use Dompdf\Dompdf;
 $html = "<!DOCTYPE html>
 <html>
 <head>
-	<title>USUARIOS REGISTRADOS</title>
+	<title>ARTÍCULOS</title>
 	<meta charset=\"utf-8\">
 	<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">	
 	<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>	
@@ -44,26 +42,14 @@ $html = "<!DOCTYPE html>
 	<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>
 	<link rel=\"stylesheet\" type=\"text/css\" href=\"../css/style.css\">	
 </head>
-  <table  class=\"table-striped\">
-            <thead class=\"fijo\">
-                <tr>                
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Email</th>
-                    <th>Telefono</th>
-                    <th>Dirección</th> 
-                    <th>Username</th>
-                    <th>Tipo</th>                                    
-                </tr>
-            </thead>
-            <tbody >
-                $tbl_row
-            </tbody>
-        </table>
+
+        <div>    
+        $articuloPintado
+        </div>   
 
 </body>
 </html>";
-$filename = "Lista de Usuarios";
+$filename = "PDF de Artículos";
 
 // instantiate and use the dompdf class
 $dompdf = new Dompdf();
@@ -71,7 +57,7 @@ $dompdf = new Dompdf();
 $dompdf->loadHtml($html);
 
 // (Optional) Setup the paper size and orientation
-$dompdf->setPaper('A4', 'landscape');  //portrait o landscape
+$dompdf->setPaper('A4', 'portrait');  //portrait o landscape
 
 // Render the HTML as PDF
 $dompdf->render();
