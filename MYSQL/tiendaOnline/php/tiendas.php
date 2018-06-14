@@ -3,22 +3,23 @@
     include('../php/functions.php');
  
 	$test = 1;
-	if ($_SERVER['REQUEST_METHOD'] === 'GET'){ // comprueba si se han recibido datos con GET
-		
+    if ($_SERVER['REQUEST_METHOD'] === 'GET'){ // comprueba si se han recibido datos con GET
+        		
 		// abre conexión con la base de datos 
-		//$conexion = mysqli_connect ("localhost", "root", "", "gestornoticias") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
-        $conexion = connectBD(); 
+		$conexion = mysqli_connect ("localhost", "root", "perla", "tiendaonline") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+        //$conexion = connectBD(); 
 		
-		$sql = "SELECT * FROM tiendas;";	
+        $sql = "SELECT * FROM tiendas;";	
+        
 		
 		$consulta = mysqli_query($conexion, $sql )or die ("Fallo en la connexion".mysqli_error($conexion));
-		//mysqli_set_charset($mysqli,'utf8');
-		
+		//mysqli_set_charset($mysqli,'utf8');        
+        
 		if ($consulta){
             $error = "Registros leídos correctamente";                      
             $datos = array();
             while($fila=mysqli_fetch_assoc($consulta)){                 
-                $datos [] = $fila;
+                $datos [] = $fila;                
             }                    
         }
         

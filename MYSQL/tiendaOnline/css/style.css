@@ -141,7 +141,7 @@ input{width: 100%;}
 button{background-color:transparent; color:#ffffff;padding: 10px; border: none;}
 button:hover{ color:#8ae6e9;padding: 10px; border: none;}
 
-#menu{
+#lista{
 	width: 20%;
 	height: 550px;
 	padding: 30px;
@@ -234,7 +234,7 @@ th{
 
 /************** articulos *****/
 
-#menuArticulos{
+#listaTiendas{
 	width: 20% !important;
 	float: left;
 	padding: 0 0 0 60px;
@@ -243,7 +243,7 @@ th{
   
   #Titulo{text-align: left;}
   
-  #Articulos{
+  #Tiendas{
 	width: 80%;
 	float: left;
 	padding: 0 100px 100px 100px; 

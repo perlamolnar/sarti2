@@ -22,47 +22,21 @@
 			}
 			if($_POST['seccio']=="registrar"){
 				include("inCuerpo/registrar.php");
-			}
-			if($_POST['seccio']=="BOnoticias"){
-				include("inCuerpo/BOnoticias.php");
-			}
+			}			
 			if($_POST['seccio']=="usuario"){
 				include("inCuerpo/usuario.php");
-			}
-			// if($_POST['seccio']=="contactos"){
+			}	
+			// elseif ($_POST['seccio']=="upload"|| $_POST['seccio']=="uploading") {
+			// 	$subsec=$_POST['seccio'];
+			// 	include("inCuerpo/upload.php");
+			// }			
+			// elseif ($_POST['seccio']=="uploadExperiencias"|| $_POST['seccio']=="uploadingExperiencias") {
+			// 	$subsec=$_POST['seccio'];
+			// 	include("inCuerpo/uploadExperiencias.php");
+			// }			
+			// elseif ($_POST['seccio']=="contacto" || $_POST['seccio']=="validarContacto") {				
 			// 	include("inCuerpo/contacto.php");
-			// }
-			if($_POST['seccio']=="products"){
-				include("inCuerpo/products.php");
-			}
-			if($_POST['seccio']=="galeria"){
-				include("inCuerpo/galeria.php");
-			}
-			if($_POST['seccio']=="BOgaleria"){
-				include("inCuerpo/BOgaleria.php");
-			}
-			if($_POST['seccio']=="agua"){
-				$dir="publicContent/agua";
-				$dir2="img/agua";
-				include("inCuerpo/publicarContent.php");
-			}
-			elseif ($_POST['seccio']=="aire") {
-				$dir="publicContent/aire";
-				$dir2="img/aire";
-				include("inCuerpo/publicarContent.php");
-			}
-			
-			elseif ($_POST['seccio']=="upload"|| $_POST['seccio']=="uploading") {
-				$subsec=$_POST['seccio'];
-				include("inCuerpo/upload.php");
-			}			
-			elseif ($_POST['seccio']=="uploadExperiencias"|| $_POST['seccio']=="uploadingExperiencias") {
-				$subsec=$_POST['seccio'];
-				include("inCuerpo/uploadExperiencias.php");
-			}			
-			elseif ($_POST['seccio']=="contacto" || $_POST['seccio']=="validarContacto") {				
-				include("inCuerpo/contacto.php");
-		   	} 		
+		   	// } 		
 			elseif ($_POST['seccio']=="login") {				
 			 	include("inCuerpo/login.php");
 			} 

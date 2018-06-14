@@ -35,9 +35,10 @@
 		<div class="hide-on-small-only" style="margin-top: 1%; font-size:15px;">
 			<div class="container">
 
-				<div id="listaTiendas" class="">
-					<h2>TIENDAS</h2>       
-					<span id="menuTitulo"></span>
+				<div id="menuTiendas" class="">
+                    
+					    
+					<span id="listaTiendas"></span>
 				</div>
 			
 				<div id="Tiendas" class="">                

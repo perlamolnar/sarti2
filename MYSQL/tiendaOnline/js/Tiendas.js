@@ -10,51 +10,54 @@ $(document).ready(function() {
 		
 		// funcion que se ejecuta cuando ha funcionado la llamada ajax correctamente
 		success : function(result){			
-			//console.log(result.consulta);
+			console.log(result.consulta);
 			// console.log(result.resultado);
 			// console.log(result.error);
-			// crear la variable para contener el cuerpo de la tabla
-			var tbl_body = "";
-				//recorre el array que recogemos del php en result.query
-			var menu = "";
+			
+			//recorre el array que recogemos del php en result.query
+			var lista = "";
 			var tiendaPintado ="";
 			var tiendaPintadoMobil="";
 			//var selectFecha="";
 				//recorre todos los valores del array y los coloca en un formato tabla
 				$.each(result.consulta, function(k , v) {
 					//console.log(v.id);									
-                    var Id_tienda = 0;
-                    var NombreTienda ="";					
-                    var Ciudad = "";
-                    var Cp = "";
-                    var Telefono="";
-                    var FotoTienda ="";
+                    var id_tienda = 0;
+                    var nombreTienda = "";
+                    var ciudad = "";
+                    var cp = "";
+                    var telefono = "";
+                    var fotoTienda = "";   
 					
 					
-                    Id_tienda = v.Id_tienda;
-                    NombreTienda = v.NombreTienda;						        	
-                    Ciudad = v.Ciudad;
-                    Cp = v.Cp;                    
-                    Telefono = v.Telefono;
-                    FotoTienda = v.FotoTienda;
+                    id_tienda = v.Id_tienda;
+                    nombreTienda = v.NombreTienda;						        	
+                    ciudad = v.Ciudad;
+                    cp = v.Cp;                    
+                    telefono = v.Telefono;
+                    fotoTienda = v.FotoTienda;
 																					
-					menu += "<a href='' onClick='goToTienda("+JSON.stringify(v)+");'>"+NombreTienda+"</a><br><hr>";
+					lista += "<a href='' onClick='goToTienda("+JSON.stringify(v)+");'>"+nombreTienda+"</a><br><hr>";
 					
-					tiendaPintado += `<div class="">
-										<h2 id="Titulo">`+ NombreTienda+`</h2><br>								
-										<hr>
-										</div>
-										<div class="articulo" id="Articulo" comment><img id="Foto" width="400px" src="img/`+ FotoTienda + `" alt="` + NombreTienda+`">`+articulo+`</div>            
-										`
+					tiendaPintado = `<h1>BIENVENID@</h1>            
+                                        `
+                                        
+                    // tiendaPintado += `<div class="">
+					// 					<h2 id="Titulo">`+ nombreTienda + `</h2><br>								
+					// 					<hr>
+					// 					</div>
+					// 					<div class="articulo" id="Articulo" comment><img id="Foto" width="400px" src="img/tiendas/`+ fotoTienda + `" alt="` + nombreTienda + `">` + ciudad + `</div>            
+                    //                     `
+                                        
 					tiendaPintadoMobil += `<div class="">
-											<br><h4 class="corners animated slideInRight" id="Titulo">`+titulo+`</h4>								
+											<br><h4 class="corners animated slideInRight" id="Titulo">`+nombreTienda+`</h4>								
 											<hr>
 											</div>
-											<div class="" id="Articulos" comment><img class="TextWrapRight" id="Foto" width="200px" src="img/`+imagen+`" alt="`+titulo+`">`+articulo+`</div>            
+											<div class="" id="Articulos" comment><img class="TextWrapRight" id="Foto" width="200px" src="img/tiendas/`+fotoTienda+`" alt="`+nombreTienda+`">`+ciudad+`</div>            
 											`																		
 											
 				})
-            $("#listaTiendas").html(menu);	
+            $("#listaTiendas").html(lista);	
 			$("#Tiendas").html(tiendaPintado);
 			$("#TiendasMobil").html(tiendaPintadoMobil);			
 
@@ -110,36 +113,38 @@ $(document).ready(function() {
 });
 
 
- function goToArticulo(miLink) {
+ function goToTienda(miLink) {
 	event.preventDefault();
     console.log(miLink);
-    
-    var id = 0;
-    var titulo ="";					
-    var articulo = "";
-    var imagen = "";
-    var fechaalta = "";
-    var articuloPintado ="";
-    var options = {year: 'numeric', month: 'long', day: 'numeric' };
-    
-    idarticulo = miLink.Id_noticia;
-    titulo = miLink.Titulo;						        	
-    articulo = miLink.Articulo;
-    imagen = miLink.Imagen;                    
-    fidUsuario = miLink.Fid_usuario;
-    
-    fechacreacion = miLink.FechaCreacion;   
-    fecha = new Date(fechacreacion);					
-    fechacreacion = fecha.toLocaleDateString("es-ES", options);	
-	//fecharecepcion = fecharecepcion.substr(0,10);		
 
-	articuloPintado += `<div class="">
-						<h2 id="Titulo">`+titulo+`</h2><br>								
+     var id_tienda = 0;
+     var nombreTienda = "";
+     var ciudad = "";
+     var cp = "";
+     var direccion = "";
+     var telefono = "";
+     var fotoTienda = "";    
+    
+     id_tienda = miLink.Id_tienda;
+     nombreTienda = miLink.NombreTienda;						        	
+     ciudad = miLink.Ciudad;
+     direccion = miLink.Direccion;
+     cp = miLink.Cp;                    
+     telefono = miLink.Telefono;
+     fotoTienda = miLink.FotoTienda;
+    
+    // fechacreacion = miLink.FechaCreacion;   
+    // fecha = new Date(fechacreacion);					
+    // fechacreacion = fecha.toLocaleDateString("es-ES", options);	
+	//fecharecepcion = fecharecepcion.substr(0,10);		
+    var tiendaPintado = "";
+	tiendaPintado += `<div class="">
+						<h2 id="Titulo">`+nombreTienda+`</h2><br>								
 						<hr>
 						</div>
-						<div class="" id="Articulo" comment><img id="Foto" width="400px" src="img/`+imagen+`" alt="`+titulo+`">`+articulo+`</div>            
+						<div id="Tiendas" comment><img id="Foto" width="400px" src="img/tiendas/`+ fotoTienda + `" alt="` + nombreTienda + `"> Ciudad: ` + ciudad + `<br>Codigo postal: ` + cp + `<br>Dirección: ` + direccion +  `<br>Teléfono: ` +telefono + `</div>            
 						`
-	$("#Articulos").html(articuloPintado);
+	$("#Tiendas").html(tiendaPintado);
 	
 }//fin de goToArticulo
 
