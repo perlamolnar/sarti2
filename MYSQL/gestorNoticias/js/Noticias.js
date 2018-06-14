@@ -10,7 +10,7 @@ $(document).ready(function() {
 		
 		// funcion que se ejecuta cuando ha funcionado la llamada ajax correctamente
 		success : function(result){			
-			 console.log(result.consulta);
+			//console.log(result.consulta);
 			// console.log(result.resultado);
 			// console.log(result.error);
 			// crear la variable para contener el cuerpo de la tabla
@@ -26,8 +26,7 @@ $(document).ready(function() {
 					var id = 0;
 					var titulo ="";					
 					var articulo = "";
-					var imagen = "";
-					var fechaCreacion = "";
+					var imagen = "";					
 					var options = {year: 'numeric', month: 'long', day: 'numeric' };
 					
 					idarticulo = v.Id_noticia;
@@ -53,17 +52,12 @@ $(document).ready(function() {
 											<hr>
 											</div>
 											<div class="" id="Articulos" comment><img class="TextWrapRight" id="Foto" width="200px" src="img/`+imagen+`" alt="`+titulo+`">`+articulo+`</div>            
-											`
-					selectFecha += `   
-									<option id='FechaCreacion' name='FechaCreacion' value='Fecha'><$FechaCreacion></option>
-					
-									`
-											
+											`																		
 											
 				})
 			$("#menuTitulo").html(menu);	
 			$("#Articulos").html(articuloPintado);
-			$("#ArticulosMobil").html(articuloPintadoMobil);
+			$("#ArticulosMobil").html(articuloPintadoMobil);			
 
 			},
 			// funcion ejecutada si ajax tiene un error
@@ -73,7 +67,47 @@ $(document).ready(function() {
 		}
 			// el resultado de la función queda guardado en la variable result	   	
 		
-		});	   
+		});//fin del primer ajax
+		
+
+
+		$.ajax({
+			url: 'php/selectFecha.php', // archivo php que tratara los datos
+			type: 'GET', // forma de enviar los datos
+			dataType: 'json', // tipo de datos que se envían
+			
+			// funcion que se ejecuta cuando ha funcionado la llamada ajax correctamente
+			success : function(result){			
+				//console.log(result.consulta);
+				// console.log(result.resultado);
+				// console.log(result.error);
+				// crear la variable para contener el cuerpo de la tabla				
+				var selectFecha="";
+					//recorre todos los valores del array y los coloca en opciones
+					$.each(result.consulta, function(k , v) {
+						//console.log(v.id);					
+						var fechaCreacion = "";
+						var options = {day: 'numeric', month: 'long', year: 'numeric'};
+
+						FechaCreacion = v.FechaArticulo;						
+						//fecha = new Date(FechaCreacion);					
+						//FechaCreacion = fecha.toLocaleDateString("es-ES", options); 
+												
+						selectFecha += `<option value='`+FechaCreacion+`'>`+FechaCreacion+`</option>`
+					})
+
+				
+				$("#FechaOptions").html(selectFecha);
+	
+				},
+				// funcion ejecutada si ajax tiene un error
+			error : function (result) {
+				//alert ("Error: no ha funcionado el ajax JSON");
+				console.error(result.error);
+			}
+				// el resultado de la función queda guardado en la variable result	   	
+			
+			});
 });
 
 
