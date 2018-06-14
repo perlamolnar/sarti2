@@ -13,9 +13,12 @@
 
 			if($_POST['seccio']=="home"){
 				include("inCuerpo/home.php");
+			}
+			if($_POST['seccio']=="productos"){
+				include("inCuerpo/productos.php");
 			}				
-			if($_POST['seccio']=="noticias"){
-				include("inCuerpo/noticias.php");
+			if($_POST['seccio']=="tiendas"){
+				include("inCuerpo/tiendas.php");
 			}
 			if($_POST['seccio']=="registrar"){
 				include("inCuerpo/registrar.php");

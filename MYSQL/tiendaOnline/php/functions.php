@@ -9,7 +9,7 @@ function initCfg(){
     $cfg['server']="localhost";
     $cfg['userBD']="root";
     $cfg['passwordBD']="perla";  //perla en el curso
-    $cfg['BD']="gestornoticias";
+    $cfg['BD']="tiendaonline";
 	return $cfg; //devuelve: ['username'], ['password']
 }
 

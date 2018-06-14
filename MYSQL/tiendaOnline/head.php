@@ -2,14 +2,15 @@
 	
 	<div id="logo">
 		<img  src="img/logo.png" alt="Logo">	
-		<h1 class='headtitle'>EL MUNDO DE <br>ESCRITORES Y LECTORES</h1>	
+		<h1 class='headtitle'>EL MUNDO DE RELOJES</h1>	
 	</div>	
 
 <form class="" action="index.php" method ="post"> 
 	<ul id="nav">
 		<!-- menu para todo el mundo -->
 		<li><button class="" value="home" name="seccio" type="submit">Home</button></li>
-		<li><button class="" value="noticias" name="seccio" type="submit">Noticias</button></li>			
+		<li><button class="" value="productos" name="seccio" type="submit">Productos</button></li>
+		<li><button class="" value="tiendas" name="seccio" type="submit">Tiendas</button></li>			
 			
 		<li class="fecha">		
 			<?php

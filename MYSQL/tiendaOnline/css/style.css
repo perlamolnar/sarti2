@@ -6,10 +6,10 @@ body{
 }
 
 #head{
-	background-image:url(../img/head.jpg);
+	/* background-image:url(../img/head.jpg);
 	background-repeat: no-repeat;
-	background-size: cover;	 
-	/* background-color: #cbddd9; */
+	background-size: cover;	  */
+	background-color: #cbddd9;
 	height: 250px;
 	padding: 20px 0px;
 	color:black;
