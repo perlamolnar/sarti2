@@ -9,7 +9,7 @@
 </head>
 <body>
     
-	<h1>NUESTRAS TIENDAS</h1>
+	<h1>VISITA NUESTRAS TIENDAS</h1>
 
 	<!-- <div class="row">
 
@@ -34,11 +34,13 @@
 	<div class="row">
 		<div class="hide-on-small-only" style="margin-top: 1%; font-size:15px;">
 			<div class="container">
-
+				
 				<div id="menuTiendas" class="">
-                    
-					    
-					<span id="listaTiendas"></span>
+                
+					<h2>TIENDAS</h2>     
+					<span id="listaTiendas">
+					   
+					</span>
 				</div>
 			
 				<div id="Tiendas" class="">                

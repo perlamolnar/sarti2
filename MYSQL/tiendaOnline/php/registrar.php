@@ -22,8 +22,8 @@
         $Password= md5($_POST['Password']);
         $CodigoActivacion= $_POST['CodigoActivacion'];
 
-        //$conexion = mysqli_connect ('localhost', 'root', '', 'gestornoticias') or die ("No se puede conectar con el servidor".mysqli_error($conexion));
-        $conexion = connectBD(); 
+        $conexion = mysqli_connect ('localhost', 'root', 'perla', 'tiendaonline') or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+        //$conexion = connectBD(); 
 
         $sql="INSERT INTO usuarios (Nombre, Telefono, Direccion, Email, Username, Password, CodigoActivacion) VALUES ('$Nombre', '$Telefono', '$Direccion', '$Email', '$Username','$Password', '$CodigoActivacion')";
 
@@ -54,7 +54,7 @@
                                 Para activar su cuenta, haga click en el siguiente enlace:
                                 <br>
                                 <br>
-                                <a href=\"http://localhost/GYM/MYSQL/gestorNoticias/php/activacionUsuario.php/?codigo=$CodigoActivacion\">ACTIVAME AHORA</a>
+                                <a href=\"http://localhost/GYM/MYSQL/tiendaonline/php/activacionUsuario.php/?codigo=$CodigoActivacion\">ACTIVAME AHORA</a>
                                 <br>
                                 <br>
                                 En caso de cualquier duda, porfavor contacta el administrador: perlamolnar@hotmail.com 

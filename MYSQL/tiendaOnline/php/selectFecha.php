@@ -6,8 +6,8 @@
 	if ($_SERVER['REQUEST_METHOD'] === 'GET'){ // comprueba si se han recibido datos con GET
 		
 		// abre conexión con la base de datos 
-		//$conexion = mysqli_connect ("localhost", "root", "", "gestornoticias") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
-        $conexion = connectBD(); 
+		$conexion = mysqli_connect ("localhost", "root", "perla", "tiendaonline") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
+        //$conexion = connectBD(); 
 	    $sql = "SELECT DISTINCT FechaCreacion as FechaArticulo FROM noticias WHERE Activ='on' ORDER BY FechaCreacion";
 	    $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la connexion".mysqli_error($conexion));
 		

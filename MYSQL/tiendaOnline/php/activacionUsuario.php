@@ -15,7 +15,8 @@
     $codigoActivacion = substr("$url", -10);
     //echo $codigoActivacion; 
     
-    $conexion = connectBD(); 
+    $conexion = mysqli_connect ("localhost", "root", "perla", "tiendaonline") or die ("No se puede conectar con el servidor".mysqli_error($conexion));        
+    //$conexion = connectBD(); 
 	
     $sql="UPDATE usuarios SET Activo='Activo' WHERE CodigoActivacion='$codigoActivacion'";
     //echo $sql;
@@ -39,7 +40,9 @@
                
             </head>
             <body>             
-            <h1>Gracias<br><br>Hemos activado tu cuenta</h1>                    
+            <h1>Gracias<br><br>Hemos activado tu cuenta</h1>
+            
+            <a href=\"http://localhost/GYM/MYSQL/tiendaOnline/index.php\">VOLVER <br>A LA PÁGINA DE RELOJES DE LUJO</a>
             </body>
             </html>
             ";

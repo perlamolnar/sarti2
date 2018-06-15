@@ -2,7 +2,7 @@
 	
 	<div id="logo">
 		<img  src="img/logo.png" alt="Logo">	
-		<h1 class='headtitle'>EL MUNDO DE RELOJES</h1>	
+		<h1 class='headtitle'>RELOJES DE LUJO</h1>	
 	</div>	
 
 <form class="" action="index.php" method ="post"> 
@@ -33,7 +33,7 @@
 		if($_SESSION['tipo']=="Admin"){
 		?>
 		
-		<li><button class="" value="usuario" name="seccio" type="submit">Usuarios</button></li>
+		
 		
 		<li class="username">
 			<?php				
@@ -69,10 +69,11 @@
 		
 		}
 
-		//menu para COLABORADOR, EDIRTOR, ADMIN
-		if($_SESSION['tipo']=="Colaborador" || $_SESSION['tipo']=="Admin" || $_SESSION['tipo']=="Editor"){
+		//menu para USUSARIO, EDIRTOR, ADMIN
+		if($_SESSION['tipo']=="Usuario" || $_SESSION['tipo']=="Admin" || $_SESSION['tipo']=="Editor"){
 		?>
-		<li><button class="" value="BOnoticias" name="seccio" type="submit">Tratar Noticias</button></li>		
+		<li><button class="" value="usuario" name="seccio" type="submit">Mis Datos</button></li>
+		<li><button class="" value="misPedidos" name="seccio" type="submit">Mis Pedidos</button></li>
 		<li><button class="" value="logout" name="seccio" type="submit">LOGOUT</button></li>
 		<li class="username">
 			<?php				

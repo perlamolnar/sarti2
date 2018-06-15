@@ -39,16 +39,9 @@ $(document).ready(function() {
 																					
 					lista += "<a href='' onClick='goToTienda("+JSON.stringify(v)+");'>"+nombreTienda+"</a><br><hr>";
 					
-					tiendaPintado = `<h1>BIENVENID@</h1>            
+					tiendaPintado = `<img id="Foto" width="400px" src="img/tiendas/tiendas0.jpg" alt="` + nombreTienda + `">	            
                                         `
-                                        
-                    // tiendaPintado += `<div class="">
-					// 					<h2 id="Titulo">`+ nombreTienda + `</h2><br>								
-					// 					<hr>
-					// 					</div>
-					// 					<div class="articulo" id="Articulo" comment><img id="Foto" width="400px" src="img/tiendas/`+ fotoTienda + `" alt="` + nombreTienda + `">` + ciudad + `</div>            
-                    //                     `
-                                        
+                      
 					tiendaPintadoMobil += `<div class="">
 											<br><h4 class="corners animated slideInRight" id="Titulo">`+nombreTienda+`</h4>								
 											<hr>
@@ -73,43 +66,43 @@ $(document).ready(function() {
 		
 
 
-		$.ajax({
-			url: 'php/selectFecha.php', // archivo php que tratara los datos
-			type: 'GET', // forma de enviar los datos
-			dataType: 'json', // tipo de datos que se envían
+		// $.ajax({
+		// 	url: 'php/selectFecha.php', // archivo php que tratara los datos
+		// 	type: 'GET', // forma de enviar los datos
+		// 	dataType: 'json', // tipo de datos que se envían
 			
-			// funcion que se ejecuta cuando ha funcionado la llamada ajax correctamente
-			success : function(result){			
-				//console.log(result.consulta);
-				// console.log(result.resultado);
-				// console.log(result.error);
-				// crear la variable para contener el cuerpo de la tabla				
-				var selectFecha="";
-					//recorre todos los valores del array y los coloca en opciones
-					$.each(result.consulta, function(k , v) {
-						//console.log(v.id);					
-						var fechaCreacion = "";
-						var options = {day: 'numeric', month: 'long', year: 'numeric'};
+		// 	// funcion que se ejecuta cuando ha funcionado la llamada ajax correctamente
+		// 	success : function(result){			
+		// 		//console.log(result.consulta);
+		// 		// console.log(result.resultado);
+		// 		// console.log(result.error);
+		// 		// crear la variable para contener el cuerpo de la tabla				
+		// 		var selectFecha="";
+		// 			//recorre todos los valores del array y los coloca en opciones
+		// 			$.each(result.consulta, function(k , v) {
+		// 				//console.log(v.id);					
+		// 				var fechaCreacion = "";
+		// 				var options = {day: 'numeric', month: 'long', year: 'numeric'};
 
-						FechaCreacion = v.FechaArticulo;						
-						//fecha = new Date(FechaCreacion);					
-						//FechaCreacion = fecha.toLocaleDateString("es-ES", options); 
+		// 				FechaCreacion = v.FechaArticulo;						
+		// 				//fecha = new Date(FechaCreacion);					
+		// 				//FechaCreacion = fecha.toLocaleDateString("es-ES", options); 
 												
-						selectFecha += `<option value='`+FechaCreacion+`'>`+FechaCreacion+`</option>`
-					})
+		// 				selectFecha += `<option value='`+FechaCreacion+`'>`+FechaCreacion+`</option>`
+		// 			})
 
 				
-				$("#FechaOptions").html(selectFecha);
+		// 		$("#FechaOptions").html(selectFecha);
 	
-				},
-				// funcion ejecutada si ajax tiene un error
-			error : function (result) {
-				//alert ("Error: no ha funcionado el ajax JSON");
-				console.error(result.error);
-			}
-				// el resultado de la función queda guardado en la variable result	   	
+		// 		},
+		// 		// funcion ejecutada si ajax tiene un error
+		// 	error : function (result) {
+		// 		//alert ("Error: no ha funcionado el ajax JSON");
+		// 		console.error(result.error);
+		// 	}
+		// 		// el resultado de la función queda guardado en la variable result	   	
 			
-			});
+		// 	});
 });
 
 
@@ -149,7 +142,7 @@ $(document).ready(function() {
 }//fin de goToArticulo
 
 
-function descargarNoticias() {
-	window.location.href = "php/generatePDFnoticias.php";
+// function descargarNoticias() {
+// 	window.location.href = "php/generatePDFnoticias.php";
 	
-}
+// }

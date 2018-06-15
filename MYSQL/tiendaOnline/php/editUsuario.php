@@ -5,12 +5,12 @@
  if ($_POST){ // comprueba si se han recibido datos con POST
     
     $ID = $_POST['Id_usuario'];
-    $Nombre= $_POST['Nombre'];
+    $Nombre= $_POST['Nombre']; echo $Nombre;
     $Email=$_POST['Email'];
     $Telefono= $_POST['Telefono'];
     $Direccion = $_POST['Direccion'];
     $Username = $_POST['Username'];
-    $Tipo = $_POST['Tipo'];
+    //$Tipo = $_POST['Tipo'];
     
 //     //subida de archivos
 //     if ($_FILES) {
@@ -48,10 +48,12 @@
 
     
 
-    //$conexion = mysqli_connect ('localhost', 'root', '', 'gestornoticias') or die ("No se puede conectar con el servidor".mysqli_error($conexion));  
-	$conexion = connectBD(); 
-	
-    $sql="UPDATE usuarios SET Nombre='$Nombre', Email='$Email', Telefono='$Telefono', Direccion='$Direccion', Username='$Username', Tipo='$Tipo' WHERE Id_usuario=$ID";
+    //$conexion = mysqli_connect ('localhost', 'root', '', 'tiendaonline') or die ("No se puede conectar con el servidor".mysqli_error($conexion));  
+    $conexion = connectBD(); 
+    
+    $usuarioActual=$_SESSION['Id_usuario'];
+    
+    $sql="UPDATE usuarios SET Nombre='$Nombre', Email='$Email', Telefono='$Telefono', Direccion='$Direccion', Username='$Username' WHERE Id_usuario='$usuarioActual'";
     //echo $sql;
 
     $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la consulta".mysqli_error($conexion));

@@ -5,13 +5,11 @@
     if ($_SERVER['REQUEST_METHOD'] === 'GET'){ // comprueba si se han recibido datos con GET
         
         //$conexion = mysqli_connect ("localhost", "root", "", "gestornoticias") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
-        $conexion = connectBD();
-                
-        $num_item = 3;
-        $pagina = $_GET["page"];
-        $inicio = ($pagina-1)*$num_item;      
+        $conexion = connectBD(); 
 
-        $sql="SELECT * FROM usuarios LIMIT $inicio, 3";    
+        $usuarioActivo=$_SESSION['Id_usuario'];
+
+        $sql="SELECT * FROM usuarios WHERE Id_usuario = $usuarioActivo ";    
 
         $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la conexion".mysqli_error($conexion));
         
@@ -20,6 +18,7 @@
             $datos = array();
             while($fila=mysqli_fetch_assoc($consulta)){                 
                 $datos [] = $fila;
+                //echo $datos;
             }                    
         }
         

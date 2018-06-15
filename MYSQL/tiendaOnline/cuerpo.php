@@ -26,6 +26,9 @@
 			if($_POST['seccio']=="usuario"){
 				include("inCuerpo/usuario.php");
 			}	
+			if($_POST['seccio']=="misPedidos"){
+				include("inCuerpo/misPedidos.php");
+			}
 			// elseif ($_POST['seccio']=="upload"|| $_POST['seccio']=="uploading") {
 			// 	$subsec=$_POST['seccio'];
 			// 	include("inCuerpo/upload.php");
