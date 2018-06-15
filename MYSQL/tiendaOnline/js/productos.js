@@ -2,14 +2,13 @@ $(document).ready(function() {
     
     PaginacionContacto(1);
     $("#back").on("click", menosUno);    
-    $("#next").on("click", masUno); 
-    //$('#editUsuario').on('click', editUsuario);
+    $("#next").on("click", masUno);   
     //$('#descargarPDF').on('click', descargarPDF);   
    
 }); //fin de document ready;
 
-function descargarPDF() {
-    window.location.href = "php/generatePDF.php";
+function generatePDFproducto() {
+    window.location.href = "php/generatePDFproducto.php";
 }
 
 function masUno() {    
@@ -82,7 +81,8 @@ function PaginacionContacto(page) {
                 
             })
             
-            $("#pintacards").html(card);                       
+            $("#pintacards").html(card); 
+                              
 
         },
         // funcion ejecutada si ajax tiene un error
@@ -98,6 +98,10 @@ function PaginacionContacto(page) {
 
 
 function openModalProducto(miUsuario) {
+
+    $("#confirmacion").empty();
+
+
     //console.log(miUsuario.Nombre);
     $('#Id_producto').val(miUsuario.Id_producto);
     $('#Nombre').val(miUsuario.Nombre);    
@@ -180,51 +184,27 @@ function openModalProducto(miUsuario) {
     $("#COMPRAR").on("click", function () {
         hacerPedido(miUsuario.Id_producto);
     });
-
-    
+   
+    $("#PDFproducto").on("click", function () {
+        generatePDFproducto(miUsuario.Id_producto);
+    });
 
 } //fin function open modal
 
 
 function hacerPedido(productoElegido) {
-
-    console.log(productoElegido);
-
+    //console.log(productoElegido);
+    
     $.ajax({
         url: 'php/hacerPedido.php', // archivo php que tratara los datos
         type: 'GET', // forma de enviar los datos
         dataType: 'json', // tipo de datos que se envían
         data: { "productoElegido": productoElegido},
         // funcion que se ejecuta cuando ha funcionado la llamada ajax correctamente
-        success: function (result) {
-            // console.log("hola2");
-            // console.log(result.consulta);
-             console.log(result.resultado);
-            // console.log(result.error);
-
-            // var card = "";
-            // //recorre el array que recogemos del php en result.query           
-            // //recorre todos los valores del array y los coloca en un formato
-            // $.each(result.consulta, function (k, v) {
-            //     //console.log(v.Id);
-            //     var id = 0;
-            //     var nombre = "";
-            //     var descripcion = "";
-            //     var precio = "";
-            //     var foto = "";
-
-            //     id = v.Id_producto;
-            //     nombre = v.Nombre;
-            //     descripcion = v.Descripcion;
-            //     precio = v.Precio;
-            //     foto = v.Foto;
-
-            //     card += "<div class='card'><img src='img/productos/" + foto + " '><h2>" + nombre + "</h2><button onClick='openModalProducto(" + JSON.stringify(v) + ")'><img class='icono' src='img/iconos/masInfo.jpg'></button></div>";
-
-            // })
-
-             $("#confirmacion").html("<h1>Hemos registrado tu pedido<br>Gracias</h1>");
-
+        success: function (result) {             
+            console.log(result.resultado);
+            // console.log(result.error); 
+            $("#confirmacion").html("<h1>Hemos registrado tu pedido<br>Gracias</h1>");
         },
         // funcion ejecutada si ajax tiene un error
         error: function (result) {
@@ -234,8 +214,9 @@ function hacerPedido(productoElegido) {
         // el resultado de la función queda guardado en la variable result
 
     });
-
 }
 
 
-
+function generatePDFproducto(productoElegido) {
+    window.location.href = "php/generatePDFproducto.php";
+}

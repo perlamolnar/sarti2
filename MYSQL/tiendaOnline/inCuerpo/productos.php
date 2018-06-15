@@ -7,7 +7,7 @@
     <title>Document</title>
     <script src="js/productos.js"></script>
     <!-- <script src="js/pedido.js"></script> -->
-    <link rel="stylesheet" href="css/stlye.css">
+    <link rel="stylesheet" href="css/style.css">
     
 </head>
 <body>
@@ -61,7 +61,7 @@
         </div>
         <div class="modal-body ">
             
-        <button id="descargarPDF" class="btnColored">DESCARGAR EN PDF</button>
+        <button id="PDFproducto" class="btnColored">DESCARGAR EN PDF</button>
 
           	<form id="formProducto" action='' enctype="multipart/form-data">
 				<div class="container">
