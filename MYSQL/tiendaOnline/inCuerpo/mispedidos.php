@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="js/usuario.js"></script>    
+    <script src="js/mispedidos.js"></script>    
 
 </head>
 <body>
@@ -13,20 +13,21 @@
 
     <div class="container">  
                             
-        <table id="listado" class="table-striped">
+        <table id="listado" >
             <thead class="fijo">
                 <tr>                
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Email</th>
-                    <th>Telefono</th>
-                    <th>Dirección</th> 
-                    <th>Username</th>
-                    <th>Tipo</th>  
-                    <th>Editar</th>                                      
+                    <th>Fecha</th>
+                    <th>Id Pedido</th>
+                    <th>Id Cliente</th>
+                    <th>Nombre Cliente</th>
+                    <th>Producto</th>
+                    <th>Precio</th> 
+                    <th>Imagen</th>
+                    <th>Cantidad</th>  
+                    <th>Editar</th>
                 </tr>
             </thead>
-            <tbody >
+            <tbody class="bgwhite">
 
             </tbody>
         </table>
@@ -34,7 +35,7 @@
         		
     </div>
 
-<!-- Modal Modificar Usuario-->
+<!-- Modal Modificar MISPEDIDOS-->
 <div class="modal fade" id="ModalEditUsuario" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -44,10 +45,10 @@
         </div>
         <div class="modal-body ">        
 
-          	<form id="formModificarUsuario" action='' enctype="multipart/form-data">
+          	<form id="formModificarPedido" action='' enctype="multipart/form-data">
 				<div class="container">
 
-                <!-- <div class="ErrorMSG"></div> -->
+                <!-- <div class="ErrorMSG"></div> readonly -->
                 
 					<input type="hidden" name="Id_usuario" id="Id_usuario" >
 
@@ -59,7 +60,7 @@
 
                         <div class="active col s12 m12 l12 input-field">
                             Email:<br>
-                            <input id="Email" name="Email" type="email" class="validate">                                                        
+                            <input type="text" name="Id_usuario" id="Id_usuario" >                                                       
                         </div><br>                       
                         
                         <div class="active col s12 m12 l12 input-field">
@@ -73,7 +74,7 @@
                         </div><br>
                         
                         <div class="active col s12 m12 l12 input-field">
-                            Username:<br>
+                            Cantidad:<br>
                             <input  id="Username" name="Username" type="text" class="validate">                            
                         </div><br>
                         

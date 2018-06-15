@@ -9,15 +9,12 @@
 
         $usuarioActivo=$_SESSION['Id_usuario'];
 
-        $sql="SELECT * FROM usuarios WHERE Id_usuario = $usuarioActivo ";  
-        
-        
-        SELECT pe.FechaPedido, u.Nombre, p.Nombre, p.Precio, p.Foto, pe.Cantidad FROM pedidos pe
-        INNER JOIN usuarios u
-        ON pe.Fid_usuario=u.Id_usuario
-        RIGHT JOIN productos p
-        ON pe.Fid_producto=p.Id_producto
-        WHERE u.Nombre IS NOT NULL
+        $sql="SELECT pe.FechaPedido, pe.Id_pedidos, u.Id_usuario, u.Nombre, p.Nombre as Producto, p.Precio, p.Foto, pe.Cantidad FROM pedidos pe
+                INNER JOIN usuarios u
+                ON pe.Fid_usuario=u.Id_usuario
+                RIGHT JOIN productos p
+                ON pe.Fid_producto=p.Id_producto
+                WHERE Id_usuario = $usuarioActivo";          
 
         $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la conexion".mysqli_error($conexion));
         

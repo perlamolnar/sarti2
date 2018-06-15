@@ -3,14 +3,14 @@ $(document).ready(function() {
     $('#editUsuario').on('click', editUsuario);       
    
     $.ajax({
-        url: 'php/usuario.php', // archivo php que tratara los datos
+        url: 'php/mispedidos.php', // archivo php que tratara los datos
         type: 'GET', // forma de enviar los datos
         dataType: 'json', // tipo de datos que se envían
        
         // funcion que se ejecuta cuando ha funcionado la llamada ajax correctamente
         success: function (result) {
             // console.log("hola2");
-            // console.log(result.consulta);
+             console.log(result.consulta);
             // console.log(result.resultado);
             // console.log(result.error);
 
@@ -21,30 +21,35 @@ $(document).ready(function() {
             //recorre todos los valores del array y los coloca en un formato tabla
             $.each(result.consulta, function (k, v) {
                 //console.log(v.Id);
-                var id = 0;
+                var fecha="";
+                var idPedido="";
+                var id_usuario = 0;
                 var nombre = "";
-                var email = "";
-                var telefono = "";
-                var direccion = "";
-                var username = "";                
-                var tipo = "";
-
+                var producto = "";
+                var precio = "";
+                var foto = "";
+                var cantidad = "";                
+                
+               
+                idPedido=v.Id_pedidos;
                 id = v.Id_usuario;
                 nombre = v.Nombre;
-                email = v.Email;
-                telefono = v.Telefono;
-                direccion = v.Direccion;
-                username = v.Username;
-                tipo = v.Tipo;
+                producto = v.Producto;
+                precio = v.Precio;
+                foto = v.Foto;
+                cantidad = v.Cantidad;                
+                fechacreacion = v.FechaPedido;                
 
                 tbl_row += "<tr>"
+                tbl_row += "<td>" + fechacreacion + "</td>";
+                tbl_row += "<td>" + idPedido + "</td>";
                 tbl_row += "<td>" + id + "</td>";
                 tbl_row += "<td>" + nombre + "</td>";
-                tbl_row += "<td>" + email + "</td>";
-                tbl_row += "<td>" + telefono + "</td>";
-                tbl_row += "<td>" + direccion + "</td>";
-                tbl_row += "<td>" + username + "</td>";
-                tbl_row += "<td>" + tipo + "</td>";
+                tbl_row += "<td>" + producto + "</td>";
+                tbl_row += "<td>" + precio + "</td>";
+                tbl_row += "<td>" + foto + "</td>";
+                tbl_row += "<td>" + cantidad + "</td>";
+                
 
                 tbl_row += "<td><button onClick='openModalEditUsuario("+JSON.stringify(v)+");'><img class='icon' src='img/edit1.png' alt='Modificar Icon' title='Editar'></button></td>";
                 //tbl_row += "<td><button onClick='borrarUsuario("+JSON.stringify(v.Id_usuario)+");'><img class='icon' src='img/borrar.png' alt='Borrar Icon' title='Borrar'></button></td>";
