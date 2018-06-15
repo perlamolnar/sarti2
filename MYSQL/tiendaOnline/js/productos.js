@@ -192,14 +192,14 @@ function hacerPedido(productoElegido) {
 
     $.ajax({
         url: 'php/hacerPedido.php', // archivo php que tratara los datos
-        type: 'POST', // forma de enviar los datos
+        type: 'GET', // forma de enviar los datos
         dataType: 'json', // tipo de datos que se envían
         data: { "productoElegido": productoElegido},
         // funcion que se ejecuta cuando ha funcionado la llamada ajax correctamente
         success: function (result) {
             // console.log("hola2");
             // console.log(result.consulta);
-            // console.log(result.resultado);
+             console.log(result.resultado);
             // console.log(result.error);
 
             // var card = "";
@@ -223,7 +223,7 @@ function hacerPedido(productoElegido) {
 
             // })
 
-            // $("#pintacards").html(card);
+             $("#confirmacion").html("<h1>Hemos registrado tu pedido<br>Gracias</h1>");
 
         },
         // funcion ejecutada si ajax tiene un error

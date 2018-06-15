@@ -2,7 +2,7 @@
     session_start();
     include('../php/functions.php');
 
-    $productoElegido=$_POST['productoElegido'];
+    $productoElegido=$_GET['productoElegido'];
     $cantidadPedido="1";
 
     if ($_SERVER['REQUEST_METHOD'] === 'GET'){ // comprueba si se han recibido datos con GET
@@ -18,11 +18,11 @@
         
         if ($consulta){
             $error = "Pedido creado";                      
-            $datos = array();
-            while($fila=mysqli_fetch_assoc($consulta)){                 
-                $datos [] = $fila;
-                //echo $datos;
-            }                    
+            // $datos = array();
+            // while($fila=mysqli_fetch_assoc($consulta)){                 
+            //     $datos [] = $fila;
+            //     //echo $datos;
+            // }                    
         }
         
         else {
@@ -34,7 +34,7 @@
         mysqli_close($conexion);        
         
 		echo json_encode([ // codifica datos para enviar de vuelta con json
-				"consulta" => $datos,
+				//"consulta" => $datos,
 				"error" => $error,
 				"resultado" => "Conexión con la base de datos correcta"
 
@@ -42,7 +42,7 @@
 	}
 	else {
 		echo json_encode([ // codifica datos para enviar de vuelta con json	en caso de conexión fallida	
-				"consulta" => "Datos no correctos",
+				//"consulta" => "Datos no correctos",
 				"error" => "Error al codificar json_encode",
 				"resultado" => "Datos no corrrectos"
 			]);

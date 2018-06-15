@@ -129,8 +129,11 @@
                 if($_SESSION['tipo']=="Usuario"){
                                          
                     echo "<div id='btnComprar'><button id='COMPRAR'>COMPRAR PRODUCTO</button></div>";
-                    //echo "<div id='btnComprar'><button onclick=\"hacerPedido(Id_producto)\" id='COMPRAR'>COMPRAR PRODUCTO</button></div>";  
+                                         
             } ?>
+
+            <div id="confirmacion"></div>
+
 
         </div>
         <div class="modal-footer">
