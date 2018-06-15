@@ -2,8 +2,8 @@
     session_start();
     include('../php/functions.php');
 
-    $procuctoElegido="1";
-    $cantidadPedido="2";
+    $productoElegido=$_POST['productoElegido'];
+    $cantidadPedido="1";
 
     if ($_SERVER['REQUEST_METHOD'] === 'GET'){ // comprueba si se han recibido datos con GET
         
@@ -12,7 +12,7 @@
 
         $usuarioActivo=$_SESSION['Id_usuario'];
 
-        $sql="INSERT INTO pedidos(Fid_usuario, Fid_producto, Cantidad) VALUES ('$usuarioActivo', '$procuctoElegido', '$cantidadPedido' )";                
+        $sql="INSERT INTO pedidos(Fid_usuario, Fid_producto, Cantidad) VALUES ('$usuarioActivo', '$productoElegido', '$cantidadPedido' )";                
 
         $consulta = mysqli_query($conexion, $sql )or die ("Fallo en la conexion".mysqli_error($conexion));
         

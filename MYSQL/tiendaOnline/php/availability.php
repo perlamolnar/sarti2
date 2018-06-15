@@ -3,8 +3,7 @@
     include('../php/functions.php');
     $Nombre = $_POST['Nombre'];
     if ($_SERVER['REQUEST_METHOD'] === 'POST'){ // comprueba si se han recibido datos con GET
-        
-        
+               
        
         //$conexion = mysqli_connect ("localhost", "root", "perla", "tiendaonline") or die ("No se puede conectar con el servidor".mysqli_error($conexion));
         $conexion = connectBD();            
