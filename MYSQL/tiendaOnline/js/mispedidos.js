@@ -47,11 +47,11 @@ $(document).ready(function() {
                 tbl_row += "<td>" + nombre + "</td>";
                 tbl_row += "<td>" + producto + "</td>";
                 tbl_row += "<td>" + precio + "</td>";
-                tbl_row += "<td>" + foto + "</td>";
+                tbl_row += "<td><img src='img/productos/"+ foto +"'></td>";
                 tbl_row += "<td>" + cantidad + "</td>";
                 
 
-                tbl_row += "<td><button onClick='openModalEditUsuario("+JSON.stringify(v)+");'><img class='icon' src='img/edit1.png' alt='Modificar Icon' title='Editar'></button></td>";
+                //tbl_row += "<td><button onClick='openModalEditUsuario("+JSON.stringify(v)+");'><img class='icon' src='img/edit1.png' alt='Modificar Icon' title='Editar'></button></td>";
                 //tbl_row += "<td><button onClick='borrarUsuario("+JSON.stringify(v.Id_usuario)+");'><img class='icon' src='img/borrar.png' alt='Borrar Icon' title='Borrar'></button></td>";
                 
                 tbl_row += "</tr>"

@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <h1>MIS DATOS</h1>
+    <h1>MIS PEDIDOS</h1>
 
     <div class="container">  
                             
@@ -24,7 +24,7 @@
                     <th>Precio</th> 
                     <th>Imagen</th>
                     <th>Cantidad</th>  
-                    <th>Editar</th>
+                    <!-- <th>Editar</th> -->
                 </tr>
             </thead>
             <tbody class="bgwhite">
@@ -49,44 +49,16 @@
 				<div class="container">
 
                 <!-- <div class="ErrorMSG"></div> readonly -->
-                
-					<input type="hidden" name="Id_usuario" id="Id_usuario" >
+                <div class="row">
+                        <input type="hidden" name="Id_usuario" id="Id_usuario" >
 
-					<div class="row">
-						<div class="active col s12 m12 l12 input-field">
-                            Nombre:<br>
-                            <input id="Nombre" name="Nombre" type="text" class="validate">                            
-						</div><br>
-
-                        <div class="active col s12 m12 l12 input-field">
-                            Email:<br>
-                            <input type="text" name="Id_usuario" id="Id_usuario" >                                                       
-                        </div><br>                       
-                        
-                        <div class="active col s12 m12 l12 input-field">
-                            Teléfono:<br>
-                            <input  id="Telefono" name="Telefono" type="text" class="validate">                            
-                        </div><br>
-                        
-                        <div class="active col s12 m12 l12 input-field">
-                            Dirección:<br>
-                            <input  id="Direccion" name="Direccion" type="text" class="validate">                            
-                        </div><br>
+                        <input type="hidden" name="Id_producto" id="Id_producto" >			
                         
                         <div class="active col s12 m12 l12 input-field">
                             Cantidad:<br>
-                            <input  id="Username" name="Username" type="text" class="validate">                            
-                        </div><br>
-                        
-                        <!-- <div class="active col s12 m12 l12 input-field">
-                            Rol:<br>                            
-                            <select id="Tipo" name="Tipo">
-                                <option value="Admin">Administrador</option>
-                                <option value="Editor">Editor</option>
-                                <option value="Colaborador">Colaborador</option>                                
-                            </select>
-                            
-						</div> -->
+                            <input  id="Username" name="Username" type="text" class="validate">
+                        </div><br>                      
+                       
                         <br>
 					</div>
 				</div>							
