@@ -160,7 +160,7 @@ button:hover{ color:#8ae6e9;padding: 10px; border: none;}
 	
 }
 table{padding: 10px;margin: auto}
-td{padding:10px; margin: auto}
+td{padding:0px; margin: auto}
 input.radioBtn{width: 50px}
 
 div#mainBox{		
@@ -225,8 +225,8 @@ li a:hover {background-color: #111;}
 td{width: 110px; }
 th{
 	text-align: center; 
-	background-color: #4c1c16; 
-	padding: 20px 0px; 
+	background-color: #72a7a4; 
+	padding: 10px 0px; 
 	color: white; 
 	text-shadow: 2px 2px 2px rgba(50, 50, 50, 1); 
 	font-size: 1.1em;
@@ -293,3 +293,6 @@ th{
 .halfBox{width: 50%; float:left; padding: 15px;}
 
 textarea{width: 100%; height: 150px}
+
+#btnComprar{background-color: #473e30 !important}
+.btnColored{background-color: #72a7a4 !important}

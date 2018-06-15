@@ -103,7 +103,8 @@ function openModalProducto(miUsuario) {
     $('#Nombre').val(miUsuario.Nombre);    
     $('#Descripcion').val(miUsuario.Descripcion);
     $('#Precio').val(miUsuario.Precio); 
-    $('#Foto').attr('src',"img/productos/" +miUsuario.Foto);     
+    $('#Foto').attr('src',"img/productos/" +miUsuario.Foto);    
+   
 
     $('#openModalProducto').modal('show');   //abrir el modal
 
@@ -113,13 +114,15 @@ function openModalProducto(miUsuario) {
     $.ajax({         
 
         url: 'php/availability.php', // archivo php que tratara los datos
-        type: 'GET', // forma de enviar los datos
+        type: 'POST', // forma de enviar los datos
         dataType: 'json', // tipo de datos que se envían
-        //data:{Nombre:Nombre},
+        data:{Nombre:Nombre},
         // funcion que se ejecuta cuando ha funcionado la llamada ajax correctamente
         success: function (result) {
-            //console.log("hola2");
-             console.log(result.consulta);
+            // console.log("hola2");
+            // console.log(result.resultado);
+            // console.log(result.sql); 
+            //console.log(result.consulta);
             // console.log(result.resultado);
             // console.log(result.error);
 
@@ -174,9 +177,65 @@ function openModalProducto(miUsuario) {
 
     });
 
+    $("#COMPRAR").on("click", function () {
+        hacerPedido(miUsuario.Id_producto);
+    });
 
+    
 
 } //fin function open modal
+
+
+function hacerPedido(productoElegido) {
+
+    console.log(productoElegido);
+
+    $.ajax({
+        url: 'php/hacerPedido.php', // archivo php que tratara los datos
+        type: 'GET', // forma de enviar los datos
+        dataType: 'json', // tipo de datos que se envían
+        data: { "productoElegido": productoElegido},
+        // funcion que se ejecuta cuando ha funcionado la llamada ajax correctamente
+        success: function (result) {
+            // console.log("hola2");
+            // console.log(result.consulta);
+            // console.log(result.resultado);
+            // console.log(result.error);
+
+            // var card = "";
+            // //recorre el array que recogemos del php en result.query           
+            // //recorre todos los valores del array y los coloca en un formato
+            // $.each(result.consulta, function (k, v) {
+            //     //console.log(v.Id);
+            //     var id = 0;
+            //     var nombre = "";
+            //     var descripcion = "";
+            //     var precio = "";
+            //     var foto = "";
+
+            //     id = v.Id_producto;
+            //     nombre = v.Nombre;
+            //     descripcion = v.Descripcion;
+            //     precio = v.Precio;
+            //     foto = v.Foto;
+
+            //     card += "<div class='card'><img src='img/productos/" + foto + " '><h2>" + nombre + "</h2><button onClick='openModalProducto(" + JSON.stringify(v) + ")'><img class='icono' src='img/iconos/masInfo.jpg'></button></div>";
+
+            // })
+
+            // $("#pintacards").html(card);
+
+        },
+        // funcion ejecutada si ajax tiene un error
+        error: function (result) {
+            console.log("Error de Ajax.");
+            console.error(result.error);
+        }
+        // el resultado de la función queda guardado en la variable result
+
+    });
+
+}
 
 
 

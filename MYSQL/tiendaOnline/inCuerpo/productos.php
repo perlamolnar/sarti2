@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="js/productos.js"></script>
+    <!-- <script src="js/pedido.js"></script> -->
     <link rel="stylesheet" href="css/stlye.css">
     
 </head>
@@ -30,9 +31,7 @@
   
     ?>
 
-    <div class="container">
-
-        <!-- <button id="descargarPDF">DESCARGAR EN PDF</button> -->
+    <div class="container">       
 
         <div class="row"> 
             <div id="pintacards">
@@ -60,7 +59,9 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">DETALLES DEL PRODUCTO</h4>
         </div>
-        <div class="modal-body ">        
+        <div class="modal-body ">
+            
+        <button id="descargarPDF" class="btnColored">DESCARGAR EN PDF</button>
 
           	<form id="formProducto" action='' enctype="multipart/form-data">
 				<div class="container">
@@ -106,8 +107,7 @@
                                     <th>Direccion</th>
                                     <th>Telefono</th>
                                     <th>Producto</th> 
-                                    <th>Cantidad</th>                                     
-                                    <!-- <th>Editar</th>                                       -->
+                                    <th>Cantidad Disponible</th> 
                                 </tr>
                             </thead>
                             <tbody >
@@ -118,8 +118,20 @@
                     </div>
                     
 
-				</div>							
-			</form>
+                </div>
+                
+                
+            </form> 
+
+
+
+           <?php  
+                if($_SESSION['tipo']=="Usuario"){
+                                         
+                    echo "<div id='btnComprar'><button id='COMPRAR'>COMPRAR PRODUCTO</button></div>";
+                    //echo "<div id='btnComprar'><button onclick=\"hacerPedido(Id_producto)\" id='COMPRAR'>COMPRAR PRODUCTO</button></div>";  
+            } ?>
+
         </div>
         <div class="modal-footer">
             <!-- <button type="button" id="editUsuario" class="btn btn-primary">GUARDAR</button>             -->
